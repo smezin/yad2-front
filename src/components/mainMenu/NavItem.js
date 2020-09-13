@@ -14,10 +14,11 @@ const NavItem = (props) => {
     return (
         <div className="nav-item">
             {
-
+                links.map((link) => (
+                    <a key={link.name} href={link.urlSuffix} className='dropdown-link main-menu-link'>{link.name}</a>
+                ))
             }
         </div>
     )
 }
-
 export default NavItem

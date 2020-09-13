@@ -1,0 +1,6 @@
+{
+    "tourism": {"localName": "תיירות ונופש", "path": "/other/tourism"},
+    "school": {"localName": "לימודים", "path": "/other/school"},
+    "magazine": {"localName": "מגזין יד2", "path": "/other/magazine"}
+
+}

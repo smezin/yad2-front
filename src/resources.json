@@ -21,34 +21,123 @@
             "realestate": {
                 "name": "נדלן",
                 "items": {                
-                    "forsale": "דירות למכירה",
-                    "rent": "דירות להשכרה",
-                    "roommates": "שותפים",
-                    "commercial": "מסחרי",
-                    "map": "חיפוש על גבי מפה",
-                    "receiver": "כונס נכסים",
-                    "realestateIndex": "מדד הנדלן",
-                    "yad1": "יד1 דירות חדשות",
-                    "yadata": "הערכת שווי נכס"
+                    "forsale": {"localName": "דירות למכירה", "path": "/realestate/forsale"},
+                    "rent": {"localName": "דירות להשכרה", "path": "/realestate/rent"},
+                    "roommates": {"localName": "שותפים", "path": "/realestate/roomates"},
+                    "commercial": {"localName": "מסחרי", "path": "/realestate/commercial"},
+                    "map": {"localName": "חיפוש על גבי מפה", "path": "/map"},
+                    "receiver": {"loacalName": "כונס נכסים", "path": "/reciever"},
+                    "realestateIndex": {"localName": "מדד הנדלן", "path": "/realestateIndex"},
+                    "yad1": {"localName": "יד1 דירות חדשות", "path": "/yad1"},
+                    "yadata": {"localName": "הערכת שווי נכס", "path": "/yadata"}
                 }
             },
             "vehicles": {
                 "name": "רכב",
                 "items": {
-                    "private-cars": "פרטי",
-                    "commercial-cars": "מסחרי",
-                    "4x4": "ג'יפים",
-                    "motorcycles": "אופנועים",
-                    "scooters": "קטנועים",
-                    "other": "מיוחדים",
-                    "car-accessories": "אביזרים",
-                    "trucks": "משאיות",
-                    "luxury-cars": "רכבי יוקרה",
-                    "watercraft": "כלי שייט",
-                    "vehicles-catalog": "קטלוג רכבים",
-                    "vehicles-pricelist": "מחירון רכב",
-                    "vehicles-reciever": "מכרזים וכינוס",
-                    "vehicles-funding": "מימון רכב"
+                    "private-cars": {"localName": "פרטי", "path": "/vehicles/private-cars"},
+                    "commercial-cars": {"localName": "מסחרי", "path": "/vehicles/commercial-cars"},
+                    "4x4": {"localName": "ג'יפים", "path": "/vehicles/4x4"},
+                    "motorcycles": {"localName": "אופנועים", "path": "/vehicles/motorcycles"},
+                    "scooters": {"localName": "קטנועים", "path": "/vehicles/scooters"},
+                    "other": {"localName": "מיוחדים", "path": "/vehicles/other"},
+                    "car-accessories": {"localName": "אביזרים", "path": "/vehicles/car-accessories"},
+                    "trucks": {"localName": "משאיות", "path": "/vehicles/trucks"},
+                    "luxury-cars": {"localName": "רכבי יוקרה", "path": "/vehicles/luxury-cars"},
+                    "watercraft": {"localName": "כלי שייט", "path": "/vehicles/watercraft"},
+                    "vehicles-catalog": {"localName": "קטלוג רכבים", "path": "/vehicles-catalog"},
+                    "vehicles-pricelist": {"localName": "מחירון רכב", "path": "/vehicles-pricelist"},
+                    "vehicles-reciever": {"localName": "מכרזים וכינוס", "path": "/vehicles-reciever"},
+                    "vehicles-funding": {"localName": "מימון רכב", "path": "/vehicles-funding"}
+                }
+            },
+            "products": {
+                "name": "יד שנייה",
+                "items": {
+                    "all": {"localName": "כל המוצרים", "path": "/products/all"},
+                    "electrical-appliances": {"localName": "חשמל", "path": "/products/electrical-appliances"},
+                    "furniture": {"localName": "ריהוט", "path": "/products/furniture"},
+                    "businesses-for-sale": {"localName": "עסקים למכירה", "path": "/products/businesses-for-sale"},
+                    "sport": {"localName": "ספורט", "path": "/products/sport"},
+                    "cellular": {"localName": "סלולרי", "path": "/products/cellular"},
+                    "baby-and-child": {"localName": "לתינוק ולילד", "path": "/products/baby-and-child"},
+                    "giveaway": {"localName": "הכל בחינם!", "path": "/products/giveaway"},
+                    "pitchonlev": {"localName": "יד2 מכל הלב", "path": "/pitchonlev"}
+                }
+            },
+            "jobs": {
+                "name": "דרושים",
+                "items":{
+                    "all": {"localName": "חיפוש עבודה", "path": "/jobs/all"}, 
+                    "find-workers": {"localName": "פרסום משרות", "path": "/jobs/find-workers"},
+                    "resume": {"localName": "כתיבת קורות חיים", "path": "/jobs/resume"}, 
+                    "companies": {"localName": "אודות החברות", "path": "/jobs/companies"},
+                    "hitech": {"localName": "דרושים הייטק", "path": "/jobs/hitech"},
+                    "young": {"localName": "דרושים צעירים", "path": "/jobs/young"}, 
+                    "no-resume": {"localName": "צעירים ללא קו''ח", "path": "/jobs/no-resume"}, 
+                    "finance": {"localName": "כספים", "path": "/jobs/finance"}, 
+                    "sales": {"localName": "מכירות", "path": "/jobs/sales"}, 
+                    "customer-service": {"localName": "שירות לקוחות", "path": "/jobs/customer-service"},
+                    "administration": {"localName": "אדמיניסטרציה", "path": "/jobs/administration"},
+                    "engineers": {"localName": "מהנדסים", "path": "/jobs/engineers"},
+                    "transportation": {"localName": "תחבורה", "path": "/jobs/transportation"},
+                    "tourism": {"localName": "מסעדנות/תיירות", "path": "/jobs/tourism"},
+                    "security": {"localName": "אבטחה", "path": "/jobs/security"},
+                    "health": {"localName": "בריאות", "path": "/jobs/health"},
+                    "professionals": {"localName": "בעלי מקצוע", "path": "/jobs/professionals"},
+                    "teaching": {"localName": "הדרכה/הוראה", "path": "/jobs/teaching"},
+                    "marketing": {"localName": "שיווק", "path": "/jobs/marketing"},
+                    "other": {"localName": "לתחומים נוספים", "path": "/jobs/other"}
+                }
+            },
+            "commercial": {
+                "name": "הכל לעסק",
+                "items": {
+                    "businesses-for-sale": {"localName": "עסקים למכירה", "path":"/products/businesses-for-sale"}, 
+                    "commercial-realestate": {"localName": "נדל''ן מסחרי", "path":"/realestate/commercial"}, 
+                    "business-equipment": {"localName": "ציוד לעסקים", "path":"/products/business-equipment"},
+                    "franchise": {"localName": "זכיינות", "path":"/products/businesses-for-sale"},
+                    "office-rent": {"localName": "משרדים להשכרה", "path":"/realestate/commercial"},
+                    "common-workspace": {"localName": "חללי עבודה משותפים", "path":"/realestate/commercial"}
+                }
+            },
+            "pets": {
+                "name": "חיות מחמד",
+                "items": {
+                    "dogs": {"localName": "כלבים", "path": "/pets/dogs"},
+                    "cats": {"localName": "חתולים", "path": "/pets/cats"},
+                    "parrots": {"localName": "תוכים ובעלי כנף", "path": "/pets/parrots"},
+                    "fish": {"localName": "דגים", "path": "/pets/fish"},
+                    "reptiles": {"localName": "זוחלים", "path": "/pets/reptiles"},
+                    "rodents": {"localName": "מכרסמים", "path": "/pets/rodents"},
+                    "horses": {"localName": "סוסים", "path": "/pets/horses"},
+                    "chickens": {"localName": "תרנגולים", "path": "/pets/chickens"},
+                    "livestock": {"localName": "חיות משק", "path": "/pets/livestock"},
+                    "ferrets": {"localName": "חמוסים", "path": "/pets/ferrets"}
+                }
+            },
+            "pro": {
+                "name": "בעלי מקצוע",
+                "items": {
+                    "rishuy-rehev": {"localName": "מכוני בדיקה ורישוי לרכב", "path": "/rishuy-rehev"},
+                    "car-wash": {"localName": "רחיצת רכב", "path": "/car-wash"},
+                    "realestate-appraiser": {"localName": "שמאי מקרקעין", "path": "/real-estate-appraiser"},
+                    "construction-materials": {"localName": "חומרי בניין", "path": "/construction-materials"},
+                    "plumbers": {"localName": "אינסטלטור", "path": "/plumbers"},
+                    "electricians": {"localName": "חשמלאים", "path": "/electricians"},
+                    "renovations": {"localName": "שיפוצים", "path": "/renovations"},
+                    "moving": {"localName": "הובלות", "path": "/moving"},
+                    "furniture": {"localName": "רהיטים", "path": "/furniture"},
+                    "maintenance": {"localName": "חברות ניקיון ואחזקה", "path": "/maintenance"},
+                    "all": {"localName": "לכל בעלי המקצוע", "path": "/all"}
+                }
+            },
+            "other": {
+                "name": "עוד...",
+                "items": {
+                    "tourism": {"localName": "תיירות ונופש", "path": "/other/tourism"},
+                    "school": {"localName": "לימודים", "path": "/other/school"},
+                    "magazine": {"localName": "מגזין יד2", "path": "/other/magazine"}
                 }
             }
         }          
