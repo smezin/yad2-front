@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './styles/styles.scss'
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import MainMenu from './components/mainMenu/MainMenu'
+import * as serviceWorker from './serviceWorker'
+import fetchFromResource from './utility/fetchFromResource'
+import NavItemDropdownMenu from './components/mainMenu/NavItemDropdown'
+import NavItem from './components/mainMenu/NavItem'
 
+fetchFromResource('mainMenu','dropdownMenus','realestate','forsale')
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MainMenu />
+    <NavItemDropdownMenu items={fetchFromResource('mainMenu', 'dropdownMenus', 'realestate', 'items')}/>
+    <NavItem categories={fetchFromResource('mainMenu', 'dropdownMenus')}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -15,3 +23,5 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+// <NavItemDropdownMenu items={fetchFromResource('mainMenu', 'dropdownMenus', 'realestate')}/>

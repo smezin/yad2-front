@@ -1,0 +1,56 @@
+{
+    "mainMenu": {
+        "addNewItemButton": {
+            "text": "+ פרסום מודעה חדשה"
+        },
+        "prevSearchesButton": {
+            "title": "חיפושים אחרונים",
+            "toAllSearches": "לכל החיפושים האחרונים"
+        },
+        "savedItemsButton": {
+            "title": "מודעות שמורות",
+            "description": "הרשימה שלך ריקה כרגע, אפשר להוסיף מודעות לרשימה בלחיצה על הסימן בפינה הימנית של כל מודעה",
+            "url": "/favorites"
+        },
+        "carComparisonButton": {
+            "title": "השוואת רכבים",
+            "description": "הרשימה שלך ריקה כרגע, אפשר להוסיף רכבים להשוואה בלחיצה על הכפתור להשוואה בפינה הימנית של כל מודעה",
+            "url": "/car-comparison"
+        },
+        "dropdownMenus": {
+            "realestate": {
+                "name": "נדלן",
+                "items": {                
+                    "forsale": "דירות למכירה",
+                    "rent": "דירות להשכרה",
+                    "roommates": "שותפים",
+                    "commercial": "מסחרי",
+                    "map": "חיפוש על גבי מפה",
+                    "receiver": "כונס נכסים",
+                    "realestateIndex": "מדד הנדלן",
+                    "yad1": "יד1 דירות חדשות",
+                    "yadata": "הערכת שווי נכס"
+                }
+            },
+            "vehicles": {
+                "name": "רכב",
+                "items": {
+                    "private-cars": "פרטי",
+                    "commercial-cars": "מסחרי",
+                    "4x4": "ג'יפים",
+                    "motorcycles": "אופנועים",
+                    "scooters": "קטנועים",
+                    "other": "מיוחדים",
+                    "car-accessories": "אביזרים",
+                    "trucks": "משאיות",
+                    "luxury-cars": "רכבי יוקרה",
+                    "watercraft": "כלי שייט",
+                    "vehicles-catalog": "קטלוג רכבים",
+                    "vehicles-pricelist": "מחירון רכב",
+                    "vehicles-reciever": "מכרזים וכינוס",
+                    "vehicles-funding": "מימון רכב"
+                }
+            }
+        }          
+    }
+}
