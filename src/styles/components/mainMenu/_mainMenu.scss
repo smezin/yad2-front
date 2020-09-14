@@ -1,4 +1,32 @@
 .main-menu {
-    background: gray;
+    background: white;
+    border-bottom: 1px solid $theme-selected;
+    border-top: 6px solid $theme-main-color;
     display: flex;
+    flex-direction: row-reverse;
+    height: 4 * $std-size;
+}
+.main-menu__items-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between; 
+    .main-menu__item-wrapper {
+        background: white;
+        display: flex;
+        direction: rtl;
+        flex-direction: row-reverse;
+        height: 100%;
+        
+        &:hover {
+            background: $theme-hovered;
+        }
+        .main-menu__item {
+            color: $theme-text;
+            font-size: $font-size-m;
+            padding: $std-size;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+        }
+    }
 }

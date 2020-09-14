@@ -12,9 +12,8 @@ import NavItem from './components/mainMenu/NavItem'
 fetchFromResource('mainMenu','dropdownMenus','realestate','forsale')
 ReactDOM.render(
   <React.StrictMode>
-    <MainMenu />
-    <NavItemDropdownMenu items={fetchFromResource('mainMenu', 'dropdownMenus', 'realestate', 'items')}/>
-    <NavItem categories={fetchFromResource('mainMenu', 'dropdownMenus')}/>
+    <MainMenu />  
+    <NavItemDropdownMenu category={fetchFromResource('mainMenu', 'dropdownMenus', 'realestate')}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -25,3 +24,4 @@ ReactDOM.render(
 serviceWorker.unregister();
 
 // <NavItemDropdownMenu items={fetchFromResource('mainMenu', 'dropdownMenus', 'realestate')}/>
+// <NavItem categories={fetchFromResource('mainMenu', 'dropdownMenus')}/>

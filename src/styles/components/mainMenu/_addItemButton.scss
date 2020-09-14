@@ -1,24 +1,22 @@
 
 .add-item-button__wrapper {
-    align-items: right;
-    display: inline-flex;
-    a {
-        text-decoration: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    .add-item-button {
+        background: $green-button;
+        border-radius: 20px;
+        color: white;
+        direction: rtl;
+        font-weight: 500;
+        font-size: $font-size-s;
+        height: 2.5 * $std-size;
+        line-height: 2.5 * $std-size;
+        margin: 15px;
+        text-align: center;
+        width: 12 * $std-size;
+        &:hover {
+            background: darken($green-button, 10%);
+        }    
     }
-}
-.add-item-button {
-    background: $green-button;
-    border-radius: 20px;
-    color: white;
-    direction: rtl;
-    font-weight: 500;
-    font-size: $font-size-s;
-    height: 2.5 * $std-size;
-    line-height: 2.5 * $std-size;
-    margin: 15px;
-    text-align: center;
-    width: 12 * $std-size;
-    &:hover {
-        background: darken($green-button, 10%);
-    }    
 }

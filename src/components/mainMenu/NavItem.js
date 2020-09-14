@@ -7,17 +7,17 @@ const NavItem = (props) => {
     const links = []
     for (let category in categories) {
         if (categories.hasOwnProperty(category)) {
-            links.push(new LinkedText('/' + category, categories[category]['name']))
+            links.push(new LinkedText('/' + category, categories[category]['localName']))
         }
     }
-    console.log(links)
-    return (
-        <div className="nav-item">
-            {
-                links.map((link) => (
-                    <a key={link.name} href={link.urlSuffix} className='dropdown-link main-menu-link'>{link.name}</a>
-                ))
-            }
+    console.log("links", links)
+    return (        
+        <div className="main-menu__items-container">    
+            {links.map((link) => (
+            <div className="main-menu__item-wrapper">
+                <a key={link.name} href={link.urlSuffix} className='main-menu__item'>{link.name}</a>        
+            </div>            
+            ))}
         </div>
     )
 }

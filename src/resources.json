@@ -19,21 +19,23 @@
         },
         "dropdownMenus": {
             "realestate": {
-                "name": "נדלן",
+                "name": "realestate",
+                "localName": "נדלן",
                 "items": {                
                     "forsale": {"localName": "דירות למכירה", "path": "/realestate/forsale"},
                     "rent": {"localName": "דירות להשכרה", "path": "/realestate/rent"},
                     "roommates": {"localName": "שותפים", "path": "/realestate/roomates"},
                     "commercial": {"localName": "מסחרי", "path": "/realestate/commercial"},
                     "map": {"localName": "חיפוש על גבי מפה", "path": "/map"},
-                    "receiver": {"loacalName": "כונס נכסים", "path": "/reciever"},
+                    "receiver": {"localName": "כונס נכסים", "path": "/reciever"},
                     "realestateIndex": {"localName": "מדד הנדלן", "path": "/realestateIndex"},
                     "yad1": {"localName": "יד1 דירות חדשות", "path": "/yad1"},
                     "yadata": {"localName": "הערכת שווי נכס", "path": "/yadata"}
                 }
             },
             "vehicles": {
-                "name": "רכב",
+                "name": "vehicles",
+                "localName": "רכב",
                 "items": {
                     "private-cars": {"localName": "פרטי", "path": "/vehicles/private-cars"},
                     "commercial-cars": {"localName": "מסחרי", "path": "/vehicles/commercial-cars"},
@@ -52,7 +54,8 @@
                 }
             },
             "products": {
-                "name": "יד שנייה",
+                "name": "products",
+                "localName": "יד שנייה",
                 "items": {
                     "all": {"localName": "כל המוצרים", "path": "/products/all"},
                     "electrical-appliances": {"localName": "חשמל", "path": "/products/electrical-appliances"},
@@ -66,7 +69,8 @@
                 }
             },
             "jobs": {
-                "name": "דרושים",
+                "name": "jobs",
+                "localName": "דרושים",
                 "items":{
                     "all": {"localName": "חיפוש עבודה", "path": "/jobs/all"}, 
                     "find-workers": {"localName": "פרסום משרות", "path": "/jobs/find-workers"},
@@ -91,7 +95,8 @@
                 }
             },
             "commercial": {
-                "name": "הכל לעסק",
+                "name": "commercial",
+                "localName": "הכל לעסק",
                 "items": {
                     "businesses-for-sale": {"localName": "עסקים למכירה", "path":"/products/businesses-for-sale"}, 
                     "commercial-realestate": {"localName": "נדל''ן מסחרי", "path":"/realestate/commercial"}, 
@@ -102,7 +107,8 @@
                 }
             },
             "pets": {
-                "name": "חיות מחמד",
+                "name": "pets",
+                "localName": "חיות מחמד",
                 "items": {
                     "dogs": {"localName": "כלבים", "path": "/pets/dogs"},
                     "cats": {"localName": "חתולים", "path": "/pets/cats"},
@@ -117,7 +123,8 @@
                 }
             },
             "pro": {
-                "name": "בעלי מקצוע",
+                "name": "pro",
+                "localName": "בעלי מקצוע",
                 "items": {
                     "rishuy-rehev": {"localName": "מכוני בדיקה ורישוי לרכב", "path": "/rishuy-rehev"},
                     "car-wash": {"localName": "רחיצת רכב", "path": "/car-wash"},
@@ -133,7 +140,8 @@
                 }
             },
             "other": {
-                "name": "עוד...",
+                "name": "other",
+                "localName": "עוד...",
                 "items": {
                     "tourism": {"localName": "תיירות ונופש", "path": "/other/tourism"},
                     "school": {"localName": "לימודים", "path": "/other/school"},

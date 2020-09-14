@@ -1,6 +1,14 @@
-.dropdown-link {
-    display: block;
-    text-decoration: none;
-    color: $theme-text;
+.dropdown {
     direction: rtl;
+    width: 25%;
+    box-shadow: 3px 3px 4px $theme-shadow;
+}
+
+.main-menu__dropdown-link-container {
+    padding: 0.3 * $std-size;
+}
+
+.main-menu__dropdown-link {
+    color: $theme-text;
+    text-decoration: none;    
 }
