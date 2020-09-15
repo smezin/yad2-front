@@ -2,18 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/styles.scss'
-import App from './App';
 import MainMenu from './components/mainMenu/MainMenu'
 import * as serviceWorker from './serviceWorker'
 import fetchFromResource from './utility/fetchFromResource'
-import NavItemDropdownMenu from './components/mainMenu/NavItemDropdown'
-import NavItem from './components/mainMenu/NavItem'
+
 
 fetchFromResource('mainMenu','dropdownMenus','realestate','forsale')
 ReactDOM.render(
   <React.StrictMode>
     <MainMenu />  
-    <NavItemDropdownMenu category={fetchFromResource('mainMenu', 'dropdownMenus', 'realestate')}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
