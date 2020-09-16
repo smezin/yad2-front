@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker'
 import fetchFromResource from './utility/fetchFromResource'
 
 
-fetchFromResource('mainMenu','dropdownMenus','realestate','forsale')
+fetchFromResource('mainMenu','navItems','realestate','forsale')
 ReactDOM.render(
   <React.StrictMode>
     <MainMenu />  

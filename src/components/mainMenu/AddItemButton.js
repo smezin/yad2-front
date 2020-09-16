@@ -2,18 +2,18 @@ import React from 'react'
 import resources from '../../resources.json'
 
 const addItemButton = () => {
-    // onClick = () => {
-    //     console.log('addNewItemClicked')
-    //     /*
-    //     check if logged in
-    //     */
-    // }
+
+    const onClick = () => {
+        console.log('add item button clicked')
+    }
+
     return (
-        <div className="add-item-button__wrapper">
+        <div className="add-item-button__container" onClick={onClick}>         
             <div className="add-item-button">
                 {resources.mainMenu.addNewItemButton.text}
-            </div>            
+            </div>      
         </div>
+       
     )
 }
 export default addItemButton

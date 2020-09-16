@@ -17,7 +17,7 @@
             "description": "הרשימה שלך ריקה כרגע, אפשר להוסיף רכבים להשוואה בלחיצה על הכפתור להשוואה בפינה הימנית של כל מודעה",
             "url": "/car-comparison"
         },
-        "dropdownMenus": {
+        "navItems": {
             "realestate": {
                 "name": "realestate",
                 "localName": "נדלן",

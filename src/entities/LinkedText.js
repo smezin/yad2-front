@@ -1,6 +1,6 @@
 export default class LinkedText {
-    constructor(urlSuffix, name, localName) {
-        this.urlSuffix = urlSuffix
+    constructor(path, name, localName) {
+        this.path = path
         this.name = name
         this.localName = localName
     }

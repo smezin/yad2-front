@@ -3,27 +3,44 @@ import LinkedText from '../../entities/LinkedText'
 
 const NavItemDropdown = (props) => {
     
-    const { category } = props
-    const items = category['items']
+    const { menuItems } = props
     const links = []
     
-    for (let link in items) {
-        if (items.hasOwnProperty(link)) {
-            links.push(new LinkedText(items[link]['path'], items[link]['localName']))
+    for (let menuItem in menuItems) {
+        if (menuItems.hasOwnProperty(menuItem)) {
+            links.push(new LinkedText(menuItems[menuItem]['path'], menuItem ,menuItems[menuItem]['localName']))
         }
     }
     
     return (
-        <div className="dropdown" id={category['name']}>
-            {
-                links.map((link) => (
-                    <div key={`container of ${link.urlSuffix}`} className="main-menu__dropdown-link-container">
-                        <a key={link.urlSuffix} href={link.urlSuffix} className='main-menu__dropdown-link' id={category.name}>{link.name}</a>
-                    </div>
-                ))
-            }
-        </div>
-    ) 
+    <div className="main-menu__nav-link__dropdown">
+        {
+            links.map((link) => (
+                <div key={`container of ${link.name}`} className="main-menu__dropdown-link-container">
+                    <a key={link.path} href={link.path} className='main-menu__dropdown-link'>{link.localName}</a>
+                </div>
+            ))
+        }
+    </div>
+) 
 }
 
 export default NavItemDropdown
+
+// for (let menuItem in menuItems) {
+//     if (items.hasOwnProperty(menuItem)) {
+//         links.push(new LinkedText(items[menuItem]['path'], menuItem ,items[menuItem]['localName']))
+//     }
+// }
+
+// return (
+//     <div className="dropdown" id={category['name']}>
+//         {
+//             links.map((link) => (
+//                 <div key={`container of ${link.name}`} className="main-menu__dropdown-link-container">
+//                     <a key={link.path} href={link.path} className='main-menu__dropdown-link'>{link.localName}</a>
+//                 </div>
+//             ))
+//         }
+//     </div>
+// ) 
