@@ -18,9 +18,9 @@ body {
     align-items: center;
 }
 
-.app-link {
-    @extend .flex-center;
+.linked-text {
     color: $theme-text;
     direction: rtl;
     text-decoration: none;
+    cursor: pointer;
 }

@@ -25,7 +25,7 @@ const mainMenu = () => {
                             <img src={logo} alt="logo"/>         
                     </div>
                 </div>
-                <div className="main-menu__nav-links-container">
+                <div className="main-menu__nav-items-container">
                     {
                        navLinks.map((navLink)=> (
                             <NavItem category={navLink['name']} key={navLink['name']}/>

@@ -12,12 +12,16 @@ const NavItemDropdown = (props) => {
         }
     }
     
+    const onClick = () => {
+        console.log('dropdown menu item clicked')
+    }
+
     return (
-    <div className="main-menu__nav-link__dropdown">
+    <div className="main-menu__dropdown-container">
         {
             links.map((link) => (
-                <div key={`container of ${link.name}`} className="main-menu__dropdown-link-container">
-                    <a key={link.path} href={link.path} className='main-menu__dropdown-link'>{link.localName}</a>
+                <div key={link.name} className="main-menu__dropdown-item" id={`main-menu__dropdownitem-link__${link.path}`} onClick={onClick}>
+                    {link.localName}
                 </div>
             ))
         }
