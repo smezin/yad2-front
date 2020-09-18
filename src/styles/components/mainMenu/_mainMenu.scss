@@ -5,7 +5,6 @@
     background: $theme-background;
     border-bottom: 1px solid $theme-selected;
     border-top: 5px solid $theme-main-color;
-    box-shadow: $theme-box-shadow;
     display: flex;
     flex-direction: row-reverse;
     height: $main-menu-height;
@@ -41,7 +40,10 @@
         display: flex;
         flex-direction: row-reverse;
         .main-menu__logo-container {
-            @extend .main-menu__nav-item;
+            height: 100%;
+            padding: $std-size;
+            @extend .linked-text;
+            @extend .flex-center;
             a{
                 @extend .flex-center;
             }
@@ -49,6 +51,7 @@
                 width: $main-menu-logo-width;
             }
             padding: $std-size 0 $std-size $std-size;
+           
         }
     }
     .main-menu__nav-items-container {
@@ -71,10 +74,12 @@
         .main-menu__dropdown-container {
             box-shadow: $theme-box-shadow;
             direction: rtl;
-            height: auto;  
+            display: grid;
+            flex-direction: column;
+            grid-auto-flow: column;
             position: absolute;
             top: $main-menu-height;
-            width: auto; 
+            width: auto;           
             .main-menu__dropdown-item {    
                 @extend .linked-text;
                 display: flex;
@@ -87,6 +92,31 @@
                 }
             }
         }
+        #main-menu__dropdown-container-of__realestate {
+            grid-template-rows: repeat(5, 1fr);                    
+        }
+        #main-menu__dropdown-container-of__vehicles {
+            grid-template-rows: repeat(10, 1fr);           
+        }
+        #main-menu__dropdown-container-of__products {
+            grid-template-rows: repeat(8, 1fr);            
+        }
+        #main-menu__dropdown-container-of__jobs {
+            grid-template-rows: repeat(10, 1fr);
+        }
+        #main-menu__dropdown-container-of__commercial {
+            grid-template-rows: repeat(6, 1fr);
+        }
+        #main-menu__dropdown-container-of__pets {
+            grid-template-rows: repeat(10, 1fr);
+        }
+        #main-menu__dropdown-container-of__pro {
+            grid-template-rows: repeat(11, 1fr);
+        }
+        #main-menu__dropdown-container-of__other {
+            grid-template-rows: repeat(3, 1fr);
+        }
+       
     }
 }
 

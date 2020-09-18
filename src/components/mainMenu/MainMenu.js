@@ -13,7 +13,6 @@ const mainMenu = () => {
             navLinks.push(new LinkedText('/'+navItem, navItems[navItem]['name'], navItems[navItem]['localName']))
         }
     }
-    console.log(navLinks)
     const onClick = () => {
         console.log('logo clicked')
     }
@@ -35,9 +34,9 @@ const mainMenu = () => {
             </div>
             <div className="main-menu__left-segment">
                 <AddItemButton />      
-            </div>
-                  
+            </div>                  
         </div>
+
     )
 }
 export default mainMenu

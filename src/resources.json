@@ -65,6 +65,9 @@
                     "cellular": {"localName": "סלולרי", "path": "/products/cellular"},
                     "baby-and-child": {"localName": "לתינוק ולילד", "path": "/products/baby-and-child"},
                     "giveaway": {"localName": "הכל בחינם!", "path": "/products/giveaway"},
+                    "game-consoles": {"localName": "קונסולות משחק", "path": "/products/game-consoles"},
+                    "computers-and-accessories": {"localName": "מחשבים וציוד נלווה", "path": "/products/computers-and-accessories"},
+                    "outdoor": {"localName": "לגינה", "path": "/products/outdoor"},
                     "pitchonlev": {"localName": "יד2 מכל הלב", "path": "/pitchonlev"}
                 }
             },
