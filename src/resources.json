@@ -99,7 +99,7 @@
             },
             "commercial": {
                 "name": "commercial",
-                "localName": "הכל לעסק",
+                "localName": "עסקים ומסחרי",
                 "items": {
                     "businesses-for-sale": {"localName": "עסקים למכירה", "path":"/products/businesses-for-sale"}, 
                     "commercial-realestate": {"localName": "נדל''ן מסחרי", "path":"/realestate/commercial"}, 

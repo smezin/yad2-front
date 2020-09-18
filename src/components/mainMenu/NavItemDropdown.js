@@ -3,10 +3,10 @@ import LinkedText from '../../entities/LinkedText'
 
 const NavItemDropdown = (props) => {
     const { menuItems, menuName, parentRect } = props  
-    const [menuWidth, setMenuWidth] = useState(200)
+    const [menuWidth, setMenuWidth] = useState(parentRect.right)            //center menu to get it's true width
     
     const setMenuLocation = () => {   
-        const menuVisbilityStatus = (menuWidth === 200) ? "hidden" : "visible"
+        const menuVisbilityStatus = (menuWidth === parentRect.right) ? "hidden" : "visible"
         return {
             left: parentRect.right - menuWidth,
             visibility: menuVisbilityStatus
