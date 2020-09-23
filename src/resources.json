@@ -19,6 +19,7 @@
         },
         "navItems": {
             "realestate": {
+                "path": "/realestate",
                 "name": "realestate",
                 "localName": "נדלן",
                 "items": {                
@@ -34,6 +35,7 @@
                 }
             },
             "vehicles": {
+                "path": "/vehicles",
                 "name": "vehicles",
                 "localName": "רכב",
                 "items": {
@@ -54,6 +56,7 @@
                 }
             },
             "products": {
+                "path": "/products",
                 "name": "products",
                 "localName": "יד שנייה",
                 "items": {
@@ -72,6 +75,7 @@
                 }
             },
             "jobs": {
+                "path": "/jobs",
                 "name": "jobs",
                 "localName": "דרושים",
                 "items":{
@@ -98,6 +102,7 @@
                 }
             },
             "commercial": {
+                "path": "/commercial",
                 "name": "commercial",
                 "localName": "עסקים ומסחרי",
                 "items": {
@@ -110,6 +115,7 @@
                 }
             },
             "pets": {
+                "path": "/pets",
                 "name": "pets",
                 "localName": "חיות מחמד",
                 "items": {
@@ -126,6 +132,7 @@
                 }
             },
             "pro": {
+                "path": "/pro",
                 "name": "pro",
                 "localName": "בעלי מקצוע",
                 "items": {
@@ -143,6 +150,7 @@
                 }
             },
             "other": {
+                "path": "/other",
                 "name": "other",
                 "localName": "עוד...",
                 "items": {
@@ -152,5 +160,21 @@
                 }
             }
         }          
+    },
+    "navbars": {
+        "realestate": {
+            "rightSide": {
+                "forsale": {"localName": "מכירה", "path": "/realestate/forsale"},
+                "rent": {"localName": "השכרה", "path": "/realestate/rent"},
+                "roommates": {"localName": "שותפים", "path": "/realestate/roomates"},
+                "commercial": {"localName": "מסחרי", "path": "/realestate/commercial"}
+            },
+            "leftSide": {
+                "receiver": {"localName": "כונס נכסים", "path": "/reciever"},
+                "realestateIndex": {"localName": "מדד הנדלן", "path": "/realestateIndex"},
+                "yad1": {"localName": "יד1 דירות חדשות", "path": "/yad1"},
+                "yadata": {"localName": "הערכת שווי נכס", "path": "/yadata"}
+            }
+        }
     }
 }

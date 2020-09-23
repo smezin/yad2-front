@@ -12,6 +12,7 @@
     .main-menu__left-segment {
         display: flex;
         flex-direction: row;
+        
         .add-item-button__container {
             align-items: center;
             display: flex;    
@@ -80,7 +81,8 @@
             padding: $main-menu-dropdown-menu-padding;
             position: absolute;
             top: $main-menu-height;
-            width: auto;           
+            width: auto;     
+            z-index: 10;      
             .main-menu__dropdown-item {    
                 @extend .linked-text;
                 display: flex;

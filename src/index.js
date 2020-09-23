@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/styles.scss'
 import MainMenu from './components/mainMenu/MainMenu'
+import RealestateNavbar from './components/navBars/RealestateNavbar'
 import * as serviceWorker from './serviceWorker'
-import fetchFromResource from './utility/fetchFromResource'
 
 
-fetchFromResource('mainMenu','navItems','realestate','forsale')
 ReactDOM.render(
   <React.StrictMode>
     <MainMenu />  
+    <RealestateNavbar />
   </React.StrictMode>,
   document.getElementById('root')
 );

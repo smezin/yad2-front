@@ -8,11 +8,12 @@ const mainMenu = () => {
     const logo = require('../../images/yad2Logo.png')
     const navItems = fetchFromResource('mainMenu', 'navItems')
     const navLinks = []
-    for (let navItem in navItems) {
+    Object.keys(navItems).forEach( (navItem) => {
         if (navItems.hasOwnProperty(navItem)) {
-            navLinks.push(new LinkedText('/'+navItem, navItems[navItem]['name'], navItems[navItem]['localName']))
+            navLinks.push(new LinkedText(navItems[navItem]['path'], navItems[navItem]['name'], navItems[navItem]['localName']))
         }
-    }
+    })
+    
     const onClick = () => {
         console.log('logo clicked')
     }
