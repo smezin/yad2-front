@@ -6,7 +6,7 @@ const NavItem = (props) => {
     const { category } = props
     const categoryItems = fetchFromResource('mainMenu', 'navItems', category)
     const [isItemHovered, setIsItemHovered] = useState(false)
-    const [pickedItem, setPickedItem] = useState('realestate')
+    const [pickedItem, setPickedItem] = useState(0)
     
     const showDropdownMenu = () => {
         setIsItemHovered(true)
@@ -15,7 +15,7 @@ const NavItem = (props) => {
         setIsItemHovered(false)
     }
     useEffect( () => {    
-    let currentLink = document.getElementById(`main-menu__nav-item__${categoryItems['name']}`)
+    let currentLink = document.getElementById(`main-menu__nav-item__${categoryItems.name}`)
         currentLink.onmouseenter = () => {
             showDropdownMenu()
         }
@@ -24,18 +24,19 @@ const NavItem = (props) => {
         }  
     },[categoryItems])   
     
-    const onClick = (e, pickedItem) => {
-        setPickedItem(pickedItem)
-        console.log(pickedItem.path)
+    const onClick = (e, newPickedItem) => {
+        console.log(newPickedItem)
+        setPickedItem(newPickedItem)        
     }
+    
     return (        
         <div className={`main-menu__nav-item`} 
-        id={`main-menu__nav-item__${categoryItems['name']}`}>
-            <div className="main-menu__nav-item-link app-link" onClick={(e) => onClick(e, categoryItems)}> 
-                {categoryItems['localName']}
+        id={`main-menu__nav-item__${categoryItems.name}`}>
+            <div className={`main-menu__nav-item-link app-link`} onClick={(e) => onClick(e, category)}> 
+                {categoryItems.localName}
             </div>
-            { isItemHovered && <NavItemDropdownMenu menuName={categoryItems['name']} menuItems={categoryItems['items']}
-                parentRect={document.getElementById(`main-menu__nav-item__${categoryItems['name']}`).getBoundingClientRect()}    
+            { isItemHovered && <NavItemDropdownMenu menuName={categoryItems.name} menuItems={categoryItems.items}
+                parentRect={document.getElementById(`main-menu__nav-item__${categoryItems.name}`).getBoundingClientRect()}    
             />}
         </div>
     )

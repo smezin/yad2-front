@@ -1,0 +1,9 @@
+.realestate-body {
+    background: $theme-background-body;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .realestate-body__content-area {
+        width: 70%;
+    }
+}

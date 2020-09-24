@@ -28,7 +28,7 @@ const mainMenu = () => {
                 <div className="main-menu__nav-items-container">
                     {
                        navLinks.map((navLink)=> (
-                            <NavItem category={navLink['name']} key={navLink['name']}/>
+                            <NavItem category={navLink.name} key={navLink.name}/>
                        ))
                     }       
                 </div>

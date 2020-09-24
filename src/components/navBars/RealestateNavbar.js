@@ -33,9 +33,9 @@ const RealestateNavbar = () => {
                 <div className="realestate-navbar__right-spacer"/>
                 {
                     rightSide.map((item) => (
-                        <div key={item['name']} className={`navbar-item__right ${pickedItem===item['name']?"picked":""}`}
+                        <div key={item.name} className={`navbar-item__right ${pickedItem===item.name?"picked":""}`}
                         onClick={(e) => onClick(e, item)}>
-                            {item['localName']}
+                            {item.localName}
                         </div>
                     ))
                 } 
@@ -44,7 +44,7 @@ const RealestateNavbar = () => {
                     {
                         leftSide.map ((item) => (
                             <div key={item.name} className="navbar-item__left">
-                                <img src={icons[item.name]} alt=""/> {item['localName']}
+                                <img src={icons[item.name]} alt=""/> {item.localName}
                             </div>
                         ))
                     }

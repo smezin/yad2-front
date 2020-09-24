@@ -1,0 +1,30 @@
+.top-info {
+    align-items: center;
+    background-color: $theme-background-body;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: $std-size * 0.6;
+    .top-info__right {
+        background-color: $theme-background-body;
+        color: $theme-text;
+        font-size: $font-size-xs;
+    }
+    .top-info__accessibility {
+        @extend .flex-center;
+        background: $accessibility-blue;
+        border-radius: 6%;
+        color: white;
+        font-size: $font-size-s;
+        height: $std-size * 1.8;
+        margin: 0 10px;
+        padding: 22px 55px;        
+        width: $std-size * 5;
+        img {
+            mix-blend-mode: multiply;
+            padding-left: $std-size * 0.5;
+            height: 30px;
+        }
+        
+    }
+}
