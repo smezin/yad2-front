@@ -170,7 +170,7 @@
                 "commercial": {"localName": "מסחרי", "path": "/realestate/commercial"}
             },
             "leftSide": {
-                "receiver": {"localName": "כונס נכסים", "path": "/reciever"},
+                "receiver": {"localName": "כונס נכסים", "path": "/receiver"},
                 "realestateIndex": {"localName": "מדד הנדלן", "path": "/realestateIndex"},
                 "yad1": {"localName": "יד1 דירות חדשות", "path": "/yad1"},
                 "yadata": {"localName": "הערכת שווי נכס", "path": "/yadata"}

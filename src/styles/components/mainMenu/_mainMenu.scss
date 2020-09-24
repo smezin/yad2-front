@@ -8,15 +8,16 @@
     display: flex;
     flex-direction: row-reverse;
     height: $main-menu-height;
-   
+    justify-content: space-between;
+
     .main-menu__left-segment {
         display: flex;
-        flex-direction: row;
-        
+        flex-direction: row;                
         .add-item-button__container {
-            align-items: center;
-            display: flex;    
+            align-items: center;    
             color: $theme-text;
+            display: flex;
+            padding-left: $std-size;
             text-decoration: none;
         }
         .add-item-button {
@@ -95,6 +96,7 @@
                 }
             }
         }
+      
         #main-menu__dropdown-container-of__realestate {
             grid-template-rows: repeat(5, 1fr);                    
         }

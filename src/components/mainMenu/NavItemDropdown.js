@@ -13,15 +13,14 @@ const NavItemDropdown = (props) => {
         }            
     }
     
-    const links = []
-    for (let menuItem in menuItems) {
-        if (menuItems.hasOwnProperty(menuItem)) {
-            links.push(new LinkedText(menuItems[menuItem]['path'], menuItem ,menuItems[menuItem]['localName']))
-        }
-    }
+    const items = []
     
-    const onClick = () => {
-        console.log('dropdown menu item clicked')
+    Object.keys(menuItems).forEach((item) => {
+        items.push(new LinkedText(menuItems[item]['path'], item ,menuItems[item]['localName']))
+    })
+
+    const onClick = (e, item) => {
+        console.log(`dropdown menu item ${item.path} clicked`)
     }
 
     useEffect ( () => {
@@ -33,10 +32,10 @@ const NavItemDropdown = (props) => {
         <div className="main-menu__dropdown-container" id={`main-menu__dropdown-container-of__${menuName}`} 
         style={setMenuLocation()}>
             {            
-                links.map((link) => (
-                    <div key={link.name} className="main-menu__dropdown-item" id={`main-menu__dropdown-item__${link.name}`}  
-                    onClick={onClick}>
-                        {link.localName}
+                items.map((item) => (
+                    <div key={item.name} className="main-menu__dropdown-item" id={`main-menu__dropdown-item__${item.name}`}  
+                    onClick={(e) => onClick(e, item)}>
+                        {item.localName}
                     </div>
                 ))
             }

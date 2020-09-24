@@ -1,10 +1,11 @@
 $std-size: 1.0rem;
-$font-size-s: 1.0 * $std-size;
-$font-size-m: 1.2 * $std-size;
-$font-size-l: 1.4 * $std-size;
-$font-size-xl: 1.6 * $std-size;
-$font-size-xxl: 2.0 * $std-size;
-$main-menu-height: 5 * $std-size;
-$main-menu-logo-width: 7 * $std-size;
+$font-size-s: $std-size *1.0;
+$font-size-m: $std-size * 1.2;
+$font-size-l: $std-size * 1.4;
+$font-size-xl: $std-size * 1.6;
+$font-size-xxl: $std-size * 2.0;
+$main-menu-height: $std-size * 5.0;
+$main-menu-logo-width: $std-size * 7.0;
 $main-menu-dropdown-item-padding: $std-size * 0.4 $std-size * 1.5 $std-size * 0.4 $std-size * 3;
 $main-menu-dropdown-menu-padding: $std-size * 1.5 0 $std-size*1.5 $std-size*2;
+$navbar-height: $std-size * 3.5;

@@ -5,7 +5,7 @@ import fetchFromResource from '../../utility/fetchFromResource'
 import LinkedText from '../../entities/LinkedText'
 
 const mainMenu = () => {
-    const logo = require('../../images/yad2Logo.png')
+    const logo = require('../../images/yad2Logo.png') //move to bucket
     const navItems = fetchFromResource('mainMenu', 'navItems')
     const navLinks = []
     Object.keys(navItems).forEach( (navItem) => {

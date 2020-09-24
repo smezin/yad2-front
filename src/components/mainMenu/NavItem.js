@@ -6,6 +6,7 @@ const NavItem = (props) => {
     const { category } = props
     const categoryItems = fetchFromResource('mainMenu', 'navItems', category)
     const [isItemHovered, setIsItemHovered] = useState(false)
+    const [pickedItem, setPickedItem] = useState('realestate')
     
     const showDropdownMenu = () => {
         setIsItemHovered(true)
@@ -23,12 +24,14 @@ const NavItem = (props) => {
         }  
     },[categoryItems])   
     
-    const onClick = () => {
-        console.log(`nav bar ${categoryItems['name']} item clicked`)
+    const onClick = (e, pickedItem) => {
+        setPickedItem(pickedItem)
+        console.log(pickedItem.path)
     }
     return (        
-        <div className="main-menu__nav-item" id={`main-menu__nav-item__${categoryItems['name']}`}>
-            <div className="main-menu__nav-item-link app-link" onClick={onClick}>
+        <div className={`main-menu__nav-item`} 
+        id={`main-menu__nav-item__${categoryItems['name']}`}>
+            <div className="main-menu__nav-item-link app-link" onClick={(e) => onClick(e, categoryItems)}> 
                 {categoryItems['localName']}
             </div>
             { isItemHovered && <NavItemDropdownMenu menuName={categoryItems['name']} menuItems={categoryItems['items']}
