@@ -2,8 +2,6 @@ import React from 'react'
 import icons from '../../icons'
 
 const TopInfo = () => {
-
-
     return (
         <div className="top-info">
             <div className="top-info__right">

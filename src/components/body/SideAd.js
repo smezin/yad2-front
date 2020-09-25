@@ -1,0 +1,13 @@
+import React from 'react'
+import ads from '../../ads'
+
+const SideAd = (props) => {
+    const { adSide } = props
+    return (
+        <div className={`side-ad__${adSide}`}>
+            <img src={ads.sideAdRight} alt="side-add" />
+        </div>
+    )
+}
+
+export default SideAd

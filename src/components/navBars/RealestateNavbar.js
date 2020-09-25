@@ -5,22 +5,14 @@ import icons from '../../icons'
 
 const RealestateNavbar = () => {
     const [pickedItem, setPickedItem] = useState('forsale')
-    const rightSideItems = fetchFromResource('navbars', 'realestate', 'rightSide')
-    const leftSideItems = fetchFromResource('navbars', 'realestate', 'leftSide')
-    const rightSide = []
-    const leftSide = []
+    const rightSideItems = fetchFromResource('navbars', 'realestate', 'rightSide') || '' // (||'') error protection 
+    const leftSideItems = fetchFromResource('navbars', 'realestate', 'leftSide') || ''
 
-    Object.keys(rightSideItems).forEach ((item) => {
-        if (rightSideItems.hasOwnProperty(item)) {
-            rightSide.push(new LinkedText(rightSideItems[item]['path'], item, 
-            rightSideItems[item]['localName']))
-        }
+    const rightSide = Object.keys(rightSideItems).map((item) => {
+            return new LinkedText(rightSideItems[item]['path'], item, rightSideItems[item]['localName'])
     })
-    Object.keys(leftSideItems).forEach ((item) => {
-        if (leftSideItems.hasOwnProperty(item)) {
-            leftSide.push(new LinkedText(leftSideItems[item]['path'], item, 
-            leftSideItems[item]['localName']))
-        }
+    const leftSide = Object.keys(leftSideItems).map((item) => {
+            return new LinkedText(leftSideItems[item]['path'], item, leftSideItems[item]['localName'])
     })
     const onClick = (e, pickedItem) => {
         setPickedItem(pickedItem.name)  

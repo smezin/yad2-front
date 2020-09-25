@@ -6,7 +6,6 @@ const NavItem = (props) => {
     const { category } = props
     const categoryItems = fetchFromResource('mainMenu', 'navItems', category)
     const [isItemHovered, setIsItemHovered] = useState(false)
-    const [pickedItem, setPickedItem] = useState(0)
     
     const showDropdownMenu = () => {
         setIsItemHovered(true)
@@ -25,8 +24,7 @@ const NavItem = (props) => {
     },[categoryItems])   
     
     const onClick = (e, newPickedItem) => {
-        console.log(newPickedItem)
-        setPickedItem(newPickedItem)        
+        console.log(newPickedItem)  
     }
     
     return (        

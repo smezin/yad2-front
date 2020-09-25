@@ -2,7 +2,7 @@
     height: 100%;
 }
 .main-menu {
-    background: $theme-background;
+    background: $theme-background-header;
     border-bottom: 1px solid $theme-selected;
     border-top: 5px solid $theme-main-color;
     display: flex;
@@ -15,6 +15,7 @@
         flex-direction: row;                
         .add-item-button__container {
             align-items: center;    
+            background: $theme-background-header;
             color: $theme-text;
             display: flex;
             padding-left: $std-size;
@@ -42,28 +43,31 @@
         display: flex;
         flex-direction: row-reverse;
         .main-menu__logo-container {
+            background: $theme-background-header;
             height: 100%;
-            padding: $std-size;
+            padding: $std-size 0 $std-size $std-size;
             @extend .linked-text;
             @extend .flex-center;
             a{
                 @extend .flex-center;
             }
             img {
+                background: $theme-background-header;
                 width: $main-menu-logo-width;
             }
-            padding: $std-size 0 $std-size $std-size;
-           
+            .main-menu__logo {
+                background: $theme-background-header;
+            }
         }
     }
     .main-menu__nav-items-container {
-        @extend .flex-center;
+        @extend .flex-center;        
         flex-direction: row-reverse;
     }
     .main-menu__nav-item {
         @extend .flex-center;
         @extend .linked-text;
-        background: $theme-background;
+        background: $theme-background-header;
         font-size: $font-size-s;
         height: 100%;
         padding: $std-size;
@@ -73,7 +77,11 @@
         &:hover {
             background: $theme-hovered;
         }
+        .app-link {
+            background: $theme-background-header;
+        }
         .main-menu__dropdown-container {
+            background: $theme-background-header;
             box-shadow: $theme-box-shadow;
             direction: rtl;
             display: grid;
@@ -86,6 +94,7 @@
             z-index: 10;      
             .main-menu__dropdown-item {    
                 @extend .linked-text;
+                background: $theme-background-header;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;

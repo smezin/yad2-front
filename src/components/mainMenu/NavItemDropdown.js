@@ -13,10 +13,10 @@ const NavItemDropdown = (props) => {
         }            
     }
     
-    const items = []
     
-    Object.keys(menuItems).forEach((item) => {
-        items.push(new LinkedText(menuItems[item]['path'], item ,menuItems[item]['localName']))
+    //add default value check for menuItems
+    const items = Object.keys(menuItems).map((item) => {
+        return new LinkedText(menuItems[item]['path'], item ,menuItems[item]['localName'])
     })
 
     const onClick = (e, item) => {

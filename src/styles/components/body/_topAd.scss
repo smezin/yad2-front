@@ -1,0 +1,9 @@
+.top-advertising {
+    align-items: center;
+    background-color: $theme-background-body;
+    display: flex;    
+    justify-content: center;
+    img {
+        height: $top-ad-height;
+    }
+}
