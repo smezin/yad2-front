@@ -1,9 +1,17 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import fetchFromResource from '../../../../utility/fetchFromResource'
+import getSubPath from '../../../../utility/getSubPath'
 
-const SearchBarHeader = (props) => {
-
-    const { category } = props
+const SearchBarHeader = () => {
+    const location = useLocation()
+    const pathname = location.pathname || location.location.pathname
+    const subUrl = getSubPath(pathname, '/realestate')
+    const defaultCategory = 'forsale'
+    const allCategories = fetchFromResource('searchBar', 'header', 'headerLinks')
+    const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
+    const category = allCategoriesNames.includes(subUrl) ? subUrl : defaultCategory
+  
     const categoryLocalName = fetchFromResource('searchBar', 'header', 'headerLinks', category)
     let headerPrefixLocalName = fetchFromResource('searchBar', 'header', 'headerPrefix')
     const headerSuffixLocalName = fetchFromResource('searchBar', 'header', 'headerSuffix')

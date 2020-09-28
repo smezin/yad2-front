@@ -25,7 +25,7 @@
                 "items": {                
                     "forsale": {"localName": "דירות למכירה", "path": "/realestate/forsale"},
                     "rent": {"localName": "דירות להשכרה", "path": "/realestate/rent"},
-                    "roommates": {"localName": "שותפים", "path": "/realestate/roomates"},
+                    "roommates": {"localName": "שותפים", "path": "/realestate/roommates"},
                     "commercial": {"localName": "מסחרי", "path": "/realestate/commercial"},
                     "map": {"localName": "חיפוש על גבי מפה", "path": "/map"},
                     "receiver": {"localName": "כונס נכסים", "path": "/reciever"},
@@ -166,7 +166,7 @@
             "rightSide": {
                 "forsale": {"localName": "מכירה", "path": "/realestate/forsale"},
                 "rent": {"localName": "השכרה", "path": "/realestate/rent"},
-                "roommates": {"localName": "שותפים", "path": "/realestate/roomates"},
+                "roommates": {"localName": "שותפים", "path": "/realestate/roommates"},
                 "commercial": {"localName": "מסחרי", "path": "/realestate/commercial"}
             },
             "leftSide": {

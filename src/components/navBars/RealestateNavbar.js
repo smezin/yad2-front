@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import LinkedText from '../../entities/LinkedText'
 import fetchFromResource from '../../utility/fetchFromResource'
+import getSubPath from '../../utility/getSubPath'
 import icons from '../../icons'
 
 const RealestateNavbar = () => {
-    const [pickedItem, setPickedItem] = useState('forsale')
+    const location = useLocation()
+    const pathname = location.pathname || location.location.pathname
+    const subUrl = getSubPath(pathname, '/realestate')
+    const defaultCategory = 'forsale'
+    const allCategories = fetchFromResource('searchBar', 'header', 'headerLinks')
+    const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
+    const category = allCategoriesNames.includes(subUrl) ? subUrl : defaultCategory
+
+    const [pickedItem, setPickedItem] = useState(category)
     const rightSideItems = fetchFromResource('navbars', 'realestate', 'rightSide') || '' // (||'') error protection 
     const leftSideItems = fetchFromResource('navbars', 'realestate', 'leftSide') || ''
 
@@ -17,7 +26,6 @@ const RealestateNavbar = () => {
     })
     const onClick = (e, pickedItem) => {
         setPickedItem(pickedItem.name)  
-        console.log(pickedItem.path)
     }
     
     return (

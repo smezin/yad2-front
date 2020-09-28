@@ -25,7 +25,7 @@ const NavItem = (props) => {
     },[categoryItems])   
     
     const onClick = (e, newPickedItem) => {
-        console.log(newPickedItem)  
+        //console.log(newPickedItem)  
     }
     
     return (        

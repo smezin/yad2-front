@@ -20,7 +20,7 @@ const NavItemDropdown = (props) => {
     })
 
     const onClick = (e, item) => {
-        console.log(`dropdown menu item ${item.path} clicked`)
+        //console.log(`dropdown menu item ${item.path} clicked`)
     }
 
     useEffect ( () => {
