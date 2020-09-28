@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import NavItemDropdownMenu from './NavItemDropdown'
 import fetchFromResource from '../../utility/fetchFromResource'
 
 const NavItem = (props) => {    
+    const location = useLocation()
+    const pathname = location.pathname || location.location.pathname
+    const secondDelimiter = pathname.indexOf('/', pathname.indexOf('/') + 1) 
+    const endOfMainCategory = secondDelimiter === -1 ? pathname.length : secondDelimiter
+    const mainCategory = pathname.substring(pathname.indexOf('/') + 1, endOfMainCategory)
     const { category } = props
     const categoryItems = fetchFromResource('mainMenu', 'navItems', category)
     const [isItemHovered, setIsItemHovered] = useState(false)
@@ -24,14 +29,11 @@ const NavItem = (props) => {
         }  
     },[categoryItems])   
     
-    const onClick = (e, newPickedItem) => {
-        //console.log(newPickedItem)  
-    }
-    
+    console.log('main:',mainCategory,' cat',category)
     return (        
-        <div className={`main-menu__nav-item`} 
+        <div className={`main-menu__nav-item${category === mainCategory ? '__picked':''}`} 
         id={`main-menu__nav-item__${categoryItems.name}`}>
-            <div className={`main-menu__nav-item-link app-link`} onClick={(e) => onClick(e, category)}> 
+            <div className={`main-menu__nav-item-link app-link${category === mainCategory ? '__picked':''}`}> 
                 <Link to={categoryItems.path}>{categoryItems.localName}</Link>
             </div>
             { isItemHovered && <NavItemDropdownMenu menuName={categoryItems.name} menuItems={categoryItems.items}
