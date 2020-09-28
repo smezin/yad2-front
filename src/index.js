@@ -2,17 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/styles.scss'
-import MainMenu from './components/mainMenu/MainMenu'
-import RealestateNavbar from './components/navBars/RealestateNavbar'
-import RealestateBody from './components/body/realestate/RealestateBody'
 import * as serviceWorker from './serviceWorker'
+import AppRouter from './routers/AppRouter';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainMenu />  
-    <RealestateNavbar />
-    <RealestateBody/>
+    <AppRouter />
   </React.StrictMode>,
   document.getElementById('root')
 );

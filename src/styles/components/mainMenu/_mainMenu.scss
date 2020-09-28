@@ -73,13 +73,17 @@
         padding: $std-size;
         &:hover .main-menu__nav-item-link {
             background: $theme-hovered;
+            a {
+                background: $theme-hovered;
+            }
         }
         &:hover {
             background: $theme-hovered;
         }
-        .app-link {
+        .app-link a{
             background: $theme-background-header;
         }
+        
         .main-menu__dropdown-container {
             background: $theme-background-header;
             box-shadow: $theme-box-shadow;
@@ -92,7 +96,7 @@
             top: $main-menu-height;
             width: auto;     
             z-index: 10;      
-            .main-menu__dropdown-item {    
+            .main-menu__dropdown-item a {    
                 @extend .linked-text;
                 background: $theme-background-header;
                 display: flex;

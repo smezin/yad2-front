@@ -23,4 +23,10 @@ body {
     direction: rtl;
     text-decoration: none;
     cursor: pointer;
+    a {
+        color: $theme-text;
+        direction: rtl;
+        text-decoration: none;
+    }
 }
+

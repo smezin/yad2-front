@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import LinkedText from '../../entities/LinkedText'
 import fetchFromResource from '../../utility/fetchFromResource'
 import icons from '../../icons'
@@ -24,20 +25,20 @@ const RealestateNavbar = () => {
             <div className="realestate-navbar__right">
                 <div className="realestate-navbar__right-spacer"/>
                 {
-                    rightSide.map((item) => (
-                        <div key={item.name} className={`navbar-item__right ${pickedItem===item.name?"picked":""}`}
+                    rightSide.map((item) => (                       
+                        <Link to={item.path} key={item.name} className={`navbar-item__right ${pickedItem===item.name?"picked":""}`}
                         onClick={(e) => onClick(e, item)}>
                             {item.localName}
-                        </div>
+                        </Link>                   
                     ))
                 } 
             </div>
             <div className="realestate-navbar__left">
                     {
                         leftSide.map ((item) => (
-                            <div key={item.name} className="navbar-item__left">
+                            <Link to={item.path} key={item.name} className="navbar-item__left">
                                 <img src={icons[item.name]} alt=""/> {item.localName}
-                            </div>
+                            </Link>
                         ))
                     }
                     <div className="realestate-navbar__left-spacer"/>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import LinkedText from '../../entities/LinkedText'
 
 const NavItemDropdown = (props) => {
@@ -12,7 +13,6 @@ const NavItemDropdown = (props) => {
             visibility: menuVisbilityStatus
         }            
     }
-    
     
     //add default value check for menuItems
     const items = Object.keys(menuItems).map((item) => {
@@ -35,7 +35,7 @@ const NavItemDropdown = (props) => {
                 items.map((item) => (
                     <div key={item.name} className="main-menu__dropdown-item" id={`main-menu__dropdown-item__${item.name}`}  
                     onClick={(e) => onClick(e, item)}>
-                        {item.localName}
+                        <Link to={item.path}>{item.localName}</Link>
                     </div>
                 ))
             }

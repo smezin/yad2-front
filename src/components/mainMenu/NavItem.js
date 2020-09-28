@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import NavItemDropdownMenu from './NavItemDropdown'
 import fetchFromResource from '../../utility/fetchFromResource'
 
@@ -31,7 +32,7 @@ const NavItem = (props) => {
         <div className={`main-menu__nav-item`} 
         id={`main-menu__nav-item__${categoryItems.name}`}>
             <div className={`main-menu__nav-item-link app-link`} onClick={(e) => onClick(e, category)}> 
-                {categoryItems.localName}
+                <Link to={categoryItems.path}>{categoryItems.localName}</Link>
             </div>
             { isItemHovered && <NavItemDropdownMenu menuName={categoryItems.name} menuItems={categoryItems.items}
                 parentRect={document.getElementById(`main-menu__nav-item__${categoryItems.name}`).getBoundingClientRect()}    

@@ -2,7 +2,7 @@ import React from 'react'
 import TopInfo from '../common/TopInfo'
 import TopAd from '../common/TopAd'
 import SideAd from '../common/SideAd'
-import SearchBar from './searchBar/SearchBar'
+import RealestateContent from './RealestateContent'
 
 const RealestateBody = () => {
     return (
@@ -11,7 +11,7 @@ const RealestateBody = () => {
             <div className="realestate-body__content-area">
                 <TopInfo />
                 <TopAd />
-                <SearchBar />
+                <RealestateContent />
             </div>  
             <SideAd adSide="left"/>
         </div>

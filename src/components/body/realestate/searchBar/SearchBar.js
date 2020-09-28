@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import SearchBarHeader from './SerachBarHeader'
 
 const SearchBar = (props) => {
@@ -11,6 +12,7 @@ const SearchBar = (props) => {
             <div className="realestate-search-bar__search-columns">
                 popo <br/>
                 xima
+                
             </div>
             
         </div>
