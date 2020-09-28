@@ -1,9 +1,9 @@
 .realestate-body {
     background: $theme-background-body;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 8px;
-    min-height: 800px;
+    min-height: 1200px;
     width: 100%;
     z-index: -1;
     .realestate-body__content-area {

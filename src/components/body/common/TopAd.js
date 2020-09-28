@@ -1,5 +1,5 @@
 import React from 'react'
-import ads from '../../ads'
+import ads from '../../../ads'
 
 const TopAd = () => {
     return (

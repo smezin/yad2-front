@@ -4,7 +4,7 @@ import './index.css';
 import './styles/styles.scss'
 import MainMenu from './components/mainMenu/MainMenu'
 import RealestateNavbar from './components/navBars/RealestateNavbar'
-import RealestateBody from './components/body/RealestateBody'
+import RealestateBody from './components/body/realestate/RealestateBody'
 import * as serviceWorker from './serviceWorker'
 
 

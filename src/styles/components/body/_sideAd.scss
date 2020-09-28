@@ -1,0 +1,12 @@
+.side-ad__right {    
+    img {
+        height: $side-ad-height;
+        max-width: $side-ad-width;
+        padding-top: $std-size;
+        position: sticky;
+        top: $std-size;        
+    }
+}
+.side-ad__left {
+    @extend .side-ad__right
+}

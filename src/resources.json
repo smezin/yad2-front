@@ -176,5 +176,18 @@
                 "yadata": {"localName": "הערכת שווי נכס", "path": "/yadata"}
             }
         }
+    },
+    "searchBar": {
+        "header": {
+            "headerPrefix": " איזה נכס ",
+            "headerSuffix": " תרצו לחפש?",
+            "headerLinks": {
+                "forsale": "מכירה",
+                "rent": "השכרה",
+                "roommates": "שותפים",
+                "commercial": "מסחרי"
+            },
+            "auxLetter": "ל"
+        }
     }
 }

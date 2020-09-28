@@ -1,5 +1,5 @@
 const ads = {
-    "topAd": require('./images/ad_large-h.png'),
+    "topAd": require('./images/large-ad-h.jpg'),
     "sideAdRight": require('./images/ad-large-v.png')
 }
 

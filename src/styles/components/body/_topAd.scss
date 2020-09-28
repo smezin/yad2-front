@@ -3,7 +3,9 @@
     background-color: $theme-background-body;
     display: flex;    
     justify-content: center;
+    margin-bottom: $std-size * 1.5;
     img {
-        height: $top-ad-height;
+        max-height: $top-ad-height;
+        width: 100%;
     }
 }

@@ -1,0 +1,23 @@
+.realestate-search-bar__container {
+    background: $theme-background-header;
+    box-shadow: $theme-box-shadow;
+    margin-top: $std-size * 1.5;
+    padding: $std-size * 1.0;
+    .realestate-search-bar__header {
+        border: 2px solid blue;
+        direction: rtl;
+        display: flex;
+        font-weight: 500;
+        .realestate-search-bar__header__alt-cat {
+            @extend .linked-text;
+            color: $theme-main-color;
+            text-decoration: underline dotted $theme-main-color;
+        }
+    }
+    .realestate-search-bar__search-columns {
+        border: 2px solid green;
+        display: flex;
+        flex-direction: row-reverse;
+        padding-top: $std-size * 1.825;
+    }
+}
