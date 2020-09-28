@@ -21,7 +21,7 @@
             "realestate": {
                 "path": "/realestate",
                 "name": "realestate",
-                "localName": "נדלן",
+                "localName": "נדל\"ן",
                 "items": {                
                     "forsale": {"localName": "דירות למכירה", "path": "/realestate/forsale"},
                     "rent": {"localName": "דירות להשכרה", "path": "/realestate/rent"},
@@ -29,7 +29,7 @@
                     "commercial": {"localName": "מסחרי", "path": "/realestate/commercial"},
                     "map": {"localName": "חיפוש על גבי מפה", "path": "/map"},
                     "receiver": {"localName": "כונס נכסים", "path": "/reciever"},
-                    "realestateIndex": {"localName": "מדד הנדלן", "path": "/realestateIndex"},
+                    "realestateIndex": {"localName": "מדד הנדל\"ן", "path": "/realestateIndex"},
                     "yad1": {"localName": "יד1 דירות חדשות", "path": "/yad1"},
                     "yadata": {"localName": "הערכת שווי נכס", "path": "/yadata"}
                 }
@@ -166,14 +166,26 @@
             "rightSide": {
                 "forsale": {"localName": "מכירה", "path": "/realestate/forsale"},
                 "rent": {"localName": "השכרה", "path": "/realestate/rent"},
-                "roommates": {"localName": "שותפים", "path": "/realestate/roommates"},
-                "commercial": {"localName": "מסחרי", "path": "/realestate/commercial"}
+                "roommates": {"localName": "דירות שותפים", "path": "/realestate/roommates"},
+                "commercial": {"localName": "נדל\"ן מסחרי", "path": "/realestate/commercial"}
             },
             "leftSide": {
                 "receiver": {"localName": "כונס נכסים", "path": "/receiver"},
-                "realestateIndex": {"localName": "מדד הנדלן", "path": "/realestateIndex"},
+                "realestateIndex": {"localName": "מדד הנדל\"ן", "path": "/realestateIndex"},
                 "yad1": {"localName": "יד1 דירות חדשות", "path": "/yad1"},
                 "yadata": {"localName": "הערכת שווי נכס", "path": "/yadata"}
+            }
+        }
+    },
+    "topInfo": {
+        "realestate": {
+            "localName": "ראשי", 
+            "path": "/realesate",
+            "subCategories": {
+                "forsale": {"localName": "נכסים למכירה"},
+                "rent": {"localName": "נכסים להשכרה"},
+                "roommates": {"localName": "נכסים שותפים"},
+                "commercial": {"localName": "נכסים מסחריים"}
             }
         }
     },

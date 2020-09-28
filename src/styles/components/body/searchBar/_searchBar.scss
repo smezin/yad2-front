@@ -4,16 +4,19 @@
     margin-top: $std-size * 1.5;
     padding: $std-size * 1.0;
     .realestate-search-bar__header {
+        background: $theme-background-header;
+        font-weight: 500;
         direction: rtl;
         display: flex;
-        font-weight: 500;
         .realestate-search-bar__header__alt-cat {
             @extend .linked-text;
+            background: $theme-background-header;
             color: $theme-main-color;
             text-decoration: underline dotted $theme-main-color;
         }
     }
     .realestate-search-bar__search-columns {
+        background: $theme-background-header;
         border: 2px solid green;
         display: flex;
         flex-direction: row-reverse;

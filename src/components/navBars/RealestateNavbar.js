@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import LinkedText from '../../entities/LinkedText'
 import fetchFromResource from '../../utility/fetchFromResource'
@@ -6,15 +6,15 @@ import getSubPath from '../../utility/getSubPath'
 import icons from '../../icons'
 
 const RealestateNavbar = () => {
+    const [category, setCategory] = useState('/forsale')
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
-    const subUrl = getSubPath(pathname, '/realestate')
-    const defaultCategory = 'forsale'
+    const categoryFromPath = getSubPath(pathname, '/realestate')
     const allCategories = fetchFromResource('searchBar', 'header', 'headerLinks')
     const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
-    const category = allCategoriesNames.includes(subUrl) ? subUrl : defaultCategory
-
-    const [pickedItem, setPickedItem] = useState(category)
+    useEffect( () => {
+        allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
+    },[location, allCategoriesNames, categoryFromPath])
     const rightSideItems = fetchFromResource('navbars', 'realestate', 'rightSide') || '' // (||'') error protection 
     const leftSideItems = fetchFromResource('navbars', 'realestate', 'leftSide') || ''
 
@@ -25,7 +25,7 @@ const RealestateNavbar = () => {
             return new LinkedText(leftSideItems[item]['path'], item, leftSideItems[item]['localName'])
     })
     const onClick = (e, pickedItem) => {
-        setPickedItem(pickedItem.name)  
+        
     }
     
     return (
@@ -34,7 +34,7 @@ const RealestateNavbar = () => {
                 <div className="realestate-navbar__right-spacer"/>
                 {
                     rightSide.map((item) => (                       
-                        <Link to={item.path} key={item.name} className={`navbar-item__right ${pickedItem===item.name?"picked":""}`}
+                        <Link to={item.path} key={item.name} className={`navbar-item__right ${category===item.name?"picked":""}`}
                         onClick={(e) => onClick(e, item)}>
                             {item.localName}
                         </Link>                   
