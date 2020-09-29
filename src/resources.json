@@ -187,6 +187,9 @@
                 "roommates": {"localName": "נכסים שותפים"},
                 "commercial": {"localName": "נכסים מסחריים"}
             }
+        },
+        "accessibility": {
+            "localName": "נגישות"
         }
     },
     "searchBar": {

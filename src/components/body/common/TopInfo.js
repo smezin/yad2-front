@@ -17,14 +17,15 @@ const TopInfo = () => {
     
     const categoryLocalName = fetchFromResource('topInfo', 'realestate', 'subCategories', category, 'localName')
     const homePage = fetchFromResource('topInfo', 'realestate', 'localName')
-    const delimiter = <span className="top-info__nav__delimiter">&nbsp;&nbsp;{" > "}&nbsp;&nbsp;</span>
+    const delimiter = <span className="top-info__nav__delimiter">&nbsp;&nbsp;{' > '}&nbsp;&nbsp;</span>
+    const accessibility = fetchFromResource('topInfo', 'accessibility', 'localName')
     return (
         <div className="top-info">
             <div className="top-info__right">
                 {homePage}{delimiter}{categoryLocalName}
             </div>
             <div className="top-info__accessibility">
-                נגישות <img src={icons.accessibility} alt=""/>
+                {accessibility} <img src={icons.accessibility} alt=""/>
             </div>
         </div>
     )

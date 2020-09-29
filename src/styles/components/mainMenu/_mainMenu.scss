@@ -36,8 +36,7 @@
             &:hover {
                 background: darken($add-item-button-background, 10%);    
             }
-        }
-        
+        }  
     }
     .main-menu__right-segment {
         display: flex;
@@ -85,7 +84,7 @@
             background: $theme-background-header;
         }
         .app-link__picked a{
-            background: darken($theme-hovered, 8%);
+            background: $theme-selected;
         }
         
         .main-menu__dropdown-container {
@@ -137,13 +136,19 @@
         }
         #main-menu__dropdown-container-of__other {
             grid-template-rows: repeat(3, 1fr);
-        }
-       
+        } 
     }
     .main-menu__nav-item__picked {
         @extend .main-menu__nav-item;
-        background-color: darken($theme-hovered, 8%);
-        pointer-events: none;
+        background-color: $theme-selected;
+        &:hover .main-menu__nav-item-link {
+            a {
+                background: $theme-selected;
+            }
+        }
+        &:hover {
+            background: $theme-selected;
+        }
     }
 }
 

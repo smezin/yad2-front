@@ -1,4 +1,4 @@
-import resources from '../resources.json'
+import resources from '../resources'
 
 const fetchFromResource = (...path) => {
     return path.reduce((acc, cur) => {

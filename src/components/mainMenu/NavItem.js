@@ -29,7 +29,6 @@ const NavItem = (props) => {
         }  
     },[categoryItems])   
     
-    console.log('main:',mainCategory,' cat',category)
     return (        
         <div className={`main-menu__nav-item${category === mainCategory ? '__picked':''}`} 
         id={`main-menu__nav-item__${categoryItems.name}`}>
