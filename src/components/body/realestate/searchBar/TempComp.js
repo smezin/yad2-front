@@ -26,6 +26,10 @@ class LocationSearchInput extends React.Component {
       <PlacesAutocomplete
         value={this.state.address}
         onChange={this.handleChange}
+        searchOptions={{
+            types: ['(regions)'],
+            componentRestrictions: { country: "il" }
+        }}
         onSelect={this.handleSelect}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (

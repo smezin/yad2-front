@@ -14,6 +14,7 @@ const renderApp= () => {
     document.getElementById('root')
   )
 }
+console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
 loadScripts(renderApp)
 
 // If you want your app to work offline and load faster, you can change
