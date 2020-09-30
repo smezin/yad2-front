@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import LinkedText from '../../entities/LinkedText'
+import LinkedText from 'entities/LinkedText'
 
 const NavItemDropdown = (props) => {
     const { menuItems, menuName, parentRect } = props  

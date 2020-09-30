@@ -1,15 +1,17 @@
 import React from 'react'
 import AddItemButton from './AddItemButton'
-import NavItem from '../../components/mainMenu/NavItem'
-import fetchFromResource from '../../utility/fetchFromResource'
-import LinkedText from '../../entities/LinkedText'
+import NavItem from 'components/mainMenu/NavItem'
+import fetchFromResource from 'utility/fetchFromResource'
+import LinkedText from 'entities/LinkedText'
 
 const mainMenu = () => {
     const logo = require('../../images/yad2Logo.png') //move to bucket
     const navItems = fetchFromResource('mainMenu', 'navItems')
-    const navLinks = Object.keys(navItems).map( (navItem) => {
+    const navLinks = typeof(navItems) === 'object' ? 
+    Object.keys(navItems).map( (navItem) => {
             return new LinkedText(navItems[navItem]['path'], navItems[navItem]['name'], navItems[navItem]['localName'])
-    })
+    }) :
+    []
     
     const onClick = () => {
         console.log('logo clicked')

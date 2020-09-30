@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import LinkedText from '../../entities/LinkedText'
-import fetchFromResource from '../../utility/fetchFromResource'
-import getSubPath from '../../utility/getSubPath'
-import icons from '../../icons'
+import LinkedText from 'entities/LinkedText'
+import fetchFromResource from 'utility/fetchFromResource'
+import getSubPath from 'utility/getSubPath'
+import icons from 'icons'
 
 const RealestateNavbar = () => {
     const [category, setCategory] = useState('/forsale')

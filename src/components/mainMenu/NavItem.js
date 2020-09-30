@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import NavItemDropdownMenu from './NavItemDropdown'
-import fetchFromResource from '../../utility/fetchFromResource'
+import fetchFromResource from 'utility/fetchFromResource'
 
 const NavItem = (props) => {    
     const location = useLocation()
@@ -10,7 +10,8 @@ const NavItem = (props) => {
     const endOfMainCategory = secondDelimiter === -1 ? pathname.length : secondDelimiter
     const mainCategory = pathname.substring(pathname.indexOf('/') + 1, endOfMainCategory)
     const { category } = props
-    const categoryItems = fetchFromResource('mainMenu', 'navItems', category)
+    let categoryItems = fetchFromResource('mainMenu', 'navItems', category)
+    categoryItems = typeof(categoryItems) === 'object' ? categoryItems : {}
     const [isItemHovered, setIsItemHovered] = useState(false)
     
     const showDropdownMenu = () => {

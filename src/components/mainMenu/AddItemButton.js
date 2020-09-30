@@ -1,5 +1,5 @@
 import React from 'react'
-import resources from '../../resources.json'
+import resources from 'resources.json'
 
 const addItemButton = () => {
 

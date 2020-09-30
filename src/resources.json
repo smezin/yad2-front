@@ -203,6 +203,13 @@
                 "commercial": "מסחרי"
             },
             "auxLetter": "ל"
+        },
+        "searchFields": {
+            "location": {
+                "localTitle": "חפשו אזור, עיר, שכונה או רחוב",
+                "localPlaceholder": "לדוגמה: רוטשילד תל אביב",
+                "localLoading": "טוען..."
+            }
         }
     }
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
-import fetchFromResource from '../../../utility/fetchFromResource'
-import getSubPath from '../../../utility/getSubPath'
-import icons from '../../../icons'
+import fetchFromResource from 'utility/fetchFromResource'
+import getSubPath from 'utility/getSubPath'
+import icons from 'icons'
 
 const TopInfo = () => {
     const [category, setCategory] = useState('forsale')

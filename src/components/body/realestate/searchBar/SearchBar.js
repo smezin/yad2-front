@@ -1,15 +1,15 @@
 import React from 'react'
 import SearchBarHeader from './SerachBarHeader'
-import LocationSearchInput from './searchFields/LocationSearchInput'
+import LocationSearch from './searchFields/LocationSearch'
 
-const SearchBar = (props) => {
+const SearchBar = () => {
     return (
         <div className="realestate-search-bar__container">
             <div className="realestate-search-bar__header">
                 <SearchBarHeader />
             </div>
             <div className="realestate-search-bar__search-columns">
-                <LocationSearchInput />                
+                <LocationSearch />                
             </div>            
         </div>
     )

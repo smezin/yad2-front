@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import SearchBar from './searchBar/SearchBar'
-import getSubPath from '../../../utility/getSubPath'
+import getSubPath from 'utility/getSubPath'
 
 const RealestateContent = () => {
     const mainCategory = '/realestate'

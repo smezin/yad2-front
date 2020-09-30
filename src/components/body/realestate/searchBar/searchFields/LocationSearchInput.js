@@ -1,15 +1,13 @@
 import React, { useState } from 'react' 
-import PlacesAutocomplete, {
-  geocodeByAddress,
-  getLatLng,
-} from 'react-places-autocomplete'
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
+import fetchFromResource from 'utility/fetchFromResource'
 
 const LocationSearchInput = () => {
- 
   const [address, setAddress] = useState('')
-
-  const handleChange = address => {
-    console.log('add', address)
+  const localLoading = fetchFromResource('searchBar', 'searchFields', 'location', 'localLoading')
+  const localPlaceholder = fetchFromResource('searchBar', 'searchFields', 'location', 'localPlaceholder')
+  
+  const handleChange = (address) => {
     setAddress( address ) 
   }
 
@@ -18,44 +16,41 @@ const LocationSearchInput = () => {
       .then(results => getLatLng(results[0]))
       .then(latLng => console.log('Success', latLng))
       .catch(error => console.error('Error', error)) 
+    setAddress( address )
   }
-  
+
   return (
-    <PlacesAutocomplete
+    <PlacesAutocomplete 
       value={address}
       onChange={handleChange}
       searchOptions={{
-          types: ['(regions)'],
+          types: ['address'],
           componentRestrictions: { country: "il" }
       }}
       onSelect={handleSelect}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-        <div>
-          <input
+        <div className="location-input__container" dir="rtl">
+          <input spellCheck="false"
             {...getInputProps({
-              placeholder: 'Search Places ...',
-              className: 'location-search-input',
+              placeholder: localPlaceholder,
+              className: 'location-input__field',
             })}
           />
-          <div className="autocomplete-dropdown-container">
-            {loading && <div>Loading...</div>}
+          <div id="autocomplete-dropdown-container" >
+            {loading && <div>{localLoading}</div>}
             {suggestions.map(suggestion => {
               const className = suggestion.active
-                ? 'suggestion-item--active'
+                ? 'suggestion-item__active'
                 : 'suggestion-item' 
-              // inline style for demonstration purpose
-              const style = suggestion.active
-                ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                : { backgroundColor: '#ffffff', cursor: 'pointer' } 
+              
               return (
-                <div
+                <div 
                   {...getSuggestionItemProps(suggestion, {
-                    className,
-                    style,
+                    className,                 
                   })}
                 >
-                  <span>{suggestion.description}</span>
+                  <span className={`description-${className}`}>{suggestion.description}</span>
                 </div>
               ) 
             })}

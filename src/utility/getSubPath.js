@@ -6,7 +6,7 @@ const getSubPath = (fullPath, path) => {
                                 fullPath.length
         return fullPath.substring(startOfSubPath, endOfSubPath)
     }
-    return null
+    return '/'
 }
 
 export default getSubPath
