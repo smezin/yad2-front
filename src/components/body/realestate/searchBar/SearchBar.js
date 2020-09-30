@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchBarHeader from './SerachBarHeader'
-import LocationSearchInput from './TempComp'
+import LocationSearchInput from './searchFields/LocationSearchInput'
 
 const SearchBar = (props) => {
     return (
@@ -9,10 +9,8 @@ const SearchBar = (props) => {
                 <SearchBarHeader />
             </div>
             <div className="realestate-search-bar__search-columns">
-                <LocationSearchInput />
-                
-            </div>
-            
+                <LocationSearchInput />                
+            </div>            
         </div>
     )
 }
