@@ -8,15 +8,15 @@ const SearchBarHeader = () => {
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
     const categoryFromPath = getSubPath(pathname, '/realestate')
-    const allCategories = fetchFromResource('realestateSearchBar', 'header', 'headerLinks') 
-    const allCategoriesNames = typeof(allCategories) === 'object' ? Object.keys(allCategories).map( (category) => category) : []
+    const allCategories = fetchFromResource('object', 'realestateSearchBar', 'header', 'headerLinks') 
+    const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
     useEffect( () => {
         allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
     },[location, allCategoriesNames, categoryFromPath])
-    const categoryLocalName = fetchFromResource('realestateSearchBar', 'header', 'headerLinks', category) || ''
-    let headerPrefixLocalName = fetchFromResource('realestateSearchBar', 'header', 'headerPrefix') || ''
-    const headerSuffixLocalName = fetchFromResource('realestateSearchBar', 'header', 'headerSuffix') || ''
-    const auxLetter = fetchFromResource('realestateSearchBar', 'header', 'auxLetter') || ''
+    const categoryLocalName = fetchFromResource('string', 'realestateSearchBar', 'header', 'headerLinks', category, 'localName') 
+    let headerPrefixLocalName = fetchFromResource('string', 'realestateSearchBar', 'header', 'headerPrefix', 'localName') 
+    const headerSuffixLocalName = fetchFromResource('string', 'realestateSearchBar', 'header', 'headerSuffix', 'localName') 
+    const auxLetter = fetchFromResource('string', 'realestateSearchBar', 'header', 'auxLetter', 'localName') 
     const alternatingCategoryName = <span className="realestate-search-bar__header__alt-cat" onClick={(e)=>onClick(e, category)}>
         {categoryLocalName} </span>
     

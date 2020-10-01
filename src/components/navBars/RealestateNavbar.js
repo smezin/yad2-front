@@ -10,13 +10,13 @@ const RealestateNavbar = () => {
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
     const categoryFromPath = getSubPath(pathname, '/realestate')
-    const allCategories = fetchFromResource('realestateSearchBar', 'header', 'headerLinks')
+    const allCategories = fetchFromResource('object', 'realestateSearchBar', 'header', 'headerLinks')
     const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
     useEffect( () => {
         allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
     },[location, allCategoriesNames, categoryFromPath])
-    const rightSideItems = fetchFromResource('navbars', 'realestate', 'rightSide') || '' // (||'') error protection 
-    const leftSideItems = fetchFromResource('navbars', 'realestate', 'leftSide') || ''
+    const rightSideItems = fetchFromResource('object', 'navbars', 'realestate', 'rightSide') 
+    const leftSideItems = fetchFromResource('object', 'navbars', 'realestate', 'leftSide') 
 
     const rightSide = Object.keys(rightSideItems).map((item) => {
             return new LinkedText(rightSideItems[item]['path'], item, rightSideItems[item]['localName'])

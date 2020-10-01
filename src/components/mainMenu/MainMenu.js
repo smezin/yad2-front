@@ -6,12 +6,10 @@ import LinkedText from 'entities/LinkedText'
 
 const mainMenu = () => {
     const logo = require('../../images/yad2Logo.png') //move to bucket
-    const navItems = fetchFromResource('mainMenu', 'navItems')
-    const navLinks = typeof(navItems) === 'object' ? 
-    Object.keys(navItems).map( (navItem) => {
+    const navItems = fetchFromResource('object', 'mainMenu', 'navItems')
+    const navLinks = Object.keys(navItems).map( (navItem) => {
             return new LinkedText(navItems[navItem]['path'], navItems[navItem]['name'], navItems[navItem]['localName'])
-    }) :
-    []
+    }) 
     
     const onClick = () => {
         console.log('logo clicked')

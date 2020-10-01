@@ -4,7 +4,7 @@ import fetchFromResource from 'utility/fetchFromResource'
 
 const PropertyType = () => {
 
-    const localHeaderTitle = fetchFromResource('realestateSearchBar', 'propertyType', 'localName')
+    const localHeaderTitle = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localName')
     return(
         <div className="property-type">
             <div className="property-type__header" dir="rtl">

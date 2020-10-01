@@ -9,16 +9,16 @@ const TopInfo = () => {
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
     const categoryFromPath = getSubPath(pathname, '/realestate')
-    const allCategories = fetchFromResource('searchBar', 'header', 'headerLinks')
+    const allCategories = fetchFromResource('object', 'realestateSearchBar', 'header', 'headerLinks')
     const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
     useEffect( () => {
         allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
     },[location, allCategoriesNames, categoryFromPath])
     
-    const categoryLocalName = fetchFromResource('topInfo', 'realestate', 'subCategories', category, 'localName')
-    const homePage = fetchFromResource('topInfo', 'realestate', 'localName')
+    const categoryLocalName = fetchFromResource('string', 'topInfo', 'realestate', 'subCategories', category, 'localName')
+    const homePage = fetchFromResource('string', 'topInfo', 'realestate', 'localName')
     const delimiter = <span className="top-info__nav__delimiter">&nbsp;&nbsp;{' > '}&nbsp;&nbsp;</span>
-    const accessibility = fetchFromResource('topInfo', 'accessibility', 'localName')
+    const accessibility = fetchFromResource('string', 'topInfo', 'accessibility', 'localName')
     return (
         <div className="top-info">
             <div className="top-info__right">

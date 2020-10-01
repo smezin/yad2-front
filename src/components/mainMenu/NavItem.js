@@ -10,8 +10,7 @@ const NavItem = (props) => {
     const endOfMainCategory = secondDelimiter === -1 ? pathname.length : secondDelimiter
     const mainCategory = pathname.substring(pathname.indexOf('/') + 1, endOfMainCategory)
     const { category } = props
-    let categoryItems = fetchFromResource('mainMenu', 'navItems', category)
-    categoryItems = typeof(categoryItems) === 'object' ? categoryItems : {}
+    const categoryItems = fetchFromResource('object', 'mainMenu', 'navItems', category)
     const [isItemHovered, setIsItemHovered] = useState(false)
     
     const showDropdownMenu = () => {

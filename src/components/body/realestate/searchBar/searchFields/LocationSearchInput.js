@@ -4,8 +4,8 @@ import fetchFromResource from 'utility/fetchFromResource'
 
 const LocationSearchInput = () => {
   const [address, setAddress] = useState('')
-  const localLoading = fetchFromResource('realestateSearchBar', 'searchFields', 'location', 'localLoading') || ''
-  const localPlaceholder = fetchFromResource('realestateSearchBar', 'searchFields', 'location', 'localPlaceholder') || ''
+  const localLoading = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localLoading') 
+  const localPlaceholder = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localPlaceholder') 
   
   const handleChange = (address) => {
     setAddress( address ) 
