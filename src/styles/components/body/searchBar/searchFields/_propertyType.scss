@@ -1,0 +1,34 @@
+.property-type {
+    background: $theme-background-header;
+    display: flex;
+    flex-direction: column;
+    padding: $std-size * 0.6;
+    .property-type__header {
+        background: $theme-background-header;
+        color: $theme-text;
+        font-size: $font-size-xs;
+        font-weight: 500;
+        height: $std-size;
+    }
+    .property-type__input {
+        background: $theme-background-header;
+        padding-top: $std-size * 0.5;
+        .property-type__container {
+            background: $theme-background-header;
+            border: 1px solid $theme-box-border;
+            color: $theme-text;
+            display: flex;
+            justify-content: space-between;
+            font-size: $font-size-xs;
+            line-height: $std-size;
+            padding: $std-size * 0.6;
+            width: $std-size * 10;
+            span {
+                background: $theme-background-header;
+                color: $theme-text;
+                font-size: $font-size-m;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

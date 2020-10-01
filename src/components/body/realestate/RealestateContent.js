@@ -11,7 +11,7 @@ const RealestateContent = () => {
    
     return (
         <div className="realestate-content">
-            <SearchBar category={1} />
+            <SearchBar />
         </div>
     )
 }

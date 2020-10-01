@@ -10,7 +10,7 @@ const RealestateNavbar = () => {
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
     const categoryFromPath = getSubPath(pathname, '/realestate')
-    const allCategories = fetchFromResource('searchBar', 'header', 'headerLinks')
+    const allCategories = fetchFromResource('realestateSearchBar', 'header', 'headerLinks')
     const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
     useEffect( () => {
         allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)

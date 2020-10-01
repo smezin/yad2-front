@@ -3,7 +3,7 @@ import LocationSearchInput from './LocationSearchInput'
 import fetchFromResource from 'utility/fetchFromResource'
 
 const LocationSearch = () => {
-    const localHeaderTitle = fetchFromResource('searchBar', 'searchFields', 'location', 'localTitle') || ''
+    const localHeaderTitle = fetchFromResource('realestateSearchBar', 'searchFields', 'location', 'localTitle') || ''
 
     return (
         <div className="location-search">
