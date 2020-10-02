@@ -1,0 +1,7 @@
+.top-boxes-row {
+    background: $theme-background-body;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    overflow: hidden;
+}

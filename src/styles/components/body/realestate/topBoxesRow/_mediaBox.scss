@@ -1,0 +1,30 @@
+.media-box__container {
+    background: $theme-background-body;
+    .media-box {
+        align-items: center;
+        background: $theme-background-body;
+        display: flex;
+        flex-direction: column;
+        font-size: $font-size-xs;
+        justify-content: space-between;    
+        padding: $std-size * 0.3;
+        width: 100%;
+        img {
+            margin: $std-size * 0.5;
+            min-width: $std-size * 5;
+            width: 100%;
+        }
+        p {
+            margin-top: 0;
+            text-align: center;
+            width: 100%;
+            white-space: nowrap;
+        }
+    }
+    &:hover {
+        p {
+            color: $theme-main-color;
+        }
+        
+    }
+}
