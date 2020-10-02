@@ -10,6 +10,7 @@
         color: lighten($theme-text, 40%);
         font-size: $font-size-xs;
         .top-info__nav__delimiter {
+            background: $theme-background-body;
             color: lighten($theme-text, 40%);
             font-size: $font-size-xxs;
         }

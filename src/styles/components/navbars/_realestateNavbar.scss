@@ -1,18 +1,15 @@
 .realestate-navbar {
-    background: $theme-background-header;
     box-shadow: $theme-box-shadow;
     display: flex;
     flex-direction: row-reverse;
     height: $navbar-height;
     justify-content: space-between;
     .realestate-navbar__right {
-        background: $theme-background-header;
         display: flex;
         flex-direction: row-reverse;        
         .navbar-item__right {
             @extend .flex-center;
             @extend .linked-text;
-            background: $theme-background-header;
             font-size: $font-size-s;
             height: 100%;
             padding: $std-size;
@@ -26,7 +23,6 @@
             font-weight: 500;
         }
         .realestate-navbar__right-spacer {
-            background: $theme-background-header;
             width: $main-menu-logo-width;
         }
     }
@@ -39,14 +35,12 @@
             margin: 0;
         }
        img {
-            background: $theme-background-header;
             height: $std-size * 1.2;
             max-width: $std-size * 2.5;
             mix-blend-mode: multiply;
             padding-left: $std-size * 0.2;            
        }
        .realestate-navbar__left-spacer {
-            background: $theme-background-header;
             width: $std-size;           
         }
     }

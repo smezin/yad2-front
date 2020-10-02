@@ -8,9 +8,10 @@ import AppRouter from './routers/AppRouter'
 
 const renderApp= () => {
   ReactDOM.render(
-    <React.StrictMode>
+//    <React.StrictMode>
       <AppRouter />
-    </React.StrictMode>,
+//    </React.StrictMode>
+,
     document.getElementById('root')
   )
 }

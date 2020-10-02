@@ -1,34 +1,65 @@
 .property-type {
-    background: $theme-background-header;
     display: flex;
     flex-direction: column;
     padding: $std-size * 0.6;
     .property-type__header {
-        background: $theme-background-header;
         color: $theme-text;
         font-size: $font-size-xs;
         font-weight: 500;
         height: $std-size;
     }
     .property-type__input {
-        background: $theme-background-header;
         padding-top: $std-size * 0.5;
         .property-type__container {
-            background: $theme-background-header;
-            border: 1px solid $theme-box-border;
-            color: $theme-text;
-            display: flex;
-            justify-content: space-between;
-            font-size: $font-size-xs;
-            line-height: $std-size;
-            padding: $std-size * 0.6;
-            width: $std-size * 10;
-            span {
-                background: $theme-background-header;
-                color: $theme-text;
-                font-size: $font-size-m;
-                transform: rotate(90deg);
+            .property-type__bar {
+                border: 1px solid $theme-box-border;
+                color: lighten($theme-text, 30%);
+                display: flex;
+                font-size: $font-size-xs;
+                justify-content: space-between;
+                line-height: $std-size;
+                padding: $std-size * 0.6;
+                width: $std-size * 10;
+                span {
+                    color: $theme-text;
+                    font-size: $font-size-m;
+                    transform: rotate(90deg);
+                }
             }
+        }
+        .property-type__dropdown {
+            border: 1px solid $theme-box-border;
+            box-shadow: $theme-box-shadow;
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(6, 1fr);
+            font-size: $font-size-s;
+            padding: $std-size;
+            padding-bottom: $std-size * 2;
+            position: absolute;
+            width: auto;
+            z-index: 10;
+            .property-type__item {
+                line-height: $std-size;
+                padding: $std-size * 0.3;
+                margin: 0 $std-size * 0.5;
+            }
+            .property-type__item__picked {
+                @extend .property-type__item;
+                color: $theme-main-color;
+            }
+            span {
+                background-color: red;
+            }
+        }
+        .expand-collapse-button {
+            bottom: $std-size * 0.5;            
+            color: $theme-main-color;
+            cursor: pointer;
+            font-size: $font-size-xs;
+            position: absolute;
+            right: $std-size * 1.8;            
         }
     }
 }

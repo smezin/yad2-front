@@ -1,5 +1,7 @@
-.side-ad__right {    
+.side-ad__right {   
+    background: $theme-background-body;
     img {
+        background: $theme-background-body; 
         height: $side-ad-height;
         max-width: $side-ad-width;
         padding-top: $std-size;
