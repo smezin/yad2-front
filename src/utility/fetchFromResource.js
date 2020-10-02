@@ -1,16 +1,17 @@
 import resources from '../resources'
 
 const fetchFromResource = (expectedType, ...path) => {
+    let found = true
     const fetchResult = path.reduce((acc, cur) => {
         if (!acc[cur]) {
-            expectedType = undefined
+            found = false
             return {}
         }
         acc = acc[cur]
         return acc
     }, resources)
 
-    if (typeof(fetchResult) === expectedType) {
+    if (found && typeof(fetchResult) === expectedType) {
         return fetchResult
     } else {
         switch (expectedType) {

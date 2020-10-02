@@ -214,9 +214,10 @@
         "propertyType": {
             "localName": "סוג נכס",
             "localPlaceholder": "בחרו סוגי נכסים",
+            "localMultiplePick": "נכסים",
             "localExpandButtonText": {
-                "expand": "עוד סוגים >",
-                "collapse": "< פחות סוגים"
+                "expand": {"localName": "עוד סוגים >"},
+                "collapse": {"localName": "< פחות סוגים"} 
             },
             "types": {
                 "forsale": {

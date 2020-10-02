@@ -20,7 +20,7 @@
                 line-height: $std-size;
                 padding: $std-size * 0.6;
                 width: $std-size * 10;
-                span {
+                .arrow {
                     color: $theme-text;
                     font-size: $font-size-m;
                     transform: rotate(90deg);
@@ -42,15 +42,30 @@
             z-index: 10;
             .property-type__item {
                 line-height: $std-size;
-                padding: $std-size * 0.3;
-                margin: 0 $std-size * 0.5;
+                padding: $std-size * 0.3 0;
+                min-width: $std-size * 10;
+                white-space: nowrap;
+                &:hover {
+                    .checkbox {
+                        color: $theme-main-color;
+                    }
+                }
             }
             .property-type__item__picked {
                 @extend .property-type__item;
-                color: $theme-main-color;
+                .checkbox {
+                    color: $theme-main-color;
+                }
+                &:hover {
+                    .checkbox {
+                        color: darken($theme-main-color, 8%);
+                    }
+                }
             }
-            span {
-                background-color: red;
+            .checkbox {
+                font-size: $font-size-m;
+                margin-left: $std-size * 0.5;
+                vertical-align: middle;
             }
         }
         .expand-collapse-button {
