@@ -242,158 +242,45 @@
                     "acquisitionGroup": {"localName": "קב' רכישה/זכות לנכס"},
                     "general": {"localName": "כללי"}
                 },
-                "rent": [
-                    {
-                        "name": "apartment",
-                        "localName": "דירה"
-                    },
-                    {
-                        "name": "gardenApartment",
-                        "localName": "דירת גן"
-                    },
-                    {
-                        "name": "privateAndKoteg",
-                        "localName": "פרטי/קוטג'"
-                    },
-                    {
-                        "name": "roofAndPenthouse",
-                        "localName": "גג/פנטהאוז"
-                    },
-                    {
-                        "name": "fields",
-                        "localName": "מגרשים"
-                    },
-                    {
-                        "name": "duplex",
-                        "localName": "דופלקס"
-                    },
-                    {
-                        "name": "double",
-                        "localName": "דו משפחתי"
-                    },
-                    {
-                        "name": "basementAndParter",
-                        "localName": "מרתף/פרטר"
-                    },
-                    {
-                        "name": "triple",
-                        "localName": "טריפלקס"
-                    },
-                    {
-                        "name": "unit",
-                        "localName": "יחידת דיור"
-                    },
-                    {
-                        "name": "farm",
-                        "localName": "משק חקלאי/נחלה"
-                    },
-                    {
-                        "name": "auxiliary farm",
-                        "localName": "משק עזר"
-                    },
-                    {
-                        "name": "assistedLiving",
-                        "localName": "דיור מוגן"
-                    },
-                    {
-                        "name": "apartmentTrading",
-                        "localName": "החלפת דירות"
-                    },
-                    {
-                        "name": "apartmentBuilding",
-                        "localName": "בניין מגורים"
-                    },
-                    {
-                        "name": "sublet",
-                        "localName": "סאבלט"
-                    },
-                    {
-                        "name": "studioAndLoft",
-                        "localName": "סטודיו/לופט"
-                    },
-                    {
-                        "name": "storage",
-                        "localName": "מחסן"
-                    },
-                    {
-                        "name": "parking",
-                        "localName": "חניה"
-                    },
-                    {
-                        "name": "acquisitionGroup",
-                        "localName": "קב' רכישה/זכות לנכס"
-                    },
-                    {
-                        "name": "general",
-                        "localName": "כללי"
-                    }
-                ],
-                "commercial": [
-                    {
-                        "name": "halls",
-                        "localName": "אולמות"
-                    },
-                    {
-                        "name": "officeBuilding",
-                        "localName": "בניין משרדים"
-                    },
-                    {
-                        "name": "stores",
-                        "localName": "חנויות/שטח מסחרי"
-                    },
-                    {
-                        "name": "sharedWorkSpace",
-                        "localName": "חלל עבודה משותף"
-                    },
-                    {
-                        "name": "parkingLot",
-                        "localName": "חניון"
-                    },
-                    {
-                        "name": "general",
-                        "localName": "כללי"
-                    },
-                    {
-                        "name": "vacationApartment",
-                        "localName": "דירת נופש"
-                    },
-                    {
-                        "name": "industrialBuildings",
-                        "localName": "מבני תעשיה"
-                    },
-                    {
-                        "name": "fields",
-                        "localName": "מגרשים"
-                    },
-                    {
-                        "name": "warehouses",
-                        "localName": "מחסנים"
-                    },
-                    {
-                        "name": "basement",
-                        "localName": "מרתף"
-                    },
-                    {
-                        "name": "offices",
-                        "localName": "משרדים"
-                    },
-                    {
-                        "name": "studio",
-                        "localName": "סטודיו"
-                    },
-                    {
-                        "name": "businessForSale",
-                        "localName": "עסקים למכירה"
-                    },
-                    {
-                        "name": "hotel",
-                        "localName": "בית מלון"
-                    },
-                    {
-                        "name": "clinics",
-                        "localName": "קליניקות"
-                    }
-                ]
+                "rent": {
+                    "apartment": {"localName": "דירה"},
+                    "gardenApartment": {"localName": "דירת גן"},
+                    "privateAndKoteg": {"localName": "פרטי/קוטג'"},
+                    "roofAndPenthouse": {"localName": "גג/פנטהאוז"},
+                    "fields": {"localName": "מגרשים"},
+                    "duplex": {"localName": "דופלקס"},
+                    "double": {"localName": "דו משפחתי"},
+                    "basementAndParter": {"localName": "מרתף/פרטר"},
+                    "triple": {"localName": "טריפלקס"},
+                    "unit": {"localName": "יחידת דיור"},
+                    "farm": {"localName": "משק חקלאי/נחלה"},
+                    "auxiliary farm": {"localName": "משק עזר"},
+                    "assistedLiving": {"localName": "דיור מוגן"},
+                    "apartmentTrading": {"localName": "החלפת דירות"},
+                    "apartmentBuilding": {"localName": "בניין מגורים"},
+                    "sublet": {"localName": "סאבלט"},
+                    "studioAndLoft": {"localName": "סטודיו/לופט"},
+                    "storage": {"localName": "מחסן"},
+                    "parking": {"localName": "חניה"},
+                    "acquisitionGroup": {"localName": "קב' רכישה/זכות לנכס"},
+                    "general": {"localName": "כללי"}
+                },
+                "commercial": {
+                    "offices": {"localName": "משרדים"},
+                    "stores": {"localName": "חנויות/שטח מסחרי"},
+                    "sharedWorkSpace":{ "localName": "חלל עבודה משותף"},
+                    "halls":{ "localName": "אולמות"},
+                    "industrialBuildings": {"localName": "מבני תעשיה"},
+                    "warehouses": {"localName": "מחסנים"},
+                    "vacationApartment": {"localName": "דירת נופש"},
+                    "fields": {"localName": "מגרשים"},
+                    "officeBuilding": {"localName": "בניין משרדים"},
+                    "parkingLot": {"localName": "חניון"},
+                    "basement": {"localName": "מרתף"},
+                    "general": {"localName": "כללי"},
+                    "studio": {"localName": "סטודיו"},
+                    "clinics": {"localName": "קליניקות"}
+                }
             }
         },
         "dealTypeInput": {

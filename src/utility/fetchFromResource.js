@@ -1,4 +1,4 @@
-import resources from '../resources'
+import resources from 'resources/resourcesHEB'
 
 const fetchFromResource = (expectedType, ...path) => {
     let found = true

@@ -1,8 +1,9 @@
 import React from 'react'
-import resources from 'resources.json'
+import fetchFromResource from 'utility/fetchFromResource'
 
 const addItemButton = () => {
 
+    const buttonLocalText = fetchFromResource('string', 'mainMenu', 'addNewItemButton', 'text')
     const onClick = () => {
         console.log('add item button clicked')
     }
@@ -10,7 +11,7 @@ const addItemButton = () => {
     return (
         <div className="add-item-button__container" onClick={onClick}>         
             <div className="add-item-button">
-                {resources.mainMenu.addNewItemButton.text}
+                {buttonLocalText}
             </div>      
         </div>
        
