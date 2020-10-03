@@ -283,6 +283,12 @@
                 }
             }
         },
+        "rooms": {
+            "localName": "חדרים",
+            "localPlaceHolder": "חדרים",
+            "fromLocalName": "מ-",
+            "upToLocalName": "עד-"
+        },
         "dealTypeInput": {
             "metaText": "בחרו עסקה",
             "placeholder": "סוג עסקה",

@@ -14,7 +14,7 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
     const multiPickLocalName = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localMultiplePick')
     const [isOpen, setIsOpen] = useState(false)
     const [pickedTypes, setPickedTypes] = useState([])    
-    const shortList = fullList.slice(0,6)
+    const shortList = fullList.slice(0,7)
     const [typesToRender, setTypeToRender] = useState(shortList)
     const [isShortList, setIsShortList] = useState(true)
     const [expandCollapseButton, setExpandCollapseButton] = useState(expandLocalName)

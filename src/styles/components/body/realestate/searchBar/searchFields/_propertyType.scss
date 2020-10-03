@@ -20,10 +20,9 @@
                 line-height: $std-size;
                 padding: $std-size * 0.6;
                 width: $std-size * 10;
-                .arrow {
-                    color: $theme-text;
-                    font-size: $font-size-m;
-                    transform: rotate(90deg);
+                .symbol__arrow {
+                    color: black;
+                    font-size: $font-size-xxs;
                 }
             }
         }

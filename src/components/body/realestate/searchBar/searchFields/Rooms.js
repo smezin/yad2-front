@@ -1,13 +1,17 @@
 import React from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import { upArrow, downArrow, checkedBox, unCheckedBox } from 'resources/specialChars'
+import RoomsInput from './RoomsInput'
 
 const Rooms = () => {
-
-
-    return (
+    const localHeaderTitle = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'localName')
+    return(
         <div className="rooms">
-
+            <div className="rooms__header" dir="rtl">
+                {localHeaderTitle}
+            </div>
+            <div className="rooms__input" dir="rtl">
+                <RoomsInput />
+            </div>
         </div>
     )
 }

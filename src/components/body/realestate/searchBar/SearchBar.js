@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import SearchBarHeader from './SerachBarHeader'
-import LocationSearch from './searchFields/LocationSearch'
+import LocationSearch from './searchFields/Location'
 import PropertyType from './searchFields/PropertyType'
+import Rooms from './searchFields/Rooms'
 import getSubPath from 'utility/getSubPath'
 import fetchFromResource from 'utility/fetchFromResource'
 
@@ -26,6 +27,7 @@ const SearchBar = () => {
             <div className="realestate-search-bar__search-columns">
                 <LocationSearch />  
                 <PropertyType category={category}/>
+                <Rooms />
 
             </div>            
         </div>

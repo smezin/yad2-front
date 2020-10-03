@@ -1,5 +1,5 @@
 import React from 'react'
-import LocationSearchInput from './LocationSearchInput'
+import LocationSearchInput from './LocationInput'
 import fetchFromResource from 'utility/fetchFromResource'
 
 const LocationSearch = () => {
