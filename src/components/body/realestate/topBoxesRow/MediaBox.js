@@ -1,13 +1,14 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const MediaBox = (props) => {
     const { box } = props
     return (
         <div className="media-box__container">        
-            <div className="media-box">
-                <img src={box.path} alt="ad" />
+            <a href={box.path} target="_blank" className="media-box">
+                <img src={box.imgSrc} alt="ad" />
                 <p>{box.text}</p>
-            </div>               
+            </a>               
         </div>
     )
 }

@@ -5,7 +5,7 @@ const SideAd = (props) => {
     const { adSide } = props
     return (
         <div className={`side-ad__${adSide}`}>
-            <img src={ads.sideAdRight} alt="side-add" />
+            <img src={ads.sideAdRight.imgSrc} alt="side-add" />
         </div>
     )
 }

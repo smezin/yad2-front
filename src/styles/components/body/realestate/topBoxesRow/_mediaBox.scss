@@ -1,6 +1,7 @@
 .media-box__container {
     background: $theme-background-body;
     .media-box {
+        @extend .linked-text;
         align-items: center;
         background: $theme-background-body;
         display: flex;
