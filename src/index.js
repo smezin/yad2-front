@@ -22,6 +22,3 @@ loadScripts(renderApp)
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
-// <NavItemDropdownMenu items={fetchFromResource('mainMenu', 'dropdownMenus', 'realestate')}/>
-// <NavItem categories={fetchFromResource('mainMenu', 'dropdownMenus')}/>

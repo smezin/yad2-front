@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import SearchBarHeader from './SerachBarHeader'
 import LocationSearch from './searchFields/Location'
@@ -7,7 +7,16 @@ import Rooms from './searchFields/Rooms'
 import getSubPath from 'utility/getSubPath'
 import fetchFromResource from 'utility/fetchFromResource'
 
+import { v4 as uuidv4 } from 'uuid'
+import { FiltersContext } from '../../../../context/FiltersContext'
+
 const SearchBar = () => {
+    const [text, setText] = useState('ABCD')
+    const { dispatch } = useContext(FiltersContext)
+    
+    const onClick = () => {
+        dispatch({ type: 'ADD_BOOKLIST', book: { title: text, author: uuidv4() } })
+    }
 
     const [category, setCategory] = useState('forsale')
     const location = useLocation()
@@ -24,7 +33,7 @@ const SearchBar = () => {
             <div className="realestate-search-bar__header">
                 <SearchBarHeader />
             </div>
-            <div className="realestate-search-bar__search-columns">
+            <div className="realestate-search-bar__search-columns" onClick={onClick}>
                 <LocationSearch />  
                 <PropertyType category={category}/>
                 <Rooms />

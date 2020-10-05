@@ -14,6 +14,7 @@ const Rooms = () => {
         }
         window.addEventListener('resize', resizeListener);
     },[])
+    
     return(
         <div className="rooms" id="rooms" onClick={getRect}>
             <div className="rooms__header" dir="rtl">
