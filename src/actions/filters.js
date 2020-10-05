@@ -10,8 +10,8 @@ export const setFilters = (filters) => ({
     type: 'SET_FILTERS',
     filters
 })
-//SET CATAGORY
-export const setCategory = (category) => {
+//SET CATEGORY
+export const setSearchCategory = (category) => {
     handleBottomFiltersChanged()
     return {
         type: 'SET_CATEGORY',
@@ -109,7 +109,7 @@ export const setMaxRoommates = (maxRoommates) => ({
     type: 'SET_MAX_ROOMMATES',
     maxRoommates
 })
-//ADD TYPE
+//SET TYPE
 export const setPropertyTypes = (propertyType) => ({
     type: 'SET_PROPERTY_TYPES',
     propertyType

@@ -1,5 +1,5 @@
 //Alphabet ordered
-export const filtersReducerDefaultState = {
+export const filtersReducerInitialState = {
   sortBy: 'date',
   locationCurrentText: '',
   search: {
@@ -29,13 +29,13 @@ export const filtersReducerDefaultState = {
 export const filtersReducer = (state, action) => {
   switch (action.type) {
     case 'CLEAR_FILTERS':
-        return filtersReducerDefaultState
+        return filtersReducerInitialState
 
     case 'CLEAR_SEARCH':
       return {
           sortBy: state.sortBy,
           search: {
-              ...filtersReducerDefaultState.search,
+              ...filtersReducerInitialState.search,
               category: state.search.category
           }
       }
