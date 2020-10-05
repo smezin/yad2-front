@@ -9,7 +9,7 @@ const TopBoxesRow = () => {
         <div className="top-boxes-row">
         {
             boxes.map((box) => (
-                <MediaBox box={box} />
+                <MediaBox box={box} key={box.path}/>
             ))
         }   
         </div>

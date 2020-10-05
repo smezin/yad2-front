@@ -1,7 +1,7 @@
 .rooms {
     display: flex;
     flex-direction: column;
-    padding: $std-size * 0.6;
+    margin: $std-size * 0.6;
     .rooms__header {
         color: $theme-text;
         font-size: $font-size-xs;
@@ -9,48 +9,47 @@
         height: $std-size;
     }
     .rooms__input {
+        direction: rtl;
         padding-top: $std-size * 0.5;
-        .rooms__continer {
-        }
-    }
-    .rooms-bar {
-        border: 1px solid $theme-box-border;
-        color: lighten($theme-text, 30%);
-        display: flex;
-        font-size: $font-size-xs;
-        justify-content: space-between;
-        line-height: $std-size;
-        padding: $std-size * 0.6;
-        width: $std-size * 6;
-        .symbol__arrow {
-            color: black;
-            font-size: $font-size-xxs;
-        }
-    }       
-    .rooms__sub-menu {
-        @extend .flex-center;
-        box-shadow: $theme-box-shadow;
-        flex-direction: row; 
-        padding: $std-size;
-        position: absolute;
-        width: $std-size * 10;
-        .rooms__sub-menu__from {
+        .rooms-bar {
             border: 1px solid $theme-box-border;
             color: lighten($theme-text, 30%);
             display: flex;
             font-size: $font-size-xs;
             justify-content: space-between;
-            line-height: $std-size * 2;
-            padding-right: $std-size * 0.3;
-            width: 50%;
+            line-height: $std-size;
+            padding: $std-size * 0.6;
+            width: $std-size * 6;
             .symbol__arrow {
-                mix-blend-mode: multiply;
-                margin: 0 $std-size * 0.5;
+                color: black;
+                font-size: $font-size-xxs;
             }
-        }
-        .rooms__sub-menu__upto {
-            @extend .rooms__sub-menu__from
-        }   
-    }    
+        }       
+        .rooms__sub-menu {
+            @extend .flex-center;
+            box-shadow: $theme-box-shadow;
+            flex-direction: row; 
+            padding: $std-size;
+            position: absolute;
+            width: $std-size * 10;
+            .rooms__sub-menu__from {
+                border: 1px solid $theme-box-border;
+                color: lighten($theme-text, 30%);
+                display: flex;
+                font-size: $font-size-xs;
+                justify-content: space-between;
+                line-height: $std-size * 2;
+                padding-right: $std-size * 0.3;
+                width: 50%;
+                .symbol__arrow {
+                    mix-blend-mode: multiply;
+                    margin: 0 $std-size * 0.5;
+                }
+            }
+            .rooms__sub-menu__upto {
+                @extend .rooms__sub-menu__from
+            }   
+        }    
+    }
 }
     
