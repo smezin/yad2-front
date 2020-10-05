@@ -1,16 +1,13 @@
-import React, { createContext, useReducer, useEffect } from 'react';
-import { filtersReducer } from '../reducers/filters';
+import React, { createContext, useReducer } from 'react';
+import { filtersReducer, filtersReducerDefaultState } from 'reducers/filters';
 
 export const FiltersContext = createContext();
 
 const FiltersContextProvider = props => {
-  const [books, dispatch] = useReducer(filtersReducer, [], () => {
-    const localData = localStorage.getItem('books');
-    return localData ? JSON.parse(localData) : [];
-  })
-  
+  const [filters, dispatch] = useReducer(filtersReducer, filtersReducerDefaultState)
+
   return (
-    <FiltersContext.Provider value={{ books, dispatch }}>
+    <FiltersContext.Provider value={{ filters, dispatch }}>
       {props.children}
     </FiltersContext.Provider>
   );

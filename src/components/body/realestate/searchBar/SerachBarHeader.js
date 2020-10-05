@@ -1,11 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import fetchFromResource from 'utility/fetchFromResource'
 import getSubPath from 'utility/getSubPath'
-
-
-import { v4 as uuidv4 } from 'uuid'
-import { FiltersContext } from '../../../../context/FiltersContext'
 
 const SearchBarHeader = () => {
     const [category, setCategory] = useState('forsale')
@@ -24,21 +20,16 @@ const SearchBarHeader = () => {
     const alternatingCategoryName = <span className="realestate-search-bar__header__alt-cat" onClick={(e)=>onClick(e, category)}>
         {categoryLocalName} </span>
     
-    const { dispatch } = useContext(FiltersContext)
-    const {books} = useContext(FiltersContext)
-    console.log('books: ', books)
-   
     if (category === 'forsale' || category === 'rent') {
         headerPrefixLocalName += auxLetter
     }
     const onClick = () => {
-        dispatch({ type: 'ADD_BOOKLIST', book: { title: "header", author: uuidv4() } })
+        //highlighted category
     }
     return (
-        <div className="search-bar__header" onClick={onClick}>
+        <div className="search-bar__header">
             {headerPrefixLocalName}{alternatingCategoryName}{headerSuffixLocalName}
         </div>
     )
 }
-
 export default SearchBarHeader

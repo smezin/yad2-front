@@ -6,18 +6,9 @@ import PropertyType from './searchFields/PropertyType'
 import Rooms from './searchFields/Rooms'
 import getSubPath from 'utility/getSubPath'
 import fetchFromResource from 'utility/fetchFromResource'
-
-import { v4 as uuidv4 } from 'uuid'
-import { FiltersContext } from '../../../../context/FiltersContext'
+import { FiltersContext} from 'context/FiltersContext'
 
 const SearchBar = () => {
-    const [text, setText] = useState('ABCD')
-    const { dispatch } = useContext(FiltersContext)
-    
-    const onClick = () => {
-        dispatch({ type: 'ADD_BOOKLIST', book: { title: text, author: uuidv4() } })
-    }
-
     const [category, setCategory] = useState('forsale')
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
@@ -27,13 +18,14 @@ const SearchBar = () => {
     useEffect( () => {
         allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
     },[location, allCategoriesNames, categoryFromPath])
-    
+    const { filters } = useContext(FiltersContext)
+    console.log('propy: ', filters)
     return (
         <div className="realestate-search-bar__container">
             <div className="realestate-search-bar__header">
                 <SearchBarHeader />
             </div>
-            <div className="realestate-search-bar__search-columns" onClick={onClick}>
+            <div className="realestate-search-bar__search-columns">
                 <LocationSearch />  
                 <PropertyType category={category}/>
                 <Rooms />

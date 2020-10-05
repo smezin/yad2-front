@@ -1,24 +1,28 @@
-import React, { useState } from 'react' 
+import React, { useState, useContext } from 'react' 
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 import fetchFromResource from 'utility/fetchFromResource'
+import { setLocation } from 'actions/filters'
+import { FiltersContext } from 'context/FiltersContext'
 
 const LocationSearchInput = () => {
   const [address, setAddress] = useState('')
   const localLoading = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localLoading') 
   const localPlaceholder = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localPlaceholder') 
+  const { filters, dispatch } = useContext(FiltersContext)
   
   const handleChange = (address) => {
-    setAddress( address ) 
+    setAddress(address) 
+    dispatch(setLocation (address))
   }
 
   const handleSelect = (address) => {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error)) 
+      .then(() => dispatch(setLocation (address)))
+      .catch(error => console.error('Error', error)) //remove to global error handler
     setAddress( address )
   }
-
+  console.log('filters: ', filters)
   return (
     <PlacesAutocomplete 
       value={address}

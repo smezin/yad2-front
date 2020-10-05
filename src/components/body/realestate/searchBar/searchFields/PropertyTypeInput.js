@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import onClickOutside from 'react-onclickoutside'
 import fetchFromResource from 'utility/fetchFromResource'
+import { setPropertyTypes } from 'actions/filters'
+import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow, checkedBox, unCheckedBox } from 'resources/specialChars'
 
 function PropertyTypeInput (props)  //must not be an arrow function for onclickoutside to work
 {
     const { category } = props
+    const { dispatch } = useContext(FiltersContext)
     const localPlaceholder = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localPlaceholder') 
     const allTypesObj = fetchFromResource('object', 'realestateSearchBar', 'propertyType', 'types', category)
     const fullList = Object.keys(allTypesObj).map((propertyType) => allTypesObj[propertyType]['localName'])
@@ -31,7 +34,11 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
     useEffect ( ()=> {
         setPickedTypes([])
     },[category])
-    
+
+    useEffect ( () => {
+        dispatch(setPropertyTypes(pickedTypes))
+    },[pickedTypes, dispatch])
+
     const showMoreTypes = () => {
         if (isShortList) {
             setTypeToRender(fullList)
@@ -53,6 +60,7 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
             }
         }
     }
+    
     const searchBarText = () => {
         switch(pickedTypes.length) {
             case 0:
@@ -62,10 +70,9 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
             default:
                 return multiPickLocalName + ' (' + pickedTypes.length + ')'
         }
+        
     }
-    
     PropertyTypeInput.handleClickOutside = () => setIsOpen(false)
-   
     return (
         <div className="property-type__container">
             <div className="property-type__bar" onClick={toggle}>
@@ -77,8 +84,8 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
                 <div className="property-type__dropdown">
                     {
                         typesToRender.map((propertyType) => (
-                            <div className={`property-type__item${pickedTypes.includes(propertyType) ? "__picked" : ""}`} key={propertyType} 
-                            onClick={() => addRemoveType(propertyType)}>
+                            <div className={`property-type__item${pickedTypes.includes(propertyType) ? "__picked" : ""}`} 
+                            onClick={() => addRemoveType(propertyType)} key={propertyType} >
                                 {pickedTypes.includes(propertyType) ? checkedBox : unCheckedBox}{propertyType}
                             </div>
                         ))
