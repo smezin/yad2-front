@@ -1,0 +1,8 @@
+.go-search {
+    @extend .searchBar-button;
+    background: $theme-main-color;
+    color: white;
+    .symbol__magnifying-glass {
+        mix-blend-mode: multiply;
+    }
+}

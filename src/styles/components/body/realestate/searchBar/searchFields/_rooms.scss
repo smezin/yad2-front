@@ -1,25 +1,14 @@
 .rooms {
-    display: flex;
-    flex-direction: column;
-    margin: $std-size * 0.6;
+    @extend .searchBar-flexbox-column;
     .rooms__header {
-        color: $theme-text;
-        font-size: $font-size-xs;
-        font-weight: 500;
-        height: $std-size;
+        @extend .searchBar-header;
     }
     .rooms__input {
         direction: rtl;
         padding-top: $std-size * 0.5;
         .rooms-bar {
-            border: 1px solid $theme-box-border;
-            color: lighten($theme-text, 30%);
-            display: flex;
-            font-size: $font-size-xs;
-            justify-content: space-between;
-            line-height: $std-size;
-            padding: $std-size * 0.6;
-            width: $std-size * 6;
+            @extend .searchBar-input-bar;
+            min-width: $std-size * 5;
             .symbol__arrow {
                 color: black;
                 font-size: $font-size-xxs;
@@ -39,7 +28,7 @@
                 border: 1px solid $theme-box-border;
                 color: lighten($theme-text, 30%);
                 display: flex;
-                font-size: $font-size-xs;
+                font-size: $font-size-xxs;
                 justify-content: space-between;
                 line-height: $std-size * 2;
                 padding-right: $std-size * 0.3;

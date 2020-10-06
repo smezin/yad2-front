@@ -6,7 +6,11 @@
         max-width: $side-ad-width;
         padding-top: $std-size;
         position: sticky;
-        top: $std-size;        
+        top: $std-size;  
+        @media (max-width: $media-breakpoint) {
+            visibility: hidden;
+            width: 0;
+        }
     }
 }
 .side-ad__left {

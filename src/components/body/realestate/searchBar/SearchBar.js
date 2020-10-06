@@ -6,8 +6,10 @@ import PropertyType from './searchFields/PropertyType'
 import Rooms from './searchFields/Rooms'
 import Price from './searchFields/Price'
 import getSubPath from 'utility/getSubPath'
+import GoSearch from './GoSearch'
+import AdvancedSearch from './AdvancedSearch'
 import fetchFromResource from 'utility/fetchFromResource'
-import { FiltersContext} from 'context/FiltersContext'
+import { FiltersContext } from 'context/FiltersContext'
 import { clearSearch, setSearchCategory } from 'actions/filters'
 
 const SearchBar = () => {
@@ -40,7 +42,8 @@ const SearchBar = () => {
                 <PropertyType category={category}/>
                 <Rooms />
                 <Price category={category}/>
-
+                <AdvancedSearch />
+                <GoSearch />
             </div>            
         </div>
     )

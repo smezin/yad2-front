@@ -1,26 +1,15 @@
 .location-search {
-    background: $theme-background-header;
-    display: flex;
-    flex-direction: column;
-    padding: $std-size * 0.6;
+    @extend .searchBar-flexbox-column;
     .location-search__header {
-        height: $std-size ;
-        background: $theme-background-header;
-        color: $theme-text;
-        font-size: $font-size-xs;
-        font-weight: 500;
+        @extend .searchBar-header;
     }
     .location-search__input {
-        .location-input__container {
-            background: $theme-background-header;
-            padding-top: $std-size * 0.5;
-            .location-input__field {
-                height: $searchbox-Height;
-                background: $theme-background-header;
-                border: 1px solid $theme-box-border;
-                padding: $std-size * 0.6  $std-size * 0.6 $std-size * 0.6 0;
-                width: 100%;
-                height: 100%;
+        direction: rtl;
+        padding-top: $std-size * 0.5;
+        .location-input__container {           
+            .location-input__bar {
+                @extend .searchBar-input-bar;
+                min-width: $std-size * 11;
                 &:focus{
                     outline-width: 0;
                 }

@@ -42,7 +42,7 @@ const LocationSearchInput = (props) => {
           <input spellCheck="false"
             {...getInputProps({
               placeholder: localPlaceholder,
-              className: 'location-input__field',
+              className: 'location-input__bar',
             })}
           />
           <div id="autocomplete-dropdown-container" >

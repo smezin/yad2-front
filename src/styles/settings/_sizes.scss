@@ -1,5 +1,5 @@
 $std-size: 1.0rem;
-$font-size-xxs: $std-size * 0.7;
+$font-size-xxs: $std-size * 0.75;
 $font-size-xs: $std-size * 0.85;
 $font-size-s: $std-size * 1.0;
 $font-size-m: $std-size * 1.2;
@@ -10,9 +10,11 @@ $main-menu-height: $std-size * 5.0;
 $main-menu-logo-width: $std-size * 6.0;
 $main-menu-dropdown-item-padding: $std-size * 0.4 $std-size * 1.5 $std-size * 0.4 $std-size * 3;
 $main-menu-dropdown-menu-padding: $std-size * 1.5 0 $std-size*1.5 $std-size*2;
+$media-breakpoint: 1185px;
 $navbar-height: $std-size * 3.5;
 $side-ad-height: $std-size * 37.5;
 $side-ad-width: $std-size * 7.5;
 $searchbox-Height: $std-size * 3;
+$searchField-container-spacing: $std-size * 0.5;
 $top-ad-height: $std-size * 11.25;
 $top-ad-width: $std-size * 58.125;

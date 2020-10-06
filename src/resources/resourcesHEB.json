@@ -295,6 +295,12 @@
             "minPriceLocalName": "ממחיר",
             "maxPriceLocalName": "עד מחיר"
         },
+        "advancedSearch": {
+            "localName": "חיפוש מתקדם"
+        },
+        "goSearch": {
+            "localName": "חיפוש"
+        },
         "dealTypeInput": {
             "metaText": "בחרו עסקה",
             "placeholder": "סוג עסקה",

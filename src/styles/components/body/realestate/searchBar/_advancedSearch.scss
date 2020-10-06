@@ -1,0 +1,7 @@
+.advanced-search {
+    @extend .searchBar-button;
+    background: $theme-selected;
+    .symbol__circled-plus {
+        mix-blend-mode: multiply;
+    }
+}

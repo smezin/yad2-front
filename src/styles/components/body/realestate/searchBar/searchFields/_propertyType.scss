@@ -1,25 +1,15 @@
 .property-type {
-    display: flex;
-    flex-direction: column;
-    padding: $std-size * 0.6;
+    @extend .searchBar-flexbox-column;
     .property-type__header {
-        color: $theme-text;
-        font-size: $font-size-xs;
-        font-weight: 500;
-        height: $std-size;
+        @extend .searchBar-header;
     }
     .property-type__input {
+        direction: rtl;
         padding-top: $std-size * 0.5;
         .property-type__container {
             .property-type__bar {
-                border: 1px solid $theme-box-border;
-                color: lighten($theme-text, 30%);
-                display: flex;
-                font-size: $font-size-xs;
-                justify-content: space-between;
-                line-height: $std-size;
-                padding: $std-size * 0.6;
-                width: $std-size * 10;
+                @extend .searchBar-input-bar;
+                min-width: $std-size * 8;
                 .symbol__arrow {
                     color: black;
                     font-size: $font-size-xxs;
@@ -36,7 +26,7 @@
             grid-auto-flow: column;
             grid-template-columns: repeat(3, auto);
             grid-template-rows: repeat(7, 1fr);
-            font-size: $font-size-s;
+            font-size: $font-size-xs;
             padding: $std-size;
             padding-bottom: $std-size * 2;
             position: absolute;
