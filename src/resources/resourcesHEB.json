@@ -290,6 +290,11 @@
             "upToLocalName": "עד-",
             "any": "הכל"
         },
+        "price": {
+            "localName": "מחיר בש\"ח",
+            "minPriceLocalName": "ממחיר",
+            "maxPriceLocalName": "עד מחיר"
+        },
         "dealTypeInput": {
             "metaText": "בחרו עסקה",
             "placeholder": "סוג עסקה",

@@ -10,5 +10,6 @@ $theme-main-color: #ff7100;
 $theme-selected: #eeeeee;
 $theme-hovered: #f9f9f9;
 $theme-text: #363636;
+$theme-text-darker: darken($theme-text, 30%);
 $theme-shadow: #707070;
 $theme-box-border: #e7e7e7;

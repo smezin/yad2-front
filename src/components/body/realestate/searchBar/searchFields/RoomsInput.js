@@ -17,6 +17,7 @@ function RoomsInput (props)
     const [isMainOpen, setIsMainOpen] = useState(false)
     const [isFromOpen, setIsFromOpen] = useState(false)
     const [isUpToOpen, setIsUpToOpen] = useState(false)
+    const [hasData, setHasData] = useState(false)
     const toggleMainDropdown = () => setIsMainOpen(!isMainOpen)
     
     const toggleFromDropdown = (() => {
@@ -46,22 +47,25 @@ function RoomsInput (props)
         } else {
             setMenuWidth(0) 
             setMenuHeight(0)
-        }
-           
+        }  
     },[isMainOpen])
     //updating dispalys on main input bar and rooms number sub selectors
     useEffect ( () => {
         if (typeof(from) === 'number' && typeof(upTo) === 'string') {
             setMainInput(fromPlaceHolder + ' ' + from)
+            setHasData(true)
         } else if (typeof(from) === 'string' && typeof(upTo) === 'number') {
             setMainInput(upToPlaceHolder + ' ' + upTo)
+            setHasData(true)
         } else if (typeof(from) === 'number' && typeof(upTo) === 'number') {
             setMainInput(from + ' - ' + upTo)
+            setHasData(true)
         } else {
             setMainInput(localPlaceHolder)
+            setHasData(false)
         }
     },[from, upTo, fromPlaceHolder, upToPlaceHolder, localPlaceHolder])
-    
+
     useEffect ( () => {
         filters.search.minRooms ? setFrom(filters.search.minRooms) : setFrom(fromPlaceHolder)
     },[filters.search.minRooms, fromPlaceHolder])
@@ -76,7 +80,7 @@ function RoomsInput (props)
     }
     return (
         <div className="rooms__input">
-            <div className="rooms-bar" onClick={toggleMainDropdown}>
+            <div className={`rooms-bar ${hasData?'has-data':''}`} onClick={toggleMainDropdown}>
                 {mainInput}{isMainOpen ? upArrow : downArrow}
             </div>
             {

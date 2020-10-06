@@ -24,7 +24,10 @@
                 color: black;
                 font-size: $font-size-xxs;
             }
-        }       
+        }    
+        .has-data {
+            color: $theme-text-darker;
+        }   
         .rooms__sub-menu {
             @extend .flex-center;
             box-shadow: $theme-box-shadow;

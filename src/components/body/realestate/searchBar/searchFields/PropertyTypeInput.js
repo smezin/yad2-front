@@ -9,15 +9,20 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
 {
     const { category } = props
     const { dispatch } = useContext(FiltersContext)
+    //fetch local text from resource
     const localPlaceholder = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localPlaceholder') 
     const allTypesObj = fetchFromResource('object', 'realestateSearchBar', 'propertyType', 'types', category)
-    const fullList = Object.keys(allTypesObj).map((propertyType) => allTypesObj[propertyType]['localName'])
     const expandLocalName = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localExpandButtonText', 'expand', 'localName')
     const collapseLocalName = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localExpandButtonText', 'collapse', 'localName')    
     const multiPickLocalName = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localMultiplePick')
-    const [isOpen, setIsOpen] = useState(false)
-    const [pickedTypes, setPickedTypes] = useState([])    
+    //setup lists
+    const fullList = Object.keys(allTypesObj).map((propertyType) => allTypesObj[propertyType]['localName'])
     const shortList = fullList.slice(0,7)
+    //state control
+    const [isOpen, setIsOpen] = useState(false)
+    const [pickedTypes, setPickedTypes] = useState([])   
+    const [hasData, setHasData] = useState(false) 
+    const [searchBarText, setSearchBarText] = useState(localPlaceholder)
     const [typesToRender, setTypeToRender] = useState(shortList)
     const [isShortList, setIsShortList] = useState(true)
     const [expandCollapseButton, setExpandCollapseButton] = useState(expandLocalName)
@@ -62,22 +67,26 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
         }
     }
     
-    const searchBarText = () => {
+    useEffect ( () => {
         switch(pickedTypes.length) {
             case 0:
-                return localPlaceholder
+                setHasData(false)
+                return setSearchBarText(localPlaceholder)
             case 1:
-                return pickedTypes[0]
+                setHasData(true)
+                return setSearchBarText(pickedTypes[0])
             default:
-                return multiPickLocalName + ' (' + pickedTypes.length + ')'
+                setHasData(true)
+                return setSearchBarText(multiPickLocalName + ' (' + pickedTypes.length + ')')
         }
-        
-    }
+    },[hasData, localPlaceholder, pickedTypes, multiPickLocalName])
+
     PropertyTypeInput.handleClickOutside = () => setIsOpen(false)
+
     return (
         <div className="property-type__container">
-            <div className="property-type__bar" onClick={toggle}>
-                {searchBarText()}
+            <div className={`property-type__bar ${hasData?'has-data':''}`} onClick={toggle}>
+                {searchBarText}
                 {isOpen ? upArrow : downArrow}
             </div>
             {
@@ -100,6 +109,6 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
 
 const clickOutsideConfig = {
     handleClickOutside: () => PropertyTypeInput.handleClickOutside
-  }
+}
    
 export default onClickOutside(PropertyTypeInput, clickOutsideConfig)

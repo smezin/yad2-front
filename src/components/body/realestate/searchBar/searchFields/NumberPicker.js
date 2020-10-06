@@ -13,11 +13,11 @@ const RoomsNumberPicker = (props) => {
     useEffect ( () => {
         switch(set) {
             case 'min':
-                setRange(Array.from({length}, (_, i) => (1 + i) * step).filter((num) => num <= (filters.search.maxRooms || max) && num >= min))
-                break
+                return setRange(Array.from({length}, (_, i) => (1 + i) * step)
+                .filter((num) => num <= (filters.search.maxRooms || max) && num >= min))
             case 'max':
-                setRange(Array.from({length}, (_, i) => (1 + i) * step).filter((num) => num >= (filters.search.minRooms || min)))
-                break
+                return setRange(Array.from({length}, (_, i) => (1 + i) * step)
+                .filter((num) => num >= (filters.search.minRooms || min)))   
             default:
         }
     },[filters.search.maxRooms, filters.search.minRooms, length, max, min, set, step])
@@ -29,13 +29,10 @@ const RoomsNumberPicker = (props) => {
     const onPick = (num) => {
         switch(set) {
             case 'min':
-                dispatch(setMinRooms(num))
-                break
+                return dispatch(setMinRooms(num))
             case 'max':
-                dispatch(setMaxRooms(num))
-                break
+                return dispatch(setMaxRooms(num))
             default:
-                break
         }
     }
     return (

@@ -4,6 +4,7 @@ import SearchBarHeader from './SerachBarHeader'
 import LocationSearch from './searchFields/Location'
 import PropertyType from './searchFields/PropertyType'
 import Rooms from './searchFields/Rooms'
+import Price from './searchFields/Price'
 import getSubPath from 'utility/getSubPath'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext} from 'context/FiltersContext'
@@ -38,6 +39,7 @@ const SearchBar = () => {
                 <LocationSearch category={category}/>  
                 <PropertyType category={category}/>
                 <Rooms />
+                <Price category={category}/>
 
             </div>            
         </div>

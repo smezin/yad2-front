@@ -21,6 +21,9 @@
                 padding: $std-size * 0.6  $std-size * 0.6 $std-size * 0.6 0;
                 width: 100%;
                 height: 100%;
+                &:focus{
+                    outline-width: 0;
+                }
             }
         }
         #autocomplete-dropdown-container {

@@ -25,6 +25,9 @@
                     font-size: $font-size-xxs;
                 }
             }
+            .has-data {
+                color: $theme-text-darker;
+            }
         }
         .property-type__dropdown {
             border: 1px solid $theme-box-border;
