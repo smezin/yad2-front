@@ -1,22 +1,50 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { FiltersContext } from 'context/FiltersContext'
 import fetchFromResource from 'utility/fetchFromResource'
+import { setMinRooms, setMaxRooms } from 'actions/filters'
 
-const NumberPicker = (props) => {
+const RoomsNumberPicker = (props) => {
+    const { filters, dispatch } = useContext(FiltersContext)
+    const [range, setRange] = useState([])
     const menuHeader = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'any')
-    const { min, max, step, downOffset} = props
+    const { set, min, max, step, downOffset} = props
     const length = Math.ceil((max - min + 1) / step) 
-    const range = Array.from({length}, (_, i) => (1+i) * step).filter((num) => num>=1)
-    console.log(downOffset)
+    
+    useEffect ( () => {
+        switch(set) {
+            case 'min':
+                setRange(Array.from({length}, (_, i) => (1 + i) * step).filter((num) => num <= (filters.search.maxRooms || max) && num >= min))
+                break
+            case 'max':
+                setRange(Array.from({length}, (_, i) => (1 + i) * step).filter((num) => num >= (filters.search.minRooms || min)))
+                break
+            default:
+        }
+    },[filters.search.maxRooms, filters.search.minRooms, length, max, min, set, step])
+  
     const style = {
         top: downOffset,
     }
+
+    const onPick = (num) => {
+        switch(set) {
+            case 'min':
+                dispatch(setMinRooms(num))
+                break
+            case 'max':
+                dispatch(setMaxRooms(num))
+                break
+            default:
+                break
+        }
+    }
     return (
-        <div className="number-picker" dir="rtl" style={style}>
-            <div className="menu-header">
+        <div className="number-picker" style={style}>
+            <div className="menu-header" onClick={() => onPick(undefined)}>
                {menuHeader}
             </div>            
             { range.map((num) => (
-                <div className="number" key={num}>
+                <div className="number" key={num} onClick={() => onPick(num)}>
                 {num}
                 </div>
             ))}
@@ -24,4 +52,4 @@ const NumberPicker = (props) => {
     )
 }
 
-export default NumberPicker
+export default RoomsNumberPicker
