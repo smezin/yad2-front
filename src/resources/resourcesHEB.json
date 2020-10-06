@@ -287,7 +287,8 @@
             "localName": "חדרים",
             "localPlaceHolder": "חדרים",
             "fromLocalName": "מ-",
-            "upToLocalName": "עד-"
+            "upToLocalName": "עד-",
+            "any": "הכל"
         },
         "dealTypeInput": {
             "metaText": "בחרו עסקה",

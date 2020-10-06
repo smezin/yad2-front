@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import onClickOutside from 'react-onclickoutside'
+import NumberPicker from './NumberPicker'
 import fetchFromResource from 'utility/fetchFromResource'
 import { upArrow, downArrow} from 'resources/specialChars'
 
@@ -16,6 +17,7 @@ function RoomsInput (props)
     const toggleUpToDropdown = () => setIsUpToOpen(!isUpToOpen)
     const { parentRect } = props
     const [menuWidth, setMenuWidth] = useState(parentRect !== 0 ? parentRect.right : 0) 
+    const [menuHeight, setMenuHeight] = useState(0)
     
     const setMenuLocation = () => { 
         const menuVisbilityStatus = (menuWidth === 0) ? "hidden" : "visible"
@@ -27,7 +29,14 @@ function RoomsInput (props)
     
     useEffect ( () => {
         const menuRect = document.getElementById('rooms__sub-menu')
-        menuRect ? setMenuWidth(menuRect.getBoundingClientRect().width) : setMenuWidth(0)        
+        if (menuRect) {
+            setMenuWidth(menuRect.getBoundingClientRect().width) 
+            setMenuHeight(menuRect.getBoundingClientRect().height)    
+        } else {
+            setMenuWidth(0) 
+            setMenuHeight(0)
+        }
+           
     },[isMainOpen])
 
     RoomsInput.handleClickOutside = () => {
@@ -44,7 +53,7 @@ function RoomsInput (props)
                 isMainOpen && 
                 <div className="rooms__sub-menu" id="rooms__sub-menu" style={setMenuLocation()}>
                     <div className="rooms__sub-menu__from" onClick={toggleFromDropdown}>
-                        {from} {upArrow} 
+                        {from} {upArrow} <NumberPicker min={1} max={12} step={0.5} downOffset={menuHeight}/>
                     </div>
                     <div className="rooms__sub-menu__upto" onClick={toggleUpToDropdown}>
                         {upTo} {upArrow} 
