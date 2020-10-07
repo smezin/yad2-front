@@ -30,8 +30,43 @@ const SearchBar = () => {
         dispatch(setSearchCategory(category))
     },[category, dispatch])
     
-    console.log('from SearchBar: ', filters)
-    
+    const renderSearchBarByCategory = () => {
+        switch(category) {
+            case 'forsale':
+                return (
+                    <React.Fragment>
+                        <PropertyType category={category}/>
+                        <Rooms />
+                        <Price category={category}/>
+                    </React.Fragment>
+                )
+            case 'rent':
+                return (
+                    <React.Fragment>
+                        <PropertyType category={category}/>
+                        <Rooms />
+                        <Price category={category}/>
+                    </React.Fragment>
+                )
+            case 'roommates':
+                return (
+                    <React.Fragment>
+                        <Price category={category} />
+                        <Rooms />
+                    </React.Fragment>
+                )
+            case 'commercial':
+                return (
+                    <React.Fragment>
+                        <PropertyType category={category}/>
+                        <Price category={category}/>
+                    </React.Fragment>
+                )
+            default:
+                return
+                //send to error handler
+        }
+    }
     return (
         <div className="realestate-search-bar__container">
             <div className="realestate-search-bar__header">
@@ -39,9 +74,7 @@ const SearchBar = () => {
             </div>
             <div className="realestate-search-bar__search-columns">
                 <LocationSearch category={category}/>  
-                <PropertyType category={category}/>
-                <Rooms />
-                <Price category={category}/>
+                {renderSearchBarByCategory()}
                 <AdvancedSearch />
                 <GoSearch />
             </div>            

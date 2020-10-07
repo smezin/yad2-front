@@ -33,7 +33,11 @@ body {
 //serach bar
 .searchBar-button {
     direction: rtl;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
     font-size: $font-size-xs;
+    justify-content: space-around;
     line-height: $std-size * 1.5;
     margin: $searchField-container-spacing;
     margin-top: $std-size * 1.9;

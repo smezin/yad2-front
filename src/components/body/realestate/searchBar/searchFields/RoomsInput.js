@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import onClickOutside from 'react-onclickoutside'
-import RoomsNumberPicker from './NumberPicker'
+import RoomsNumberPicker from '../../../common/NumberPicker'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow} from 'resources/specialChars'

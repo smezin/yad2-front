@@ -6,8 +6,9 @@ import { magnifyingGlass } from 'resources/specialChars'
 const GoSearch = () => {
     const { filters } = useContext(FiltersContext)
     const searchLocalName = fetchFromResource('string', 'realestateSearchBar', 'goSearch', 'localName')
+    const onClick = () => console.log(filters)
     return (
-        <div className="go-search">
+        <div className="go-search" onClick={onClick}>
             {magnifyingGlass}  {searchLocalName}
         </div>
     )
