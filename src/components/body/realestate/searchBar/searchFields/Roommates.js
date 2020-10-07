@@ -3,7 +3,7 @@ import RoommatesInput from './RoommatesInput'
 import fetchFromResource from 'utility/fetchFromResource'
 
 const Roommates = () => {
-    const localHeaderTitle = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'localName')
+    const headerLocalName = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'localName')
     const [parentRect, setParentRect] = useState(0)
     const getRect = () => {
         setParentRect(document.getElementById('roommates') ? document.getElementById('roommates').getBoundingClientRect() : 0)
@@ -18,7 +18,7 @@ const Roommates = () => {
     return (
         <div className='roommates' id="roommates" onClick={getRect}>
             <div className="roommates__header">
-                {localHeaderTitle}
+                {headerLocalName}
             </div>
                 <RoommatesInput parentRect={parentRect} />
         </div>

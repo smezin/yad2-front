@@ -5,6 +5,15 @@ const handleBottomFiltersChanged = () => {
     }, 0)
 }
 
+
+//CLEAR SEARCH
+export const clearSearch = () => ({
+    type: 'CLEAR_SEARCH'
+})
+//CLEAR FILTERS
+export const clearFilters = () => ({
+    type: 'CLEAR_FILTERS'
+})
 //SET CATEGORY
 export const setSearchCategory = (category) => {
     handleBottomFiltersChanged()
@@ -13,13 +22,10 @@ export const setSearchCategory = (category) => {
         category
     }
 }
-//CLEAR SEARCH
-export const clearSearch = () => ({
-    type: 'CLEAR_SEARCH'
-})
-//CLEAR FILTERS
-export const clearFilters = () => ({
-    type: 'CLEAR_FILTERS'
+//SET DEAL TYPES
+export const setDealTypes = (dealTypes) => ({
+    type: 'SET_DEAL_TYPES',
+    dealTypes
 })
 //SET FILTERS
 export const setFilters = (filters) => ({

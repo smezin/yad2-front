@@ -19,22 +19,22 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
     const fullList = Object.keys(allTypesObj).map((propertyType) => allTypesObj[propertyType]['localName'])
     const shortList = fullList.slice(0,7)
     //state control
-    const [isOpen, setIsOpen] = useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [pickedTypes, setPickedTypes] = useState([])   
     const [hasData, setHasData] = useState(false) 
     const [searchBarText, setSearchBarText] = useState(localPlaceholder)
     const [typesToRender, setTypeToRender] = useState(shortList)
     const [isShortList, setIsShortList] = useState(true)
     const [expandCollapseButton, setExpandCollapseButton] = useState(expandLocalName)
-    const toggle = () => {
-        if (!isOpen) {
+    const toggleDropdown = () => {
+        if (!isDropdownOpen) {
             if (isShortList) {
                 setTypeToRender(shortList)
             } else {
                 setTypeToRender(fullList)
             }
         }
-        setIsOpen(!isOpen)
+        setIsDropdownOpen(!isDropdownOpen)
     } 
     useEffect ( ()=> {
         setPickedTypes([])
@@ -56,17 +56,10 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
         setIsShortList(!isShortList)
     }
     const addRemoveType = (propertyType) => {
-        if (pickedTypes.includes(localPlaceholder)) {
-            setPickedTypes([propertyType])
-        } else {
-            if (pickedTypes.includes(propertyType)) {
-                setPickedTypes(pickedTypes.filter((type => type !== propertyType)))
-            } else {
-                setPickedTypes([...pickedTypes, propertyType])
-            }
-        }
+        pickedTypes.includes(propertyType) ?
+            setPickedTypes(pickedTypes.filter((type => type !== propertyType))) :         
+            setPickedTypes([...pickedTypes, propertyType])
     }
-    
     useEffect ( () => {
         switch(pickedTypes.length) {
             case 0:
@@ -81,20 +74,20 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
         }
     },[hasData, localPlaceholder, pickedTypes, multiPickLocalName])
 
-    PropertyTypeInput.handleClickOutside = () => setIsOpen(false)
+    PropertyTypeInput.handleClickOutside = () => setIsDropdownOpen(false)
 
     return (
-        <div className="property-type__container">
-            <div className={`property-type__bar ${hasData?'has-data':''}`} onClick={toggle}>
+        <div className="property-type__input">
+            <div className={`property-type__bar ${hasData?'has-data':''}`} onClick={toggleDropdown}>
                 {searchBarText}
-                {isOpen ? upArrow : downArrow}
+                {isDropdownOpen ? upArrow : downArrow}
             </div>
             {
-                isOpen &&
+                isDropdownOpen &&
                 <div className="property-type__dropdown">
                     {
                         typesToRender.map((propertyType) => (
-                            <div className={`property-type__item${pickedTypes.includes(propertyType) ? "__picked" : ""}`} 
+                            <div className={`dropdown__item${pickedTypes.includes(propertyType) ? "__picked" : ""}`} 
                             onClick={() => addRemoveType(propertyType)} key={propertyType} >
                                 {pickedTypes.includes(propertyType) ? checkedBox : unCheckedBox}{propertyType}
                             </div>

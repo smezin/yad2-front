@@ -6,64 +6,30 @@
     .property-type__input {
         direction: rtl;
         padding-top: $std-size * 0.5;
-        .property-type__container {
-            .property-type__bar {
-                min-width: $std-size * 8;
-                @extend .searchBar-input-bar;
-                .symbol__arrow {
-                    color: black;
-                    font-size: $font-size-xxs;
-                }
-            }
-            .has-data {
-                color: $theme-text-darker;
+        .property-type__bar {
+            min-width: $std-size * 8;
+            @extend .searchBar-input-bar;
+            .symbol__arrow {
+                color: black;
+                font-size: $font-size-xxs;
             }
         }
+        .has-data {
+            color: $theme-text-darker;
+        }
+        
         .property-type__dropdown {
-            border: 1px solid $theme-box-border;
-            box-shadow: $theme-box-shadow;
-            display: grid;
-            grid-auto-flow: column;
+            @extend .dropdown-with-checkboxes;
             grid-template-columns: repeat(3, auto);
             grid-template-rows: repeat(7, 1fr);
-            font-size: $font-size-xs;
-            padding: $std-size;
-            padding-bottom: $std-size * 2;
-            position: absolute;
-            width: auto;
-            z-index: 10;
-            .property-type__item {
-                line-height: $std-size;
-                padding: $std-size * 0.3 0;
-                min-width: $std-size * 10;
-                white-space: nowrap;
-                &:hover {
-                    .checkbox {
-                        color: $theme-main-color;
-                    }
-                }
-            }
-            .property-type__item__picked {
-                @extend .property-type__item;
-                .checkbox {
-                    color: $theme-main-color;
-                }
-                &:hover {
-                    .checkbox {
-                        color: darken($theme-main-color, 8%);
-                    }
-                }
-            }
-            .checkbox {
-                font-size: $font-size-m;
-                margin-left: $std-size * 0.5;
-                vertical-align: middle;
-            }
+            padding-bottom: $std-size * 1.8 !important;
+            
         }
         .expand-collapse-button {
-            bottom: $std-size * 0.5;            
+            bottom: $std-size * 0.6;            
             color: $theme-main-color;
             cursor: pointer;
+            display: flex;
             font-size: $font-size-xs;
             position: absolute;
             right: $std-size * 1.8;            

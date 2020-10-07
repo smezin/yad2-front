@@ -4,12 +4,12 @@ import fetchFromResource from 'utility/fetchFromResource'
 
 const LocationSearch = (props) => {
     const { category } = props
-    const localHeaderTitle = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localTitle') 
+    const headerLocalName = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localTitle') 
 
     return (
         <div className="location-search">
             <div className="location-search__header">
-                {localHeaderTitle}
+                {headerLocalName}
             </div>
             <div className="location-search__input">
                 <LocationSearchInput category={category}/>

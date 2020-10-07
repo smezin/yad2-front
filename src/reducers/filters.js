@@ -40,9 +40,7 @@ export const filtersReducer = (state, action) => {
           }
       }
   
-    case 'SET_FILTERS':
-            return action.filters
-
+    
     case 'SET_CATEGORY':
         return {
             ...state,
@@ -60,6 +58,18 @@ export const filtersReducer = (state, action) => {
             location: action.location
         }
     }
+    case 'SET_DEAL_TYPES':
+        return {
+            ...state,
+            search: {
+                ...state.search,
+                types: [action.dealTypes]
+            }
+        }
+
+    case 'SET_FILTERS':
+        return action.filters
+
     case 'SET_LOCATION_CURRENT_TEXT':
         return {
             ...state,

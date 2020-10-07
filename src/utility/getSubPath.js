@@ -1,3 +1,5 @@
+//get the next piece of URL (from fullPath) thats after 'path'
+
 const getSubPath = (fullPath, path) => {
     if (fullPath.includes(path)) {
         const startOfSubPath = fullPath.indexOf(path) + path.length + 1

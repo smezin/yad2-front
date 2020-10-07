@@ -4,15 +4,13 @@ import fetchFromResource from 'utility/fetchFromResource'
 
 const PropertyType = (props) => {
     const { category } = props
-    const localHeaderTitle = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localName')
+    const headerLocalName = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localName')
     return(
         <div className="property-type">
             <div className="property-type__header" dir="rtl">
-                {localHeaderTitle}
+                {headerLocalName}
             </div>
-            <div className="property-type__input" dir="rtl">
                 <PropertyTypeInput category={category}/>
-            </div>
         </div>
     )
 }

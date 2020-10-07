@@ -6,6 +6,7 @@ import PropertyType from './searchFields/PropertyType'
 import Roommates from './searchFields/Roommates'
 import Rooms from './searchFields/Rooms'
 import Price from './searchFields/Price'
+import DealType from './searchFields/DealType'
 import getSubPath from 'utility/getSubPath'
 import GoSearch from './GoSearch'
 import AdvancedSearch from './AdvancedSearch'
@@ -60,6 +61,7 @@ const SearchBar = () => {
             case 'commercial':
                 return (
                     <React.Fragment>
+                        <DealType category={category}/>
                         <PropertyType category={category}/>
                         <Price category={category}/>
                     </React.Fragment>

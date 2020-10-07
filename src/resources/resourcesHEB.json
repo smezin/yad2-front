@@ -308,9 +308,10 @@
         "goSearch": {
             "localName": "חיפוש"
         },
-        "dealTypeInput": {
+        "dealType": {
             "localName": "בחרו עסקה",
             "localPlaceholder": "סוג עסקה",
+            "multiPickLocalName": "עסקאות",
             "types": {
                 "forsale": {"localName": "מכירה"},
                 "rent": {"localName": "השכרה"}
