@@ -1,8 +1,28 @@
 .advanced-search {
-    @extend .searchBar-button;
-    background: $theme-selected;
-    .symbol__circled-plus {
-        mix-blend-mode: multiply;
-        padding-left: $std-size * 0.5;
+    .advanced-search__button {
+        @extend .searchBar-button;
+        background: $theme-selected;
+        .button-text {
+            background-color: inherit;
+            margin-right: $std-size * 0.4;
+        }
+        .symbol-wrapper {
+            background-color: inherit;
+        }
+        .symbol-wrapper__rotate-open {
+            background-color: inherit;
+            transform: rotate(45deg);
+            transition-duration: 2s;
+        }
+        .symbol-wrapper__rotate-close {
+            background-color: inherit;
+            transform: rotate(0);
+            transition-duration: 2s;
+        }
+        .symbol__circled-plus {
+            mix-blend-mode: multiply;
+            margin-left: $std-size * 0.5;
+        }
     }
+    
 }

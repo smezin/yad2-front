@@ -317,5 +317,65 @@
                 "rent": {"localName": "השכרה"}
             }
         }
+    },
+    "advancedSearch": {
+        "localName": "מאפייני דירה",
+        "forsale": {
+            "pandorDoors": {"localName": "דלתות פנדור"},
+            "parking": {"localName": "חניה"},
+            "elevator": {"localName": "מעלית"},
+            "airConditioning": {"localName": "מיזוג"},
+            "balcony": {"localName": "מרפסת"},
+            "secureRoom": {"localName": "ממ\"ד"},
+            "bars": {"localName": "סורגים"},
+            "storage": {"localName": "מחסן"},
+            "disabledFriendly": {"localName": "גישה לנכים"},
+            "reconditioned": {"localName": "משופצת"},
+            "furnished": {"localName": "מרוהטת"},
+            "exclusive": {"localName": "בבלעדיות"}
+            },
+        "rent": {
+            "pandorDoors": {"localName": "דלתות פנדור"},
+            "parking": {"localName": "חניה"},
+            "elevator": {"localName": "מעלית"},
+            "airConditioning": {"localName": "מיזוג"},
+            "balcony": {"localName": "מרפסת"},
+            "secureRoom": {"localName": "ממ\"ד"},
+            "bars": {"localName": "סורגים"},
+            "storage": {"localName": "מחסן"},
+            "disabledFriendly": {"localName": "גישה לנכים"},
+            "reconditioned": {"localName": "משופצת"},
+            "furnished": {"localName": "מרוהטת"},
+            "petsFriendly": {"localName": "חיות מחמד"},
+            "roommates": {"localName": "לשותפים"},
+            "longTerm": {"localName": "לטווח ארוך"},
+            "exclusive": {"localName": "בבלעדיות"}
+        },
+        "roommates": {
+            "parking": {"localName": "חניה"},
+            "elevator": {"localName": "מעלית"},
+            "airConditioning": {"localName": "מיזוג"},
+            "balcony": {"localName": "מרפסת"},
+            "secureRoom": {"localName": "ממ\"ד"},
+            "bars": {"localName": "סורגים"},
+            "storage": {"localName": "מחסן"},
+            "disabledFriendly": {"localName": "גישה לנכים"},
+            "reconditioned": {"localName": "משופצת"},
+            "furnished": {"localName": "מרוהטת"},
+            "petsFriendly": {"localName": "חיות מחמד"},
+            "nonSmoker": {"localName": "שותף לא מעשן"},
+            "kosherKeeper": {"localName": "שומר כשרות"}
+        },
+        "commercial": {
+            "parking": {"localName": "חניה"},
+            "elevator": {"localName": "מעלית"},
+            "airConditioning": {"localName": "מיזוג"},
+            "furnished": {"localName": "מרוהטת"},
+            "storage": {"localName": "מחסן"},
+            "balcony": {"localName": "מרפסת"},
+            "disabledFriendly": {"localName": "גישה לנכים"},
+            "rental": {"localName": "נכס מניב"},
+            "exclusive": {"localName": "בבלעדיות"}
+        }
     }
 }

@@ -12,7 +12,10 @@ const Roommates = () => {
         const resizeListener = () => {
             getRect()
         }
-        window.addEventListener('resize', resizeListener);
+        window.addEventListener('resize', resizeListener)
+        return function cleanup () {
+            window.removeEventListener('resize', resizeListener)
+        }
     },[])
     
     return (

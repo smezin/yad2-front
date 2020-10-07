@@ -22,9 +22,26 @@ const SearchBar = () => {
     const allCategories = fetchFromResource('object', 'realestateSearchBar', 'header', 'headerLinks') 
     const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
     const { dispatch } = useContext(FiltersContext)
+    const [parentRect, setParentRect] = useState()
+
     useEffect( () => {
         allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
     },[location, allCategoriesNames, categoryFromPath])
+
+    const getRect = () => {
+        setParentRect(document.getElementById('realestate-search-bar__container') ? 
+            document.getElementById('realestate-search-bar__container').getBoundingClientRect() : 0)
+    }
+    useEffect(() => {
+        getRect()
+        const resizeListener = () => {
+            getRect()
+        }
+        window.addEventListener('resize', resizeListener)
+        return function cleanup () {
+            window.removeEventListener('resize', resizeListener)
+        }
+    },[])
 
     //clear search when changing category (forsale, rent ....)
     useEffect( () => {
@@ -72,14 +89,14 @@ const SearchBar = () => {
         }
     }
     return (
-        <div className="realestate-search-bar__container">
+        <div className="realestate-search-bar__container" id="realestate-search-bar__container">
             <div className="realestate-search-bar__header">
                 <SearchBarHeader />
             </div>
             <div className="realestate-search-bar__search-columns">
                 <LocationSearch category={category}/>  
                 {renderSearchBarByCategory()}
-                <AdvancedSearch />
+                <AdvancedSearch parentRect={parentRect}/>
                 <GoSearch />
             </div>            
         </div>
