@@ -8,8 +8,8 @@
         padding-top: $std-size * 0.5;
         .property-type__container {
             .property-type__bar {
-                @extend .searchBar-input-bar;
                 min-width: $std-size * 8;
+                @extend .searchBar-input-bar;
                 .symbol__arrow {
                     color: black;
                     font-size: $font-size-xxs;

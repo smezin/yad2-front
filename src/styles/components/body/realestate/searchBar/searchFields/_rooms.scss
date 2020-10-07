@@ -5,10 +5,11 @@
     }
     .rooms__input {
         direction: rtl;
+        max-width: $std-size * 9;
+        min-width: $std-size * 5;
         padding-top: $std-size * 0.5;
         .rooms-bar {
             @extend .searchBar-input-bar;
-            min-width: $std-size * 5;
             .symbol__arrow {
                 color: black;
                 font-size: $font-size-xxs;
