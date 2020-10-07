@@ -18,49 +18,7 @@
         .has-data {
             color: $theme-text-darker;
         }   
-        .rooms__sub-menu {
-            @extend .flex-center;
-            box-shadow: $theme-box-shadow;
-            flex-direction: row; 
-            padding: $std-size;
-            position: absolute;
-            width: $std-size * 10;
-            .rooms__sub-menu__from {
-                border: 1px solid $theme-box-border;
-                color: lighten($theme-text, 30%);
-                display: flex;
-                font-size: $font-size-xxs;
-                justify-content: space-between;
-                line-height: $std-size * 2;
-                padding-right: $std-size * 0.3;
-                width: 50%;
-                .symbol__arrow {
-                    mix-blend-mode: multiply;
-                    margin: 0 $std-size * 0.5;
-                }
-            }
-            .rooms__sub-menu__upto {
-                @extend .rooms__sub-menu__from
-            }  
-            .number-picker {
-                border: 1px $theme-box-border solid;
-                display: flex;
-                flex-direction: column;
-                max-height: $std-size * 17;
-                overflow-y: scroll;
-                position: absolute;
-                .menu-header {
-                    @extend .number;
-                    padding-top: $std-size *5;
-                }
-                .number {
-                    padding: $std-size * 0.4 $std-size * 0.5 0 $std-size * 1.5;
-                    &:hover {
-                        background: $theme-selected;
-                    }
-                }
-            } 
-        }    
+     
     }
 }
     

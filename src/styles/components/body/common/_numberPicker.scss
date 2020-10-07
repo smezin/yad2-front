@@ -1,0 +1,18 @@
+.number-picker {
+    border: 1px $theme-box-border solid;
+    display: flex;
+    flex-direction: column;
+    max-height: $std-size * 17;
+    overflow-y: scroll;
+    position: absolute;
+    .menu-header {
+        @extend .number;
+        padding-top: $std-size *5;
+    }
+    .number {
+        padding: $std-size * 0.4 $std-size * 0.5 0 $std-size * 1.5;
+        &:hover {
+            background: $theme-selected;
+        }
+    }
+} 

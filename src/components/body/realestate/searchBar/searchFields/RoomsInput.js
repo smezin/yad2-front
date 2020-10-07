@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
 import onClickOutside from 'react-onclickoutside'
-import RoomsNumberPicker from '../../../common/NumberPicker'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow} from 'resources/specialChars'
+import FromToInput from 'components/body/common/FromToInput'
 
 function RoomsInput (props)  
 {
@@ -15,40 +15,11 @@ function RoomsInput (props)
     const [from, setFrom] = useState(fromPlaceHolder)
     const [upTo, setUpTo] = useState(upToPlaceHolder)
     const [isMainOpen, setIsMainOpen] = useState(false)
-    const [isFromOpen, setIsFromOpen] = useState(false)
-    const [isUpToOpen, setIsUpToOpen] = useState(false)
     const [hasData, setHasData] = useState(false)
     const toggleMainDropdown = () => setIsMainOpen(!isMainOpen)
     
-    const toggleFromDropdown = (() => {
-        setIsFromOpen(!isFromOpen)
-        setIsUpToOpen(false)
-    })
-    const toggleUpToDropdown = (() => {
-        setIsUpToOpen(!isUpToOpen)
-        setIsFromOpen(false)
-    })
     const { parentRect } = props
-    const [menuWidth, setMenuWidth] = useState(parentRect !== 0 ? parentRect.right : 0) 
-    const [menuHeight, setMenuHeight] = useState(0)
-    
-    const setMenuLocation = () => { 
-        const menuVisbilityStatus = (menuWidth === 0) ? "hidden" : "visible"
-        return {
-            left: parentRect.left - (menuWidth - parentRect.width)/2,
-            visibility: menuVisbilityStatus
-        } 
-    }
-    useEffect ( () => {
-        const menuRect = document.getElementById('rooms__sub-menu')
-        if (menuRect) {
-            setMenuWidth(menuRect.getBoundingClientRect().width) 
-            setMenuHeight(menuRect.getBoundingClientRect().height)    
-        } else {
-            setMenuWidth(0) 
-            setMenuHeight(0)
-        }  
-    },[isMainOpen])
+  
     //updating dispalys on main input bar and rooms number sub selectors
     useEffect ( () => {
         if (typeof(from) === 'number' && typeof(upTo) === 'string') {
@@ -75,8 +46,14 @@ function RoomsInput (props)
 
     RoomsInput.handleClickOutside = () => {
         setIsMainOpen(false)
-        setIsFromOpen(false)
-        setIsUpToOpen(false)
+    }
+    const subMenuSpecs = {
+        min: 1,
+        max: 12,
+        step: 0.5,
+        from,
+        upTo,
+        parentRect,
     }
     return (
         <div className="rooms__input">
@@ -84,22 +61,8 @@ function RoomsInput (props)
                 {mainInput}{isMainOpen ? upArrow : downArrow}
             </div>
             {
-                isMainOpen && 
-                <div className="rooms__sub-menu" id="rooms__sub-menu" style={setMenuLocation()}>
-                    <div className="rooms__sub-menu__from" onClick={toggleFromDropdown}>
-                        {from} {upArrow} 
-                        {   isFromOpen &&
-                            <RoomsNumberPicker set="min" min={1} max={12} step={0.5} downOffset={menuHeight}/>
-                        }
-                    </div>
-                    <div className="rooms__sub-menu__upto" onClick={toggleUpToDropdown}>
-                        {upTo} {upArrow}
-                        {   isUpToOpen &&
-                            <RoomsNumberPicker set="max" min={1} max={12} step={0.5} downOffset={menuHeight}/>
-                        }
-                    </div>
-
-                </div>
+                isMainOpen &&                
+                <FromToInput  menuSpecs={subMenuSpecs}/>
             }
         </div>
         
@@ -109,3 +72,4 @@ const clickOutsideConfig = {
     handleClickOutside: () => RoomsInput.handleClickOutside
 }   
 export default onClickOutside(RoomsInput, clickOutsideConfig)
+
