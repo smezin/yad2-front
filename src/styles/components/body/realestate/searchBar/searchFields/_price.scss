@@ -21,9 +21,6 @@
             @extend .price__min;
             grid-area: min-price;
         }
-        .picked {
-            color: $theme-text-darker;
-        }
     }
     
 }

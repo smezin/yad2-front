@@ -59,6 +59,9 @@
     flex-grow: 1;
     flex-shrink: 1;
     padding: $searchField-container-spacing;
+    .has-data {
+        color: $theme-text-darker !important;
+    }  
 }
 .searchBar-header {
     color: $theme-text;

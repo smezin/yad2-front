@@ -82,10 +82,10 @@ const Price = (props) => {
               {headerLocalName}
             </div>
             <div className="price__input-container">
-                <input className={`price__min ${minPriceDisplay !== minPricePlaceHolder ? 'picked':''}`} type="text" value={minPriceDisplay} 
+                <input className={`price__min ${minPriceDisplay !== minPricePlaceHolder ? 'has-data':''}`} type="text" value={minPriceDisplay} 
                 onChange={(e) => handleChange(e, 'min')} onFocus={(e) => clearPlaceHolder(e, 'min')} onBlur={(e) => onBlur(e, 'min')} />
-                <input className={`price__max ${maxPriceDisplay !== maxPricePlaceHolder ? 'picked':''}`} type="text" value={maxPriceDisplay} onChange={(e) => handleChange(e, 'max')} 
-                onFocus={(e) => clearPlaceHolder(e, 'max')} onBlur={(e) => onBlur(e, 'max')} />
+                <input className={`price__max ${maxPriceDisplay !== maxPricePlaceHolder ? 'has-data':''}`} type="text" value={maxPriceDisplay} 
+                onChange={(e) => handleChange(e, 'max')} onFocus={(e) => clearPlaceHolder(e, 'max')} onBlur={(e) => onBlur(e, 'max')} />
             </div>
         </div>
     )

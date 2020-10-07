@@ -23,6 +23,7 @@ const LocationSearchInput = (props) => {
       .catch(error => console.error('Error', error)) //remove to global error handler
     setAddress( address )
   }
+
   useEffect ( () => {
     setAddress('')
   },[category])
@@ -38,11 +39,11 @@ const LocationSearchInput = (props) => {
       onSelect={handleSelect}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-        <div className="location-input__container" dir="rtl">
+        <div className="location-input__container">
           <input spellCheck="false"
             {...getInputProps({
               placeholder: localPlaceholder,
-              className: 'location-input__bar',
+              className: `location-input__bar ${address === '' ? '' : 'has-data'}`,
             })}
           />
           <div id="autocomplete-dropdown-container" >

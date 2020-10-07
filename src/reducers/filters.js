@@ -143,7 +143,6 @@ export const filtersReducer = (state, action) => {
           }
       }
     case 'SET_MIN_ROOMMATES':
-        console.log('reducer ', action.minRoommates)
       return {
           ...state,
           search: {
