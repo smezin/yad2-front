@@ -9,4 +9,4 @@ export const heart = <span className="symbol__heart">&#9825;</span>
 export const doubleArrow = <span className="symbol__double-arrow">&#8644;</span>
 export const circledPlus = <span className="symbol__circled-plus">&#8853;</span>
 export const circledX = <span className="symbol__circled-x">&#10754;</span>
-export const magnifyingGlass = <span className="symbol__magnifying-glass">&#128269;</span>
+export const magnifyingGlass = <span className="symbol__magnifying-glass" style={{transform: "rotate(-90deg)"}} >&#8981;</span>

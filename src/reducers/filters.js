@@ -88,7 +88,7 @@ export const filtersReducer = (state, action) => {
           ...state,
           search: {
               ...state.search,
-              maxRoommates: action.Roommates
+              maxRoommates: action.maxRoommates
           }
       }
     case 'SET_MAX_ROOMS':
@@ -133,11 +133,12 @@ export const filtersReducer = (state, action) => {
           }
       }
     case 'SET_MIN_ROOMMATES':
+        console.log('reducer ', action.minRoommates)
       return {
           ...state,
           search: {
               ...state.search,
-              minRoommates: action.Roommates
+              minRoommates: action.minRoommates
           }
       }
     case 'SET_MIN_ROOMS':

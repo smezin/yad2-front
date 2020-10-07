@@ -13,11 +13,14 @@ const Rooms = () => {
             getRect()
         }
         window.addEventListener('resize', resizeListener);
+        return function cleanup () {
+            window.removeEventListener('resize', resizeListener)
+        }
     },[])
     
     return(
         <div className="rooms" id="rooms" onClick={getRect}>
-            <div className="rooms__header" dir="rtl">
+            <div className="rooms__header" >
                 {localHeaderTitle}
             </div>
             <RoomsInput parentRect = {parentRect}/>

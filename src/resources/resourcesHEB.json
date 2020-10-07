@@ -290,6 +290,13 @@
             "upToLocalName": "עד-",
             "any": "הכל"
         },
+        "roommates": {
+            "localName": "שותפים",
+            "localPlaceHolder": "שותפים",
+            "fromLocalName": "מ-",
+            "upToLocalName": "עד-",
+            "any": "הכל"
+        },
         "price": {
             "localName": "מחיר בש\"ח",
             "minPriceLocalName": "ממחיר",
@@ -302,20 +309,12 @@
             "localName": "חיפוש"
         },
         "dealTypeInput": {
-            "metaText": "בחרו עסקה",
-            "placeholder": "סוג עסקה",
-            "types": [
-                {
-                    "name": "forsale",
-                    "localName": "מכירה"
-                },
-                {
-                    "name": "rent",
-                    "localName": "השכרה"
-                }
-            ]
+            "localName": "בחרו עסקה",
+            "localPlaceholder": "סוג עסקה",
+            "types": {
+                "forsale": {"localName": "מכירה"},
+                "rent": {"localName": "השכרה"}
+            }
         }
-
-        
     }
 }

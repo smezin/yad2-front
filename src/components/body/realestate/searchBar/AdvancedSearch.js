@@ -4,7 +4,7 @@ import { circledPlus } from 'resources/specialChars'
 
 const AdvancedSearch = () => {
 
-    const [buttonText, setButtonText] = useState(fetchFromResource('string', 'realestateSearchBar', 'advancedSearch', 'localName'))
+    const [buttonText] = useState(fetchFromResource('string', 'realestateSearchBar', 'advancedSearch', 'localName'))
 
 
     return (

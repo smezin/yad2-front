@@ -32,6 +32,7 @@ body {
 }
 //serach bar
 .searchBar-button {
+    cursor: pointer;
     direction: rtl;
     display: flex;
     flex-grow: 1;
@@ -66,7 +67,7 @@ body {
     display: flex;
     flex-grow: 1;
     flex-shrink: 1;
-    font-size: $font-size-xxs;
+    font-size: $font-size-xs;
     justify-content: space-between;
     line-height: $std-size;
     padding: $std-size * 0.6;

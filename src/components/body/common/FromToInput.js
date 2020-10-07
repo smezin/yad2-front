@@ -4,10 +4,9 @@ import { upArrow, downArrow} from 'resources/specialChars'
 
 const FromToInput = (props) => {
     const { menuSpecs } = props
-    const { from, upTo, min, max, step, parentRect} = menuSpecs
+    const { from, upTo, parentRect} = menuSpecs
     const [isFromOpen, setIsFromOpen] = useState(false)
     const [isUpToOpen, setIsUpToOpen] = useState(false)
-    const [hasData, setHasData] = useState(false)
     const [menuWidth, setMenuWidth] = useState(parentRect.right) 
     const [menuHeight, setMenuHeight] = useState(0)
 
@@ -21,7 +20,6 @@ const FromToInput = (props) => {
     })
 
     const setMenuLocation = () => { 
-        console.log(menuWidth)
         const menuVisbilityStatus = (menuWidth === parentRect.right) ? "hidden" : "visible"
         return {
             left: parentRect.left - (menuWidth - parentRect.width)/2,
@@ -39,19 +37,19 @@ const FromToInput = (props) => {
             setMenuHeight(0)
         }  
     },[])
-
+  
     return ( 
     <div className="from-to-input" id="from-to-input" style={setMenuLocation()}>
         <div className="from-to-input__from" onClick={toggleFromDropdown}>
             {from} {isFromOpen ? downArrow : upArrow} 
             {   isFromOpen &&
-                <NumberPicker set="min" min={min} max={max} step={step} downOffset={menuHeight}/>
+                <NumberPicker set="min" menuSpecs = {menuSpecs} downOffset={menuHeight}/>
             }
         </div>
         <div className="from-to-input__upto" onClick={toggleUpToDropdown}>
             {upTo} {isUpToOpen ? downArrow : upArrow}
             {   isUpToOpen &&
-                <NumberPicker set="max" min={min} max={max} step={step} downOffset={menuHeight}/>
+                <NumberPicker set="max" menuSpecs = {menuSpecs} downOffset={menuHeight}/>
             }
         </div>
 

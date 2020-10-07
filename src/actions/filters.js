@@ -73,8 +73,8 @@ export const setMinPrice = (minPrice) => ({
 })
 //SET MIN ROOMMATES
 export const setMinRoommates = (minRoommates) => ({
-    type: 'SET_MIN_ROOMMATES',
-    minRoommates
+        type: 'SET_MIN_ROOMMATES',
+        minRoommates
 })
 //SET MIN ROOMS
 export const setMinRooms = (minRooms) => ({

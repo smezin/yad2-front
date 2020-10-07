@@ -1,8 +1,16 @@
 .go-search {
     @extend .searchBar-button;
     background: $theme-main-color;
-    color: white;
+    .header {
+        background: inherit;
+        color: white;
+        padding-right: $std-size * 0.5;
+    }
     .symbol__magnifying-glass {
-        mix-blend-mode: multiply;
+        font-size: $font-size-l;
+        mix-blend-mode: multiply;      
+    }
+    &:hover {
+        background: darken($theme-main-color, 10%);
     }
 }

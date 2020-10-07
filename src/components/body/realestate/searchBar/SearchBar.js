@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import SearchBarHeader from './SerachBarHeader'
 import LocationSearch from './searchFields/Location'
 import PropertyType from './searchFields/PropertyType'
+import Roommates from './searchFields/Roommates'
 import Rooms from './searchFields/Rooms'
 import Price from './searchFields/Price'
 import getSubPath from 'utility/getSubPath'
@@ -19,7 +20,7 @@ const SearchBar = () => {
     const categoryFromPath = getSubPath(pathname, '/realestate')
     const allCategories = fetchFromResource('object', 'realestateSearchBar', 'header', 'headerLinks') 
     const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
-    const { filters, dispatch } = useContext(FiltersContext)
+    const { dispatch } = useContext(FiltersContext)
     useEffect( () => {
         allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
     },[location, allCategoriesNames, categoryFromPath])
@@ -52,6 +53,7 @@ const SearchBar = () => {
                 return (
                     <React.Fragment>
                         <Price category={category} />
+                        <Roommates category={category} />
                         <Rooms />
                     </React.Fragment>
                 )
