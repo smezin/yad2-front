@@ -4,8 +4,7 @@ import { FiltersContext } from 'context/FiltersContext'
 import FromToInput from 'components/body/common/FromToInput'
 import { setMinFloor, setMaxFloor } from 'actions/filters'
 
-function FloorPickerInput (props)  
-{
+const FloorPickerInput = (props) => {
     const { filters } = useContext(FiltersContext)
     const fromPlaceHolder = fetchFromResource('string', 'advancedSearch', 'floor', 'fromLocalName')
     const upToPlaceHolder = fetchFromResource('string', 'advancedSearch', 'floor', 'upToLocalName')

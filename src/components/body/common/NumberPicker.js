@@ -22,22 +22,26 @@ const NumberPicker = (props) => {
         }
     },[dispatch, filters.search, min, max, set, minFilter, maxFilter, step])
   
-    const onPick = (num) => {
-        if (toggleNumOfPicks) {
-            num === undefined ? toggleNumOfPicks('dec') : toggleNumOfPicks('inc')
-        }
+    const clearPick = () => {
+        onPick(undefined)
+    }
+    const onPick = (pickedNum) => {
         switch(set) {
             case 'min':
-                return dispatch(setMin(num))
+                (filters.search[minFilter] === undefined && pickedNum !== undefined) && toggleNumOfPicks('inc');
+                (filters.search[minFilter] !== undefined && pickedNum === undefined) && toggleNumOfPicks('dec')
+                return dispatch(setMin(pickedNum))
             case 'max':
-                return dispatch(setMax(num))
+                (filters.search[maxFilter] === undefined && pickedNum !== undefined) && toggleNumOfPicks('inc');
+                (filters.search[maxFilter] !== undefined && pickedNum === undefined) && toggleNumOfPicks('dec')
+                return dispatch(setMax(pickedNum))
             default:
         }
     }
    
     return (
         <div className="number-picker" style={style}>
-            <div className="menu-header" onClick={() => onPick(undefined)}>
+            <div className="menu-header" onClick={() => clearPick()}>
                {numbersHeader}
             </div>            
             {range.map((num) => (
