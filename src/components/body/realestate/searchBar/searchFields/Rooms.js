@@ -6,7 +6,8 @@ const Rooms = () => {
     const localHeaderTitle = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'localName')
     const [parentRect, setParentRect] = useState(0)
     const getRect = () => {
-        setParentRect(document.getElementById('rooms') ? document.getElementById('rooms').getBoundingClientRect() : 0)
+        const rect = document.getElementById('rooms').getBoundingClientRect()
+        setParentRect(rect ? rect : 0)
     }
     useEffect(() => {
         const resizeListener = () => {

@@ -2,7 +2,7 @@
     background: $theme-background-header;
     box-shadow: $theme-box-shadow-searchbar;
     margin-top: $std-size * 1.5;
-    padding: $std-size * 1.0;
+    padding: $searchbar-padding;
     .realestate-search-bar__header {
         direction: rtl;
         display: flex;

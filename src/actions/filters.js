@@ -102,6 +102,10 @@ export const setPropertyTypes = (propertyType) => ({
     type: 'SET_PROPERTY_TYPES',
     propertyType
 })
+export const setProperties = (properties) => ({
+    type: 'SET_PROPERTIES',
+    properties
+})
 //SORT BY DATE
 export const sortByDate = () => {
     handleBottomFiltersChanged()

@@ -13,6 +13,7 @@ function RoommatesInput (props)
     const localPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'localPlaceHolder')
     const fromPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'fromLocalName')
     const upToPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'upToLocalName')
+    const numbersHeader = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'any')
     const [mainInput, setMainInput] = useState(localPlaceHolder)
     const [fromText, setFromText] = useState(fromPlaceHolder)
     const [upToText, setUpToText] = useState(upToPlaceHolder)
@@ -38,6 +39,7 @@ function RoommatesInput (props)
         setIsMainOpen(false)
     }
     const subMenuSpecs = {
+        numbersHeader,
         min: 2,
         max: 5,
         step: 1,

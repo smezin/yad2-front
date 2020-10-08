@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import RoommatesInput from './RoommatesInput'
+import FloorPickerInput from './FloorPickerInput'
 import fetchFromResource from 'utility/fetchFromResource'
 
-const Roommates = () => {
-    const headerLocalName = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'localName')
+const FloorPicker = () => {
+    const headerLocalName = fetchFromResource('string', 'advancedSearch', 'floor', 'localName')
     const [parentRect, setParentRect] = useState(0)
     const getRect = () => {
-        const rect = document.getElementById('roommates') 
+        const rect = document.getElementById('flooer-picker') 
         setParentRect(rect ? rect : 0)
     }
     useEffect(() => {
@@ -20,12 +20,12 @@ const Roommates = () => {
     },[])
     
     return (
-        <div className='roommates' id="roommates" onClick={getRect}>
-            <div className="roommates__header">
+        <div className='floor-picker' id="floor-picker" onClick={getRect}>
+            <div className="floorPicker__header">
                 {headerLocalName}
             </div>
-                <RoommatesInput parentRect={parentRect} />
+                {/* <FloorPickerInput parentRect={parentRect} /> */}
         </div>
     )
 }
-export default Roommates
+export default FloorPicker

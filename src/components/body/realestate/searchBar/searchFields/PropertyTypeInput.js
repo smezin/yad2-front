@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import onClickOutside from 'react-onclickoutside'
 import fetchFromResource from 'utility/fetchFromResource'
-import { setPropertyTypes, clearSearch } from 'actions/filters'
+import { setPropertyTypes } from 'actions/filters'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow, checkedBox, unCheckedBox } from 'resources/specialChars'
 
@@ -38,7 +38,6 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
     } 
     useEffect ( ()=> {
         setPickedTypes([])
-        dispatch(clearSearch())
     },[category, dispatch])
 
     useEffect ( () => {
@@ -57,7 +56,7 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
     }
     const addRemoveType = (propertyType) => {
         pickedTypes.includes(propertyType) ?
-            setPickedTypes(pickedTypes.filter((type => type !== propertyType))) :         
+            setPickedTypes(pickedTypes.filter(type => type !== propertyType)) :         
             setPickedTypes([...pickedTypes, propertyType])
     }
     useEffect ( () => {

@@ -5,11 +5,9 @@ import setRangeFromMinMaxStep from 'utility/setRangeFromMinMaxStep'
 
 const NumberPicker = (props) => {
     const { menuSpecs, downOffset, set } = props
-    const { setMin, setMax, minFilter, maxFilter, min, max, step } = menuSpecs
+    const { setMin, setMax, minFilter, maxFilter, min, max, step, numbersHeader } = menuSpecs
     const { filters, dispatch } = useContext(FiltersContext)
     const [range, setRange] = useState([])
-    const menuHeader = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'any')
-   // const { downOffset} = props
   
     useEffect ( () => {
         switch(set) {
@@ -40,7 +38,7 @@ const NumberPicker = (props) => {
     return (
         <div className="number-picker" style={style}>
             <div className="menu-header" onClick={() => onPick(undefined)}>
-               {menuHeader}
+               {numbersHeader}
             </div>            
             { range.map((num) => (
                 <div className="number" key={num} onClick={() => onPick(num)}>

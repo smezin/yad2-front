@@ -40,7 +40,6 @@ export const filtersReducer = (state, action) => {
           }
       }
   
-    
     case 'SET_CATEGORY':
         return {
             ...state,
@@ -172,6 +171,14 @@ export const filtersReducer = (state, action) => {
             search: {
                 ...state.search,
                 types: [action.propertyType]
+            }
+        }
+    case 'SET_PROPERTIES':
+        return {
+            ...state,
+            search: {
+                ...state.search,
+                properties: action.properties
             }
         }
     case 'SET_TEXT':

@@ -4,12 +4,12 @@ import { upArrow, downArrow} from 'resources/specialChars'
 
 const FromToInput = (props) => {
     const { menuSpecs } = props
-    const { from, upTo, parentRect} = menuSpecs
+    const { from, upTo, parentRect, header} = menuSpecs
     const [isFromOpen, setIsFromOpen] = useState(false)
     const [isUpToOpen, setIsUpToOpen] = useState(false)
     const [menuWidth, setMenuWidth] = useState(parentRect.right) 
     const [menuHeight, setMenuHeight] = useState(0)
-
+    console.log(parentRect)
     const toggleFromDropdown = (() => {
         setIsFromOpen(!isFromOpen)
         setIsUpToOpen(false)
@@ -43,13 +43,13 @@ const FromToInput = (props) => {
         <div className="from-to-input__from" onClick={toggleFromDropdown}>
             {from} {isFromOpen ? downArrow : upArrow} 
             {   isFromOpen &&
-                <NumberPicker set="min" menuSpecs = {menuSpecs} downOffset={menuHeight}/>
+                <NumberPicker set="min" menuSpecs = {menuSpecs} downOffset={menuHeight} header={header} />
             }
         </div>
         <div className="from-to-input__upto" onClick={toggleUpToDropdown}>
             {upTo} {isUpToOpen ? downArrow : upArrow}
             {   isUpToOpen &&
-                <NumberPicker set="max" menuSpecs = {menuSpecs} downOffset={menuHeight}/>
+                <NumberPicker set="max" menuSpecs = {menuSpecs} downOffset={menuHeight} header={header} />
             }
         </div>
 

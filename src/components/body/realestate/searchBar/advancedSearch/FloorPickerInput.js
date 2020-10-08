@@ -5,15 +5,15 @@ import setFromToInputDisplay from 'utility/setFromToInputDisplay'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow} from 'resources/specialChars'
 import FromToInput from 'components/body/common/FromToInput'
-import { setMaxRooms, setMinRooms } from 'actions/filters' 
+import { setMinRoommates, setMaxRoommates } from 'actions/filters'
 
-function RoomsInput (props)  
+function RoommatesInput (props)  
 {
     const { filters } = useContext(FiltersContext)
-    const localPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'localPlaceHolder')
-    const fromPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'fromLocalName')
-    const upToPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'upToLocalName')
-    const numbersHeader = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'any')
+    const localPlaceHolder = fetchFromResource('string', 'advancedSearch', 'roommates', 'localPlaceHolder')
+    const fromPlaceHolder = fetchFromResource('string', 'advancedSearch', 'floor', 'fromLocalName')
+    const upToPlaceHolder = fetchFromResource('string', 'advancedSearch', 'floor', 'upToLocalName')
+    const numbersHeader = fetchFromResource('string', 'advancedSearch', 'roommates', 'any')
     const [mainInput, setMainInput] = useState(localPlaceHolder)
     const [fromText, setFromText] = useState(fromPlaceHolder)
     const [upToText, setUpToText] = useState(upToPlaceHolder)
@@ -29,31 +29,31 @@ function RoomsInput (props)
     },[mainInput, fromText, upToText, fromPlaceHolder, upToPlaceHolder, localPlaceHolder])
 
     useEffect ( () => {
-        filters.search.minRooms ? setFromText(filters.search.minRooms) : setFromText(fromPlaceHolder)
-    },[filters.search.minRooms, fromPlaceHolder])
+        filters.search.minRoommates ? setFromText(filters.search.minRoommates) : setFromText(fromPlaceHolder)
+    },[filters.search.minRoommates, fromPlaceHolder])
     useEffect ( () => {
-        filters.search.maxRooms ? setUpToText(filters.search.maxRooms) : setUpToText(upToPlaceHolder)
-    },[filters.search.maxRooms, upToPlaceHolder])
+        filters.search.maxRoommates ? setUpToText(filters.search.maxRoommates) : setUpToText(upToPlaceHolder)
+    },[filters.search.maxRoommates, upToPlaceHolder])
 
-    RoomsInput.handleClickOutside = () => {
+    RoommatesInput.handleClickOutside = () => {
         setIsMainOpen(false)
     }
     const subMenuSpecs = {
         numbersHeader,
-        min: 1,
-        max: 12,
-        step: 0.5,
-        setMax: setMaxRooms,
-        setMin: setMinRooms,
-        minFilter: "minRooms",
-        maxFilter: "maxRooms",
+        min: 2,
+        max: 5,
+        step: 1,
+        setMax: setMaxRoommates,
+        setMin: setMinRoommates,
+        minFilter: "minRoommates",
+        maxFilter: "maxRoommates",
         from: fromText,
         upTo: upToText,
         parentRect,
     }
     return (
-        <div className="rooms__input">
-            <div className={`rooms-bar ${hasData?'has-data':''}`} onClick={toggleMainDropdown}>
+        <div className="roommates__input">
+            <div className={`roommates-bar ${hasData?'has-data':''}`} onClick={toggleMainDropdown}>
                 {mainInput}{isMainOpen ? upArrow : downArrow}
             </div>
             {
@@ -65,6 +65,6 @@ function RoomsInput (props)
     )
 }
 const clickOutsideConfig = {
-    handleClickOutside: () => RoomsInput.handleClickOutside
+    handleClickOutside: () => RoommatesInput.handleClickOutside
 }   
-export default onClickOutside(RoomsInput, clickOutsideConfig)
+export default onClickOutside(RoommatesInput, clickOutsideConfig)

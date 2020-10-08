@@ -2,6 +2,8 @@ $accessibility-blue: #002f75;
 $add-item-button-background: #0fca80;
 $theme-background-header: #fff;
 $theme-background-body: #f9f9f9;
+$theme-dropdown-border: #ccc;
+$theme-box-border: #e7e7e7;
 $theme-box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
 $theme-box-shadow-searchbar: 0 2px 6px 0 rgba(0,0,0,.1);
 $theme-footer-background: #363636;
@@ -13,4 +15,4 @@ $theme-hovered: #f9f9f9;
 $theme-text: #363636;
 $theme-text-darker: darken($theme-text, 40%);
 $theme-shadow: #707070;
-$theme-box-border: #e7e7e7;
+

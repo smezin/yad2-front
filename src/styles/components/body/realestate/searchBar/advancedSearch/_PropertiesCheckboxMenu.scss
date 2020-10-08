@@ -1,0 +1,42 @@
+.properties-checkbox-menu {
+    direction: rtl;
+    padding: $std-size $std-size * 3;
+    .properties-checkbox-menu__header {
+        direction: inherit;
+        display: flex;
+        font-size: $font-size-s;
+        font-weight: 500;
+    }
+    .properties-checkbox-menu__items-container{
+        border-bottom: 1px solid $theme-dropdown-border;
+        direction: inherit;
+        display: grid;        
+        grid-template-columns: repeat(5,1fr);        
+        overflow: hidden;
+        overflow-x: auto;
+        padding: $std-size*0.5 0;
+        text-align: right;        
+        .properties-checkbox-menu__item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: $theme-text;
+            font-size: $font-size-s;
+            min-width: $std-size * 6;
+            padding: $std-size * 0.8;  
+            .symbol__checkbox {
+                font-size: $font-size-l;
+                padding-left: $std-size * 0.3;
+            }         
+        }
+        .properties-checkbox-menu__item__picked {
+            @extend .properties-checkbox-menu__item;
+            .symbol__checkbox {
+                color: $theme-main-color;
+            }
+        }
+    }
+   
+
+}
+

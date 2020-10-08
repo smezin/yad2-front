@@ -9,7 +9,7 @@ import Price from './searchFields/Price'
 import DealType from './searchFields/DealType'
 import getSubPath from 'utility/getSubPath'
 import GoSearch from './GoSearch'
-import AdvancedSearch from './AdvancedSearch'
+import AdvancedSearch from './advancedSearch/AdvancedSearch'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
 import { clearSearch, setSearchCategory } from 'actions/filters'
@@ -96,7 +96,7 @@ const SearchBar = () => {
             <div className="realestate-search-bar__search-columns">
                 <LocationSearch category={category}/>  
                 {renderSearchBarByCategory()}
-                <AdvancedSearch parentRect={parentRect}/>
+                <AdvancedSearch category={category} parentRect={parentRect}/>
                 <GoSearch />
             </div>            
         </div>
