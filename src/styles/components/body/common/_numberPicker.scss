@@ -1,4 +1,4 @@
-.number-picker {
+.number-picker__searchbar-template {
     border: 1px $theme-box-border solid;
     display: flex;
     flex-direction: column;
@@ -15,4 +15,28 @@
             background: $theme-selected;
         }
     }
+  
 } 
+.number-picker__advanced-search-row-template {
+    max-height: $std-size * 12;
+    border: 1px $theme-box-border solid;
+    display: flex;
+    flex-direction: column;
+    max-height: $std-size * 17;
+    overflow-y: scroll;
+    position: absolute;
+    .number {
+        padding: $std-size * 0.5 $std-size;
+        &:hover {
+            background: $theme-selected;
+        }
+    }
+    .menu-header {
+        text-align: center;
+        font-size: $font-size-xs;
+        padding: $std-size * 0.5 $std-size;
+        &:hover {
+            background: $theme-selected;
+        }
+    }
+}

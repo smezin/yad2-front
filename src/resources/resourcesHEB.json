@@ -386,7 +386,8 @@
         "floor": {
             "localName": "קומה",
             "fromLocalName": "מ-",
-            "upToLocalName": "עד-"
+            "upToLocalName": "עד-",
+            "any": "הכל"
         }
     }
 }

@@ -6,7 +6,7 @@ const Roommates = () => {
     const headerLocalName = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'localName')
     const [parentRect, setParentRect] = useState(0)
     const getRect = () => {
-        const rect = document.getElementById('roommates') 
+        const rect = document.getElementById('roommates').getBoundingClientRect()
         setParentRect(rect ? rect : 0)
     }
     useEffect(() => {
@@ -18,7 +18,6 @@ const Roommates = () => {
             window.removeEventListener('resize', resizeListener)
         }
     },[])
-    
     return (
         <div className='roommates' id="roommates" onClick={getRect}>
             <div className="roommates__header">

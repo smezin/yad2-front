@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
 import ProperiesCheckboxMenu from './ProperiesCheckboxMenu'
-import FloorPicker from './FloorPicker'
+import AdvancedSearchRow from './AdvancedSearchRow'
 import onClickOutside from 'react-onclickoutside'
 
 function AdvancedSearch (props) 
@@ -69,7 +69,7 @@ function AdvancedSearch (props)
                 isDropsownOpen && 
                 <div className="advanced-search__container" style={dropdownStyle}>
                     <ProperiesCheckboxMenu category={category} toggleNumOfPicks={toggleNumOfPicks} />
-                    <FloorPicker category={category} toggleNumOfPicks={toggleNumOfPicks} />
+                    <AdvancedSearchRow category={category} toggleNumOfPicks={toggleNumOfPicks} />
                 </div>
             }
         </div>

@@ -1,6 +1,7 @@
 .properties-checkbox-menu {
     direction: rtl;
     padding: $std-size $std-size * 3;
+    padding-bottom: $std-size * 0.5;
     .properties-checkbox-menu__header {
         direction: inherit;
         display: flex;
@@ -27,7 +28,12 @@
             .symbol__checkbox {
                 font-size: $font-size-l;
                 padding-left: $std-size * 0.3;
-            }         
+            }    
+            &:hover {
+                .symbol__checkbox {
+                    color: $theme-main-color;
+                }
+            }     
         }
         .properties-checkbox-menu__item__picked {
             @extend .properties-checkbox-menu__item;

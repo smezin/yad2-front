@@ -1,4 +1,4 @@
-.from-to-input {
+.from-to-input__searchbar-template {
     @extend .flex-center;
     box-shadow: $theme-box-shadow;
     flex-direction: row; 
@@ -23,3 +23,31 @@
         @extend .from-to-input__from
     }  
 } 
+.from-to-input__advanced-search-row-template {
+    .from-to-input {
+        @extend .flex-center;
+        flex-direction: row; 
+        justify-content: space-between;
+        margin: $std-size;
+        position: relative;
+    }
+    .from-to-input__from {
+        border: 1px solid $theme-box-border;
+        color: lighten($theme-text, 30%);
+        cursor: pointer;
+        display: flex;
+        font-size: $font-size-xxs;
+        justify-content: space-between;
+        line-height: $std-size * 2.0;
+        min-height: $std-size * 2.4;
+        padding-right: $std-size * 0.3;
+        width: 49%;
+        .symbol__arrow {
+            mix-blend-mode: multiply;
+            margin: 0 $std-size * 0.5;
+        }
+    }
+    .from-to-input__upto {
+        @extend .from-to-input__from
+    }  
+}

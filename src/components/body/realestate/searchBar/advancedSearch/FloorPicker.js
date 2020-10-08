@@ -2,11 +2,12 @@ import React, {useState, useEffect} from 'react'
 import FloorPickerInput from './FloorPickerInput'
 import fetchFromResource from 'utility/fetchFromResource'
 
-const FloorPicker = () => {
+const FloorPicker = (props) => {
+    const { toggleNumOfPicks } = props
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'floor', 'localName')
     const [parentRect, setParentRect] = useState(0)
     const getRect = () => {
-        const rect = document.getElementById('flooer-picker') 
+        const rect = document.getElementById('floor-picker').getBoundingClientRect()
         setParentRect(rect ? rect : 0)
     }
     useEffect(() => {
@@ -21,10 +22,10 @@ const FloorPicker = () => {
     
     return (
         <div className='floor-picker' id="floor-picker" onClick={getRect}>
-            <div className="floorPicker__header">
+            <div className="floor-picker__header">
                 {headerLocalName}
             </div>
-                {/* <FloorPickerInput parentRect={parentRect} /> */}
+                <FloorPickerInput parentRect={parentRect} toggleNumOfPicks={toggleNumOfPicks} />
         </div>
     )
 }

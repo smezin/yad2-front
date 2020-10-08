@@ -1,70 +1,53 @@
 import React, { useState, useEffect, useContext } from 'react'
 import onClickOutside from 'react-onclickoutside'
 import fetchFromResource from 'utility/fetchFromResource'
-import setFromToInputDisplay from 'utility/setFromToInputDisplay'
 import { FiltersContext } from 'context/FiltersContext'
-import { upArrow, downArrow} from 'resources/specialChars'
 import FromToInput from 'components/body/common/FromToInput'
-import { setMinRoommates, setMaxRoommates } from 'actions/filters'
+import { setMinFloor, setMaxFloor } from 'actions/filters'
 
-function RoommatesInput (props)  
+function FloorPickerInput (props)  
 {
     const { filters } = useContext(FiltersContext)
-    const localPlaceHolder = fetchFromResource('string', 'advancedSearch', 'roommates', 'localPlaceHolder')
     const fromPlaceHolder = fetchFromResource('string', 'advancedSearch', 'floor', 'fromLocalName')
     const upToPlaceHolder = fetchFromResource('string', 'advancedSearch', 'floor', 'upToLocalName')
-    const numbersHeader = fetchFromResource('string', 'advancedSearch', 'roommates', 'any')
-    const [mainInput, setMainInput] = useState(localPlaceHolder)
+    const numbersHeader = fetchFromResource('string', 'advancedSearch', 'floor', 'any')
     const [fromText, setFromText] = useState(fromPlaceHolder)
     const [upToText, setUpToText] = useState(upToPlaceHolder)
-    const [isMainOpen, setIsMainOpen] = useState(false)
-    const [hasData, setHasData] = useState(false)
-    const toggleMainDropdown = () => setIsMainOpen(!isMainOpen)
-    
-    const { parentRect } = props
-  
+    const [isDropDownOpen, setIsDropDownOpen] = useState(false)
+    const { parentRect, toggleNumOfPicks } = props
+   
     useEffect ( () => {
-        setMainInput(setFromToInputDisplay(fromText, upToText, localPlaceHolder, fromPlaceHolder, upToPlaceHolder))
-        setHasData(mainInput === localPlaceHolder ? false : true)
-    },[mainInput, fromText, upToText, fromPlaceHolder, upToPlaceHolder, localPlaceHolder])
+        filters.search.minFloor !== undefined ? setFromText(filters.search.minFloor) : setFromText(fromPlaceHolder)
+    },[filters.search.minFloor, fromPlaceHolder])
+    useEffect ( () => {
+        filters.search.maxFloor !== undefined ? setUpToText(filters.search.maxFloor) : setUpToText(upToPlaceHolder)
+    },[filters.search.maxFloor, upToPlaceHolder])
 
-    useEffect ( () => {
-        filters.search.minRoommates ? setFromText(filters.search.minRoommates) : setFromText(fromPlaceHolder)
-    },[filters.search.minRoommates, fromPlaceHolder])
-    useEffect ( () => {
-        filters.search.maxRoommates ? setUpToText(filters.search.maxRoommates) : setUpToText(upToPlaceHolder)
-    },[filters.search.maxRoommates, upToPlaceHolder])
-
-    RoommatesInput.handleClickOutside = () => {
-        setIsMainOpen(false)
+    FloorPickerInput.handleClickOutside = () => {
+        setIsDropDownOpen(false)
     }
+
     const subMenuSpecs = {
         numbersHeader,
-        min: 2,
-        max: 5,
+        min: 0,
+        max: 16,
         step: 1,
-        setMax: setMaxRoommates,
-        setMin: setMinRoommates,
-        minFilter: "minRoommates",
-        maxFilter: "maxRoommates",
+        setMax: setMaxFloor,
+        setMin: setMinFloor,
+        minFilter: "minFloor",
+        maxFilter: "maxFloor",
         from: fromText,
         upTo: upToText,
         parentRect,
     }
     return (
-        <div className="roommates__input">
-            <div className={`roommates-bar ${hasData?'has-data':''}`} onClick={toggleMainDropdown}>
-                {mainInput}{isMainOpen ? upArrow : downArrow}
-            </div>
-            {
-                isMainOpen &&                
-                <FromToInput  menuSpecs={subMenuSpecs}/>
-            }
+        <div className="floor-picker__input">     
+            <FromToInput  menuSpecs={subMenuSpecs} autoPosition={false} toggleNumOfPicks={toggleNumOfPicks} />
         </div>
         
     )
 }
 const clickOutsideConfig = {
-    handleClickOutside: () => RoommatesInput.handleClickOutside
+    handleClickOutside: () => FloorPickerInput.handleClickOutside
 }   
-export default onClickOutside(RoommatesInput, clickOutsideConfig)
+export default onClickOutside(FloorPickerInput, clickOutsideConfig)

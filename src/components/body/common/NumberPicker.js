@@ -1,14 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
-import fetchFromResource from 'utility/fetchFromResource'
 import setRangeFromMinMaxStep from 'utility/setRangeFromMinMaxStep'
 
 const NumberPicker = (props) => {
-    const { menuSpecs, downOffset, set } = props
+    const { menuSpecs, downOffset, set, toggleNumOfPicks } = props
     const { setMin, setMax, minFilter, maxFilter, min, max, step, numbersHeader } = menuSpecs
     const { filters, dispatch } = useContext(FiltersContext)
     const [range, setRange] = useState([])
-  
+    const style = {top: downOffset}
     useEffect ( () => {
         switch(set) {
             case 'min':
@@ -21,11 +20,10 @@ const NumberPicker = (props) => {
         }
     },[dispatch, filters.search, min, max, set, minFilter, maxFilter, step])
   
-    const style = {
-        top: downOffset,
-    }
-
     const onPick = (num) => {
+        if (toggleNumOfPicks) {
+            num === undefined ? toggleNumOfPicks('dec') : toggleNumOfPicks('inc')
+        }
         switch(set) {
             case 'min':
                 return dispatch(setMin(num))
@@ -34,13 +32,13 @@ const NumberPicker = (props) => {
             default:
         }
     }
-
+   
     return (
         <div className="number-picker" style={style}>
             <div className="menu-header" onClick={() => onPick(undefined)}>
                {numbersHeader}
             </div>            
-            { range.map((num) => (
+            {range.map((num) => (
                 <div className="number" key={num} onClick={() => onPick(num)}>
                 {num}
                 </div>

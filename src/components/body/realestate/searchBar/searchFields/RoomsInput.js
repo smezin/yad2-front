@@ -58,7 +58,7 @@ function RoomsInput (props)
             </div>
             {
                 isMainOpen &&                
-                <FromToInput  menuSpecs={subMenuSpecs}/>
+                <FromToInput  menuSpecs={subMenuSpecs} autoPosition={true} />
             }
         </div>
         
