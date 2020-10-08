@@ -12,10 +12,12 @@ const NumberPicker = (props) => {
         switch(set) {
             case 'min':
                 return setRange(setRangeFromMinMaxStep(min, max, step)
-                .filter((num) => num <= (filters.search[maxFilter] || max) && num >= min))
+                .filter((num) => num <= (filters.search[maxFilter] !== undefined ? filters.search[maxFilter] : max) 
+                && num >= min))
             case 'max':
                 return setRange(setRangeFromMinMaxStep(min, max, step)
-                .filter((num) => num >= (filters.search[minFilter] || min) && num <= max))   
+                .filter((num) => num >= (filters.search[minFilter] !== undefined ? filters.search[minFilter] : min)
+                 && num <= max))   
             default:
         }
     },[dispatch, filters.search, min, max, set, minFilter, maxFilter, step])

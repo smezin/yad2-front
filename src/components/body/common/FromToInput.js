@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import NumberPicker from 'components/body/common/NumberPicker'
 import { upArrow, downArrow} from 'resources/specialChars'
+import onClickOutside from 'react-onclickoutside'
 
-const FromToInput = (props) => {
+function FromToInput (props) 
+{
     const { menuSpecs, autoPosition, toggleNumOfPicks } = props
     const { from, upTo, parentRect, header} = menuSpecs
     const [isFromOpen, setIsFromOpen] = useState(false)
@@ -41,6 +43,10 @@ const FromToInput = (props) => {
         }  
     },[])
 
+    FromToInput.handleClickOutside = () => {
+        setIsFromOpen(false)
+        setIsUpToOpen(false)
+    }
     return ( 
     <div className="from-to-input" id="from-to-input" style={setMenuLocation()}>
         <div className="from-to-input__from" onClick={toggleFromDropdown}>
@@ -61,4 +67,8 @@ const FromToInput = (props) => {
     </div>
     )
 }
-export default FromToInput
+const clickOutsideConfig = {
+    handleClickOutside: () => FromToInput.handleClickOutside
+}   
+export default onClickOutside(FromToInput, clickOutsideConfig)
+
