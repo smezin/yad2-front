@@ -8,6 +8,9 @@ export const addSeperator = (numAsString) => {
 }
 //remove the thousands seperator , 
 export const removeSeperator = (numAsString) => {
+    if (typeof(numAsString) === 'number') {
+        numAsString = numAsString.toString()
+    }
     if (typeof(numAsString) !== 'string') {
         return ''
     }

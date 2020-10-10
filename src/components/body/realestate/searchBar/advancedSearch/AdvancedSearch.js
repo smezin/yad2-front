@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import onClickOutside from 'react-onclickoutside'
 import fetchFromResource from 'utility/fetchFromResource'
 import ProperiesCheckboxMenu from './ProperiesCheckboxMenu'
 import AdvancedSearchRow from './AdvancedSearchRow'
-import onClickOutside from 'react-onclickoutside'
 
 function AdvancedSearch (props) 
 {
@@ -44,7 +44,11 @@ function AdvancedSearch (props)
         top:  -myPosition.height / 2 + 7
         })
     },[myPosition])
-    
+
+    useEffect( () => {
+        setNumOfPickedFilters(0)
+    },[category])
+
     AdvancedSearch.handleClickOutside = () => setIsDropdownOpen(false)
     return (
         <div className="advanced-search" >

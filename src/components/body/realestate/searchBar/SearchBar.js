@@ -45,6 +45,7 @@ const SearchBar = () => {
 
     //clear search when changing category (forsale, rent ....)
     useEffect( () => {
+        console.log('cleared search')
         dispatch(clearSearch())
         dispatch(setSearchCategory(category))
     },[category, dispatch])

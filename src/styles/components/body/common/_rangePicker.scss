@@ -1,4 +1,4 @@
-.price {
+.range-picker__free-text-template {
     @extend .searchBar-flexbox-column;
     .range-picker__header {
         @extend .searchBar-header;
@@ -12,13 +12,14 @@
         min-width: $std-size * 8;
         .range-picker__min {
             @extend .searchBar-input-bar;
-           // width: 50%;
             &:focus{
                 outline-width: 0;
             }
         }
         .range-picker__max {
             @extend .range-picker__min;
+            grid-area: min-range-picker;
         }
     }
+    
 }

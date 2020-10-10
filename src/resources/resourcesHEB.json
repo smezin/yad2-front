@@ -388,6 +388,12 @@
             "fromLocalName": "מ-",
             "upToLocalName": "עד-",
             "any": "הכל"
+        },
+        "size": {
+            "localName": "גודל דירה (במ\"ר)",
+            "fromLocalName": "מ-",
+            "upToLocalName": "עד-",
+            "any": "הכל"
         }
     }
 }

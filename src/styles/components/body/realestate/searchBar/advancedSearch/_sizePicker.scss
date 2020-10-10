@@ -1,0 +1,35 @@
+.size-picker {
+    @extend .searchBar-flexbox-column;
+    padding: $std-size*0.6;
+    max-width: $std-size * 18;
+    .range-picker__header {
+        color: $theme-text;
+        font-size: $font-size-s-xs;
+        padding-right: $std-size;
+    }
+    .range-picker__input-container {
+        @extend .flex-center;
+        flex-direction: row; 
+        justify-content: space-between;
+        margin: $std-size;
+        position: relative;
+        .range-picker__min {
+            border: 1px solid $theme-box-border;
+            color: lighten($theme-text, 30%);
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 1;
+            font-size: $font-size-xs;
+            line-height: $std-size;
+            margin: 0 $std-size * 0.15;
+            padding: $std-size * 0.6;
+            width: 100%;
+            &:focus{
+                outline-width: 0;
+            }
+        }
+        .range-picker__max {
+            @extend .range-picker__min;
+        }
+    }
+}
