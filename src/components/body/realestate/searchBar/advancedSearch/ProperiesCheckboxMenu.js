@@ -12,7 +12,6 @@ const PropertiesCheckboxMenu = (props) => {
     const itemsObj = fetchFromResource('object', 'advancedSearch', 'PropertiesCheckboxMenu', 'properties', category)
     const items = Object.keys(itemsObj).map((item) => itemsObj[item]['localName'])
    
-    
     const addRemoveProperty = (property) => {
         if (pickedProperties.includes(property)) {
             setPickedProperties(pickedProperties.filter( (pickedProperty) => property !== pickedProperty))

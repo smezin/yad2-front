@@ -3,9 +3,9 @@ import { FiltersContext } from 'context/FiltersContext'
 import setRangeFromMinMaxStep from 'utility/setRangeFromMinMaxStep'
 import { incAdvancedFilters, decAdvancedFilters} from 'actions/filters'
 
-const NumberPicker = (props) => {
+const RangePickerDiscrete = (props) => {
     const { menuSpecs, downOffset, set } = props
-    const { setMin, setMax, minFilter, maxFilter, min, max, step, numbersHeader } = menuSpecs
+    const { setMin, setMax, minFilter, maxFilter, min, max, step, numbersHeader, updateAdvancedFiltersCount } = menuSpecs
     const { filters, dispatch } = useContext(FiltersContext)
     const [range, setRange] = useState([])
     const style = {top: downOffset}
@@ -27,19 +27,29 @@ const NumberPicker = (props) => {
         onPick(undefined)
     }
     const onPick = (pickedNum) => {
+        updateAdvancedFiltersCount && updateFiltersCount(pickedNum)
         switch(set) {
             case 'min':
-                (filters.search[minFilter] === undefined && pickedNum !== undefined) && dispatch(incAdvancedFilters());
-                (filters.search[minFilter] !== undefined && pickedNum === undefined) && dispatch(decAdvancedFilters())
                 return dispatch(setMin(pickedNum))
             case 'max':
-                (filters.search[maxFilter] === undefined && pickedNum !== undefined) && dispatch(incAdvancedFilters());
-                (filters.search[maxFilter] !== undefined && pickedNum === undefined) && dispatch(decAdvancedFilters())
                 return dispatch(setMax(pickedNum))
             default:
         }
     }
-   
+    const updateFiltersCount = (isNumber) => {
+        switch(set) {
+            case 'min':
+                (filters.search[minFilter] === undefined && isNumber ) && dispatch(incAdvancedFilters());
+                (filters.search[minFilter] !== undefined && !isNumber ) && dispatch(decAdvancedFilters());
+                break
+            case 'max':
+                (filters.search[maxFilter] === undefined && isNumber ) && dispatch(incAdvancedFilters());
+                (filters.search[maxFilter] !== undefined && !isNumber ) && dispatch(decAdvancedFilters());
+                break
+            default:
+                break
+        }
+    }
     return (
         <div className="number-picker" style={style}>
             <div className="menu-header" onClick={() => clearPick()}>
@@ -53,5 +63,4 @@ const NumberPicker = (props) => {
         </div>
     )
 }
-
-export default NumberPicker
+export default RangePickerDiscrete

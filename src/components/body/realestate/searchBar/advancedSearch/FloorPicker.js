@@ -3,7 +3,6 @@ import FloorPickerInput from './FloorPickerInput'
 import fetchFromResource from 'utility/fetchFromResource'
 
 const FloorPicker = (props) => {
-    const { toggleNumOfPicks } = props
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'floor', 'localName')
     const [parentRect, setParentRect] = useState(0)
     const getRect = () => {
@@ -25,7 +24,7 @@ const FloorPicker = (props) => {
             <div className="floor-picker__header">
                 {headerLocalName}
             </div>
-                <FloorPickerInput parentRect={parentRect} toggleNumOfPicks={toggleNumOfPicks} />
+                <FloorPickerInput parentRect={parentRect} />
         </div>
     )
 }

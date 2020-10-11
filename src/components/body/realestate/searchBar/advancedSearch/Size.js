@@ -1,11 +1,11 @@
 import React from 'react'
-import RangePicker from 'components/body/common/RangePicker'
+import RangePickerContinuous from 'components/body/common/RangePickerContinuous'
 import {setMinSize, setMaxSize} from 'actions/filters'
 import fetchFromResource from 'utility/fetchFromResource'
 
 
 const Size = (props) => {
-    const { category, toggleNumOfPicks } = props
+    const { category } = props
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'size', 'localName')
     const minPlaceHolder = fetchFromResource('string', 'advancedSearch', 'size', 'fromLocalName')
     const maxPlaceHolder = fetchFromResource('string', 'advancedSearch', 'size', 'upToLocalName')
@@ -23,7 +23,7 @@ const Size = (props) => {
 
     return (
         < div className="size-picker">
-           <RangePicker category={category} rangeSpecs={rangeSpecs} toggleNumOfPicks={toggleNumOfPicks}/>
+           <RangePickerContinuous category={category} rangeSpecs={rangeSpecs} />
         </div>
         
     )

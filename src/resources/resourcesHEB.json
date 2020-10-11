@@ -394,6 +394,10 @@
             "fromLocalName": "מ-",
             "upToLocalName": "עד-",
             "any": "הכל"
+        },
+        "date": {
+            "localName": "תאריך כניסה",
+            "localPlaceHolder": "החל מ- הזינו תאריך"
         }
     }
 }

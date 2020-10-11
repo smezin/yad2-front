@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
-import FromToInput from 'components/body/common/FromToInput'
+import RangeInput from 'components/body/common/RangeInput'
 import { setMinFloor, setMaxFloor } from 'actions/filters'
 
 const FloorPickerInput = (props) => {
@@ -11,7 +11,7 @@ const FloorPickerInput = (props) => {
     const numbersHeader = fetchFromResource('string', 'advancedSearch', 'floor', 'any')
     const [fromText, setFromText] = useState(fromPlaceHolder)
     const [upToText, setUpToText] = useState(upToPlaceHolder)
-    const { parentRect, toggleNumOfPicks } = props
+    const { parentRect } = props
    
     useEffect ( () => {
         filters.search.minFloor !== undefined ? setFromText(filters.search.minFloor) : setFromText(fromPlaceHolder)
@@ -32,10 +32,11 @@ const FloorPickerInput = (props) => {
         from: fromText,
         upTo: upToText,
         parentRect,
+        updateAdvancedFiltersCount: true
     }
     return (
         <div className="floor-picker__input">     
-            <FromToInput  menuSpecs={subMenuSpecs} autoPosition={false} toggleNumOfPicks={toggleNumOfPicks} />
+            <RangeInput  menuSpecs={subMenuSpecs} autoPosition={false} />
         </div>
         
     )

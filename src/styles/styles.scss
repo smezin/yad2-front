@@ -1,6 +1,7 @@
 @import './settings/colors';
 @import './settings/sizes';
 @import './base/base';
+@import './components/body/realestate/searchBar/searchFields/searchFieldsCommonStyles';
 @import './components/mainMenu/addItemButton';
 @import './components/mainMenu/mainMenu';
 @import './components/navbars/realestateNavbar';
@@ -17,12 +18,12 @@
 @import './components/body/realestate/searchBar/searchFields/price';
 @import './components/body/realestate/searchBar/advancedSearch/advancedSearch';
 @import './components/body/realestate/searchBar/goSearch';
-@import './components/body/common/fromToInput';
+@import './components/body/common/rangeInput';
 @import './components/body/common/numberPicker';
 @import './components/body/realestate/searchBar/searchFields/roommates';
 @import './components/body/realestate/searchBar/searchFields/dealType';
-@import './components/body/realestate/searchBar/searchFields/searchFieldsCommonStyles';
 @import './components/body/realestate/searchBar/advancedSearch/PropertiesCheckboxMenu';
 @import './components/body/realestate/searchBar/advancedSearch/floorPicker';
 @import './components/body/realestate/searchBar/advancedSearch/advancedSearchRow';
 @import './components//body/realestate/searchBar/advancedSearch/sizePicker';
+@import './components/body/realestate/searchBar/advancedSearch/entryDate'

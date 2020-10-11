@@ -16,8 +16,8 @@
             }
         }   
     }
-    .from-to-input {
-        @extend .from-to-input__searchbar-template;
+    .range-input {
+        @extend .range-input__searchbar-template;
     }
     .number-picker {
         @extend .number-picker__searchbar-template;

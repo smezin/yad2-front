@@ -30,3 +30,15 @@ body {
         text-decoration: none;
     }
 }
+.searchBar-avdanced-search-header {
+    color: $theme-text;
+    font-size: $font-size-s-xs;
+    padding-right: $std-size * 1.2;
+}
+.searchBar-header {
+    color: $theme-text;
+    direction: rtl;
+    font-size: $font-size-xs;
+    font-weight: 500;
+    padding-right: $std-size * 0.2;
+}

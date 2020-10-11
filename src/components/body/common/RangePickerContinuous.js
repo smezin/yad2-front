@@ -4,8 +4,8 @@ import { incAdvancedFilters, decAdvancedFilters} from 'actions/filters'
 import isNumeric from 'utility/isNumeric'
 import { addSeperator, removeSeperator} from 'utility/numbersDisplay'
 
-const RangePicker = (props) => {
-    const { category, rangeSpecs } = props
+const RangePickerContinuous = (props) => {
+    const { rangeSpecs } = props
     const { headerLocalName, minPlaceHolder, maxPlaceHolder, setMin, setMax, minFilter, maxFilter, updateAdvancedFiltersCount } = rangeSpecs
     const { dispatch, filters } = useContext(FiltersContext)
     const [minDisplay, setMinDisplay] = useState(addSeperator(filters.search[minFilter]) || minPlaceHolder)
@@ -107,4 +107,4 @@ const RangePicker = (props) => {
         </div>
     )
 }
-export default RangePicker
+export default RangePickerContinuous

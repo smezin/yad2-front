@@ -1,0 +1,18 @@
+.entry-date {
+    direction: rtl;
+    padding: $std-size * 0.6;
+    .entry-date__header {
+        @extend .searchBar-avdanced-search-header;
+    }
+    .entry-date__input {
+        border: 1px solid $theme-box-border;
+        color: lighten($theme-text, 30%);
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        font-size: $font-size-xs;
+        line-height: $std-size;
+        margin: $std-size;
+        padding: $std-size * 0.6;
+    }
+}

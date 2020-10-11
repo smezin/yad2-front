@@ -1,13 +1,14 @@
 import React from 'react'
 import FloorPicker from './FloorPicker'
 import SizePicker from './Size'
+import EntryDate from './EntryDate'
 
 const AdvancedSearchRow = (props) => {
-    const { toggleNumOfPicks } = props
     return (
         <div className="advanced-search-row">
-            <FloorPicker toggleNumOfPicks={toggleNumOfPicks} />
-            <SizePicker toggleNumOfPicks={toggleNumOfPicks} />
+            <FloorPicker />
+            <SizePicker />
+            <EntryDate />
         </div>
     )
 }

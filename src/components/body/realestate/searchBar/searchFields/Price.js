@@ -1,5 +1,5 @@
 import React from 'react'
-import RangePicker from 'components/body/common/RangePicker'
+import RangePickerContinuous from 'components/body/common/RangePickerContinuous'
 import {setMinPrice, setMaxPrice} from 'actions/filters'
 import fetchFromResource from 'utility/fetchFromResource'
 
@@ -20,7 +20,7 @@ const Price = (props) => {
 
     return (
         < div className="price">
-           <RangePicker category={category} rangeSpecs={rangeSpecs} />
+           <RangePickerContinuous category={category} rangeSpecs={rangeSpecs} />
         </div>
         
     )

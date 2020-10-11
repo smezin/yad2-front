@@ -4,7 +4,7 @@ import fetchFromResource from 'utility/fetchFromResource'
 import setFromToInputDisplay from 'utility/setFromToInputDisplay'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow} from 'resources/specialChars'
-import FromToInput from 'components/body/common/FromToInput'
+import RangeInput from 'components/body/common/RangeInput'
 import { setMaxRooms, setMinRooms } from 'actions/filters' 
 
 function RoomsInput (props)  
@@ -58,7 +58,7 @@ function RoomsInput (props)
             </div>
             {
                 isMainOpen &&                
-                <FromToInput  menuSpecs={subMenuSpecs} autoPosition={true} />
+                <RangeInput  menuSpecs={subMenuSpecs} autoPosition={true} />
             }
         </div>
         
