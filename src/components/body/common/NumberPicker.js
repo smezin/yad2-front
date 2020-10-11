@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
 import setRangeFromMinMaxStep from 'utility/setRangeFromMinMaxStep'
+import { incAdvancedFilters, decAdvancedFilters} from 'actions/filters'
 
 const NumberPicker = (props) => {
-    const { menuSpecs, downOffset, set, toggleNumOfPicks } = props
+    const { menuSpecs, downOffset, set } = props
     const { setMin, setMax, minFilter, maxFilter, min, max, step, numbersHeader } = menuSpecs
     const { filters, dispatch } = useContext(FiltersContext)
     const [range, setRange] = useState([])
@@ -28,12 +29,12 @@ const NumberPicker = (props) => {
     const onPick = (pickedNum) => {
         switch(set) {
             case 'min':
-                (filters.search[minFilter] === undefined && pickedNum !== undefined) && toggleNumOfPicks('inc');
-                (filters.search[minFilter] !== undefined && pickedNum === undefined) && toggleNumOfPicks('dec')
+                (filters.search[minFilter] === undefined && pickedNum !== undefined) && dispatch(incAdvancedFilters());
+                (filters.search[minFilter] !== undefined && pickedNum === undefined) && dispatch(decAdvancedFilters())
                 return dispatch(setMin(pickedNum))
             case 'max':
-                (filters.search[maxFilter] === undefined && pickedNum !== undefined) && toggleNumOfPicks('inc');
-                (filters.search[maxFilter] !== undefined && pickedNum === undefined) && toggleNumOfPicks('dec')
+                (filters.search[maxFilter] === undefined && pickedNum !== undefined) && dispatch(incAdvancedFilters());
+                (filters.search[maxFilter] !== undefined && pickedNum === undefined) && dispatch(decAdvancedFilters())
                 return dispatch(setMax(pickedNum))
             default:
         }

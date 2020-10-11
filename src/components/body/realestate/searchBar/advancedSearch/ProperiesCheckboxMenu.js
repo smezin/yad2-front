@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
-import { setProperties } from 'actions/filters'
+import { setProperties, incAdvancedFilters, decAdvancedFilters } from 'actions/filters'
 import { checkedBox, unCheckedBox } from 'resources/specialChars'
 
 const PropertiesCheckboxMenu = (props) => {
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'PropertiesCheckboxMenu', 'localName')
-    const { category, toggleNumOfPicks } = props
+    const { category } = props
     const { dispatch, filters } = useContext(FiltersContext)
     const [pickedProperties, setPickedProperties] = useState(filters.search.properties)
     const itemsObj = fetchFromResource('object', 'advancedSearch', 'PropertiesCheckboxMenu', 'properties', category)
@@ -16,10 +16,10 @@ const PropertiesCheckboxMenu = (props) => {
     const addRemoveProperty = (property) => {
         if (pickedProperties.includes(property)) {
             setPickedProperties(pickedProperties.filter( (pickedProperty) => property !== pickedProperty))
-            toggleNumOfPicks('dec')
+            dispatch(decAdvancedFilters())
         } else {
             setPickedProperties([...pickedProperties, property])
-            toggleNumOfPicks('inc')
+            dispatch(incAdvancedFilters())
         }        
     }
     

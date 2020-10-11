@@ -14,6 +14,14 @@ export const clearSearch = () => ({
 export const clearFilters = () => ({
     type: 'CLEAR_FILTERS'
 })
+//DEC_ADVANCED_FILTERS
+export const decAdvancedFilters = () => ({
+    type: 'DEC_ADVANCED_FILTERS'
+})
+//INC_ADVANCED_FILTERS
+export const incAdvancedFilters = () => ({
+    type: 'INC_ADVANCED_FILTERS'
+})
 //SET CATEGORY
 export const setSearchCategory = (category) => {
     handleBottomFiltersChanged()

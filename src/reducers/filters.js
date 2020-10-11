@@ -2,6 +2,7 @@
 export const filtersReducerInitialState = {
   sortBy: 'date',
   locationCurrentText: '',
+  numOfAdvancedFilters: 0,
   search: {
       category: 'forsale',
       dealTypes: [],
@@ -23,7 +24,7 @@ export const filtersReducerInitialState = {
       showOnlyItemsWithPrice: false,
       text: undefined,
       types: []
-  }
+  },
 }
 
 export const filtersReducer = (state, action) => {
@@ -34,12 +35,22 @@ export const filtersReducer = (state, action) => {
     case 'CLEAR_SEARCH':
       return {
           sortBy: state.sortBy,
+          ...filtersReducerInitialState,
           search: {
               ...filtersReducerInitialState.search,
               category: state.search.category
           }
       }
-  
+    case 'DEC_ADVANCED_FILTERS':
+        return {
+            ...state,
+            numOfAdvancedFilters: state.numOfAdvancedFilters - 1
+        }
+    case 'INC_ADVANCED_FILTERS':
+        return {
+            ...state,
+            numOfAdvancedFilters: state.numOfAdvancedFilters + 1
+        }
     case 'SET_CATEGORY':
         return {
             ...state,

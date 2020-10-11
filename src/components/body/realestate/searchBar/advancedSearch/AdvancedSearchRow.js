@@ -1,6 +1,6 @@
 import React from 'react'
 import FloorPicker from './FloorPicker'
-import SizePicker from './SizePicker'
+import SizePicker from './Size'
 
 const AdvancedSearchRow = (props) => {
     const { toggleNumOfPicks } = props

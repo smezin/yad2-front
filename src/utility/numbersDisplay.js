@@ -1,5 +1,8 @@
 //add the thousands seperator , 
 export const addSeperator = (numAsString) => {
+    if (typeof(numAsString) === 'number') {
+        numAsString = numAsString.toString()
+    } 
     if (typeof(numAsString) !== 'string') {
         return ''
     }

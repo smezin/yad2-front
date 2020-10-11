@@ -10,7 +10,7 @@ const FiltersContextProvider = props => {
     <FiltersContext.Provider value={{ filters, dispatch }}>
       {props.children}
     </FiltersContext.Provider>
-  );
-};
+  )
+}
 
 export default FiltersContextProvider;

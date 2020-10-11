@@ -14,7 +14,8 @@ const Price = (props) => {
         minPlaceHolder, 
         maxPlaceHolder,
         setMin: setMinPrice,
-        setMax: setMaxPrice
+        setMax: setMaxPrice,
+        updateAdvancedFiltersCount: false
     }
 
     return (

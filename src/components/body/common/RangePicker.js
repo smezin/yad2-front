@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
+import { incAdvancedFilters, decAdvancedFilters} from 'actions/filters'
 import isNumeric from 'utility/isNumeric'
 import { addSeperator, removeSeperator} from 'utility/numbersDisplay'
 
 const RangePicker = (props) => {
-    const { category, rangeSpecs, toggleNumOfPicks } = props
-    const { headerLocalName, minPlaceHolder, maxPlaceHolder, setMin, setMax, minFilter, maxFilter } = rangeSpecs
+    const { category, rangeSpecs } = props
+    const { headerLocalName, minPlaceHolder, maxPlaceHolder, setMin, setMax, minFilter, maxFilter, updateAdvancedFiltersCount } = rangeSpecs
     const { dispatch, filters } = useContext(FiltersContext)
-    const [minDisplay, setMinDisplay] = useState(filters.search[minFilter] || minPlaceHolder)
-    const [maxDisplay, setMaxDisplay] = useState(filters.search[maxFilter] || maxPlaceHolder)
+    const [minDisplay, setMinDisplay] = useState(addSeperator(filters.search[minFilter]) || minPlaceHolder)
+    const [maxDisplay, setMaxDisplay] = useState(addSeperator(filters.search[maxFilter]) || maxPlaceHolder)
 
     const onBlur = (e, set) => {
         if (e.target.value === '') {
@@ -23,28 +24,52 @@ const RangePicker = (props) => {
         }
     }
     const handleChange = (e, set) => {
+        let isNumber = undefined
         if (isNumeric(removeSeperator(e.target.value))) {
+            isNumber = true
             switch(set) {
                 case 'min':
-                    return setMinDisplay(addSeperator(removeSeperator(e.target.value)))
+                    setMinDisplay(addSeperator(removeSeperator(e.target.value)))
+                    break
                 case 'max':
-                    return setMaxDisplay(addSeperator(removeSeperator(e.target.value)))
+                    setMaxDisplay(addSeperator(removeSeperator(e.target.value)))
+                    break
                 default:
                     return
             }
         } else {
+            isNumber = false
             e.target.value=''
             switch(set) {
                 case 'min':
-                    return setMinDisplay('')
+                    setMinDisplay('')
+                    break
                 case 'max':
-                    return setMaxDisplay('')
+                    setMaxDisplay('')
+                    break
                 default:
-                    return
+                    break
             }   
         }
+        updateAdvancedFiltersCount && updateFiltersCount(set, isNumber)
     }
-
+    const updateFiltersCount = (set, isNumber) => {
+        if (!updateAdvancedFiltersCount) {
+            return
+        }
+        switch(set) {
+            case 'min':
+                (filters.search[minFilter] === undefined && isNumber ) && dispatch(incAdvancedFilters());
+                (filters.search[minFilter] !== undefined && !isNumber ) && dispatch(decAdvancedFilters());
+                break
+            case 'max':
+                (filters.search[maxFilter] === undefined && isNumber ) && dispatch(incAdvancedFilters());
+                (filters.search[maxFilter] !== undefined && !isNumber ) && dispatch(decAdvancedFilters());
+                break
+            default:
+                break
+        }
+    }
     const clearPlaceHolder = (e, set) => {
         if (e.target.value === minPlaceHolder || e.target.value === maxPlaceHolder) {
             e.target.value = ''
@@ -62,20 +87,12 @@ const RangePicker = (props) => {
         isNumeric(removeSeperator(minDisplay)) ? dispatch(setMin(parseFloat(removeSeperator(minDisplay)))) 
         : dispatch(setMin(undefined))
     },[minDisplay, setMin, dispatch])
+
     useEffect( () => {
         isNumeric(removeSeperator(maxDisplay)) ? dispatch(setMax(parseFloat(removeSeperator(maxDisplay)))) 
         : dispatch(setMax(undefined))
     },[maxDisplay, setMax, dispatch])
     
-    useEffect( () => {
-        setMinDisplay(minPlaceHolder)
-        setMaxDisplay(maxPlaceHolder)
-    },[category, minPlaceHolder, maxPlaceHolder])
-    
-    useEffect ( () => {
-        filters.search[minFilter] && setMinDisplay(filters.search[minFilter])
-        filters.search[maxFilter] && setMaxDisplay(filters.search[maxFilter])
-    },[filters.search, maxFilter, minFilter])
     return (
         <div className="range-picker">
             <div className="range-picker__header">

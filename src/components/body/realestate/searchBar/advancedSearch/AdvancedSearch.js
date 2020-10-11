@@ -1,30 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import onClickOutside from 'react-onclickoutside'
 import fetchFromResource from 'utility/fetchFromResource'
 import ProperiesCheckboxMenu from './ProperiesCheckboxMenu'
 import AdvancedSearchRow from './AdvancedSearchRow'
+import { FiltersContext } from 'context/FiltersContext'
 
 function AdvancedSearch (props) 
 {
+    const { filters } = useContext(FiltersContext)
     const [buttonText] = useState(fetchFromResource('string', 'realestateSearchBar', 'advancedSearch', 'localName'))
     const { parentRect, category } = props
     const width = parentRect ? parentRect.width : 0
     const left = parentRect ? parentRect.left : 0
     const [isDropsownOpen, setIsDropdownOpen] = useState(false)
-    const [numOfpickedFilters, setNumOfPickedFilters] = useState(0)
     const [myPosition, setMyposition] = useState(0)
     const [circleStyle, setCircleStyle] = useState({})
     
-    const toggleNumOfPicks = (set) => {
-        switch(set) {
-            case 'dec':
-                return setNumOfPickedFilters(numOfpickedFilters - 1)
-            case 'inc':
-                return setNumOfPickedFilters(numOfpickedFilters + 1)
-            default:
-                return //to error handler
-        }
-    }
     const getRect = () => {
         const rect = document.getElementById('advanced-search__button').getBoundingClientRect()
         setMyposition(rect ? rect : 0)
@@ -45,10 +36,6 @@ function AdvancedSearch (props)
         })
     },[myPosition])
 
-    useEffect( () => {
-        setNumOfPickedFilters(0)
-    },[category])
-
     AdvancedSearch.handleClickOutside = () => setIsDropdownOpen(false)
     return (
         <div className="advanced-search" >
@@ -57,13 +44,13 @@ function AdvancedSearch (props)
                 <div className="button-text">{buttonText}</div> 
                 <div className="num-of-picked-filters__wrapper">
                     {
-                        numOfpickedFilters > 0 &&
-                        <div className="num-of-picked-filters">({numOfpickedFilters})</div>
+                        filters.numOfAdvancedFilters > 0 &&
+                        <div className="num-of-picked-filters">({filters.numOfAdvancedFilters})</div>
                     }
                 </div>
                 <div className="circle__wrapper" >
                     {
-                        numOfpickedFilters > 0 &&
+                        filters.numOfAdvancedFilters > 0 &&
                         <span className="circle" style={circleStyle}></span>
                     }
                 </div>
@@ -72,8 +59,8 @@ function AdvancedSearch (props)
             {
                 isDropsownOpen && 
                 <div className="advanced-search__container" style={dropdownStyle}>
-                    <ProperiesCheckboxMenu category={category} toggleNumOfPicks={toggleNumOfPicks} />
-                    <AdvancedSearchRow category={category} toggleNumOfPicks={toggleNumOfPicks} />
+                    <ProperiesCheckboxMenu category={category} />
+                    <AdvancedSearchRow category={category} />
                 </div>
             }
         </div>

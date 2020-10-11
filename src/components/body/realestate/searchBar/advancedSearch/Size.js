@@ -17,7 +17,8 @@ const Size = (props) => {
         setMin: setMinSize,
         setMax: setMaxSize,
         minFilter: 'minSize',
-        maxFilter: 'maxSize'
+        maxFilter: 'maxSize',
+        updateAdvancedFiltersCount: true
     }
 
     return (
