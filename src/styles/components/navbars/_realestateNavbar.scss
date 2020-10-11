@@ -8,8 +8,8 @@
         display: flex;
         flex-direction: row-reverse;        
         .navbar-item__right {
-            @extend .flex-center;
-            @extend .linked-text;
+            @extend .flex-center !optional;
+            @extend .linked-text !optional;
             font-size: $font-size-s;
             height: 100%;
             padding: $std-size;

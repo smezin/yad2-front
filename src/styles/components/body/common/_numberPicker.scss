@@ -6,7 +6,7 @@
     overflow-y: scroll;
     position: absolute;
     .menu-header {
-        @extend .number;
+        @extend .number !optional;
         padding-top: $std-size *5;
     }
     .number {

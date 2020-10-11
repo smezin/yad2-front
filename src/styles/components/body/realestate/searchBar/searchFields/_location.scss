@@ -1,7 +1,7 @@
 .location-search {
-    @extend .searchBar-flexbox-column;
+    @extend .searchBar-flexbox-column !optional;
     .location-search__header {
-        @extend .searchBar-header;
+        @extend .searchBar-header !optional;
     }
     .location-search__input {
         direction: rtl;
@@ -10,7 +10,7 @@
         min-width: $std-size * 11;
         .location-input__container {           
             .location-input__bar {
-                @extend .searchBar-input-bar;
+                @extend .searchBar-input-bar !optional;
                 &:focus{
                     outline-width: 0;
                 }

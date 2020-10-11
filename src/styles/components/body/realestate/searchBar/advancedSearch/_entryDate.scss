@@ -2,11 +2,11 @@
     direction: rtl;
     padding: $std-size * 0.6;
     .entry-date__header {
-        @extend .searchBar-avdanced-search-header;
+        @extend .searchBar-avdanced-search-header !optional;
     }
     .entry-date__input {
         border: 1px solid $theme-box-border;
-        color: lighten($theme-text, 30%);
+        color: $theme-text-lighter;
         display: flex;
         flex-grow: 1;
         flex-shrink: 1;
@@ -15,4 +15,13 @@
         margin: $std-size;
         padding: $std-size * 0.6;
     }
+    
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+    background: $theme-main-color !important;
+    border-radius: 25px !important;
+}
+:focus {
+    outline: none;
 }

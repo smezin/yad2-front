@@ -1,5 +1,5 @@
 .go-search {
-    @extend .searchBar-button;
+    @extend .searchBar-button !optional;
     background: $theme-main-color;
     .header {
         background: inherit;

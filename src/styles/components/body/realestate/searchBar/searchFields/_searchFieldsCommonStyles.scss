@@ -72,7 +72,7 @@
 }
 .searchBar-input-bar {
     border: 1px solid $theme-box-border;
-    color: lighten($theme-text, 30%);
+    color: $theme-text-darker;
     direction: rtl;
     display: flex;
     flex-grow: 1;

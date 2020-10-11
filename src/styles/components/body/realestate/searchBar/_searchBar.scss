@@ -9,7 +9,7 @@
         font-weight: 500;
         padding-right: $std-size * 0.6;
         .realestate-search-bar__header__alt-cat {
-            @extend .linked-text;
+            @extend .linked-text !optional;
             background: $theme-background-header;
             color: $theme-main-color;
             text-decoration: underline dotted $theme-main-color;

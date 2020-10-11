@@ -31,12 +31,12 @@ body {
     }
 }
 .searchBar-avdanced-search-header {
-    color: $theme-text;
+    color: $theme-text-darker;
     font-size: $font-size-s-xs;
     padding-right: $std-size * 1.2;
 }
 .searchBar-header {
-    color: $theme-text;
+    color: $theme-text-darker;
     direction: rtl;
     font-size: $font-size-xs;
     font-weight: 500;

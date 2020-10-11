@@ -1,15 +1,15 @@
 .floor-picker {
-    @extend .range-input__advanced-search-row-template;
+    @extend .range-input__advanced-search-row-template !optional;
     direction: rtl;
     display: flex;
     flex-direction: column;
     min-width: $std-size * 18;
     padding: $std-size * 0.6;
     .floor-picker__header {
-        @extend .searchBar-avdanced-search-header;
+        @extend .searchBar-avdanced-search-header !optional;
     }
     .number-picker{
-        @extend .number-picker__searchbar-template;
+        @extend .number-picker__searchbar-template !optional;
     }
     
 }

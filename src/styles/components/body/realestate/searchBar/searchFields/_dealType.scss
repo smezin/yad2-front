@@ -1,14 +1,14 @@
 .deal-type {
-    @extend .searchBar-flexbox-column;
+    @extend .searchBar-flexbox-column !optional;
     .deal-type__header {
-        @extend .searchBar-header;
+        @extend .searchBar-header !optional;
     }
     .deal-type__input {
         direction: rtl;
         padding-top: $std-size * 0.5;
         .deal-type__bar {
             min-width: $std-size * 8;
-            @extend .searchBar-input-bar;
+            @extend .searchBar-input-bar !optional;
             .symbol__arrow {
                 color: black;
                 font-size: $font-size-xxs;
@@ -19,7 +19,7 @@
         }
         
         .deal-type__dropdown {
-            @extend .dropdown-with-checkboxes;
+            @extend .dropdown-with-checkboxes !optional;
             grid-template-columns: 1;
             grid-template-rows: repeat(2, 1fr);
         }

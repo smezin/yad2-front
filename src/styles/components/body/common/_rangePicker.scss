@@ -1,7 +1,7 @@
 .range-picker__free-text-template {
     @extend .searchBar-flexbox-column;
     .range-picker__header {
-        @extend .searchBar-header;
+        color: red;
     }
     .range-picker__input-container {
         direction: rtl;
@@ -11,14 +11,13 @@
         max-width: $std-size * 24;
         min-width: $std-size * 8;
         .range-picker__min {
-            @extend .searchBar-input-bar;
+            @extend .searchBar-input-bar !optional;
             &:focus{
                 outline-width: 0;
             }
         }
         .range-picker__max {
             @extend .range-picker__min;
-            grid-area: min-range-picker;
         }
     }
     

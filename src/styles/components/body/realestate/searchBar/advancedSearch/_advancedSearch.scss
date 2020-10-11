@@ -4,7 +4,7 @@
         background: $theme-selected;
         display: flex;
         justify-content: space-around;
-        @extend .searchBar-button;
+        @extend .searchBar-button !optional;
         .button-text {
             background-color: inherit;
             margin: 0 $std-size * 0.4;

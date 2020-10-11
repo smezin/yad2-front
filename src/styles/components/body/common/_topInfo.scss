@@ -7,16 +7,16 @@
     padding: $std-size * 0.6;
     .top-info__right {
         background-color: $theme-background-body;
-        color: lighten($theme-text, 40%);
+        color: $theme-text-lighter;
         font-size: $font-size-xs;
         .top-info__nav__delimiter {
             background: $theme-background-body;
-            color: lighten($theme-text, 40%);
+            color: $theme-text-lighter;
             font-size: $font-size-xxs;
         }
     }
     .top-info__accessibility {
-        @extend .flex-center;
+        @extend .flex-center !optional;
         background: $accessibility-blue;
         border-radius: 6%;
         color: white;

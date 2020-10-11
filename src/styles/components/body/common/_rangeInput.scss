@@ -1,5 +1,5 @@
 .range-input__searchbar-template {
-    @extend .flex-center;
+    @extend .flex-center !optional;
     box-shadow: $theme-box-shadow;
     flex-direction: row; 
     padding: $std-size;
@@ -7,7 +7,7 @@
     width: $std-size * 10;
     .range-input__from {
         border: 1px solid $theme-box-border;
-        color: lighten($theme-text, 30%);
+        color: $theme-text-lighter;
         display: flex;
         font-size: $font-size-xxs;
         justify-content: space-between;
@@ -20,12 +20,12 @@
         }
     }
     .range-input__upto {
-        @extend .range-input__from
+        @extend .range-input__from 
     }  
 } 
 .range-input__advanced-search-row-template {
     .range-input {
-        @extend .flex-center;
+        @extend .flex-center !optional;
         flex-direction: row; 
         justify-content: space-between;
         margin: $std-size;
@@ -33,7 +33,7 @@
     }
     .range-input__from {
         border: 1px solid $theme-box-border;
-        color: lighten($theme-text, 30%);
+        color: $theme-text-lighter;
         cursor: pointer;
         display: flex;
         font-size: $font-size-xxs;

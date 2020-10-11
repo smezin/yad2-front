@@ -1,7 +1,7 @@
 .roommates {
     @extend .searchBar-flexbox-column;
     .roommates__header {
-        @extend .searchBar-header;
+        @extend .searchBar-header !optional;
     }
     .roommates__input {
         direction: rtl;
@@ -9,7 +9,7 @@
         min-width: $std-size * 6;
         padding-top: $std-size * 0.5;
         .roommates-bar {
-            @extend .searchBar-input-bar;
+            @extend .searchBar-input-bar !optional;
             .symbol__arrow {
                 color: black;
                 font-size: $font-size-xxs;
@@ -20,10 +20,10 @@
         }   
     }
     .range-input {
-        @extend .range-input__searchbar-template;
+        @extend .range-input__searchbar-template !optional;
     }
     .number-picker {
-        @extend .number-picker__searchbar-template;
+        @extend .number-picker__searchbar-template !optional;
     }
 }
     
