@@ -21,6 +21,11 @@ export const filtersReducerInitialState = {
       maxSize: undefined,
       onlyImmediateEntry: false,
       properties: [],
+      restroom: undefined,
+      rooms: undefined,
+      securityRoom: undefined,
+      split: undefined,
+      storage: undefined,
       showOnlyItemsWithImage: false,
       showOnlyItemsWithPrice: false,
       text: undefined,
@@ -224,6 +229,30 @@ export const filtersReducer = (state, action) => {
                 balcony: action.balcony
             }
         }
+    case 'TOGGLE_RESTROOM':
+        return {
+            ...state,
+            search: {
+                ...state.search,
+                restroom: action.restroom
+            }
+        }
+    case 'TOGGLE_ROOMS':
+        return {
+            ...state,
+            search: {
+                ...state.search,
+                rooms: action.rooms
+            }
+        }
+    case 'TOGGLE_SECURITY_ROOM':
+        return {
+            ...state,
+            search: {
+                ...state.search,
+                securityRoom: action.securityRoom
+            }
+        }
     case 'TOGGLE_SHOW_ONLY_ITEMS_WITH_IMAGE':
         return {
             ...state,
@@ -240,6 +269,22 @@ export const filtersReducer = (state, action) => {
               showOnlyItemsWithPrice: !state.search.showOnlyItemsWithPrice
           }
       }
+      case 'TOGGLE_SPLIT':
+          return {
+              ...state,
+              search: {
+                  ...state.search,
+                  split: action.split
+              }
+          }
+      case 'TOGGLE_STORAGE':
+        return {
+            ...state,
+            search: {
+                ...state.search,
+                storage: action.storage
+            }
+        }
     case 'REMOVE_TYPE':
         return {
             ...state,

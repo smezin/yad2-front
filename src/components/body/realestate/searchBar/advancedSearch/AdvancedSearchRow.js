@@ -1,8 +1,13 @@
 import React from 'react'
-import FloorPicker from './FloorPicker'
-import SizePicker from './Size'
-import EntryDate from './EntryDate'
 import Balcony from './Balcony'
+import EntryDate from './EntryDate'
+import FloorPicker from './FloorPicker'
+import Restroom from './Restroom'
+import Rooms from './Rooms'
+import SecurityRoom from './SecurityRoom'
+import SizePicker from './Size'
+import Split from './Split'
+import Storage from './Storage'
 
 const AdvancedSearchRow = (props) => {
     const { category } = props
@@ -23,28 +28,39 @@ const AdvancedSearchRow = (props) => {
                 return (
                     <React.Fragment>
                         <div className="advanced-search-row">
-                          
-                           
-                            <EntryDate />
-                        </div>
-                        <div className="advanced-search-row">
                             <FloorPicker />
-                           
+                            <SizePicker />
+                            <EntryDate />
                         </div>
                     </React.Fragment>
                 )
             case 'roommates':
                 return (
-                    <React.Fragment>
-                        <div className="advanced-search-row">
-                            <Balcony />
-                            <SizePicker />
-                        </div>                       
-                    </React.Fragment>
+                    <div className="advanced-search-row">
+                       <Split />
+                    </div>      
                 )
                 
             case 'commercial':
-                return
+                return (
+                    <React.Fragment>
+                    <div className="advanced-search-row">
+                        <FloorPicker />
+                        <SizePicker />
+                        <EntryDate />
+                    </div>   
+                    <div className="advanced-search-row">
+                        <Balcony />
+                        <Restroom />
+                        <Storage />
+                        <SecurityRoom />
+                    </div>      
+                    <div className="advanced-search-row">
+                       <Split />
+                       <Rooms />
+                    </div>                       
+                </React.Fragment>
+                )
             default:
                 return   
         }

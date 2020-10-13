@@ -100,6 +100,11 @@ export const setMinSize = (minSize) => ({
     type: 'SET_MIN_SIZE',
     minSize
 })
+//SET PROPERTIES
+export const setProperties = (properties) => ({
+    type: 'SET_PROPERTIES',
+    properties
+})
 //SET TEXT
 export const setText = (text) => ({
     type: 'SET_TEXT',
@@ -110,10 +115,7 @@ export const setPropertyTypes = (propertyType) => ({
     type: 'SET_PROPERTY_TYPES',
     propertyType
 })
-export const setProperties = (properties) => ({
-    type: 'SET_PROPERTIES',
-    properties
-})
+
 //SORT BY DATE
 export const sortByDate = () => {
     handleBottomFiltersChanged()
@@ -164,6 +166,31 @@ export const removeType = (propertyType) => ({
 export const toggleBalcony = (balcony) => ({
     type: 'TOGGLE_BALCONY',
     balcony
+})
+//TOGGLE RESTROOM
+export const toggleRestroom = (restroom) => ({
+    type: 'TOGGLE_RESTROOM',
+    restroom
+})
+//TOGGLE ROOMS
+export const toggleRooms = (rooms) => ({
+    type: 'TOGGLE_ROOMS',
+    rooms,
+})
+//TOGGLE SECURITY ROOM
+export const toggleSecurityRoom = (securityRoom) => ({
+    type: 'TOGGLE_SECURITY_ROOM',
+    securityRoom
+})
+//TOGGLE SPLIT
+export const toggleSplit = (split) => ({
+    type: 'TOGGLE_SPLIT',
+    split
+})
+//TOGGLE STORAGE
+export const toggleStorage = (storage) => ({
+    type: 'TOGGLE_STORAGE',
+    storage
 })
 //TOGGLE ONLY IMMEDIATE ENTRY
 export const toggleOnlyImmediateEntry = () => ({

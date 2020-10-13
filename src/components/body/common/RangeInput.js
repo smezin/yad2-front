@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import RangePickerDiscrete from 'components/body/common/RangePickerDiscrete'
 import { upArrow, downArrow} from 'resources/specialChars'
 import onClickOutside from 'react-onclickoutside'
+import isNumeric from 'utility/isNumeric'
 
 function RangeInput (props) 
 {
@@ -49,13 +50,13 @@ function RangeInput (props)
     }
     return ( 
     <div className="range-input" id="range-input" style={setMenuLocation()}>
-        <div className="range-input__from" onClick={toggleFromDropdown}>
+        <div className={`range-input__from${isNumeric(from) ? '__has-data':''}`} onClick={toggleFromDropdown}>
             {from} {isFromOpen ? downArrow : upArrow} 
             {   isFromOpen &&
                 <RangePickerDiscrete set="min" menuSpecs={menuSpecs} downOffset={menuHeight} header={header} />
             }
         </div>
-        <div className="range-input__upto" onClick={toggleUpToDropdown}>
+        <div className={`range-input__upto${isNumeric(upTo) ? '__has-data':''}`} onClick={toggleUpToDropdown}>
             {upTo} {isUpToOpen ? downArrow : upArrow}
             {   isUpToOpen &&
                 <RangePickerDiscrete set="max" menuSpecs={menuSpecs} downOffset={menuHeight} header={header} />

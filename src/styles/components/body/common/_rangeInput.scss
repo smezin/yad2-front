@@ -47,7 +47,14 @@
             margin: 0 $std-size * 0.5;
         }
     }
+    .range-input__from__has-data {
+       @extend .range-input__from;
+       color: $theme-text-darker;
+    }
     .range-input__upto {
         @extend .range-input__from
     }  
+    .range-input__upto__has-data {
+       @extend .range-input__from__has-data
+    }
 }

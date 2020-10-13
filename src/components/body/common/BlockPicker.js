@@ -5,7 +5,6 @@ const BlockPicker = (props) => {
     const { optionsObj, toggleFunc, serachFilter } = props
     const { dispatch, filters } = useContext(FiltersContext)
     const [currentPick, setCurrentPick] = useState(filters.search[serachFilter])
-    console.log(currentPick)
     
     const handlePick = (pick) => {
         dispatch(toggleFunc(pick))
