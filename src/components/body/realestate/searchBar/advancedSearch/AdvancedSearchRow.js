@@ -44,7 +44,8 @@ const AdvancedSearchRow = (props) => {
             case 'roommates':
                 return (
                     <div className="advanced-search-row">
-                       <Split />
+                       <EntryDate />
+                       <Text />
                     </div>      
                 )
                 
