@@ -8,8 +8,8 @@ const RangePickerContinuous = (props) => {
     const { rangeSpecs } = props
     const { headerLocalName, minPlaceHolder, maxPlaceHolder, setMin, setMax, minFilter, maxFilter, updateAdvancedFiltersCount } = rangeSpecs
     const { dispatch, filters } = useContext(FiltersContext)
-    const [minDisplay, setMinDisplay] = useState(addSeperator(filters.search[minFilter]) || minPlaceHolder)
-    const [maxDisplay, setMaxDisplay] = useState(addSeperator(filters.search[maxFilter]) || maxPlaceHolder)
+    const [minDisplay, setMinDisplay] = useState(addSeperator(filters.search[minFilter]))
+    const [maxDisplay, setMaxDisplay] = useState(addSeperator(filters.search[maxFilter]))
 
     const handleChange = (e, set) => {
         let isNumber = undefined
@@ -68,19 +68,17 @@ const RangePickerContinuous = (props) => {
         isNumeric(removeSeperator(maxDisplay)) ? dispatch(setMax(parseFloat(removeSeperator(maxDisplay)))) 
         : dispatch(setMax(undefined))
     },[maxDisplay, setMax, dispatch])
-    const style = {
-        color: 'black'
-    }
+
     return (
         <div className="range-picker">
             <div className="range-picker__header">
               {headerLocalName}
             </div>
             <div className="range-picker__input-container">
-                <input style={style} className="range-picker__min" type="text" onChange={(e) => handleChange(e, 'min')}
-                placeholder={minPlaceHolder} />
+                <input className="range-picker__min" type="text" onChange={(e) => handleChange(e, 'min')}
+                placeholder={minPlaceHolder} value={minDisplay} />
                 <input className="range-picker__max" type="text" onChange={(e) => handleChange(e, 'max')} 
-                placeholder={maxPlaceHolder} />
+                placeholder={maxPlaceHolder} value={maxDisplay} />
             </div>
         </div>
     )

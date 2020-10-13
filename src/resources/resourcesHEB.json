@@ -319,6 +319,23 @@
         }
     },
     "advancedSearch": {
+        "balcony": {
+            "localName": "מרפסת",
+            "options": {
+                "yes": {"localName": "כן"},
+                "no": {"localName": "לא"}
+            }
+        },
+        "date": {
+            "localName": "תאריך כניסה",
+            "localPlaceHolder": "החל מ- הזינו תאריך"
+        },
+        "floor": {
+            "localName": "קומה",
+            "fromLocalName": "מ-",
+            "upToLocalName": "עד-",
+            "any": "הכל"
+        },
         "PropertiesCheckboxMenu": {
             "localName": "מאפייני דירה",
             "properties": {
@@ -383,21 +400,11 @@
                 }
             }  
         },
-        "floor": {
-            "localName": "קומה",
-            "fromLocalName": "מ-",
-            "upToLocalName": "עד-",
-            "any": "הכל"
-        },
         "size": {
             "localName": "גודל דירה (במ\"ר)",
             "fromLocalName": "מ-",
             "upToLocalName": "עד-",
             "any": "הכל"
-        },
-        "date": {
-            "localName": "תאריך כניסה",
-            "localPlaceHolder": "החל מ- הזינו תאריך"
         }
     }
 }

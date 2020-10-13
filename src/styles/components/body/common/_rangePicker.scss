@@ -1,8 +1,5 @@
 .range-picker__free-text-template {
     @extend .searchBar-flexbox-column;
-    .range-picker__header {
-        color: red;
-    }
     .range-picker__input-container {
         direction: rtl;
         display: flex;

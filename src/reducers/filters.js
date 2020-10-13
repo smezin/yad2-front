@@ -4,6 +4,7 @@ export const filtersReducerInitialState = {
   locationCurrentText: '',
   numOfAdvancedFilters: 0,
   search: {
+      balcony: undefined,
       category: 'forsale',
       dealTypes: [],
       location: undefined,
@@ -215,7 +216,14 @@ export const filtersReducer = (state, action) => {
             ...state,
             sortBy: 'priceLowHigh'
         }
-    
+    case 'TOGGLE_BALCONY':
+        return {
+            ...state,
+            search: {
+                ...state.search,
+                balcony: action.balcony
+            }
+        }
     case 'TOGGLE_SHOW_ONLY_ITEMS_WITH_IMAGE':
         return {
             ...state,

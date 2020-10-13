@@ -5,6 +5,7 @@
     max-height: $std-size * 17;
     overflow-y: scroll;
     position: absolute;
+    z-index: 10;
     .menu-header {
         @extend .number !optional;
         padding-top: $std-size *5;

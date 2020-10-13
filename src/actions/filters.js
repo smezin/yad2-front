@@ -160,6 +160,11 @@ export const removeType = (propertyType) => ({
     type: 'REMOVE_TYPE',
     propertyType
 })
+//TOGGLE BALCONY
+export const toggleBalcony = (balcony) => ({
+    type: 'TOGGLE_BALCONY',
+    balcony
+})
 //TOGGLE ONLY IMMEDIATE ENTRY
 export const toggleOnlyImmediateEntry = () => ({
     type: 'TOGGLE_ONLY_IMMEDIATE_ENTRY'
