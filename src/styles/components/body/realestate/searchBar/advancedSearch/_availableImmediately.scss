@@ -1,0 +1,21 @@
+.available-immediately {
+    display: flex;
+    margin: auto;
+    .available-immediately__header{
+        color: $theme-text;
+        font-size: $font-size-s;
+        justify-content: space-around;
+        padding: 0 $std-size * 0.2;
+        margin: auto;
+    }
+
+    .symbol__checkbox {
+        font-size: $font-size-l;
+        padding-left: $std-size * 0.3;
+    }    
+    &:hover {
+        .symbol__checkbox {
+            color: $theme-main-color;
+        }
+    }  
+}

@@ -20,7 +20,7 @@ const Size = (props) => {
         maxFilter: 'maxSize',
         updateAdvancedFiltersCount: true
     }
-
+    
     return (
         < div className="size-picker">
            <RangePickerContinuous category={category} rangeSpecs={rangeSpecs} />

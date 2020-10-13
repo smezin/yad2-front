@@ -1,5 +1,8 @@
 import React from 'react'
+import AdvancedSearchButton from './AdvancedSeachButton'
+import AvailableImmediately from './AvailableImmediately'
 import Balcony from './Balcony'
+import ClearAdvancedFilters from './ClearAdvancedFilters'
 import EntryDate from './EntryDate'
 import FloorPicker from './FloorPicker'
 import Restroom from './Restroom'
@@ -12,7 +15,7 @@ import Storage from './Storage'
 
 const AdvancedSearchRow = (props) => {
     const { category } = props
-
+   
     const renderAdvancedSearchRowsByCategory = () => {
         switch(category) {
             case 'forsale':
@@ -22,6 +25,7 @@ const AdvancedSearchRow = (props) => {
                             <FloorPicker />
                             <SizePicker />
                             <EntryDate />
+                            <AvailableImmediately />
                         </div>
                         <div className="advanced-search-row">
                             <Text />
@@ -35,6 +39,7 @@ const AdvancedSearchRow = (props) => {
                             <FloorPicker />
                             <SizePicker />
                             <EntryDate />
+                            <AvailableImmediately />
                         </div>
                         <div className="advanced-search-row">
                             <Text />
@@ -45,6 +50,7 @@ const AdvancedSearchRow = (props) => {
                 return (
                     <div className="advanced-search-row">
                        <EntryDate />
+                       <AvailableImmediately />
                        <Text />
                     </div>      
                 )
@@ -56,6 +62,7 @@ const AdvancedSearchRow = (props) => {
                         <FloorPicker />
                         <SizePicker />
                         <EntryDate />
+                        <AvailableImmediately />
                     </div>   
                     <div className="advanced-search-row">
                         <Balcony />
@@ -69,16 +76,22 @@ const AdvancedSearchRow = (props) => {
                     </div>        
                     <div className="advanced-search-row">
                             <Text />
-                        </div>               
+                    </div>               
                 </React.Fragment>
                 )
             default:
                 return   
         }
     }
+  
     return (
         <div>
            {renderAdvancedSearchRowsByCategory()}
+           <div className="advanced-search-row">
+              <AdvancedSearchButton />
+              <ClearAdvancedFilters />
+           </div>
+           
         </div>
     )
 }

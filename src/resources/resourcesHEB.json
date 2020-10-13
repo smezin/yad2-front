@@ -319,12 +319,21 @@
         }
     },
     "advancedSearch": {
+        "advancedSearchButton": {
+            "localName": "חיפוש"
+        },
+        "availableImmediately" : {
+            "localName": "כניסה מיידית"
+        },
         "balcony": {
             "localName": "מרפסת",
             "options": {
                 "yes": {"localName": "כן"},
                 "no": {"localName": "לא"}
             }
+        },
+        "cleanAdvancedPicks" : {
+            "localName": "נקה"
         },
         "date": {
             "localName": "תאריך כניסה",

@@ -9,24 +9,24 @@ const Storage = () => {
     const { dispatch, filters } = useContext(FiltersContext)
     const [currentText, setCurrentText] = useState(filters.search.text || '')
    
-    
     const handleChange = (e) => {
         updateFiltersCount(e.target.value)
         setCurrentText(e.target.value)
-        
-        
     }
     const updateFiltersCount = (input) => {
-       // console.log(filters.search.text, ' ', currentText);
        if (input !== '' && (currentText === '' || !currentText)) {
            dispatch(incAdvancedFilters())
        } else if (input === '' && currentText !== '') {
            dispatch(decAdvancedFilters())
        }
     }
-    useEffect ( () => {
+    useEffect( () => {
         dispatch(setText(currentText))
     },[currentText, dispatch])
+    
+    useEffect( () => {
+        filters.numOfAdvancedFilters === 0 && setCurrentText('')
+    },[filters.numOfAdvancedFilters])
 
     return (
         <div className="advanced-search-text">

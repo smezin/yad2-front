@@ -4,7 +4,10 @@ const handleBottomFiltersChanged = () => {
      //   fetchItems()
     }, 0)
 }
-
+//CLEAR ADVANCED FILTERS
+export const clearAdvancedFilters = () => ({
+    type: 'CLEAR_ADVANCED_FILTERS'
+})
 
 //CLEAR SEARCH
 export const clearSearch = () => ({
@@ -192,9 +195,10 @@ export const toggleStorage = (storage) => ({
     type: 'TOGGLE_STORAGE',
     storage
 })
-//TOGGLE ONLY IMMEDIATE ENTRY
-export const toggleOnlyImmediateEntry = () => ({
-    type: 'TOGGLE_ONLY_IMMEDIATE_ENTRY'
+//TOGGLE AVAILABLE IMMEDIATELY 
+export const toggleAvailableImmediately = (availableImmediately) => ({
+    type: 'TOGGLE_AVAILABLE_IMMEDIATELY',
+    availableImmediately
 })
 //SET MIN ENTRY DATE
 export const setMinEntryDate = (minEntryDate) => ({

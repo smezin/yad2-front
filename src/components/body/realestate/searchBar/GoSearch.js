@@ -9,7 +9,7 @@ const GoSearch = () => {
     const onClick = () => console.log(filters)
     return (
         <div className="go-search" onClick={onClick}>
-            {magnifyingGlass}  <span className="header">{searchLocalName}</span> 
+            {magnifyingGlass}  <span className="go-search__header">{searchLocalName}</span> 
         </div>
     )
 }

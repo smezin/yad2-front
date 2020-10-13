@@ -19,7 +19,7 @@ export const filtersReducerInitialState = {
       maxRoommates: undefined,
       maxRooms: undefined,
       maxSize: undefined,
-      onlyImmediateEntry: false,
+      availableImmediately: false,
       properties: [],
       restroom: undefined,
       rooms: undefined,
@@ -32,9 +32,32 @@ export const filtersReducerInitialState = {
       types: []
   },
 }
-
+const advancedFiltersInitialState = {
+    balcony: undefined,
+    minEntryDate: undefined,
+    minFloor: undefined,       
+    minSize: undefined,      
+    maxFloor: undefined,      
+    maxSize: undefined,
+    availableImmediately: false,
+    properties: [],
+    restroom: undefined,
+    rooms: undefined,
+    securityRoom: undefined,
+    split: undefined,
+    storage: undefined,
+    text: undefined,
+}
 export const filtersReducer = (state, action) => {
   switch (action.type) {
+    case 'CLEAR_ADVANCED_FILTERS':
+        return {
+            numOfAdvancedFilters: 0,
+            search: {
+                ...state.search,
+                ...advancedFiltersInitialState
+            }
+        }
     case 'CLEAR_FILTERS':
         return filtersReducerInitialState
 
@@ -293,12 +316,12 @@ export const filtersReducer = (state, action) => {
                 types: state.search.types.filter((type) => type !== action.propertyType)
             }
         }
-    case 'TOGGLE_ONLY_IMMEDIATE_ENTRY':
+    case 'TOGGLE_AVAILABLE_IMMEDIATELY':
         return {
             ...state,
             search: {
                 ...state.search,
-                onlyImmediateEntry: !state.search.onlyImmediateEntry
+                availableImmediately: action.availableImmediately
             }
         }
     case 'TOGGLE_PROPERTY':

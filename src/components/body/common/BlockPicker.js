@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
 import { incAdvancedFilters } from 'actions/filters'
 
@@ -12,6 +12,9 @@ const BlockPicker = (props) => {
         dispatch(toggleFunc(pick))
         setCurrentPick(pick)
     }
+    useEffect( () => {
+        setCurrentPick(filters.search[serachFilter])
+    },[filters.search, filters.numOfAdvancedFilters, serachFilter])
   
     return (
         <div className="block-picker__options-container" >            

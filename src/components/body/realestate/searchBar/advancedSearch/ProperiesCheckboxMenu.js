@@ -22,7 +22,6 @@ const PropertiesCheckboxMenu = (props) => {
         }        
     }
     
-   
     useEffect( () => {
         dispatch(setProperties(pickedProperties))
     },[pickedProperties, dispatch])
@@ -31,6 +30,9 @@ const PropertiesCheckboxMenu = (props) => {
         dispatch(setProperties(filters.search.properties))
     },[dispatch, filters.search.properties])
 
+    useEffect( () => {
+        setPickedProperties(filters.search.properties)
+    },[filters.numOfAdvancedFilters, filters.search.properties])
     return (
         <div className="properties-checkbox-menu">
             <div className="properties-checkbox-menu__header">

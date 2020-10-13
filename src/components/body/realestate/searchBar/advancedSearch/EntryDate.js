@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { setMinEntryDate, incAdvancedFilters } from 'actions/filters'
 import fetchFromResource from 'utility/fetchFromResource'
 import DatePicker from "react-datepicker"
@@ -17,7 +17,9 @@ const EntryDate = () => {
         setEntryDate(pickedDate)
         dispatch(setMinEntryDate(pickedDate))
     }
-    
+    useEffect( () => {
+        setEntryDate(filters.search.minEntryDate || false)
+    },[filters.numOfAdvancedFilters, filters.search.minEntryDate])
     return(
         <div className="entry-date">
             <div className="entry-date__header">

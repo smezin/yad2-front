@@ -1,0 +1,10 @@
+.advanced-search-button {
+    background: $theme-main-color;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-size: $font-size-xs;
+    font-weight: 500;
+    margin: 0 auto;
+    padding: $std-size * 0.8 $std-size * 1.2;
+}

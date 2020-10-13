@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
-import { incAdvancedFilters, decAdvancedFilters} from 'actions/filters'
+import { incAdvancedFilters, decAdvancedFilters } from 'actions/filters'
 import isNumeric from 'utility/isNumeric'
 import { addSeperator, removeSeperator} from 'utility/numbersDisplay'
 
@@ -68,6 +68,11 @@ const RangePickerContinuous = (props) => {
         isNumeric(removeSeperator(maxDisplay)) ? dispatch(setMax(parseFloat(removeSeperator(maxDisplay)))) 
         : dispatch(setMax(undefined))
     },[maxDisplay, setMax, dispatch])
+
+    // useEffect( () => {
+    //     setMinDisplay(filters.search.minSize)
+    //     setMaxDisplay(filters.search.maxSize)
+    // },[filters.numOfAdvancedFilters, filters.search.maxSize, filters.search.minSize])
 
     return (
         <div className="range-picker">
