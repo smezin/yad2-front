@@ -1,9 +1,9 @@
 .block-picker__container {
     @extend .searchBar-flexbox-column !optional;
     padding: $std-size*0.6;
-    max-width: $std-size * 18;
+    max-width: $std-size * 24;
     .block-picker__header {
-        @extend .searchBar-avdanced-search-header;
+        @extend .searchBar-avdanced-search-header !optional;
     }
     .block-picker__options-container {
         @extend .flex-center !optional;

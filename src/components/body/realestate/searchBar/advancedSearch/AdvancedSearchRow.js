@@ -5,6 +5,7 @@ import FloorPicker from './FloorPicker'
 import Restroom from './Restroom'
 import Rooms from './Rooms'
 import SecurityRoom from './SecurityRoom'
+import Text from './Text'
 import SizePicker from './Size'
 import Split from './Split'
 import Storage from './Storage'
@@ -22,6 +23,9 @@ const AdvancedSearchRow = (props) => {
                             <SizePicker />
                             <EntryDate />
                         </div>
+                        <div className="advanced-search-row">
+                            <Text />
+                        </div>
                     </React.Fragment>
                 )
             case 'rent':
@@ -31,6 +35,9 @@ const AdvancedSearchRow = (props) => {
                             <FloorPicker />
                             <SizePicker />
                             <EntryDate />
+                        </div>
+                        <div className="advanced-search-row">
+                            <Text />
                         </div>
                     </React.Fragment>
                 )
@@ -58,7 +65,10 @@ const AdvancedSearchRow = (props) => {
                     <div className="advanced-search-row">
                        <Split />
                        <Rooms />
-                    </div>                       
+                    </div>        
+                    <div className="advanced-search-row">
+                            <Text />
+                        </div>               
                 </React.Fragment>
                 )
             default:

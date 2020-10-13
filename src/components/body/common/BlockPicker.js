@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
+import { incAdvancedFilters } from 'actions/filters'
 
 const BlockPicker = (props) => {
     const { optionsObj, toggleFunc, serachFilter } = props
@@ -7,6 +8,7 @@ const BlockPicker = (props) => {
     const [currentPick, setCurrentPick] = useState(filters.search[serachFilter])
     
     const handlePick = (pick) => {
+        !currentPick && dispatch(incAdvancedFilters())
         dispatch(toggleFunc(pick))
         setCurrentPick(pick)
     }

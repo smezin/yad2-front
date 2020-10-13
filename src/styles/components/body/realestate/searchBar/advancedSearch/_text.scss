@@ -1,0 +1,25 @@
+.advanced-search-text {
+    @extend .range-input__advanced-search-row-template !optional;
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    padding: $std-size * 0.6;
+    .advanced-search-text__header {
+        @extend .searchBar-avdanced-search-header !optional;
+    }
+    .advanced-search-text__input-container { 
+        margin: $std-size;
+        input {
+            border: 1px solid $theme-box-border;
+            direction: rtl;
+            display: flex;
+            justify-content: flex-start;
+            min-width: $std-size * 24;
+            padding: $std-size * 0.6;
+            &:focus{
+                outline-width: 0;
+            }    
+        }
+       
+    }
+}
