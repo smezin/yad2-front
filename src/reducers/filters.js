@@ -22,6 +22,7 @@ export const filtersReducerInitialState = {
       availableImmediately: false,
       properties: [],
       restroom: undefined,
+      roommateGender: [],
       rooms: undefined,
       securityRoom: undefined,
       split: undefined,
@@ -42,6 +43,7 @@ const advancedFiltersInitialState = {
     availableImmediately: false,
     properties: [],
     restroom: undefined,
+    roommateGender: [],
     rooms: undefined,
     securityRoom: undefined,
     split: undefined,
@@ -258,6 +260,14 @@ export const filtersReducer = (state, action) => {
             search: {
                 ...state.search,
                 restroom: action.restroom
+            }
+        }
+    case 'TOGGLE_ROOMMATE_GENDER':
+        return {
+            ...state,
+            search: {
+                ...state.search,
+                roommateGender: action.roommateGender
             }
         }
     case 'TOGGLE_ROOMS':

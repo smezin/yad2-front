@@ -1,0 +1,44 @@
+.roommate-gender {
+    margin: auto;
+    .roommate-gender__header {
+        color: $theme-text-darker;
+        direction: rtl;
+        font-size: $font-size-s-xs;
+        padding-bottom: $std-size * 1.0;
+    }
+    .roommate-gender__options-container {
+        direction: rtl;
+        display: flex;
+        justify-content: space-between;
+        min-width: $std-size * 8;
+        padding-bottom: $std-size * 1.8;
+        .roommate-gender__male {
+            display: flex;
+            justify-content: space-around;
+            .roommate-gender__option__text {
+                color: $theme-text-darker;
+                cursor: pointer;
+                font-size: $font-size-s;
+                margin: auto 0;
+            }
+            .roommate-gender__option {
+                .symbol__checkbox {
+                    font-size: $font-size-m;
+                    padding-left: $std-size * 0.4;
+                }
+                .symbol__checkedbox {
+                    color: $theme-main-color;
+                }
+            }
+            &:hover {
+                .symbol__checkbox {
+                    color: $theme-main-color;
+                }
+            }
+        }
+        
+        .roommate-gender__female {
+            @extend .roommate-gender__male
+        }   
+    }
+}

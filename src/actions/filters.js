@@ -175,6 +175,10 @@ export const toggleRestroom = (restroom) => ({
     type: 'TOGGLE_RESTROOM',
     restroom
 })
+export const toggleRoommateGender = (roommateGender) => ({
+    type: 'TOGGLE_ROOMMATE_GENDER',
+    roommateGender
+})
 //TOGGLE ROOMS
 export const toggleRooms = (rooms) => ({
     type: 'TOGGLE_ROOMS',
