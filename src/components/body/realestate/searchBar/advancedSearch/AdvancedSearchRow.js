@@ -6,6 +6,7 @@ import ClearAdvancedFilters from './ClearAdvancedFilters'
 import EntryDate from './EntryDate'
 import FloorPicker from './FloorPicker'
 import Restroom from './Restroom'
+import RoommateGender from './RoommateGender'
 import Rooms from './Rooms'
 import SecurityRoom from './SecurityRoom'
 import Text from './Text'
@@ -51,6 +52,7 @@ const AdvancedSearchRow = (props) => {
                     <div className="advanced-search-row">
                        <EntryDate />
                        <AvailableImmediately />
+                       <RoommateGender />
                        <Text />
                     </div>      
                 )

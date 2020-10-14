@@ -417,6 +417,13 @@
                 "inBuilding": {"localName": "בבנין"}
             }
         },
+        "roommateGender": {
+            "localName": "מין השותף הרצוי",
+            "options": {
+                "male": {"localName": "זכר"},
+                "female": {"localName": "נקבה"}
+            }
+        },
         "rooms": {
             "localName": "חדרים",
             "options": {

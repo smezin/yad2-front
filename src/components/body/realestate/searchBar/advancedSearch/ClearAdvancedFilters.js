@@ -10,7 +10,7 @@ const ClearAdvancedFliters = () => {
     const onClick = () => dispatch(clearAdvancedFilters())
 
     return (
-        <div className="clean-advanced-picks-button" onClick={onClick} >
+        <div className="clear-advanced-filters-button" onClick={onClick} >
             {clearLocalName}
         </div>
     )
