@@ -5,6 +5,7 @@ import MainMenu from 'components/mainMenu/MainMenu'
 import RealestateNavbar from 'components/navBars/RealestateNavbar'
 import RealestateBody from 'components/body/realestate/RealestateBody'
 import Footer from 'components/footer/Footer'
+import PersonalPage from 'components/personal/PersonalPage'
 
 export const history = createBrowserHistory()
 
@@ -25,6 +26,7 @@ const AppRouter = () => {
             <Switch>
                 <Route path="/realestate" component={RealestateBody} />
                 <Redirect from="/" to="/realestate" exact={true} />
+                <Route path="/personal" component={PersonalPage} />
             </Switch>
             <Footer />
         </Router>
