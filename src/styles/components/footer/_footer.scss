@@ -1,0 +1,35 @@
+.footer {
+    background: $theme-footer-background;
+    .top-text {
+        background-color: inherit;
+        color: $theme-text-lighter;
+        font-size: $font-size-xs;
+        margin: 0 $std-size * 10;
+        text-align: center;
+        padding: $std-size * 3 0 $std-size * 0.8;
+        white-space: pre-wrap;
+    }
+    .social-media-links {
+        background-color: inherit;
+        display: flex;
+        justify-content: space-around;
+        margin: $std-size *2 auto;
+        padding-bottom: $std-size * 2;
+        width: 20%;
+        .social-media-links__icon-container {
+            align-items: center;
+            background-color: black;
+            border-radius: 35px;
+            display: flex;
+            justify-content: center;
+            padding: $std-size * 0.3;
+            height: 40px;
+            width: 40px;   
+            .social-media-links__icon {
+                background-color: inherit;
+                height: $std-size;
+                width: $std-size;
+            }     
+        }
+    }
+}
