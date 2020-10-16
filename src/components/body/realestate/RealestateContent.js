@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBar from './searchBar/SearchBar'
 import TopBoxesRow from './topBoxesRow/TopBoxesRow'
-import FiltersContextProvider from '../../../context/FiltersContext'
+import FiltersContextProvider from 'context/FiltersContext'
 
 const RealestateContent = () => {
     

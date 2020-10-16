@@ -50,7 +50,7 @@ const advancedFiltersInitialState = {
     storage: undefined,
     text: undefined,
 }
-export const filtersReducer = (state, action) => {
+export const filtersReducer = (state = filtersReducerInitialState, action) => {
   switch (action.type) {
     case 'CLEAR_ADVANCED_FILTERS':
         return {

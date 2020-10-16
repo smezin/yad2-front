@@ -15,7 +15,7 @@ const PersonalContent = () => {
                 <div className="personal-content__categories">
                     {
                         Object.keys(menuCategories).map( (category) => 
-                        <div className="personal-content__category">
+                        <div className="personal-content__category" key={category} >
                             {menuCategories[category]['localName']}
                         </div>
                         )
