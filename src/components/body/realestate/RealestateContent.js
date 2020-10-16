@@ -2,6 +2,7 @@ import React from 'react'
 import SearchBar from './searchBar/SearchBar'
 import TopBoxesRow from './topBoxesRow/TopBoxesRow'
 import FiltersContextProvider from 'context/FiltersContext'
+import Feed from './feed/Feed'
 
 const RealestateContent = () => {
     
@@ -11,6 +12,7 @@ const RealestateContent = () => {
                 <SearchBar />
             </FiltersContextProvider>
             <TopBoxesRow />
+            <Feed />
         </div>
     )
 }

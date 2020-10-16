@@ -1,0 +1,28 @@
+.promoted-project {
+    border-radius: 3%;
+    box-shadow: $theme-box-shadow;
+    display: flex;
+    flex-direction: column;
+    height: $std-size * 13;   
+    overflow: hidden;
+    width: 30%;
+   
+    .promoted-project__city {
+        font-size: $font-size-s;
+    }
+    .promoted-project__address {
+        font-size: $font-size-m;
+    }
+    .promoted-project__text {
+
+    }
+    img {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        transition: transform 0.5s;
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+}
