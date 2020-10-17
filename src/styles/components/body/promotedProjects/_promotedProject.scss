@@ -1,28 +1,46 @@
 .promoted-project {
     border-radius: 3%;
     box-shadow: $theme-box-shadow;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     height: $std-size * 13;   
     overflow: hidden;
     width: 30%;
-   
-    .promoted-project__city {
-        font-size: $font-size-s;
-    }
-    .promoted-project__address {
-        font-size: $font-size-m;
-    }
-    .promoted-project__text {
-
+    &:hover {
+        color: blue;
+        img {          
+            transform: scale(1.03);           
+        }
     }
     img {
         width: 100%;
         height: auto;
         overflow: hidden;
         transition: transform 0.5s;
-        &:hover {
-            transform: scale(1.03);
-        }
+       
     }
+    .promoted-project__description {
+        padding: $std-size * 0.4 $std-size * 0.8;
+        color: inherit;
+        .promoted-project__address {
+            color: inherit;
+            font-size: $font-size-s;
+            font-weight: 500;
+        }
+        .promoted-project__city {
+            color: inherit;
+            font-size: $font-size-xs;
+            padding-top: $std-size * 0.3;
+        }
+        .promoted-project__text {
+            color: inherit;
+            font-size: $font-size-xs;
+            font-weight: 500;
+            padding-top: $std-size * 0.8;
+        }
+        
+    }
+    
+  
 }

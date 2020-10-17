@@ -18,7 +18,52 @@ export const sampleItemOne = {
         size: 120, 
         split: undefined,
         storage: undefined,
-        text: "מציאה, כל הקודם זוכה",
-        
+        text: "מציאה, כל הקודם זוכה",  
+    }
+}
+export const sampleItemTwo = {
+    images: [require('images/pormoted_ad2.jpg')],
+    item: {    
+        availableImmediately: "no",
+        balcony: undefined,
+        category: 'forsale',
+        dealType: undefined,
+        entryDate: undefined,
+        floor: 4,
+        location: "סביוני הפארק, תל אביב",
+        myGender: 'male',
+        price: 1500000,
+        properties: ["מחסן"],
+        restroom: undefined,
+        roommates: undefined,
+        rooms: 5,
+        securityRoom: undefined,
+        size: 120, 
+        split: undefined,
+        storage: undefined,
+        text: "מציאה, כל הקודם זוכה",  
+    }
+}
+export const sampleItemThree = {
+    images: [require('images/pormoted_ad3.jpg')],
+    item: {    
+        availableImmediately: "no",
+        balcony: undefined,
+        category: 'forsale',
+        dealType: undefined,
+        entryDate: undefined,
+        floor: 4,
+        location: "רחוב הפקאן, אשדוד",
+        myGender: 'male',
+        price: 1500000,
+        properties: ["מחסן"],
+        restroom: undefined,
+        roommates: undefined,
+        rooms: 5,
+        securityRoom: undefined,
+        size: 120, 
+        split: undefined,
+        storage: undefined,
+        text: "מציאה, כל הקודם זוכה",  
     }
 }

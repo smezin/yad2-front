@@ -481,5 +481,9 @@
             "update": {"localName": "עדכון פרטים"}
         },
         "exit": {"localName": "התנתק"}
+    },
+    "pageNotFound": {
+        "messageLocalName": "כנראה הגעת לעמוד הזה בטעות",
+        "buttonLocalName": "החזירו אותי לעמוד הבית"
     }
 }

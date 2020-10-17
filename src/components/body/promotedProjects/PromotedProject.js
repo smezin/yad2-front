@@ -1,19 +1,22 @@
 import React from 'react'
-import { sampleItemOne } from 'data/fixtures/item'
 
-const PromotedProject = () => {
-    const address = sampleItemOne.item.location
-    const city = address.split(',')[address.split(',').length - 1]
-    const imgPath = sampleItemOne.images[0]
-    const text = sampleItemOne.item.text
-    console.log(address.split(','))
+const PromotedProject = (props) => {
+    const { projectItem } = props
+    const address = projectItem.item.location.split(',')[0]
+    const city = projectItem.item.location.split(',')[address.split(',').length]
+    const imgPath = projectItem.images[0]
+    const text = projectItem.item.text
+    console.log(imgPath)
     
     return (
         <div className="promoted-project">
             <img src={imgPath} alt="x" />
-            <div className="promoted-project__city">{city}</div> 
-            <div className="promoted-project__address">{address}</div> 
-            <div className="promoted-project__text">{text}</div>        
+            <div className="promoted-project__description">
+                <div className="promoted-project__address">{address}</div> 
+                <div className="promoted-project__city">{city}</div> 
+                <div className="promoted-project__text">{text}</div>   
+            </div>
+                 
         </div>
     )
 }

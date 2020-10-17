@@ -1,0 +1,29 @@
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: $std-size $std-size * 12;
+    .page-not-found__message {
+        color: $theme-text;
+        font-size: $font-size-l;
+        margin: 0 auto;
+        padding: $std-size;
+    }
+    .page-not-found__button {
+        border: 2px solid $theme-main-color;
+        border-radius: 2px;
+        color: $theme-main-color;
+        cursor: pointer;
+        font-size: $font-size-s;
+        font-weight: 500;
+        margin: 0 auto;
+        padding: $std-size * 0.5 $std-size;
+        width: $std-size * 12;
+    }
+    img {
+        padding-left: $std-size * 4;
+    }
+    a {
+        text-decoration: none;
+    }
+}
