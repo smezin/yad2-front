@@ -1,14 +1,14 @@
 import React from 'react'
 import ItemContextProvider from 'context/ItemContext'
 import SideAd from 'components/body/common/SideAd'
-import PersonalContent from './PersonalContent'
+import PersonalMenu from './PersonalMenu'
 
 const PersonalPage = () => {
     return (
         <div className="personal-page">
             <SideAd adSide="right" />
             <ItemContextProvider>
-              <PersonalContent />
+              <PersonalMenu />
             </ItemContextProvider>
             <SideAd adSide="left" />
         </div>

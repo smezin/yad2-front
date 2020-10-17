@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Router , Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router , Route, Switch, Redirect } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import MainMenu from 'components/mainMenu/MainMenu'
 import RealestateNavbar from 'components/navBars/RealestateNavbar'
@@ -18,10 +18,9 @@ export const RedirectHome = () => {
     return null
 }
 
-
 const AppRouter = () => {
     return (
-        <Router history={history}>
+        <Router>
             <MainMenu />  
             <RealestateNavbar />
             <Switch>

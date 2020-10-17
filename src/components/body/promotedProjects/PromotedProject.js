@@ -6,7 +6,6 @@ const PromotedProject = (props) => {
     const city = projectItem.item.location.split(',')[address.split(',').length]
     const imgPath = projectItem.images[0]
     const text = projectItem.item.text
-    console.log(imgPath)
     
     return (
         <div className="promoted-project">
