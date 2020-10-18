@@ -27,8 +27,14 @@ export const itemReducerInitialState = {
 export const itemReducer = (state = itemReducerInitialState, action) => {
     switch(action.type) {
         case 'SET_CATEGORY':
+            console.log('reducer')
             return {
-
+                ...state,
+                item: {
+                    ...state.item,
+                    category: action.category
+                }
+                
             }
         case 'SET_ENTRY_DATE':
             return {

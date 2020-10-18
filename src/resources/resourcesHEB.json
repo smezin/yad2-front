@@ -475,12 +475,18 @@
     },
     "personal": {
         "localName": "האיזור האישי",
+        "exit": {"localName": "התנתק"},
         "categories": {
             "edit": {"localName": "עדכון ועריכת מודעות"},
             "publish": {"localName": "פרסום מודעה חדשה"},
             "update": {"localName": "עדכון פרטים"}
         },
-        "exit": {"localName": "התנתק"}
+        "itemTypes": {
+            "forsale": {"localName": "מכירה"},
+            "rent": {"localName": "השכרה"},
+            "roommates": {"localName": "דירת שותפים"},
+            "commercial": {"localName": "נכסים מסחרי"}
+        }
     },
     "pageNotFound": {
         "messageLocalName": "כנראה הגעת לעמוד הזה בטעות",

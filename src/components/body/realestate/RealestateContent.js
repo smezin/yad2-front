@@ -4,12 +4,12 @@ import TopBoxesRow from './topBoxesRow/TopBoxesRow'
 import FiltersContextProvider from 'context/FiltersContext'
 import Feed from './feed/Feed'
 
-const RealestateContent = () => {
-    
+const RealestateContent = (props) => {
+    const { category } = props
     return (
         <div className="realestate-content">
             <FiltersContextProvider>
-                <SearchBar />
+                <SearchBar category={category} />
             </FiltersContextProvider>
             <TopBoxesRow />
             <Feed />

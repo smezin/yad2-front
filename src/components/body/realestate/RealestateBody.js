@@ -4,14 +4,15 @@ import TopAd from '../common/TopAd'
 import SideAd from '../common/SideAd'
 import RealestateContent from './RealestateContent'
 
-const RealestateBody = () => {
+const RealestateBody = (props) => {
+    const { category } = props
     return (
         <div className="realestate-body">
             <SideAd adSide="right"/>
             <div className="realestate-body__content-area">
                 <TopInfo />
                 <TopAd />
-                <RealestateContent />
+                <RealestateContent category={category} />
             </div>  
             <SideAd adSide="left"/>
         </div>

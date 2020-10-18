@@ -8,8 +8,8 @@ const Storage = () => {
     const optionsObj = fetchFromResource('object', 'advancedSearch', 'storage', 'options')
     
     return (
-        <div className="balcony block-picker__container">
-            <div className="balcony__header block-picker__header">
+        <div className="storage block-picker__container">
+            <div className="storage__header block-picker__header">
                 {headerLocalName}
             </div>
             <BlockPicker optionsObj={optionsObj} toggleFunc={toggleStorage} serachFilter="storage" />
