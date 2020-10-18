@@ -481,12 +481,15 @@
             "publish": {"localName": "פרסום מודעה חדשה"},
             "update": {"localName": "עדכון פרטים"}
         },
-        "itemTypes": {
-            "forsale": {"localName": "מכירה"},
-            "rent": {"localName": "השכרה"},
-            "roommates": {"localName": "דירת שותפים"},
-            "commercial": {"localName": "נכסים מסחרי"}
+        "itemForm": {
+            "itemTypes": {
+                "forsale": {"localName": "מכירה"},
+                "rent": {"localName": "השכרה"},
+                "roommates": {"localName": "דירת שותפים"},
+                "commercial": {"localName": "נכסים מסחרי"}
+            }
         }
+
     },
     "pageNotFound": {
         "messageLocalName": "כנראה הגעת לעמוד הזה בטעות",

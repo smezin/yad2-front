@@ -1,5 +1,4 @@
-const newItem = {
-    
+const initialItemProperties = {
     availableImmediately: false,
     balcony: undefined,
     category: 'forsale',
@@ -18,23 +17,20 @@ const newItem = {
     split: undefined,
     storage: undefined,
     text: undefined,
-    
 }
 export const itemReducerInitialState = {
     images: [],
-    item: newItem,
+    properties: initialItemProperties,
 }
 export const itemReducer = (state = itemReducerInitialState, action) => {
     switch(action.type) {
         case 'SET_CATEGORY':
-            console.log('reducer')
             return {
                 ...state,
-                item: {
-                    ...state.item,
+                properties: {
+                    ...state.properties,
                     category: action.category
-                }
-                
+                }   
             }
         case 'SET_ENTRY_DATE':
             return {

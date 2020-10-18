@@ -1,10 +1,8 @@
 //SET_CATEGORY
-export const setCategory = (category) => {
-    console.log('action ', category)
-    return ({
-    type: 'SET_CATEGORY',
-    category
-})}
+export const setCategory = (category) => ({
+        type: 'SET_CATEGORY',
+        category
+})
 //SET_ENTRY_DATE
 
 //SET_FLOOR

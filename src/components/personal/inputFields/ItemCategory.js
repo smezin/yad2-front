@@ -6,8 +6,7 @@ import fetchFromResource from 'utility/fetchFromResource'
 
 const ItemCategory = () => {
     const [pickedCategory, setPickedCategory] = useState('forsale')
-    const categoriesObj = fetchFromResource('object', 'personal', 'itemTypes')
-    const categoriesLocalNames = Object.keys(categoriesObj).map((category) => categoriesObj[category]['localName'])
+    const categoriesObj = fetchFromResource('object', 'personal', 'itemForm','itemTypes')
     const { dispatch } = useContext(ItemContext)
     
     const onChange = (e) => {
