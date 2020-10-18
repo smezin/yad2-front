@@ -17,7 +17,7 @@
         width: 100%;
         height: auto;
         overflow: hidden;
-        transition: transform 0.5s;
+        transition: transform 0.5s ease;
        
     }
     .promoted-project__description {
@@ -40,7 +40,5 @@
             padding-top: $std-size * 0.8;
         }
         
-    }
-    
-  
+    } 
 }
