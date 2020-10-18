@@ -4,16 +4,29 @@ export const setCategory = (category) => ({
         category
 })
 //SET_ENTRY_DATE
-
+export const setEntryDate = (entryDate) => ({
+        type: 'SET_ENTRY_DATE',
+        entryDate
+})
 //SET_FLOOR
 
 //SET_LOCATION
-
+export const setLocation = (location) => ({
+        type: 'SET_LOCATION',
+        location
+})
 //SET_MY_GENDER 
 
 //SET_PRICE
-
-//SET_SIZE               
+export const setPrice = (price) => ({
+        type: 'SET_PRICE',
+        price
+})
+//SET_SIZE      
+export const setSize = (size) => ({
+        type: 'SET_SIZE',
+        size
+})         
 
 //SET_TEXT 
 

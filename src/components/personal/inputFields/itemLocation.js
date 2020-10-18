@@ -1,18 +1,23 @@
-import React from 'react'
-import LocationSearchInput from './LocationInput'
+import React, { useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
+import LocationInput from 'components/body/realestate/searchBar/searchFields/LocationInput'
+import { ItemContext } from 'context/ItemContext'
+import { setLocation } from 'actions/item'
 
 const ItemLocation = (props) => {
     const { category } = props
-    const headerLocalName = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localTitle') 
-
+    const { dispatch } = useContext(ItemContext)
+    const headerLocalName = fetchFromResource('string', 'personal', 'itemForm', 'itemLocation' ,'headerLocalName') 
+    const localLoading = fetchFromResource('string', 'personal', 'itemForm', 'itemLocation', 'localLoading') 
+    const localPlaceholder = fetchFromResource('string', 'personal', 'itemForm', 'itemLocation', 'localPlaceholder') 
     return (
         <div className="item-location">
             <div className="item-location__header">
                 {headerLocalName}
             </div>
             <div className="item-location__input">
-                <LocationSearchInput category={category}/>
+                <LocationInput category={category} localLoading={localLoading} localPlaceholder={localPlaceholder}
+                 setLocation={setLocation} dispatch={dispatch} />
             </div>
 
         </div>

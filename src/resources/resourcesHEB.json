@@ -487,9 +487,19 @@
                 "rent": {"localName": "השכרה"},
                 "roommates": {"localName": "דירת שותפים"},
                 "commercial": {"localName": "נכסים מסחרי"}
+            },
+            "itemLocation": {
+                "headerLocalName": "מיקום הנכס",
+                "localLoading": "טוען...",
+                "localPlaceholder": "לדוגמה: אחוזה, רעננה"
+            },
+            "itemPrice": {
+                "headerLocalName": "מחיר הנכס"
+            },
+            "itemSize": {
+                "headerLocalName": "גודל הנכס במ\"ר"
             }
         }
-
     },
     "pageNotFound": {
         "messageLocalName": "כנראה הגעת לעמוד הזה בטעות",

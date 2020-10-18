@@ -2,6 +2,10 @@ import React, { useContext, useState, useEffect } from 'react'
 import { ItemContext } from 'context/ItemContext'
 import './inputFields/ItemCategory'
 import ItemCategory from './inputFields/ItemCategory'
+import ItemEntryDate from './inputFields/ItemEntryDate'
+import ItemLocation from './inputFields/ItemLocation'
+import ItemPrice from './inputFields/ItemPrice'
+import ItemSize from './inputFields/ItemSize'
 
 const PublishNewItem = () => {
     const { item } = useContext(ItemContext)
@@ -36,6 +40,10 @@ const PublishNewItem = () => {
     return(
         <div className="add-item-form">
             <ItemCategory />
+            <ItemLocation />
+            <ItemPrice />
+            <ItemSize />
+            <ItemEntryDate />
             <div>{renderFormByCategory()} </div>
         </div>
     )

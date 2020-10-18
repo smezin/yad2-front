@@ -34,7 +34,11 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
             }
         case 'SET_ENTRY_DATE':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    entryDate: action.entryDate
+                }
             }
         case 'SET_FLOOR':
             return {
@@ -42,7 +46,11 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
             }
         case 'SET_LOCATION':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    location: action.location
+                }
             }
         case 'SET_MY_GENDER': 
             return {
@@ -50,11 +58,19 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
             }
         case 'SET_PRICE':
             return {
-    
+                ...state,
+                properties: {
+                    ...state.properties,
+                    price: action.price
+                }
             }
         case 'SET_SIZE':
             return {
-                
+                ...state,
+                properties: {
+                    ...state.properties,
+                    size: action.size
+                }
             }
         case 'SET_TEXT': 
             return {
