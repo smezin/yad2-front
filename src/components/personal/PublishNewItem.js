@@ -3,8 +3,10 @@ import { ItemContext } from 'context/ItemContext'
 import './inputFields/ItemCategory'
 import ItemCategory from './inputFields/ItemCategory'
 import ItemEntryDate from './inputFields/ItemEntryDate'
+import ItemFloor from './inputFields/ItemFloor'
 import ItemLocation from './inputFields/ItemLocation'
 import ItemPrice from './inputFields/ItemPrice'
+import ItemRooms from './inputFields/ItemRooms'
 import ItemSize from './inputFields/ItemSize'
 
 const PublishNewItem = () => {
@@ -15,19 +17,19 @@ const PublishNewItem = () => {
         switch(itemCategory) {
             case 'forsale':
                 return (
-                    <div>forsale</div>
+                    <div>forsale custom fields</div>
                 )
             case 'rent':
                 return (
-                    <div>rent</div>
+                    <div>rent custom fields</div>
                 )
             case 'roommates':
                 return (
-                    <div>roommates</div>
+                    <div>roommates custom fields</div>
                 )
             case 'commercial':
                 return (
-                    <div>commercial</div>
+                    <div>commercial custom fields</div>
                 )
             default:
                 return
@@ -44,7 +46,9 @@ const PublishNewItem = () => {
             <ItemPrice />
             <ItemSize />
             <ItemEntryDate />
-            <div>{renderFormByCategory()} </div>
+            <ItemFloor />
+            <ItemRooms />
+            <div className="custom-fields">{renderFormByCategory()} </div>
         </div>
     )
 }

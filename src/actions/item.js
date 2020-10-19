@@ -9,7 +9,10 @@ export const setEntryDate = (entryDate) => ({
         entryDate
 })
 //SET_FLOOR
-
+export const setFloor = (floor) => ({
+        type: 'SET_FLOOR',
+        floor
+})   
 //SET_LOCATION
 export const setLocation = (location) => ({
         type: 'SET_LOCATION',
@@ -22,6 +25,11 @@ export const setPrice = (price) => ({
         type: 'SET_PRICE',
         price
 })
+//SET_ROOMS
+export const setRooms = (rooms) => ({
+        type: 'SET_ROOMS',
+        rooms
+}) 
 //SET_SIZE      
 export const setSize = (size) => ({
         type: 'SET_SIZE',
@@ -38,12 +46,17 @@ export const setSize = (size) => ({
 
 //TOGGLE_PROPERTIES 
 
+//TOGGLE_PROPERTY_TYPE
+export const togglePropertyType = (propertyType) => ({
+        type: 'TOGGLE_PROPERTY_TYPE',
+        propertyType
+})      
 //TOGGLE_RESTROOM 
 
 //TOGGLE_ROOMMATES
 
-//TOGGLE_ROOMS
-
+//SET_ROOMS
+  
 //TOGGLE_SECURITY_ROOM
 
 //TOGGLE_SPLIT

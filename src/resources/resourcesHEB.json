@@ -482,23 +482,33 @@
             "update": {"localName": "עדכון פרטים"}
         },
         "itemForm": {
-            "itemTypes": {
-                "forsale": {"localName": "מכירה"},
-                "rent": {"localName": "השכרה"},
-                "roommates": {"localName": "דירת שותפים"},
-                "commercial": {"localName": "נכסים מסחרי"}
+            "itemFloor": {
+                "headerLocalName": "קומה"
             },
             "itemLocation": {
                 "headerLocalName": "מיקום הנכס",
                 "localLoading": "טוען...",
                 "localPlaceholder": "לדוגמה: אחוזה, רעננה"
             },
+            "itemPropertyType": {
+                "headerLocalName": "סוג הנכס"
+            },
+            "itemTypes": {
+                "headerLocalName": "קטגוריה",
+                "forsale": {"localName": "מכירה"},
+                "rent": {"localName": "השכרה"},
+                "roommates": {"localName": "דירת שותפים"},
+                "commercial": {"localName": "נכסים מסחרי"}
+            },           
             "itemPrice": {
                 "headerLocalName": "מחיר הנכס"
             },
+            "itemRooms": {
+                "headerLocalName": "חדרים"
+            },
             "itemSize": {
                 "headerLocalName": "גודל הנכס במ\"ר"
-            }
+            }       
         }
     },
     "pageNotFound": {

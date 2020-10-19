@@ -1,0 +1,58 @@
+.add-item-form {
+    background: $theme-background-body;
+    padding: $std-size;
+    .item-category,
+    .item-entry-date,
+    .item-floor,
+    .item-location,
+    .location-input__container,
+    .item-price,
+    .item-rooms,
+    .item-size {
+        background-color: inherit;
+    }
+    .item-category__header,
+    .item-entry-date__header,
+    .item-floor__header,
+    .item-location__header,
+    .item-price__header,
+    .item-rooms__header,
+    .item-size__header {
+        background-color: inherit;
+        color: $theme-text;
+        font-size: $font-size-xs;
+        font-weight: 500;
+        padding: $std-size * 0.8 $std-size * 0.4 $std-size * 0.3 $std-size * 0.5;
+    }
+    .item-category__input,
+    .item-floor__input,
+    .item-location__input,
+    .item-rooms__input {
+        background-color: inherit;
+        select{
+            @extend .item-form__input-field;
+        }
+        input {
+            @extend .item-form__input-field;
+        }    
+    }
+    .item-price,
+    .item-size {
+        .numeric-input {
+            @extend .item-form__input-field;
+        }  
+    }
+    .item-entry-date__input {
+        @extend .item-form__input-field;
+    }
+    .single-picker-discrete {
+        @extend .item-form__input-field;
+    }
+    .item-form__input-field {
+        border: 1px solid $theme-box-border;
+        height: $std-size * 2;
+        min-width: $std-size * 6;
+        outline: none;
+        padding: $std-size * 0.5;
+    }
+}

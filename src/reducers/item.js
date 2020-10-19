@@ -9,6 +9,7 @@ const initialItemProperties = {
     myGender: undefined,
     price: undefined,
     properties: [],
+    propertyType: undefined,
     restroom: undefined,
     roommates: undefined,
     rooms: undefined,
@@ -42,6 +43,11 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
             }
         case 'SET_FLOOR':
             return {
+                ...state,
+                properties: {
+                    ...state.properties,
+                    floor: action.floor
+                }
 
             }
         case 'SET_LOCATION':
@@ -62,6 +68,14 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
                 properties: {
                     ...state.properties,
                     price: action.price
+                }
+            }
+        case 'SET_ROOMS':
+            return {
+                ...state,
+                properties: {
+                    ...state.properties,
+                    rooms: action.rooms
                 }
             }
         case 'SET_SIZE':
@@ -92,15 +106,19 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
             return {
 
             }
+        case 'TOGGLE_PROPERTY_TYPE': 
+            return {
+                ...state,
+                properties: {
+                    ...state.properties,
+                    propertyType: action.propertyType
+                }
+            }
         case 'TOGGLE_RESTROOM': 
             return {
 
             }
         case 'TOGGLE_ROOMMATES':
-            return {
-
-            }
-        case 'TOGGLE_ROOMS':
             return {
 
             }

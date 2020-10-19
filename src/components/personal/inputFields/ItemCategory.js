@@ -6,7 +6,8 @@ import fetchFromResource from 'utility/fetchFromResource'
 
 const ItemCategory = () => {
     const [pickedCategory, setPickedCategory] = useState('forsale')
-    const categoriesObj = fetchFromResource('object', 'personal', 'itemForm','itemTypes')
+    const headerLocalName = fetchFromResource('string', 'personal', 'itemForm', 'itemTypes', 'headerLocalName')
+    const categoriesObj = fetchFromResource('object', 'personal', 'itemForm', 'itemTypes')
     const { dispatch } = useContext(ItemContext)
     
     const onChange = (e) => {
@@ -14,8 +15,11 @@ const ItemCategory = () => {
         dispatch(setCategory(e.target.value))        
     }
     return(
-        <div className="add-item-form">
-             <div>
+        <div className="item-category">
+            <div className="item-category__header header">
+                {headerLocalName}
+            </div>
+            <div className="item-category__input input">
                 <select value={pickedCategory} onChange={(e)=>onChange(e)} >
                 {
                     Object.keys(categoriesObj).map((categoryOption) => (

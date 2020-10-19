@@ -19,7 +19,6 @@ const ItemLocation = (props) => {
                 <LocationInput category={category} localLoading={localLoading} localPlaceholder={localPlaceholder}
                  setLocation={setLocation} dispatch={dispatch} />
             </div>
-
         </div>
     )
 }
