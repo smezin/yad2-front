@@ -8,7 +8,7 @@ const LocationSearch = (props) => {
     const { category } = props
     const headerLocalName = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localTitle') 
     const localLoading = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localLoading') 
-    const localPlaceholder = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'localPlaceholder') 
+    const placeholderLocalName = fetchFromResource('string', 'realestateSearchBar', 'searchFields', 'location', 'placeholderLocalName') 
     const { dispatch } = useContext(FiltersContext)
     return (
         <div className="location-search">
@@ -16,7 +16,7 @@ const LocationSearch = (props) => {
                 {headerLocalName}
             </div>
             <div className="location-search__input">
-                <LocationSearchInput category={category} localLoading={localLoading} localPlaceholder={localPlaceholder} 
+                <LocationSearchInput category={category} localLoading={localLoading} placeholderLocalName={placeholderLocalName} 
                     setLocation={setLocation} dispatch={dispatch}
                 />
             </div>

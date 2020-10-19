@@ -7,7 +7,7 @@ const ItemText = () => {
     const { dispatch } = useContext(ItemContext)
     const headerLocalName = fetchFromResource('string', 'personal', 'itemForm', 'itemText', 'headerLocalName')
     const placeholderLocalName = fetchFromResource('string', 'personal', 'itemForm', 'itemText', 'placeholderLocalName')
-    console.log(headerLocalName)
+    
     const onChange = (e) => {
         dispatch(setText(e.target.value))
     }

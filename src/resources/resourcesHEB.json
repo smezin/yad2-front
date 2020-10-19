@@ -207,13 +207,13 @@
         "searchFields": {
             "location": {
                 "localTitle": "חפשו אזור, עיר, שכונה או רחוב",
-                "localPlaceholder": "לדוגמה: רוטשילד תל אביב",
+                "placeholderLocalName": "לדוגמה: רוטשילד תל אביב",
                 "localLoading": "טוען..."
             }
         },
         "propertyType": {
             "localName": "סוג נכס",
-            "localPlaceholder": "בחרו סוגי נכסים",
+            "placeholderLocalName": "בחרו סוגי נכסים",
             "localMultiplePick": "נכסים",
             "localExpandButtonText": {
                 "expand": {"localName": "עוד סוגים >"},
@@ -310,7 +310,7 @@
         },
         "dealType": {
             "localName": "בחרו עסקה",
-            "localPlaceholder": "סוג עסקה",
+            "placeholderLocalName": "סוג עסקה",
             "multiPickLocalName": "עסקאות",
             "types": {
                 "forsale": {"localName": "מכירה"},
@@ -488,7 +488,7 @@
             "itemLocation": {
                 "headerLocalName": "מיקום הנכס",
                 "localLoading": "טוען...",
-                "localPlaceholder": "לדוגמה: אחוזה, רעננה"
+                "placeholderLocalName": "לדוגמה: אחוזה, רעננה"
             },
             "itemPropertyType": {
                 "headerLocalName": "סוג הנכס"

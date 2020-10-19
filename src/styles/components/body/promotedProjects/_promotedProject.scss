@@ -1,6 +1,7 @@
 .promoted-project {
     border-radius: 3%;
     box-shadow: $theme-box-shadow;
+    position: relative;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -19,7 +20,32 @@
         overflow: hidden;
         transition: transform 0.5s ease;
        
+    }   
+    .symbol__heart {
+        align-items: center;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;        
+        font-size: $font-size-l;
+        height: $std-size * 1.8;
+        justify-content: center;        
+        position: absolute;
+        right: $std-size * 0.3;
+        text-align: center;
+        top: $std-size * 0.3;
+        width: $std-size * 1.8;
+        &:hover {
+            color: $theme-main-color;
+        }
     }
+    .symbol__heart-full {
+        @extend .symbol__heart;
+        font-size: $font-size-xs;
+       
+    }
+    
+    
+    
     .promoted-project__description {
         padding: $std-size * 0.4 $std-size * 0.8;
         color: inherit;

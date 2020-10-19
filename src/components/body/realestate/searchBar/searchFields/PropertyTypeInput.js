@@ -10,7 +10,7 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
     const { category } = props
     const { dispatch } = useContext(FiltersContext)
     //fetch local text from resource
-    const localPlaceholder = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localPlaceholder') 
+    const placeholderLocalName = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'placeholderLocalName') 
     const allTypesObj = fetchFromResource('object', 'realestateSearchBar', 'propertyType', 'types', category)
     const expandLocalName = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localExpandButtonText', 'expand', 'localName')
     const collapseLocalName = fetchFromResource('string', 'realestateSearchBar', 'propertyType', 'localExpandButtonText', 'collapse', 'localName')    
@@ -22,7 +22,7 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [pickedTypes, setPickedTypes] = useState([])   
     const [hasData, setHasData] = useState(false) 
-    const [searchBarText, setSearchBarText] = useState(localPlaceholder)
+    const [searchBarText, setSearchBarText] = useState(placeholderLocalName)
     const [typesToRender, setTypeToRender] = useState(shortList)
     const [isShortList, setIsShortList] = useState(true)
     const [expandCollapseButton, setExpandCollapseButton] = useState(expandLocalName)
@@ -63,7 +63,7 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
         switch(pickedTypes.length) {
             case 0:
                 setHasData(false)
-                return setSearchBarText(localPlaceholder)
+                return setSearchBarText(placeholderLocalName)
             case 1:
                 setHasData(true)
                 return setSearchBarText(pickedTypes[0])
@@ -71,7 +71,7 @@ function PropertyTypeInput (props)  //must not be an arrow function for onclicko
                 setHasData(true)
                 return setSearchBarText(multiPickLocalName + ' (' + pickedTypes.length + ')')
         }
-    },[hasData, localPlaceholder, pickedTypes, multiPickLocalName])
+    },[hasData, placeholderLocalName, pickedTypes, multiPickLocalName])
 
     PropertyTypeInput.handleClickOutside = () => setIsDropdownOpen(false)
 

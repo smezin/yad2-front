@@ -9,11 +9,11 @@ function DealTypeInput (props)
 {
     const { dispatch } = useContext(FiltersContext)
     const { category } = props
-    const localPlaceholder = fetchFromResource('string', 'realestateSearchBar', 'dealType', 'localPlaceholder')
+    const placeholderLocalName = fetchFromResource('string', 'realestateSearchBar', 'dealType', 'placeholderLocalName')
     const multiPickLocalName = fetchFromResource('string', 'realestateSearchBar', 'dealType', 'multiPickLocalName')
     const dealTypesObj = fetchFromResource('object', 'realestateSearchBar', 'dealType', 'types')
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-    const [searchBarText, setSearchBarText] = useState(localPlaceholder)
+    const [searchBarText, setSearchBarText] = useState(placeholderLocalName)
     const [pickedTypes, setPickedTypes] = useState([])
     const [hasData, setHasData] = useState(false)
    
@@ -33,7 +33,7 @@ function DealTypeInput (props)
         switch(pickedTypes.length) {
             case 0:
                 setHasData(false)
-                return setSearchBarText(localPlaceholder)
+                return setSearchBarText(placeholderLocalName)
             case 1:
                 setHasData(true)
                 return setSearchBarText(pickedTypes[0])
@@ -41,7 +41,7 @@ function DealTypeInput (props)
                 setHasData(true)
                 return setSearchBarText(multiPickLocalName + ' (' + pickedTypes.length + ')')
         }
-    },[hasData, localPlaceholder, pickedTypes, multiPickLocalName])
+    },[hasData, placeholderLocalName, pickedTypes, multiPickLocalName])
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
     useEffect ( ()=> {

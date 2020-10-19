@@ -3,7 +3,7 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 
 
 const LocationSearchInput = (props) => {
-  const { category, localLoading, localPlaceholder, setLocation, dispatch } = props
+  const { category, localLoading, placeholderLocalName, setLocation, dispatch } = props
   const [address, setAddress] = useState('')
   
   const handleChange = (address) => {
@@ -37,7 +37,7 @@ const LocationSearchInput = (props) => {
         <div className="location-input__container">
           <input spellCheck="false"
             {...getInputProps({
-              placeholder: localPlaceholder,
+              placeholder: placeholderLocalName,
               className: `location-input__bar ${address === '' ? '' : 'has-data'}`,
             })}
           />
