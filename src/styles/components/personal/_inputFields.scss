@@ -1,5 +1,5 @@
 .add-item-form {
-    background: $theme-background-body;
+    background: darken($theme-background-body, 10%);
     padding: $std-size;
     .item-category,
     .item-entry-date,
@@ -8,7 +8,8 @@
     .location-input__container,
     .item-price,
     .item-rooms,
-    .item-size {
+    .item-size,
+    .item-text {
         background-color: inherit;
     }
     .item-category__header,
@@ -17,7 +18,8 @@
     .item-location__header,
     .item-price__header,
     .item-rooms__header,
-    .item-size__header {
+    .item-size__header,
+    .item-text__header {
         background-color: inherit;
         color: $theme-text;
         font-size: $font-size-xs;
@@ -47,6 +49,13 @@
     }
     .single-picker-discrete {
         @extend .item-form__input-field;
+    }
+    .item-text__input{
+        border: 1px solid $theme-box-border;
+        max-width: 95%;
+        min-height: $std-size * 6;
+        min-width: $std-size * 32;
+        resize: none;
     }
     .item-form__input-field {
         border: 1px solid $theme-box-border;

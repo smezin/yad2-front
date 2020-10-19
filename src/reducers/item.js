@@ -70,6 +70,14 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
                     price: action.price
                 }
             }
+        case 'SET_PROPERTIES': 
+            return {
+                ...state,
+                properties: {
+                    ...state.properties,
+                    properties: action.properties
+                }
+            }
         case 'SET_ROOMS':
             return {
                 ...state,
@@ -88,7 +96,11 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
             }
         case 'SET_TEXT': 
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    text: action.text
+                }
             }
         case 'TOGGLE_AVAILABLE_IMMEDIATELY':
             return {
@@ -99,10 +111,6 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
 
             }
         case 'TOGGLE_DEAL_TYPE':
-            return {
-
-            }
-        case 'TOGGLE_PROPERTIES': 
             return {
 
             }

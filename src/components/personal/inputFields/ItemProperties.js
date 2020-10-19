@@ -1,24 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import { FiltersContext } from 'context/FiltersContext'
-import { setProperties, incAdvancedFilters, decAdvancedFilters } from 'actions/filters'
+import { setProperties } from 'actions/item'
 import { checkedBox, unCheckedBox } from 'resources/specialChars'
+import { ItemContext } from 'context/ItemContext'
 
-const PropertiesCheckboxMenu = (props) => {
+const ItemProperties = (props) => {
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'PropertiesCheckboxMenu', 'localName')
     const { category } = props
-    const { dispatch, filters } = useContext(FiltersContext)
-    const [pickedProperties, setPickedProperties] = useState(filters.search.properties)
+    const { dispatch, item } = useContext(ItemContext)
+    const [pickedProperties, setPickedProperties] = useState(item.properties.properties)
     const itemsObj = fetchFromResource('object', 'advancedSearch', 'PropertiesCheckboxMenu', 'properties', category)
     const items = Object.keys(itemsObj).map((item) => itemsObj[item]['localName'])
    
     const addRemoveProperty = (property) => {
         if (pickedProperties.includes(property)) {
             setPickedProperties(pickedProperties.filter( (pickedProperty) => property !== pickedProperty))
-            dispatch(decAdvancedFilters())
         } else {
             setPickedProperties([...pickedProperties, property])
-            dispatch(incAdvancedFilters())
         }        
     }
     
@@ -27,12 +25,13 @@ const PropertiesCheckboxMenu = (props) => {
     },[pickedProperties, dispatch])
 
     useEffect( () => {
-        dispatch(setProperties(filters.search.properties))
-    },[dispatch, filters.search.properties])
+        dispatch(setProperties(item.properties.properties))
+    },[dispatch, item.properties.properties])
 
     useEffect( () => {
-        setPickedProperties(filters.search.properties)
-    },[filters.numOfAdvancedFilters, filters.search.properties])
+        setPickedProperties(item.properties.properties)
+    },[item.properties.properties])
+
     return (
         <div className="properties-checkbox-menu">
             <div className="properties-checkbox-menu__header">
@@ -51,4 +50,4 @@ const PropertiesCheckboxMenu = (props) => {
         </div> 
     )
 }
-export default PropertiesCheckboxMenu
+export default ItemProperties

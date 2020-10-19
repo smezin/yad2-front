@@ -25,6 +25,11 @@ export const setPrice = (price) => ({
         type: 'SET_PRICE',
         price
 })
+//SET_PROPERTIES 
+export const setProperties = (properties) => ({
+        type: 'SET_PROPERTIES',
+        properties
+})
 //SET_ROOMS
 export const setRooms = (rooms) => ({
         type: 'SET_ROOMS',
@@ -37,14 +42,15 @@ export const setSize = (size) => ({
 })         
 
 //SET_TEXT 
-
+export const setText = (text) => ({
+        type: 'SET_TEXT',
+        text
+})    
 //TOGGLE_AVAILABLE_IMMEDIATELY
 
 //TOGGLE_BALCONY
 
 //TOGGLE_DEAL_TYPE
-
-//TOGGLE_PROPERTIES 
 
 //TOGGLE_PROPERTY_TYPE
 export const togglePropertyType = (propertyType) => ({

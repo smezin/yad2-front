@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { ItemContext } from 'context/ItemContext'
-import './inputFields/ItemCategory'
+// import './inputFields/ItemCategory'
 import ItemCategory from './inputFields/ItemCategory'
 import ItemEntryDate from './inputFields/ItemEntryDate'
 import ItemFloor from './inputFields/ItemFloor'
@@ -8,6 +8,8 @@ import ItemLocation from './inputFields/ItemLocation'
 import ItemPrice from './inputFields/ItemPrice'
 import ItemRooms from './inputFields/ItemRooms'
 import ItemSize from './inputFields/ItemSize'
+import ItemProperties from './inputFields/ItemProperties'
+import ItemText from './inputFields/ItemText'
 
 const PublishNewItem = () => {
     const { item } = useContext(ItemContext)
@@ -17,7 +19,9 @@ const PublishNewItem = () => {
         switch(itemCategory) {
             case 'forsale':
                 return (
-                    <div>forsale custom fields</div>
+                     <React.Fragment>
+                         
+                     </React.Fragment>
                 )
             case 'rent':
                 return (
@@ -48,6 +52,8 @@ const PublishNewItem = () => {
             <ItemEntryDate />
             <ItemFloor />
             <ItemRooms />
+            <ItemProperties category={itemCategory} />
+            <ItemText />
             <div className="custom-fields">{renderFormByCategory()} </div>
         </div>
     )

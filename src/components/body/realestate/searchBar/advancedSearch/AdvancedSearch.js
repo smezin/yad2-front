@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import onClickOutside from 'react-onclickoutside'
 import fetchFromResource from 'utility/fetchFromResource'
-import ProperiesCheckboxMenu from './ProperiesCheckboxMenu'
+import ProperiesCheckboxMenu from './PropertiesCheckboxMenu'
 import AdvancedSearchRow from './AdvancedSearchRow'
 import { FiltersContext } from 'context/FiltersContext'
 

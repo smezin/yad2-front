@@ -1,14 +1,17 @@
 .properties-checkbox-menu {
+    background: inherit;
     direction: rtl;
     padding: $std-size $std-size * 3;
     padding-bottom: $std-size * 0.5;
     .properties-checkbox-menu__header {
+        background: inherit;
         direction: inherit;
         display: flex;
         font-size: $font-size-s;
         font-weight: 500;
     }
     .properties-checkbox-menu__items-container{
+        background: inherit;
         border-bottom: 1px solid $theme-dropdown-border;
         direction: inherit;
         display: grid;        
@@ -18,14 +21,19 @@
         padding: $std-size*0.5 0;
         text-align: right;        
         .properties-checkbox-menu__item {
-            display: flex;
             align-items: center;
-            justify-content: flex-start;
+            background: inherit;
             color: $theme-text;
+            display: flex;           
             font-size: $font-size-s;
+            justify-content: flex-start;
             min-width: $std-size * 6;
             padding: $std-size * 0.8;  
+            .item-wrapper {
+                background: inherit;
+            }
             .symbol__checkbox {
+                background: inherit;
                 font-size: $font-size-l;
                 padding-left: $std-size * 0.3;
             }    

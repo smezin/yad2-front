@@ -508,7 +508,11 @@
             },
             "itemSize": {
                 "headerLocalName": "גודל הנכס במ\"ר"
-            }       
+            },
+            "itemText": {
+                "headerLocalName": "תיאור הנכס",
+                "placeholderLocalName": "הוספת תיאור מפורט יעילה בהגדלת החשיפה למודעה"
+            }     
         }
     },
     "pageNotFound": {
