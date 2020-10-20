@@ -4,16 +4,16 @@ import fetchFromResource from 'utility/fetchFromResource'
 import setFromToInputDisplay from 'utility/setFromToInputDisplay'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow} from 'resources/specialChars'
-import RangeInput from 'components/body/common/RangeInput'
-import { setMinRoommates, setMaxRoommates } from 'actions/filters'
+import RangeInputDiscrete from 'components/body/common/RangeInputDiscrete'
+import { setMaxRooms, setMinRooms } from 'actions/filters' 
 
-function RoommatesInput (props)  
+function RoomsInput (props)  
 {
     const { filters } = useContext(FiltersContext)
-    const localPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'localPlaceHolder')
-    const fromPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'fromLocalName')
-    const upToPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'upToLocalName')
-    const numbersHeader = fetchFromResource('string', 'realestateSearchBar', 'roommates', 'any')
+    const localPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'localPlaceHolder')
+    const fromPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'fromLocalName')
+    const upToPlaceHolder = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'upToLocalName')
+    const numbersHeader = fetchFromResource('string', 'realestateSearchBar', 'rooms', 'any')
     const [mainInput, setMainInput] = useState(localPlaceHolder)
     const [fromText, setFromText] = useState(fromPlaceHolder)
     const [upToText, setUpToText] = useState(upToPlaceHolder)
@@ -29,42 +29,42 @@ function RoommatesInput (props)
     },[mainInput, fromText, upToText, fromPlaceHolder, upToPlaceHolder, localPlaceHolder])
 
     useEffect ( () => {
-        filters.search.minRoommates ? setFromText(filters.search.minRoommates) : setFromText(fromPlaceHolder)
-    },[filters.search.minRoommates, fromPlaceHolder])
+        filters.search.minRooms ? setFromText(filters.search.minRooms) : setFromText(fromPlaceHolder)
+    },[filters.search.minRooms, fromPlaceHolder])
     useEffect ( () => {
-        filters.search.maxRoommates ? setUpToText(filters.search.maxRoommates) : setUpToText(upToPlaceHolder)
-    },[filters.search.maxRoommates, upToPlaceHolder])
+        filters.search.maxRooms ? setUpToText(filters.search.maxRooms) : setUpToText(upToPlaceHolder)
+    },[filters.search.maxRooms, upToPlaceHolder])
 
-    RoommatesInput.handleClickOutside = () => {
+    RoomsInput.handleClickOutside = () => {
         setIsMainOpen(false)
     }
     const subMenuSpecs = {
         numbersHeader,
-        min: 2,
-        max: 5,
-        step: 1,
-        setMax: setMaxRoommates,
-        setMin: setMinRoommates,
-        minFilter: "minRoommates",
-        maxFilter: "maxRoommates",
+        min: 1,
+        max: 12,
+        step: 0.5,
+        setMax: setMaxRooms,
+        setMin: setMinRooms,
+        minFilter: "minRooms",
+        maxFilter: "maxRooms",
         from: fromText,
         upTo: upToText,
         parentRect,
     }
     return (
-        <div className="roommates__input">
-            <div className={`roommates-bar ${hasData?'has-data':''}`} onClick={toggleMainDropdown}>
+        <div className="rooms__input">
+            <div className={`rooms-bar ${hasData?'has-data':''}`} onClick={toggleMainDropdown}>
                 {mainInput}{isMainOpen ? upArrow : downArrow}
             </div>
             {
                 isMainOpen &&                
-                <RangeInput menuSpecs={subMenuSpecs} autoPosition={true} />
+                <RangeInputDiscrete  menuSpecs={subMenuSpecs} autoPosition={true} />
             }
         </div>
         
     )
 }
 const clickOutsideConfig = {
-    handleClickOutside: () => RoommatesInput.handleClickOutside
+    handleClickOutside: () => RoomsInput.handleClickOutside
 }   
-export default onClickOutside(RoommatesInput, clickOutsideConfig)
+export default onClickOutside(RoomsInput, clickOutsideConfig)

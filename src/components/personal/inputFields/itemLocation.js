@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import LocationInput from 'components/body/realestate/searchBar/searchFields/LocationInput'
+import LocationInput from 'components/body/realestate/searchBar/regularSearch/LocationInput'
 import { ItemContext } from 'context/ItemContext'
 import { setLocation } from 'actions/item'
 

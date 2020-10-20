@@ -14,7 +14,7 @@ const PromotedProject = (props) => {
     }
     return (
         <div className="promoted-project">
-            <img src={imgPath} alt="x" />
+            <img src={imgPath} alt="project-pic" />
             {
                 isFavorite ? 
                 <span role="img" aria-label="orange-heart" className="symbol__heart-full" onClick={heartClicked} >&#129505;</span>

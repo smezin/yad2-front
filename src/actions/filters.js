@@ -119,29 +119,14 @@ export const setPropertyTypes = (propertyType) => ({
     propertyType
 })
 
-//SORT BY DATE
-export const sortByDate = () => {
-    handleBottomFiltersChanged()
+//SET SORT BY
+export const setSortBy = (sortBy) => {
     return {
-        type: 'SORT_BY_DATE'
+        type: 'SET_SORT_BY',
+        sortBy
     }
 }
 
-//SORT BY PRICE HIGH LOW
-export const sortByPriceHighlow = () => {
-    handleBottomFiltersChanged()
-    return {
-        type: 'SORT_BY_PRICE_HIGH_LOW'
-    }
-}
-
-//SORT BY PRICE LOW HIGH
-export const sortByPriceLowHigh = () => {
-    handleBottomFiltersChanged()
-    return {
-        type: 'SORT_BY_PRICE_LOW_HIGH'
-    }
-}
 
 //TOGGLE SHOW ONLY ITEMS WITH PRICE
 export const toggleShowOnlyItemsWithPrice = () => {

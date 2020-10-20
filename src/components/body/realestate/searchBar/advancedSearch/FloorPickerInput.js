@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
-import RangeInput from 'components/body/common/RangeInput'
+import RangeInputDiscrete from 'components/body/common/RangeInputDiscrete'
 import { setMinFloor, setMaxFloor } from 'actions/filters'
 
 const FloorPickerInput = (props) => {
@@ -36,7 +36,7 @@ const FloorPickerInput = (props) => {
     }
     return (
         <div className="floor-picker__input">     
-            <RangeInput  menuSpecs={subMenuSpecs} autoPosition={false} />
+            <RangeInputDiscrete  menuSpecs={subMenuSpecs} autoPosition={false} />
         </div>
         
     )

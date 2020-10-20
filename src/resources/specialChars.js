@@ -10,3 +10,6 @@ export const fullHeart = <span className="symbol__heart-full">&#9829;</span>
 export const doubleArrow = <span className="symbol__double-arrow">&#8644;</span>
 export const circledPlus = <span className="symbol__circled-plus">&#8853;</span>
 export const magnifyingGlass = <span className="symbol__magnifying-glass" style={{transform: "rotate(-90deg)"}} >&#8981;</span>
+export const circledBullet = <span className="symbol__circled-bullet">&#10687;</span>
+export const circle = <span className="symbol__circle">&#11096;</span>
+export const NIS = <span className="symbol__nis">&#8362;</span>

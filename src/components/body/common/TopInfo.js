@@ -11,6 +11,7 @@ const TopInfo = () => {
     const categoryFromPath = getSubPath(pathname, '/realestate')
     const allCategories = fetchFromResource('object', 'realestateSearchBar', 'header', 'headerLinks')
     const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
+    
     useEffect( () => {
         allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
     },[location, allCategoriesNames, categoryFromPath])

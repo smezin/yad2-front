@@ -4,7 +4,7 @@ import { upArrow, downArrow} from 'resources/specialChars'
 import onClickOutside from 'react-onclickoutside'
 import isNumeric from 'utility/isNumeric'
 
-function RangeInput (props) 
+function RangeInputDiscrete (props) 
 {
     const { menuSpecs, autoPosition } = props
     const { from, upTo, parentRect, header} = menuSpecs
@@ -44,7 +44,7 @@ function RangeInput (props)
         }  
     },[])
 
-    RangeInput.handleClickOutside = () => {
+    RangeInputDiscrete.handleClickOutside = () => {
         setIsFromOpen(false)
         setIsUpToOpen(false)
     }
@@ -67,7 +67,7 @@ function RangeInput (props)
     )
 }
 const clickOutsideConfig = {
-    handleClickOutside: () => RangeInput.handleClickOutside
+    handleClickOutside: () => RangeInputDiscrete.handleClickOutside
 }   
-export default onClickOutside(RangeInput, clickOutsideConfig)
+export default onClickOutside(RangeInputDiscrete, clickOutsideConfig)
 

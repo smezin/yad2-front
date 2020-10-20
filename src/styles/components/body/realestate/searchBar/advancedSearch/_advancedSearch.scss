@@ -52,5 +52,6 @@
         box-shadow: $theme-box-shadow-searchbar;
         margin-top: $searchbar-padding;
         position: absolute;
+        z-index: 10;
     }
 }

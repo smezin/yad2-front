@@ -65,15 +65,18 @@ const RangePickerContinuous = (props) => {
     },[minDisplay, setMin, dispatch])
 
     useEffect( () => {
-        isNumeric(removeSeperator(maxDisplay)) ? dispatch(setMax(parseFloat(removeSeperator(maxDisplay)))) 
+        const maxDisplayWithLowerLimit = Math.max(parseFloat(removeSeperator(minDisplay)), parseFloat(removeSeperator(maxDisplay)))
+        isNumeric(removeSeperator(maxDisplayWithLowerLimit)) ? dispatch(setMax(parseFloat(removeSeperator(maxDisplayWithLowerLimit)))) 
         : dispatch(setMax(undefined))
-    },[maxDisplay, setMax, dispatch])
+    },[maxDisplay, minDisplay, setMax, dispatch])
 
-    // useEffect( () => {
-    //     setMinDisplay(filters.search.minSize)
-    //     setMaxDisplay(filters.search.maxSize)
-    // },[filters.numOfAdvancedFilters, filters.search.maxSize, filters.search.minSize])
-
+    const onMaxSubmit = () => {
+        parseFloat(removeSeperator(maxDisplay)) < parseFloat(removeSeperator(minDisplay)) && setMaxDisplay(minDisplay)
+    }
+    const onMinSubmit = () => {
+        parseFloat(removeSeperator(maxDisplay)) < parseFloat(removeSeperator(minDisplay)) && setMinDisplay(maxDisplay)
+    }
+    
     return (
         <div className="range-picker">
             <div className="range-picker__header">
@@ -81,9 +84,9 @@ const RangePickerContinuous = (props) => {
             </div>
             <div className="range-picker__input-container">
                 <input className="range-picker__min" type="text" onChange={(e) => handleChange(e, 'min')}
-                placeholder={minPlaceHolder} value={minDisplay} />
+                onBlur={onMinSubmit} placeholder={minPlaceHolder} value={minDisplay} />
                 <input className="range-picker__max" type="text" onChange={(e) => handleChange(e, 'max')} 
-                placeholder={maxPlaceHolder} value={maxDisplay} />
+                onBlur={onMaxSubmit} placeholder={maxPlaceHolder} value={maxDisplay} />
             </div>
         </div>
     )

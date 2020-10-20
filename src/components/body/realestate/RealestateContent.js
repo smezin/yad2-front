@@ -9,10 +9,10 @@ const RealestateContent = (props) => {
     return (
         <div className="realestate-content">
             <FiltersContextProvider>
-                <SearchBar category={category} />
+                <SearchBar category={category} />            
+                <TopBoxesRow />
+                <Feed />
             </FiltersContextProvider>
-            <TopBoxesRow />
-            <Feed />
         </div>
     )
 }

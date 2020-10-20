@@ -30,7 +30,6 @@ export const filtersReducerInitialState = {
       showOnlyItemsWithImage: false,
       showOnlyItemsWithPrice: false,
       text: undefined,
-      types: []
   },
 }
 const advancedFiltersInitialState = {
@@ -104,7 +103,7 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
             ...state,
             search: {
                 ...state.search,
-                types: [action.dealTypes]
+                dealTypes: action.dealTypes
             }
         }
 
@@ -212,7 +211,7 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
             ...state,
             search: {
                 ...state.search,
-                types: [action.propertyType]
+                types: action.propertyType
             }
         }
     case 'SET_PROPERTIES':
@@ -231,21 +230,12 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
               text: action.text
           }
       }
-    case 'SORT_BY_DATE':
+    case 'SET_SORT_BY':
         return {
             ...state,
-            sortBy: 'date'
+            sortBy: action.sortBy
         }
-    case 'SORT_BY_PRICE_HIGH_LOW':
-        return {
-            ...state,
-            sortBy: 'priceHighLow'
-        }
-    case 'SORT_BY_PRICE_LOW_HIGH':
-        return {
-            ...state,
-            sortBy: 'priceLowHigh'
-        }
+    
     case 'TOGGLE_BALCONY':
         return {
             ...state,
@@ -346,20 +336,20 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
                     [...state.search.properties, action.property]
             }
         }
-    case 'TOGGLE_DEAL_TYPE':
-        let newDealTypesArr = [...state.search.dealTypes]
-        if (state.search.dealTypes.includes(action.dealType)) {
-            newDealTypesArr = newDealTypesArr.filter((dealType) => dealType !== action.dealType)
-        } else {
-            newDealTypesArr.push(action.dealType)
-        }
-        return {
-            ...state,
-            search: {
-                ...state.search,
-                dealTypes: newDealTypesArr
-            }
-        }
+    // case 'TOGGLE_DEAL_TYPE':
+    //     let newDealTypesArr = [...state.search.dealTypes]
+    //     if (state.search.dealTypes.includes(action.dealType)) {
+    //         newDealTypesArr = newDealTypesArr.filter((dealType) => dealType !== action.dealType)
+    //     } else {
+    //         newDealTypesArr.push(action.dealType)
+    //     }
+    //     return {
+    //         ...state,
+    //         search: {
+    //             ...state.search,
+    //             dealTypes: newDealTypesArr
+    //         }
+    //     }
     default:
         return state
     }

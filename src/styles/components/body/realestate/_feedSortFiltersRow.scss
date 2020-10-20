@@ -1,0 +1,53 @@
+.feed-sort-filters-row {
+    background: $theme-background-body;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin: $std-size * 2 $std-size;
+    .sort-by {
+        background-color: inherit;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        .sort-by__header{
+            background-color: inherit;
+            font-size: $font-size-xs;
+            margin: auto 0;
+            margin-left: $std-size * 0.8;
+            padding-left: $std-size*0.5 0;
+        }
+        .sort-by__input {
+            background-color: white;
+            border: 1px solid $theme-box-border;
+            font-size: $font-size-xs;
+            min-width: $std-size * 12;
+            padding: $std-size * 0.5 0;
+            .sort-by__bar {
+                display: flex;
+                justify-content: space-between;
+                background-color: inherit;
+                padding: 0 $std-size;
+            }
+        }
+        .sort-by__dropdown {
+            box-shadow: $theme-box-shadow;
+            display: flex;
+            flex-direction: column;
+            padding: $std-size * 0.8;
+            position: absolute;
+            top: $std-size * 3;
+            .sort-by__dropdown-item {
+                line-height: $std-size * 1.2;
+                padding: $std-size * 0.5;                
+            }
+            .sort-by__dropdown-item__picked {
+                @extend .sort-by__dropdown-item;
+                .symbol__circled-bullet{
+                    color: $theme-main-color;
+                }
+                
+            }
+        }
+    }
+    
+}
