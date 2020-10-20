@@ -7,8 +7,8 @@ import onClickOutside from 'react-onclickoutside'
 
 function SortBy ()
  {
-    const headerLocalName = fetchFromResource('string', 'feedSortFilter', 'headerLocalName')
-    const optionsObj = fetchFromResource('object', 'feedSortFilter', 'options')
+    const headerLocalName = fetchFromResource('string', 'feedSortFilter', 'sortBy', 'headerLocalName')
+    const optionsObj = fetchFromResource('object', 'feedSortFilter', 'sortBy', 'options')
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [pickedOption, setPickedOption] = useState('date')
     const { dispatch } = useContext(FiltersContext)

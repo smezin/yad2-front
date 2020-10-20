@@ -1,7 +1,8 @@
 .feed-sort-filters-row {
     background: $theme-background-body;
+    color: $theme-text-darker;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     justify-content: space-between;
     margin: $std-size * 2 $std-size;
     .sort-by {
@@ -23,6 +24,7 @@
             min-width: $std-size * 12;
             padding: $std-size * 0.5 0;
             .sort-by__bar {
+                cursor: pointer;
                 display: flex;
                 justify-content: space-between;
                 background-color: inherit;
@@ -47,6 +49,39 @@
                 }
                 
             }
+        }
+    }
+    .show-only {
+        @extend .sort-by;
+        .show-only__header {
+            @extend .sort-by__header;
+        }
+        .show-only__with-image {
+            border: 1px solid $theme-box-border;
+            direction: rtl;
+            font-size: $font-size-xs;
+            margin: auto $std-size * 0.2;
+            padding: $std-size * 0.5 $std-size * 1.2;
+            .symbol__nis {
+                background-color: inherit;
+                color: inherit;
+            }
+            &:hover {
+                background: $theme-selected;
+            }
+
+        }
+        .show-only__with-price {
+            @extend .show-only__with-image
+        }
+        .show-only__with-image__picked {
+            @extend .show-only__with-image;
+            border-color: $theme-main-color;
+            color: $theme-main-color;
+            font-weight: 500;
+        }
+        .show-only__with-price__picked {
+            @extend .show-only__with-image__picked;
         }
     }
     

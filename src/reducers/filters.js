@@ -281,15 +281,15 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
             ...state,
             search: {
                 ...state.search,
-                showOnlyItemsWithImage: !state.search.showOnlyItemsWithImage
+                showOnlyItemsWithImage: action.showOnlyItemsWithImage
             }
         }
     case 'TOGGLE_SHOW_ONLY_ITEMS_WITH_PRICE':
       return {
-          sortBy: state.sortBy,
+          ...state,
           search: {
               ...state.search,
-              showOnlyItemsWithPrice: !state.search.showOnlyItemsWithPrice
+              showOnlyItemsWithPrice: action.showOnlyItemsWithPrice
           }
       }
       case 'TOGGLE_SPLIT':

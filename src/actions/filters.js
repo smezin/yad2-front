@@ -127,20 +127,20 @@ export const setSortBy = (sortBy) => {
     }
 }
 
-
 //TOGGLE SHOW ONLY ITEMS WITH PRICE
-export const toggleShowOnlyItemsWithPrice = () => {
-    handleBottomFiltersChanged()
+export const toggleShowOnlyItemsWithPrice = (showOnlyItemsWithPrice) => {
     return {
-        type: 'TOGGLE_SHOW_ONLY_ITEMS_WITH_PRICE'
+        type: 'TOGGLE_SHOW_ONLY_ITEMS_WITH_PRICE',
+        showOnlyItemsWithPrice
+        
     }
 }
 
 //TOGGLE SHOW ONLY ITEMS WITH IMAGE
-export const toggleShowOnlyItemsWithImage = () => {
-    handleBottomFiltersChanged()
+export const toggleShowOnlyItemsWithImage = (showOnlyItemsWithImage) => {
     return {
-        type: 'TOGGLE_SHOW_ONLY_ITEMS_WITH_IMAGE'
+        type: 'TOGGLE_SHOW_ONLY_ITEMS_WITH_IMAGE',
+        showOnlyItemsWithImage
     }
 }
 
