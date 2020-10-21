@@ -2,6 +2,7 @@ import React from 'react'
 import { NIS } from 'resources/specialChars'
 import fetchFromResource from 'utility/fetchFromResource'
 import { addSeperator } from 'utility/numbersDisplay'
+import FavoriteHeart from './FavoriteHeart'
 
 const FeedItem = (props) => {
     const { item } = props
@@ -13,10 +14,12 @@ const FeedItem = (props) => {
     const propertyType = (item.properties && item.properties.propertyType) ? item.properties.propertyType : ''
     const street = location.split(',')[0]
     const city = location.split(',')[1] || ''
+
     return (
         <div className="feed-item">
             <div className="feed-item__image">
                 <img src={imgPath} alt="pic" />
+                <FavoriteHeart favoriteItem={item} />
             </div>
             <div className="feed-item__location">
                 <span className="feed-item__location__street">{street}</span> 

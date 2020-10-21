@@ -1,0 +1,22 @@
+.favorite-heart {
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;        
+    font-size: $font-size-l;
+    height: $std-size * 1.8;
+    justify-content: center;        
+    position: absolute;
+    right: $std-size * 0.3;
+    text-align: center;
+    top: $std-size * 0.3;
+    width: $std-size * 1.8;
+    &:hover {
+        color: $theme-main-color;
+    }
+}
+.favorite-heart-full {
+    @extend .symbol__heart;
+    font-size: $font-size-xs;
+    
+}

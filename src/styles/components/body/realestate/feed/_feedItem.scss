@@ -6,6 +6,7 @@
     height: $std-size * 5;
     justify-content: space-between;
     margin-bottom: 1px;
+    position: relative;
     width: 100%;
     &:hover {
         box-shadow: 0 0 3px rgba(0,0,0,0.6);
@@ -20,6 +21,18 @@
             border-radius: 5%;
             height: 100%;
             margin: auto 0;
+        }
+        .symbol__heart {
+            @extend .favorite-heart;
+            height: $std-size * 1.4 !important;
+            width: $std-size * 1.4 !important;
+            right: $std-size * 0.6 !important;
+            top: $std-size * 0.6 !important;
+        }
+        .symbol__heart-full {
+            @extend .symbol__heart;
+            font-size: $font-size-xs !important;
+           
         }
     }
     .feed-item__location {
