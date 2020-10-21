@@ -1,12 +1,12 @@
 .promoted-project {
-    border-radius: 3%;
-    box-shadow: $theme-box-shadow;
+    border-radius: 3% 3% 0 0;
+    box-shadow: $theme-box-shadow-promoted-ad;
     position: relative;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    height: $std-size * 13;   
-    overflow: hidden;
+    height: $std-size * 15;   
+    overflow: visible;
     width: 30%;
     &:hover {
         color: blue;
@@ -14,13 +14,17 @@
             transform: scale(1.03);           
         }
     }
-    img {
-        width: 100%;
-        height: auto;
+    .promoted-project__image-container {       
+        border-radius: 3% 3% 0 0;
+        height: 100%;
         overflow: hidden;
-        transition: transform 0.5s ease;
-       
-    }   
+        width: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;       
+        }   
+    } 
     .symbol__heart {
         align-items: center;
         background-color: white;
@@ -43,12 +47,10 @@
         font-size: $font-size-xs;
        
     }
-    
-    
-    
     .promoted-project__description {
-        padding: $std-size * 0.4 $std-size * 0.8;
         color: inherit;
+        padding: 0 $std-size * 0.8;
+        padding-bottom: $std-size * 0.4;
         .promoted-project__address {
             color: inherit;
             font-size: $font-size-s;

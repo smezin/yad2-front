@@ -3,7 +3,7 @@
     color: $theme-text-darker;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: $std-size * 2 $std-size;
     .sort-by {
         background-color: inherit;
@@ -15,7 +15,7 @@
             font-size: $font-size-xs;
             margin: auto 0;
             margin-left: $std-size * 0.8;
-            padding-left: $std-size*0.5 0;
+            padding-left: $std-size * 0.5 0;
         }
         .sort-by__input {
             background-color: white;

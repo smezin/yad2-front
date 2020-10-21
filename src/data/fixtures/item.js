@@ -35,13 +35,14 @@ export const sampleItemTwo = {
         price: 1500000,
         properties: ["מחסן"],
         restroom: undefined,
+        ribbonText: "פרויקט משגע",
         roommates: undefined,
         rooms: 5,
         securityRoom: undefined,
         size: 120, 
         split: undefined,
         storage: undefined,
-        text: "מציאה, כל הקודם זוכה",  
+        text: "נותרו יחידות אחרונות",  
     }
 }
 export const sampleItemThree = {
@@ -64,6 +65,6 @@ export const sampleItemThree = {
         size: 120, 
         split: undefined,
         storage: undefined,
-        text: "מציאה, כל הקודם זוכה",  
+        text: "פרויקט יוקרתי",  
     }
 }
