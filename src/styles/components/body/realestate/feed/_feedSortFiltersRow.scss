@@ -3,8 +3,9 @@
     color: $theme-text-darker;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: $std-size * 2 $std-size;
+    width: 95%;
     .sort-by {
         background-color: inherit;
         display: flex;

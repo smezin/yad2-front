@@ -1,0 +1,92 @@
+.feed-item {
+    background: $theme-feed-item;
+    border: 1px solid $theme-box-border;
+    cursor: pointer;
+    display: flex;
+    height: $std-size * 5;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    width: 100%;
+    &:hover {
+        box-shadow: 0 0 3px rgba(0,0,0,0.6);
+    }
+    .feed-item__image {
+        background-color: inherit;
+        height: $std-size * 4;        
+        margin: auto $std-size * 0.4;
+        overflow: hidden;
+        width: 15%;
+        img{
+            border-radius: 5%;
+            height: 100%;
+            margin: auto 0;
+        }
+    }
+    .feed-item__location {
+        background-color: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 29%;
+        .feed-item__location__street {
+            background-color: inherit;
+            font-size: $font-size-s;
+            padding: $std-size * 0.3 0;
+        }
+        .feed-item__location__city {
+            background-color: inherit;
+            font-size: $font-size-xs;
+        }
+    }
+    .feed-item__floor {
+        background-color: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 $std-size;
+        width: 12%;
+        .feed-item__floor-number {
+            background-color: inherit;
+            color: $theme-text-darker;
+            font-size: $font-size-s;
+            text-align: center;
+        }
+        .feed-item__floor-title {
+            background-color: inherit;
+            color: $theme-text-lighter;
+            font-size: $font-size-xxs;
+            text-align: center;
+        }
+    }
+    .feed-item__rooms {
+        @extend .feed-item__floor;
+        border-right: 1px solid $theme-box-border;
+        .feed-item__rooms-number {
+            @extend .feed-item__floor-number;
+        }
+        .feed-item__rooms-title {
+            @extend .feed-item__floor-title;
+        }
+    }
+    .feed-item__size {
+        @extend .feed-item__floor;
+        border-left: 1px solid $theme-box-border;
+        .feed-item__size-number {
+            @extend .feed-item__floor-number;
+        }
+        .feed-item__size-title {
+            @extend .feed-item__floor-title;
+        }
+    }
+    .feed-item__price {
+        @extend .feed-item__floor;
+        width: 20%;
+        .feed-item__price-number {
+            @extend .feed-item__floor-number;
+            .symbol__nis{
+                background-color: inherit;
+                padding-right: $std-size * 0.2;
+            }
+        }
+    }
+}

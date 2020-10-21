@@ -1,6 +1,6 @@
 export const sampleItemOne = {
     images: [require('images/pormoted_ad1.jpg')],
-    item: {    
+    properties: {    
         availableImmediately: "no",
         balcony: undefined,
         category: 'forsale',
@@ -23,7 +23,7 @@ export const sampleItemOne = {
 }
 export const sampleItemTwo = {
     images: [require('images/pormoted_ad2.jpg')],
-    item: {    
+    properties: {    
         availableImmediately: "no",
         balcony: undefined,
         category: 'forsale',
@@ -47,7 +47,7 @@ export const sampleItemTwo = {
 }
 export const sampleItemThree = {
     images: [require('images/pormoted_ad3.jpg')],
-    item: {    
+    properties: {    
         availableImmediately: "no",
         balcony: undefined,
         category: 'forsale',

@@ -1,4 +1,5 @@
 .feed {
+    align-items: center;
     background: $theme-background-body;
     direction: rtl;
     display: flex;
@@ -6,4 +7,7 @@
     margin-left: auto;
     min-height: 800px;
     width: 70%;
+    .feed-items {
+        width: 100%;
+    }
 }

@@ -537,5 +537,11 @@
     },
     "promotedProjects": {
         "defaultRibbonText": {"localName": "פרויקט חדש"}
+    },
+    "feedItem": {
+        "rooms": {"localName": "חדרים"},
+        "floor": {"localName": "קומה"},
+        "size": {"localName": "מ\"ר"}
     }
+
 }
