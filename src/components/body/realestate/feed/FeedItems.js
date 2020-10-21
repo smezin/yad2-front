@@ -9,7 +9,7 @@ const FeedItems = (props) => {
         <div className="feed-items">
             {
                 items.map((item)=> (
-                    <FeedItem item={item} />
+                    <FeedItem item={item} key={item.id}/>
                 ))
             }
         </div>

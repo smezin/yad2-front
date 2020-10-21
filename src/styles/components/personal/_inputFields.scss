@@ -7,6 +7,7 @@
     .item-location,
     .location-input__container,
     .item-price,
+    .item-property-type,
     .item-rooms,
     .item-size,
     .item-text {
@@ -17,6 +18,7 @@
     .item-floor__header,
     .item-location__header,
     .item-price__header,
+    .item-property-type__header,
     .item-rooms__header,
     .item-size__header,
     .item-text__header {
@@ -29,6 +31,7 @@
     .item-category__input,
     .item-floor__input,
     .item-location__input,
+    .item-property-type__input,
     .item-rooms__input {
         background-color: inherit;
         select{
@@ -63,5 +66,10 @@
         min-width: $std-size * 6;
         outline: none;
         padding: $std-size * 0.5;
+       
+        option {
+            font-size: $font-size-xs;
+            
+        }
     }
 }

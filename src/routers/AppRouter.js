@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router , Route, Switch, Redirect } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import MainMenu from 'components/mainMenu/MainMenu'
@@ -9,14 +9,6 @@ import PageNotFound from 'components/PageNotFound'
 import PersonalPage from 'components/personal/PersonalPage'
 
 export const history = createBrowserHistory()
-
-export const RedirectHome = () => {
-    useEffect( () => {
-        window.scrollTo(0, 0)
-        history.push('/realestate')
-    })
-    return null
-}
 
 const AppRouter = () => {
     return (

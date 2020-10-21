@@ -1,4 +1,5 @@
 export const sampleItemOne = {
+    id: '123',
     images: [require('images/pormoted_ad1.jpg')],
     properties: {    
         availableImmediately: "no",
@@ -11,6 +12,7 @@ export const sampleItemOne = {
         myGender: 'male',
         price: 1500000,
         properties: ["מחסן"],
+        propertyType: "דופלקס",
         restroom: undefined,
         roommates: undefined,
         rooms: 5,
@@ -22,6 +24,7 @@ export const sampleItemOne = {
     }
 }
 export const sampleItemTwo = {
+    id: '456',
     images: [require('images/pormoted_ad2.jpg')],
     properties: {    
         availableImmediately: "no",
@@ -34,6 +37,7 @@ export const sampleItemTwo = {
         myGender: 'male',
         price: 1500000,
         properties: ["מחסן"],
+        propertyType: undefined,
         restroom: undefined,
         ribbonText: "פרויקט משגע",
         roommates: undefined,
@@ -46,6 +50,7 @@ export const sampleItemTwo = {
     }
 }
 export const sampleItemThree = {
+    id: '789',
     images: [require('images/pormoted_ad3.jpg')],
     properties: {    
         availableImmediately: "no",
@@ -58,6 +63,7 @@ export const sampleItemThree = {
         myGender: 'male',
         price: 1500000,
         properties: ["מחסן"],
+        propertyType: "פנטהאוז",
         restroom: undefined,
         roommates: undefined,
         rooms: 5,

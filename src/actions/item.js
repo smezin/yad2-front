@@ -30,6 +30,11 @@ export const setProperties = (properties) => ({
         type: 'SET_PROPERTIES',
         properties
 })
+//SET_PROPERTY_TYPE
+export const setPropertyType = (propertyType) => ({
+        type: 'SET_PROPERTY_TYPE',
+        propertyType
+})  
 //SET_ROOMS
 export const setRooms = (rooms) => ({
         type: 'SET_ROOMS',
@@ -53,10 +58,7 @@ export const setText = (text) => ({
 //TOGGLE_DEAL_TYPE
 
 //TOGGLE_PROPERTY_TYPE
-export const togglePropertyType = (propertyType) => ({
-        type: 'TOGGLE_PROPERTY_TYPE',
-        propertyType
-})      
+    
 //TOGGLE_RESTROOM 
 
 //TOGGLE_ROOMMATES

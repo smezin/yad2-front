@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { ItemContext } from 'context/ItemContext'
-// import './inputFields/ItemCategory'
 import ItemCategory from './inputFields/ItemCategory'
 import ItemEntryDate from './inputFields/ItemEntryDate'
 import ItemFloor from './inputFields/ItemFloor'
@@ -10,6 +9,7 @@ import ItemRooms from './inputFields/ItemRooms'
 import ItemSize from './inputFields/ItemSize'
 import ItemProperties from './inputFields/ItemProperties'
 import ItemText from './inputFields/ItemText'
+import ItemPropertyType from './inputFields/ItemPropertyType'
 
 const PublishNewItem = () => {
     const { item } = useContext(ItemContext)
@@ -52,6 +52,7 @@ const PublishNewItem = () => {
             <ItemEntryDate />
             <ItemFloor />
             <ItemRooms />
+            <ItemPropertyType category={itemCategory} />
             <ItemProperties category={itemCategory} />
             <ItemText />
             <div className="custom-fields">{renderFormByCategory()} </div>

@@ -499,7 +499,8 @@
         },
         "itemForm": {
             "itemFloor": {
-                "headerLocalName": "קומה"
+                "headerLocalName": "קומה",
+                "placeholderLocalName": "בחר"
             },
             "itemLocation": {
                 "headerLocalName": "מיקום הנכס",
@@ -507,7 +508,8 @@
                 "placeholderLocalName": "לדוגמה: אחוזה, רעננה"
             },
             "itemPropertyType": {
-                "headerLocalName": "סוג הנכס"
+                "headerLocalName": "סוג הנכס",
+                "placeholderLocalName": "בחר"
             },
             "itemTypes": {
                 "headerLocalName": "קטגוריה",
@@ -520,7 +522,8 @@
                 "headerLocalName": "מחיר הנכס"
             },
             "itemRooms": {
-                "headerLocalName": "חדרים"
+                "headerLocalName": "חדרים",
+                "placeholderLocalName": "בחר"
             },
             "itemSize": {
                 "headerLocalName": "גודל הנכס במ\"ר"

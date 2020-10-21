@@ -22,6 +22,7 @@ const initialItemProperties = {
     text: undefined,
 }
 export const itemReducerInitialState = {
+    id: undefined,
     images: [],
     properties: initialItemProperties,
 }
@@ -80,6 +81,14 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
                     properties: action.properties
                 }
             }
+        case 'SET_PROPERTY_TYPE': 
+            return {
+                ...state,
+                properties: {
+                    ...state.properties,
+                    propertyType: action.propertyType
+                }
+            }
         case 'SET_ROOMS':
             return {
                 ...state,
@@ -116,14 +125,7 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
             return {
 
             }
-        case 'TOGGLE_PROPERTY_TYPE': 
-            return {
-                ...state,
-                properties: {
-                    ...state.properties,
-                    propertyType: action.propertyType
-                }
-            }
+       
         case 'TOGGLE_RESTROOM': 
             return {
 
