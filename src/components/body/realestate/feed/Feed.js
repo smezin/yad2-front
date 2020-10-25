@@ -10,7 +10,6 @@ const Feed = () => {
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
     const category = getSubPath(pathname, '/realestate')
-    console.log(category, 'cat')
     return (
         <div className="feed">
             {

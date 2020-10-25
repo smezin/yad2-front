@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import { useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import SearchBarHeader from './SerachBarHeader'
 import LocationSearch from './regularSearch/Location'
 import PropertyType from './regularSearch/PropertyType'
@@ -15,17 +15,18 @@ import { FiltersContext } from 'context/FiltersContext'
 import { clearSearch, setSearchCategory } from 'actions/filters'
 
 const SearchBar = () => {
-    const [category, setCategory] = useState('forsale')
+    const history = useHistory()
+    const defaultCategory = 'forsale'
+    const [category, setCategory] = useState(defaultCategory)
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
-    const categoryFromPath = getSubPath(pathname, '/realestate')
+    let categoryFromPath = getSubPath(pathname, '/realestate')
     const allCategories = fetchFromResource('object', 'realestateSearchBar', 'header', 'headerLinks') 
     const allCategoriesNames = Object.keys(allCategories).map( (category) => category)
     const { dispatch } = useContext(FiltersContext)
     const [parentRect, setParentRect] = useState()
-
     useEffect( () => {
-        allCategoriesNames.includes(categoryFromPath) && setCategory(categoryFromPath)
+        allCategoriesNames.includes(categoryFromPath) ? setCategory(categoryFromPath) : setCategory(defaultCategory)
     },[location, allCategoriesNames, categoryFromPath])
 
     const getRect = () => {

@@ -1,0 +1,27 @@
+.modal{
+    background-color: rgba(0,0,0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    .modal-content {
+        opacity: 1;
+        display: flex;
+        flex-direction: row-reverse;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        height: 60%;
+        width: 60%;       
+        img {
+            height: auto;
+            width: 40%;
+        }
+        .modal-input-fields-container {
+    
+        }
+    }
+   
+}
