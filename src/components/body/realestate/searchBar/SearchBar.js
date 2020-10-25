@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import SearchBarHeader from './SerachBarHeader'
 import LocationSearch from './regularSearch/Location'
 import PropertyType from './regularSearch/PropertyType'
@@ -15,7 +15,6 @@ import { FiltersContext } from 'context/FiltersContext'
 import { clearSearch, setSearchCategory } from 'actions/filters'
 
 const SearchBar = () => {
-    const history = useHistory()
     const defaultCategory = 'forsale'
     const [category, setCategory] = useState(defaultCategory)
     const location = useLocation()

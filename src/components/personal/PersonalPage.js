@@ -11,8 +11,7 @@ const PersonalPage = () => {
               <PersonalContent />
             </ItemContextProvider>
             <SideAd adSide="left" />
-        </div>
-        
+        </div>  
     )
 }
 

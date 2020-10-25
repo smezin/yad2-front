@@ -5,21 +5,20 @@ import MainMenu from 'components/mainMenu/MainMenu'
 import RealestateNavbar from 'components/navBars/RealestateNavbar'
 import RealestateBody from 'components/body/realestate/RealestateBody'
 import Footer from 'components/footer/Footer'
-import Modal from 'components/personal/Modal'
 import PageNotFound from 'components/PageNotFound'
 import PersonalPage from 'components/personal/PersonalPage'
+import SignIn from 'components/personal/SignIn'
 
 export const history = createBrowserHistory()
-const PrivateRoute = ({ component, ...options }) => {
+const PrivateRoute = ({ component, data, ...options }) => {
     //const { user } = useAuthDataContext();
     const user = false
-    const finalComponent = user ? component : Modal
-   
+    const finalComponent = user ? component : SignIn
     return <Route {...options} component={finalComponent} />
   }; 
 const AppRouter = () => {
     return (
-        <Router>            
+        <Router>      
             <MainMenu />  
             <RealestateNavbar />
             <Switch>

@@ -545,6 +545,15 @@
         "rooms": {"localName": "חדרים"},
         "floor": {"localName": "קומה"},
         "size": {"localName": "מ\"ר"}
+    },
+    "signIn": {
+        "localName": "התחברות",
+        "userName": {"localName": "שם משתמש", "localPlaceholder": "שם משתמש"},
+        "password": {"localName": "סיסמה", "localPlaceholder": "סיסמה"},
+        "forgotPassword": {"localName": "שכחתי סיסמה"},
+        "submitForm": {"localName": "המשך"},
+        "notRegisteredYet":  {"localName": "עדיין לא נרשמת ליד 2? "},
+        "signUp":  {"localName": "להרשמה"}
     }
 
 }

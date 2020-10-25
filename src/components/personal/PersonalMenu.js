@@ -24,7 +24,8 @@ const PersonalMenu = () => {
                 <div className="personal-content__categories">
                     {
                         Object.keys(menuCategories).map( (menuCategory) => 
-                        <div className={`personal-content__category${menuCategory === category ? '__picked':''}`} onClick={()=>onMenuCategoryPick(menuCategory)} key={menuCategory} >
+                        <div className={`personal-content__category${menuCategory === category ? '__picked':''}`} 
+                        onClick={()=>onMenuCategoryPick(menuCategory)} key={menuCategory} >
                             {menuCategories[menuCategory]['localName']}
                         </div>
                         )
