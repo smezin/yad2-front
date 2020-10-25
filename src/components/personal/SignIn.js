@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { signInImage } from 'images'
 import fetchFromResource from 'utility/fetchFromResource'
 import SideAd from 'components/body/common/SideAd'
+import { signUp } from 'actions/auth'
 
 const SignIn = () => {
     const headerLocalName = fetchFromResource('string', 'signIn', 'localName')
@@ -19,6 +20,11 @@ const SignIn = () => {
     const [isSignUp, setIsSignUp] = useState(false)
     const renderSignUp = () => setIsSignUp(true)
     const renderSignIn = () => setIsSignUp(false)
+    const [userName, setUserName] = useState('')
+    const [password, setPassword] = useState('')
+    const handleUserName = (e) => setUserName(e.target.value)
+    const handlePassword = (e) => setPassword(e.target.value)
+    const sendRequest = () => signUp(userName, password)
     return (
         <div className="sign-in-page">
         <SideAd adSide="right" />
@@ -30,11 +36,11 @@ const SignIn = () => {
                     </div>
                     <div className="sign-in__username">
                         <span className="sign-in__username-header">{userNameLocalName}</span> 
-                        <input placeholder={userNameLocalPlaceholder} />              
+                        <input placeholder={userNameLocalPlaceholder} onChange={(e)=>handleUserName(e)}/>              
                     </div>
                     <div className="sign-in__password">
                         <span className="sign-in__password-header"> {passwordLocalName}</span>
-                        <input placeholder={passwordLocalPlaceholder} />
+                        <input placeholder={passwordLocalPlaceholder} onChange={(e)=>handlePassword(e)} />
                     </div>
                     {
                         isSignUp &&
@@ -44,7 +50,7 @@ const SignIn = () => {
                         </div>
                     }
                     <span className="forgot-password">{!isSignUp && forgotPasswordLocalName}</span>
-                    <span className="submit-form">{submitLocalName}</span>
+                    <span className="submit-form" onClick={sendRequest}>{submitLocalName}</span>
                     <div className="register">
                         <span className="not-registered-yet">{!isSignUp && notRegisteredYetLocalName}</span>
                         <span className="sign-up" onClick={renderSignUp}>{!isSignUp && signUpLocalName}</span>

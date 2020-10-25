@@ -6,16 +6,6 @@ import loadScripts from './utility/loadScripts'
 import * as serviceWorker from './serviceWorker'
 import AppRouter from './routers/AppRouter'
 
-// const jsx = (
-//   <AppRouter />
-// )
-// let hasRendered = false
-// const renderApp = () => {
-//   if (!hasRendered) {
-//     ReactDOM.render(jsx, document.getElementById('root'))
-//     hasRendered = true
-//   }
-// }
 const renderApp= () => {
   ReactDOM.render(
       <AppRouter />,
