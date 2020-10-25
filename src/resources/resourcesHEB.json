@@ -553,7 +553,9 @@
         "forgotPassword": {"localName": "שכחתי סיסמה"},
         "submitForm": {"localName": "המשך"},
         "notRegisteredYet":  {"localName": "עדיין לא נרשמת ליד 2? "},
-        "signUp":  {"localName": "להרשמה"}
+        "signUp":  {"localName": "להרשמה"},
+        "reEnterPassword": {"localName": "הזן שנית", "localPlaceholder": "סיסמה"},
+        "alreadySignedUp": {"localName": "כבר רשום? התחבר"}
     }
 
 }

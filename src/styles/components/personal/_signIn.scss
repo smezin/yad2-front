@@ -1,82 +1,106 @@
-.sign-in {
-    border: 1px solid darken($theme-box-border, 20%);
+.sign-in-page {
     display: flex;
-    flex-direction: row-reverse;
-    height: 20%;
-    justify-content: space-between;
-    left: 20%;
-    margin: $std-size * 3 auto;
-    top: 25%;
-    width: 50%;
-    img {
-        width: 40%;
+    margin: $std-size * 0.7 0;
+    .side-ad__right {
+        img {
+            background: $theme-background-header;
+        }        
     }
-    .sign-in-input-fields-container {
-        direction: rtl;
+    .side-ad__left {
+        @extend .side-ad__right;
+    }
+    .sign-in {
+        border: 1px solid darken($theme-box-border, 20%);
+        box-shadow: $theme-box-shadow;
         display: flex;
-        flex-direction: column;
-        padding: $std-size;
-        width: 60%;
-        .sign-in__header {
-            font-size: $font-size-xl;
-            padding-bottom: $std-size * 2;
+        flex-direction: row-reverse;
+        height: 62vh;
+        justify-content: space-between;
+        left: 20%;
+        margin: $std-size * 3 auto;
+        top: 25%;
+        width: 50%;
+        img {
+            width: 40%;
         }
-        .sign-in__username {
+        .sign-in-input-fields-container {
+            direction: rtl;
             display: flex;
             flex-direction: column;
-            padding-bottom: $std-size;
-            padding-left: $std-size * 4;
-            .sign-in__username-header {
-                color: $theme-text;
-                font-size: $font-size-s;
-                padding-bottom: $std-size * 0.5;
+            padding: $std-size;
+            width: 60%;
+            .sign-in__header {
+                font-size: $font-size-xl;
+                padding-bottom: $std-size * 2;
             }
-            input {
-                background-color: $theme-hovered;
-                border: 1px solid darken($theme-box-border, 15%);
-                border-radius: 5px;
-                height: $std-size * 2.2;            
+            .sign-in__username {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: $std-size;
+                padding-left: $std-size * 4;
+                .sign-in__username-header {
+                    color: $theme-text;
+                    font-size: $font-size-s;
+                    padding-bottom: $std-size * 0.5;
+                }
+                input {
+                    background-color: $theme-hovered;
+                    border: 1px solid darken($theme-box-border, 15%);
+                    border-radius: 5px;
+                    height: $std-size * 2.2;            
+                }
             }
-        }
-        .sign-in__password {
-            @extend .sign-in__username;
-            .sign-in__password-header {
-                @extend .sign-in__username-header;
+            .sign-in__password {
+                @extend .sign-in__username;
+                .sign-in__password-header {
+                    @extend .sign-in__username-header;
+                }
             }
-        }
-        .forgot-password {
-            border-bottom: 2px solid $theme-box-border;
-            color: $theme-main-color;
-            cursor: pointer;
-            font-size: $font-size-xs;
-            font-weight: 500;
-            padding-bottom: $std-size;
-            text-align: left;
-        }
-        .submit-form {
-            border: 1px solid $theme-main-color;
-            border-radius: 20% / 50%;
-            color: $theme-main-color;
-            cursor: pointer;
-            font-size: $font-size-xs;
-            font-weight: 500;
-            margin-top: $std-size * 0.8;
-            margin-right: 70%;
-            padding: $std-size * 0.5;
-            text-align: center;
-            width: 24%;
-        }
-        .register {
-            padding-top: $std-size;
-            .not-registered-yet {
-                font-size: $font-size-xs;
+            .sign-in__re-enter-password {
+                @extend .sign-in__username;
+                .sign-in__re-enter-password-header {
+                    @extend .sign-in__username-header;
+                }
             }
-            .sign-up{
+            .forgot-password {
+                border-bottom: 2px solid $theme-box-border;
                 color: $theme-main-color;
                 cursor: pointer;
                 font-size: $font-size-xs;
                 font-weight: 500;
-                padding-right: $std-size * 0.2;
+                padding-bottom: $std-size;
+                text-align: left;
+            }
+            .submit-form {
+                border: 1px solid $theme-main-color;
+                border-radius: 20% / 50%;
+                color: $theme-main-color;
+                cursor: pointer;
+                font-size: $font-size-xs;
+                font-weight: 500;
+                margin-top: $std-size * 0.8;
+                margin-right: 70%;
+                padding: $std-size * 0.5;
+                text-align: center;
+                width: 24%;
+            }
+            .register {
+                padding-top: $std-size;
+                .not-registered-yet {
+                    font-size: $font-size-xs;
+                }
+                .sign-up{
+                    color: $theme-main-color;
+                    cursor: pointer;
+                    font-size: $font-size-xs;
+                    font-weight: 500;
+                    padding-right: $std-size * 0.2;
+                }
+                .already-signed-up {
+                    color: $theme-main-color;
+                    cursor: pointer;
+                    font-size: $font-size-xs;
+                }
             }
         }
     }
