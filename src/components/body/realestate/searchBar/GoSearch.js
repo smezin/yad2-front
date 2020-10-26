@@ -6,7 +6,7 @@ import { signUp } from 'actions/auth';
 const GoSearch = () => {
     const { filters } = useContext(FiltersContext)
     const searchLocalName = fetchFromResource('string', 'realestateSearchBar', 'goSearch', 'localName')
-    const onClick = () => signUp ('aaa111', '123456')
+    const onClick = () => signUp ('user', 'mail', 'pass')
 
     return (
         <div className="go-search" onClick={onClick}>

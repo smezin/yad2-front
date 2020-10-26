@@ -17,14 +17,17 @@ const SignIn = () => {
     const reEnterPasswordLocalName = fetchFromResource('string', 'signIn', 'reEnterPassword','localName')
     const reEnterPasswordLocalPlaceholder = fetchFromResource('string', 'signIn', 'reEnterPassword','localPlaceholder')
     const alreadySignedUp = fetchFromResource('string', 'signIn', 'alreadySignedUp','localName')
+    const emailLocalName = fetchFromResource('string', 'signIn', 'email','localName')
     const [isSignUp, setIsSignUp] = useState(false)
     const renderSignUp = () => setIsSignUp(true)
     const renderSignIn = () => setIsSignUp(false)
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
     const handleUserName = (e) => setUserName(e.target.value)
     const handlePassword = (e) => setPassword(e.target.value)
-    const sendRequest = () => signUp(userName, password)
+    const handleEmail = (e) => setEmail(e.target.value)
+    const sendRequest = () => signUp(userName, email, password)
     return (
         <div className="sign-in-page">
         <SideAd adSide="right" />
@@ -49,6 +52,10 @@ const SignIn = () => {
                             <input placeholder={reEnterPasswordLocalPlaceholder} />
                         </div>
                     }
+                    <div className="sign-in__email">
+                        <span className="sign-in__email-header"> {emailLocalName}</span>
+                        <input placeholder={emailLocalName} onChange={(e)=>handleEmail(e)} />
+                    </div>
                     <span className="forgot-password">{!isSignUp && forgotPasswordLocalName}</span>
                     <span className="submit-form" onClick={sendRequest}>{submitLocalName}</span>
                     <div className="register">

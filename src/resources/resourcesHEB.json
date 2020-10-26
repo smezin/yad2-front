@@ -555,7 +555,8 @@
         "notRegisteredYet":  {"localName": "עדיין לא נרשמת ליד 2? "},
         "signUp":  {"localName": "להרשמה"},
         "reEnterPassword": {"localName": "הזן שנית", "localPlaceholder": "סיסמה"},
-        "alreadySignedUp": {"localName": "כבר רשום? התחבר"}
+        "alreadySignedUp": {"localName": "כבר רשום? התחבר"},
+        "email": {"localName": "דואר אלקטרוני"}
     }
 
 }
