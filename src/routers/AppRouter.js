@@ -7,13 +7,13 @@ import RealestateBody from 'components/body/realestate/RealestateBody'
 import Footer from 'components/footer/Footer'
 import PageNotFound from 'components/PageNotFound'
 import PersonalPage from 'components/personal/PersonalPage'
-import SignIn from 'components/personal/SignIn'
+import SignInSignOnForm from 'components/personal/SignIn'
 
 export const history = createBrowserHistory()
 const PrivateRoute = ({ component, data, ...options }) => {
     //const { user } = useAuthDataContext();
     const user = false
-    const finalComponent = user ? component : SignIn
+    const finalComponent = user ? component : SignInSignOnForm
     return <Route {...options} component={finalComponent} />
   }; 
 const AppRouter = () => {

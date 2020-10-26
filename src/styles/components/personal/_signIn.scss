@@ -68,6 +68,10 @@
                     @extend .sign-in__username-header;
                 }
             }
+            .sign-in__inavlid-input {
+                @extend input;
+                color: red;
+            }
             .forgot-password {
                 border-bottom: 2px solid $theme-box-border;
                 color: $theme-main-color;
