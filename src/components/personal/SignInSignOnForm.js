@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import validator from 'validator'
 import { signInImage } from 'images'
 import fetchFromResource from 'utility/fetchFromResource'
 import SideAd from 'components/body/common/SideAd'
-import { signIn, signUp } from 'actions/auth'
+import { SignIn, signUp } from 'actions/auth'
+import { AuthContext } from 'context/AuthContext'
 
 const SignInSignOnForm = () => {
     const headerLocalName = fetchFromResource('string', 'signIn', 'localName')
@@ -19,6 +20,7 @@ const SignInSignOnForm = () => {
     const reEnterPasswordLocalPlaceholder = fetchFromResource('string', 'signIn', 'reEnterPassword','localPlaceholder')
     const alreadySignedUp = fetchFromResource('string', 'signIn', 'alreadySignedUp','localName')
     const emailLocalName = fetchFromResource('string', 'signIn', 'email','localName')
+    const { dispatch } = useContext(AuthContext)
     const [isSignUp, setIsSignUp] = useState(false)
     const renderSignUp = () => setIsSignUp(true)
     const renderSignIn = () => setIsSignUp(false)
@@ -33,9 +35,9 @@ const SignInSignOnForm = () => {
 
     const sendRequest = () => {
         if (isSignUp && password === reEnteredPassword) {
-            signUp(username, email, password)
+            signUp(username, email, password, dispatch)
         } else {
-            signIn(username, password)
+            SignIn(username, password, dispatch)
         }
         
     } 

@@ -7,7 +7,8 @@ import RealestateBody from 'components/body/realestate/RealestateBody'
 import Footer from 'components/footer/Footer'
 import PageNotFound from 'components/PageNotFound'
 import PersonalPage from 'components/personal/PersonalPage'
-import SignInSignOnForm from 'components/personal/SignIn'
+import SignInSignOnForm from 'components/personal/SignInSignOnForm'
+import AuthContextProvider from 'context/AuthContext'
 
 export const history = createBrowserHistory()
 const PrivateRoute = ({ component, data, ...options }) => {
@@ -19,6 +20,7 @@ const PrivateRoute = ({ component, data, ...options }) => {
 const AppRouter = () => {
     return (
         <Router>      
+        <AuthContextProvider>
             <MainMenu />  
             <RealestateNavbar />
             <Switch>
@@ -29,7 +31,7 @@ const AppRouter = () => {
                 <Route component={PageNotFound} />
             </Switch>
             <Footer />
-            
+        </AuthContextProvider>  
         </Router>
     )
 }
