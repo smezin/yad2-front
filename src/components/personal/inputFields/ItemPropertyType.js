@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import { setPropertyType } from 'actions/item'
+import { setPropertyType } from 'actions/item.actions'
 import { ItemContext } from 'context/ItemContext'
 import SinglePickerDiscrete from './common/SinglePickerDiscrete'
 

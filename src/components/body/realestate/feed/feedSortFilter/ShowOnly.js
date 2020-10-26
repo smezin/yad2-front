@@ -1,4 +1,4 @@
-import { toggleShowOnlyItemsWithImage, toggleShowOnlyItemsWithPrice } from 'actions/filters'
+import { toggleShowOnlyItemsWithImage, toggleShowOnlyItemsWithPrice } from 'actions/filters.actions'
 import { FiltersContext } from 'context/FiltersContext'
 import React, { useContext, useState } from 'react'
 import { NIS } from 'resources/specialChars'

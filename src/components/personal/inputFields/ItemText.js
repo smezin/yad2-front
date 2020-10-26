@@ -1,4 +1,4 @@
-import { setText } from 'actions/filters'
+import { setText } from 'actions/filters.actions'
 import { ItemContext } from 'context/ItemContext'
 import React, { useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'

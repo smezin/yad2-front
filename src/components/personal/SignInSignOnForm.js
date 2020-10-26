@@ -3,7 +3,7 @@ import validator from 'validator'
 import { signInImage } from 'images'
 import fetchFromResource from 'utility/fetchFromResource'
 import SideAd from 'components/body/common/SideAd'
-import { SignIn, signUp } from 'actions/auth'
+import { signIn, signUp } from 'actions/auth.actions'
 import { AuthContext } from 'context/AuthContext'
 
 const SignInSignOnForm = () => {
@@ -37,7 +37,7 @@ const SignInSignOnForm = () => {
         if (isSignUp && password === reEnteredPassword) {
             signUp(username, email, password, dispatch)
         } else {
-            SignIn(username, password, dispatch)
+            signIn(username, password, dispatch)
         }
         
     } 

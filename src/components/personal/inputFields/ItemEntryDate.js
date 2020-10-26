@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { setEntryDate } from 'actions/item'
+import { setEntryDate } from 'actions/item.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"

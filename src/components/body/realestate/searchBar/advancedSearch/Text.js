@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react' 
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
-import { setText } from 'actions/filters'
-import { incAdvancedFilters, decAdvancedFilters } from 'actions/filters'
+import { setText } from 'actions/filters.actions'
+import { incAdvancedFilters, decAdvancedFilters } from 'actions/filters.actions'
 
 const Storage = () => {
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'text', 'localName')

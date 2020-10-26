@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import onClickOutside from 'react-onclickoutside'
 import fetchFromResource from 'utility/fetchFromResource'
-import { setPropertyTypes } from 'actions/filters'
+import { setPropertyTypes } from 'actions/filters.actions'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow, checkedBox, unCheckedBox } from 'resources/specialChars'
 

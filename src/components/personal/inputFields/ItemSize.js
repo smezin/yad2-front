@@ -1,5 +1,5 @@
 import React from 'react'
-import { setSize } from 'actions/item'
+import { setSize } from 'actions/item.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 import NumericInput from 'components/body/common/NumericInput'
 

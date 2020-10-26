@@ -1,6 +1,6 @@
 import React from 'react'
 import RangePickerContinuous from 'components/body/common/RangePickerContinuous'
-import {setMinSize, setMaxSize} from 'actions/filters'
+import {setMinSize, setMaxSize} from 'actions/filters.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 
 

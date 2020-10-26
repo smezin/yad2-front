@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
 import setRangeFromMinMaxStep from 'utility/setRangeFromMinMaxStep'
-import { incAdvancedFilters, decAdvancedFilters} from 'actions/filters'
+import { incAdvancedFilters, decAdvancedFilters} from 'actions/filters.actions'
 
 const RangePickerDiscrete = (props) => {
     const { menuSpecs, downOffset, set } = props

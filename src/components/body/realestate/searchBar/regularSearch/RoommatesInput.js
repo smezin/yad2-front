@@ -5,7 +5,7 @@ import setFromToInputDisplay from 'utility/setFromToInputDisplay'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow} from 'resources/specialChars'
 import RangeInputDiscrete from 'components/body/common/RangeInputDiscrete'
-import { setMinRoommates, setMaxRoommates } from 'actions/filters'
+import { setMinRoommates, setMaxRoommates } from 'actions/filters.actions'
 
 function RoommatesInput (props)  
 {

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
 import RangeInputDiscrete from 'components/body/common/RangeInputDiscrete'
-import { setMinFloor, setMaxFloor } from 'actions/filters'
+import { setMinFloor, setMaxFloor } from 'actions/filters.actions'
 
 const FloorPickerInput = (props) => {
     const { filters } = useContext(FiltersContext)

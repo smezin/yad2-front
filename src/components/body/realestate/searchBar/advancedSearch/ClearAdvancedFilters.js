@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import { clearAdvancedFilters } from 'actions/filters'
+import { clearAdvancedFilters } from 'actions/filters.actions'
 import { FiltersContext } from 'context/FiltersContext'
 
 const ClearAdvancedFliters = () => {

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { ItemContext } from 'context/ItemContext'
-import { setCategory } from 'actions/item'
+import { setCategory } from 'actions/item.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 
 

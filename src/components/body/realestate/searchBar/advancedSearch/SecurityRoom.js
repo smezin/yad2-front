@@ -1,7 +1,7 @@
 import React from 'react' 
 import BlockPicker from 'components/body/common/BlockPicker'
 import fetchFromResource from 'utility/fetchFromResource'
-import { toggleSecurityRoom } from 'actions/filters'
+import { toggleSecurityRoom } from 'actions/filters.actions'
 
 const SecurityRoom = () => {
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'securityRoom', 'localName')

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
-import { toggleRoommateGender, incAdvancedFilters, decAdvancedFilters } from 'actions/filters'
+import { toggleRoommateGender, incAdvancedFilters, decAdvancedFilters } from 'actions/filters.actions'
 import { checkedBox, unCheckedBox } from 'resources/specialChars'
 import fetchFromResource from 'utility/fetchFromResource'
 

@@ -12,7 +12,7 @@ import GoSearch from './GoSearch'
 import AdvancedSearch from './advancedSearch/AdvancedSearch'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
-import { clearSearch, setSearchCategory } from 'actions/filters'
+import { clearSearch, setSearchCategory } from 'actions/filters.actions'
 
 const SearchBar = () => {
     const defaultCategory = 'forsale'

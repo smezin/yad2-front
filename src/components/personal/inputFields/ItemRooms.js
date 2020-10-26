@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import { setRooms } from 'actions/item'
+import { setRooms } from 'actions/item.actions'
 import setRangeFromMinMaxStep from 'utility/setRangeFromMinMaxStep'
 import { ItemContext } from 'context/ItemContext'
 import SinglePickerDiscrete from 'components/personal/inputFields/common/SinglePickerDiscrete'

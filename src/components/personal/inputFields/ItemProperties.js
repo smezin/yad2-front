@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import { setProperties } from 'actions/item'
+import { setProperties } from 'actions/item.actions'
 import { checkedBox, unCheckedBox } from 'resources/specialChars'
 import { ItemContext } from 'context/ItemContext'
 

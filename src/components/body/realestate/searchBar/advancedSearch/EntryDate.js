@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { setMinEntryDate, incAdvancedFilters } from 'actions/filters'
+import { setMinEntryDate, incAdvancedFilters } from 'actions/filters.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"

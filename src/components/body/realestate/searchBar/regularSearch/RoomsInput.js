@@ -5,7 +5,7 @@ import setFromToInputDisplay from 'utility/setFromToInputDisplay'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow} from 'resources/specialChars'
 import RangeInputDiscrete from 'components/body/common/RangeInputDiscrete'
-import { setMaxRooms, setMinRooms } from 'actions/filters' 
+import { setMaxRooms, setMinRooms } from 'actions/filters.actions' 
 
 function RoomsInput (props)  
 {

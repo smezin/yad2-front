@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
-import { incAdvancedFilters } from 'actions/filters'
+import { incAdvancedFilters } from 'actions/filters.actions'
 
 const BlockPicker = (props) => {
     const { optionsObj, toggleFunc, serachFilter } = props

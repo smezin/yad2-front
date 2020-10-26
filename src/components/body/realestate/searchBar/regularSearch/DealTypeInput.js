@@ -3,7 +3,7 @@ import onClickOutside from 'react-onclickoutside'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
 import { upArrow, downArrow, checkedBox, unCheckedBox } from 'resources/specialChars'
-import { setDealTypes, clearSearch} from 'actions/filters'
+import { setDealTypes, clearSearch} from 'actions/filters.actions'
 
 function DealTypeInput (props) 
 {

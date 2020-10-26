@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiltersContext } from 'context/FiltersContext'
-import { incAdvancedFilters, decAdvancedFilters } from 'actions/filters'
+import { incAdvancedFilters, decAdvancedFilters } from 'actions/filters.actions'
 import isNumeric from 'utility/isNumeric'
 import { addSeperator, removeSeperator} from 'utility/numbersDisplay'
 

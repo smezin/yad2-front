@@ -3,7 +3,7 @@ export const setAuth = (response) => ({
     type: 'SET_AUTH',
     response
 })
-export const SignIn = async (username, password, dispatch) => {
+export const signIn = async (username, password, dispatch) => {
     try {
         const requestParams = {
             method: 'POST',

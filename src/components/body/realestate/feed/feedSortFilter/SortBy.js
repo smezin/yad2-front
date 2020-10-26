@@ -1,4 +1,4 @@
-import { setSortBy } from 'actions/filters'
+import { setSortBy } from 'actions/filters.actions'
 import { FiltersContext } from 'context/FiltersContext'
 import React, { useState, useContext } from 'react'
 import { circle, circledBullet, downArrow, upArrow } from 'resources/specialChars'

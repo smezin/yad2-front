@@ -1,7 +1,7 @@
 import React from 'react' 
 import BlockPicker from 'components/body/common/BlockPicker'
 import fetchFromResource from 'utility/fetchFromResource'
-import { toggleSplit } from 'actions/filters'
+import { toggleSplit } from 'actions/filters.actions'
 
 const Split = () => {
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'split', 'localName')

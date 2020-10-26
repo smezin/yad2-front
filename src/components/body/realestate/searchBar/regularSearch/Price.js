@@ -1,6 +1,6 @@
 import React from 'react'
 import RangePickerContinuous from 'components/body/common/RangePickerContinuous'
-import {setMinPrice, setMaxPrice} from 'actions/filters'
+import {setMinPrice, setMaxPrice} from 'actions/filters.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 
 const Price = (props) => {

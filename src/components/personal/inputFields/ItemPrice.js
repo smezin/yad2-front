@@ -1,5 +1,5 @@
 import React from 'react'
-import { setPrice } from 'actions/item'
+import { setPrice } from 'actions/item.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 import NumericInput from 'components/body/common/NumericInput'
 

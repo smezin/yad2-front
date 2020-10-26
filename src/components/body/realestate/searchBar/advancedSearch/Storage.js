@@ -1,7 +1,7 @@
 import React from 'react' 
 import BlockPicker from 'components/body/common/BlockPicker'
 import fetchFromResource from 'utility/fetchFromResource'
-import { toggleStorage } from 'actions/filters'
+import { toggleStorage } from 'actions/filters.actions'
 
 const Storage = () => {
     const headerLocalName = fetchFromResource('string', 'advancedSearch', 'storage', 'localName')

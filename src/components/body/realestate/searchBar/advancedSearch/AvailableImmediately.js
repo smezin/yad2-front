@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
-import { toggleAvailableImmediately, incAdvancedFilters, decAdvancedFilters } from 'actions/filters'
+import { toggleAvailableImmediately, incAdvancedFilters, decAdvancedFilters } from 'actions/filters.actions'
 import { checkedBox, unCheckedBox } from 'resources/specialChars'
 
 const AvailableImmediately = () => {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import LocationSearchInput from './LocationInput'
-import { setLocation } from 'actions/filters'
+import { setLocation } from 'actions/filters.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 import { FiltersContext } from 'context/FiltersContext'
 

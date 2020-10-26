@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
 import LocationInput from 'components/body/realestate/searchBar/regularSearch/LocationInput'
 import { ItemContext } from 'context/ItemContext'
-import { setLocation } from 'actions/item'
+import { setLocation } from 'actions/item.actions'
 
 const ItemLocation = (props) => {
     const { category } = props
