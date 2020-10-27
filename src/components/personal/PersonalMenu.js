@@ -1,20 +1,23 @@
 import React, { useState, useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import {ItemContext} from 'context/ItemContext'
+import { signAllOut } from 'actions/auth.actions'
+import { AuthContext } from 'context/AuthContext'
 
 const PersonalMenu = () => {
     const headerLocalName = fetchFromResource('string', 'personal', 'localName')
     const menuCategories = fetchFromResource('object', 'personal', 'categories')
     const exitButtonText = fetchFromResource('string', 'personal', 'exit', 'localName') 
     const [category, setCategory] = useState('publish')
-    const { item } = useContext(ItemContext)
+    const { dispatch } = useContext(AuthContext)
+    
     
     const onMenuCategoryPick = (menuCategory) => {
         setCategory(menuCategory)
     }
     const onExit = () => {
-        console.log('--->', item)
+        signAllOut(dispatch)        
     }
+
     return (
         <div className="personal-content__top">
             <div className="personal-content__header">

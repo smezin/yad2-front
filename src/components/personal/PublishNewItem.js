@@ -19,21 +19,27 @@ const PublishNewItem = () => {
         switch(itemCategory) {
             case 'forsale':
                 return (
-                     <React.Fragment>
+                    <React.Fragment>
                          
-                     </React.Fragment>
+                    </React.Fragment>
                 )
             case 'rent':
                 return (
-                    <div>rent custom fields</div>
+                    <React.Fragment>
+                         
+                    </React.Fragment>
                 )
             case 'roommates':
                 return (
-                    <div>roommates custom fields</div>
+                    <React.Fragment>
+                         
+                    </React.Fragment>
                 )
             case 'commercial':
                 return (
-                    <div>commercial custom fields</div>
+                    <React.Fragment>
+                         
+                    </React.Fragment>
                 )
             default:
                 return

@@ -30,17 +30,32 @@ const SignInSignOnForm = () => {
     const [email, setEmail] = useState('')
     const handleUserName = (e) => setUsername(e.target.value)
     const handlePassword = (e) => setPassword(e.target.value)
-    const handleEmail = (e) => setEmail(e.target.value)
+    const handleEmail = (e) => setEmail((e.target.value).toLowerCase())
     const handleReEnteredPassword = (e) => setReEnteredPassword(e.target.value)
-
-    const sendRequest = () => {
-        if (isSignUp && password === reEnteredPassword) {
-            signUp(username, email, password, dispatch)
+    const sendRequest = (isSignUp) => {
+        if (isSignUp) {
+            validateForm().validForm && signUp(username, email, password, dispatch);
         } else {
             signIn(username, password, dispatch)
         }
-        
     } 
+    const validateForm = () => {
+        const validationResult = {
+            "username": true,
+            "email": true,
+            "password": true,
+            "reEnteredPassword": true,
+            "validForm": false
+        }
+        validationResult.email = validator.isEmail(email)
+        validationResult.username = validator.isLength(username, {min:4, max:12}) 
+        validationResult.password = validator.isLength(password, {min:4, max:16}) 
+        validationResult.reEnteredPassword = password === reEnteredPassword
+        validationResult.validForm = validationResult.email && validationResult.username 
+                                    && validationResult.password && validationResult.reEnteredPassword
+        return validationResult
+    }
+    
     return (
         <div className="sign-in-page">
         <SideAd adSide="right" />
@@ -51,31 +66,34 @@ const SignInSignOnForm = () => {
                         {headerLocalName}
                     </div>                   
                     <div className="sign-in__username">
-                        <span className="sign-in__username-header">{userNameLocalName}</span> 
-                        <input placeholder={userNameLocalPlaceholder} onChange={(e)=>handleUserName(e)}/>              
+                        <span className={"sign-in__username-header"}>{userNameLocalName}</span> 
+                        <input placeholder={userNameLocalPlaceholder} onChange={(e)=>handleUserName(e)} 
+                            className={validateForm().username?'':'sign-in__inavlid-input'} />              
                     </div>                   
                    
                     <div className="sign-in__password">
                         <span className="sign-in__password-header"> {passwordLocalName}</span>
-                        <input placeholder={passwordLocalPlaceholder} onChange={(e)=>handlePassword(e)} />
+                        <input placeholder={passwordLocalPlaceholder} onChange={(e)=>handlePassword(e)}
+                        className={validateForm().password?'':'sign-in__inavlid-input'} />
                     </div>
                     {
                         isSignUp &&
                         <div className="sign-in__re-enter-password">
                             <span className="sign-in__re-enter-password-header"> {reEnterPasswordLocalName}</span>
-                            <input placeholder={reEnterPasswordLocalPlaceholder} onChange={(e)=>handleReEnteredPassword(e)} />
+                            <input placeholder={reEnterPasswordLocalPlaceholder} onChange={(e)=>handleReEnteredPassword(e)}
+                            className={validateForm().reEnteredPassword?'':'sign-in__inavlid-input'} />
                         </div>
                     }
                     {
                         isSignUp &&
                         <div className="sign-in__email">
                             <span className="sign-in__email-header"> {emailLocalName}</span>
-                            <input placeholder={emailLocalName} className={validator.isEmail(email)?'':'sign-in__inavlid-input'} 
-                            type="email" required onChange={(e)=>handleEmail(e)} />
+                            <input placeholder={emailLocalName} type="email" required onChange={(e)=>handleEmail(e)}
+                            className={validateForm().email?'':'sign-in__inavlid-input'} />
                         </div>
                     }
                     <span className="forgot-password">{!isSignUp && forgotPasswordLocalName}</span>
-                    <span className="submit-form" onClick={sendRequest}>{submitLocalName}</span>
+                    <span className="submit-form" onClick={()=>sendRequest(isSignUp)}>{submitLocalName}</span>
                     <div className="register">
                         <span className="not-registered-yet">{!isSignUp && notRegisteredYetLocalName}</span>
                         <span className="sign-up" onClick={renderSignUp}>{!isSignUp && signUpLocalName}</span>

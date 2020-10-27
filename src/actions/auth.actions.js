@@ -3,6 +3,9 @@ export const setAuth = (response) => ({
     type: 'SET_AUTH',
     response
 })
+export const removeAuth = () => ({
+    type: 'REMOVE_AUTH'
+})
 export const signIn = async (username, password, dispatch) => {
     try {
         const requestParams = {
@@ -17,7 +20,6 @@ export const signIn = async (username, password, dispatch) => {
             throw response.status
         } 
         response = await response.json()
-        console.log('in',response)
         dispatch(setAuth(response))
     } catch (e) {
         console.log(e)
@@ -37,9 +39,11 @@ export const signUp = async (username, email, password, dispatch) => {
             throw response.status            
         }
         response = await response.json()
-        console.log('up',response)
         dispatch(setAuth(response))
     } catch (e) {
         console.log(e)
     } 
+}
+export const signAllOut = async (dispatch) => {
+    dispatch(removeAuth())
 }

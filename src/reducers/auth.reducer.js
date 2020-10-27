@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie'
+
 export const userReducerInitialState = {    
     email: undefined,
     favoriteItems: [],
@@ -25,6 +26,11 @@ export const authReducer = (state = userReducerCurrentState, action) => {
                 email: action.response.email,
                 username: action.response.username,
                 token: action.response.token
+            }
+        case 'REMOVE_AUTH':
+            Cookies.remove("User")
+            return {
+                ...userReducerInitialState
             }
         default:
             return state

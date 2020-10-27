@@ -1,5 +1,6 @@
 .add-item-form {
     background: darken($theme-background-body, 10%);
+    border-radius: 0 0 $std-size*0.25 $std-size*0.25;
     padding: $std-size;
     .item-category,
     .item-entry-date,

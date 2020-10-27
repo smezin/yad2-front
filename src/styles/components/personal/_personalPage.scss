@@ -28,6 +28,7 @@
         }
         .personal-content__menu {
             background: $theme-main-color;
+            border-radius: $std-size*0.25 $std-size*0.25 0 0;
             display: flex;
             height: $std-size * 2.8;
             justify-content: space-between;
