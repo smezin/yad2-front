@@ -25,14 +25,14 @@ export const signIn = async (username, password, dispatch) => {
         console.log(e)
     }
 }
-export const signUp = async (username, email, password, dispatch) => {
+export const signUp = async (username, email, mobile, password, dispatch) => {
     try {
         const requestParams = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({username, email, password})
+            body: JSON.stringify({username, email, mobile, password})
         }
         let response = await fetch('http://localhost:8080/api/auth/signup', requestParams)
         if (response.status !== 201 && response.status !== 200) {

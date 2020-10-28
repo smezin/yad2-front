@@ -4,6 +4,7 @@ export const userReducerInitialState = {
     email: undefined,
     favoriteItems: [],
     id: undefined,
+    mobile: undefined,
     previousSearches: [],
     token: undefined,    
     username: undefined
@@ -14,19 +15,26 @@ const user = Cookies.get("User")
 if (user) {
     console.log(JSON.parse(user))
     userReducerCurrentState = Object.assign({}, JSON.parse(user))
+    userReducerCurrentState = {
+        ...userReducerInitialState,
+        ...userReducerCurrentState
+    }
 }
 
 export const authReducer = (state = userReducerCurrentState, action) => {
     switch(action.type) {
         case 'SET_AUTH':
-            Cookies.set("User", action.response, {expires: 3})
-            return {
+            console.log(action.response)
+            const newState =  {
                 ...state,
                 id: action.response.id,
                 email: action.response.email,
+                mobile: action.response.mobile,
+                token: action.response.token,
                 username: action.response.username,
-                token: action.response.token
             }
+            Cookies.set("User", newState, {expires: 3})
+            return newState
         case 'REMOVE_AUTH':
             Cookies.remove("User")
             return {

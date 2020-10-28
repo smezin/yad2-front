@@ -20,6 +20,8 @@ const SignInSignOnForm = () => {
     const reEnterPasswordLocalPlaceholder = fetchFromResource('string', 'signIn', 'reEnterPassword','localPlaceholder')
     const alreadySignedUp = fetchFromResource('string', 'signIn', 'alreadySignedUp','localName')
     const emailLocalName = fetchFromResource('string', 'signIn', 'email','localName')
+    const mobileLocalName = fetchFromResource('string', 'signIn', 'mobile','localName')
+    const locale = 'he-IL'
     const { dispatch } = useContext(AuthContext)
     const [isSignUp, setIsSignUp] = useState(false)
     const renderSignUp = () => setIsSignUp(true)
@@ -28,13 +30,20 @@ const SignInSignOnForm = () => {
     const [password, setPassword] = useState('')
     const [reEnteredPassword, setReEnteredPassword] = useState('')
     const [email, setEmail] = useState('')
+    const [mobile, setMobile] = useState('')
     const handleUserName = (e) => setUsername(e.target.value)
     const handlePassword = (e) => setPassword(e.target.value)
     const handleEmail = (e) => setEmail((e.target.value).toLowerCase())
+    const handleMobile = (e) => {
+        const unDashedPhoneNumber = (e.target.value).replace('-','')
+        const standardDashedPhoneNumber = [unDashedPhoneNumber.slice(0,3) + '-' + unDashedPhoneNumber.slice(3)].join('')
+        setMobile(standardDashedPhoneNumber) 
+        console.log(standardDashedPhoneNumber)       
+    }
     const handleReEnteredPassword = (e) => setReEnteredPassword(e.target.value)
     const sendRequest = (isSignUp) => {
         if (isSignUp) {
-            validateForm().validForm && signUp(username, email, password, dispatch);
+            validateForm().validForm && signUp(username, email, mobile, password, dispatch);
         } else {
             signIn(username, password, dispatch)
         }
@@ -43,15 +52,17 @@ const SignInSignOnForm = () => {
         const validationResult = {
             "username": true,
             "email": true,
+            "mobile": true,
             "password": true,
             "reEnteredPassword": true,
             "validForm": false
         }
         validationResult.email = validator.isEmail(email)
-        validationResult.username = validator.isLength(username, {min:4, max:12}) 
+        validationResult.mobile = validator.isMobilePhone(mobile.replace('-',''), locale)
         validationResult.password = validator.isLength(password, {min:4, max:16}) 
+        validationResult.username = validator.isLength(username, {min:4, max:12}) 
         validationResult.reEnteredPassword = password === reEnteredPassword
-        validationResult.validForm = validationResult.email && validationResult.username 
+        validationResult.validForm = validationResult.email && validationResult.username && validationResult.mobile
                                     && validationResult.password && validationResult.reEnteredPassword
         return validationResult
     }
@@ -90,6 +101,14 @@ const SignInSignOnForm = () => {
                             <span className="sign-in__email-header"> {emailLocalName}</span>
                             <input placeholder={emailLocalName} type="email" required onChange={(e)=>handleEmail(e)}
                             className={validateForm().email?'':'sign-in__inavlid-input'} />
+                        </div>
+                    }
+                    {
+                        isSignUp &&
+                        <div className="sign-in__mobile">
+                            <span className="sign-in__mobile-header"> {mobileLocalName}</span>
+                            <input placeholder={mobileLocalName} required onChange={(e)=>handleMobile(e)}
+                            className={validateForm().mobile?'':'sign-in__inavlid-input'} />
                         </div>
                     }
                     <span className="forgot-password">{!isSignUp && forgotPasswordLocalName}</span>

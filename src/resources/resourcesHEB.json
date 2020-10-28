@@ -556,7 +556,8 @@
         "signUp":  {"localName": "להרשמה"},
         "reEnterPassword": {"localName": "הזן שנית", "localPlaceholder": "סיסמה"},
         "alreadySignedUp": {"localName": "כבר רשום? התחבר"},
-        "email": {"localName": "דואר אלקטרוני"}
+        "email": {"localName": "דואר אלקטרוני"},
+        "mobile": {"localName": "טלפון נייד"}
     }
 
 }

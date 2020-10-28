@@ -13,6 +13,7 @@ import AuthContextProvider from 'context/AuthContext'
 export const history = createBrowserHistory()
 
 const AppRouter = () => {
+    
     return (
         <Router>      
         <AuthContextProvider>
