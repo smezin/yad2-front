@@ -532,7 +532,8 @@
                 "headerLocalName": "תיאור הנכס",
                 "placeholderLocalName": "הוספת תיאור מפורט יעילה בהגדלת החשיפה למודעה"
             }     
-        }
+        },
+        "publish": { "localName": "פרסם מודעה"}
     },
     "pageNotFound": {
         "messageLocalName": "כנראה הגעת לעמוד הזה בטעות",

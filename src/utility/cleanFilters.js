@@ -16,5 +16,6 @@ const cleanFilters = (filters) => {
             cleanedFilters.search[searchFilter] = parseFloat(cleanedFilters.search[searchFilter])
         }
     })
+    return cleanedFilters
 }
 export default cleanFilters

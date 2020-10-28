@@ -37,8 +37,7 @@ const SignInSignOnForm = () => {
     const handleMobile = (e) => {
         const unDashedPhoneNumber = (e.target.value).replace('-','')
         const standardDashedPhoneNumber = [unDashedPhoneNumber.slice(0,3) + '-' + unDashedPhoneNumber.slice(3)].join('')
-        setMobile(standardDashedPhoneNumber) 
-        console.log(standardDashedPhoneNumber)       
+        setMobile(standardDashedPhoneNumber)   
     }
     const handleReEnteredPassword = (e) => setReEnteredPassword(e.target.value)
     const sendRequest = (isSignUp) => {

@@ -146,6 +146,8 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
             return {
 
             }
+        case 'SET_ITEM':
+            console.log('from item reducer -->\n ', action.response)
         default:
             return {
                 state

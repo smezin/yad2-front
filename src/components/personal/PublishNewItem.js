@@ -10,11 +10,23 @@ import ItemSize from './inputFields/ItemSize'
 import ItemProperties from './inputFields/ItemProperties'
 import ItemText from './inputFields/ItemText'
 import ItemPropertyType from './inputFields/ItemPropertyType'
+import fetchFromResource from 'utility/fetchFromResource'
+import cleanItem from 'utility/cleanItem'
+import { publishItem } from 'actions/item.actions'
+import { AuthContext } from 'context/AuthContext'
 
 const PublishNewItem = () => {
-    const { item } = useContext(ItemContext)
+    const { item, dispatch } = useContext(ItemContext)
+    const { auth } = useContext(AuthContext)
     const [itemCategory, setItemCategory] = useState(item.properties.category)
+    const publishButton = fetchFromResource('string', 'personal', 'publish', 'localName')
     
+    const publishItemButton = () => {
+        console.log(item)
+        const itemToPublish = cleanItem(item)
+        console.log(itemToPublish)
+        publishItem(item, auth.id, dispatch)        
+    }
     const renderFormByCategory = () => {
         switch(itemCategory) {
             case 'forsale':
@@ -62,7 +74,13 @@ const PublishNewItem = () => {
             <ItemProperties category={itemCategory} />
             <ItemText />
             <div className="custom-fields">{renderFormByCategory()} </div>
+            <div className="publish-button" onClick={publishItemButton}>
+                {publishButton}
+            </div>
         </div>
     )
 }
 export default PublishNewItem
+
+
+

@@ -62,6 +62,25 @@
             }
         }
     }
+    .publish-button {
+        background: $theme-main-color;
+        border: 3px solid $theme-main-color;
+        border-radius: 2px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        font-size: $font-size-s;
+        font-weight: 500;
+        justify-content: space-around;
+        margin: $std-size * 0.6 auto;
+        margin-top: $std-size * 1.2;
+        max-width: $std-size * 8;
+        padding: $std-size * 0.6;
+        &:hover {
+            background: darken($theme-main-color, 12%);
+            border: 3px solid $theme-main-color;
+        }
+    }
 }
 .button-style {
     cursor: pointer;

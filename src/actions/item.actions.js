@@ -70,3 +70,26 @@ export const setText = (text) => ({
 //TOGGLE_SPLIT
 
 //TOGGLE_STORAGE
+export const setItem = (response) => ({
+        type: 'SET_ITEM',
+        response
+})
+export const publishItem = async (item, userId, dispatch) => {
+        try {
+        const requestParams = {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({item, userId})
+        }
+        let response = await fetch('http://localhost:8080/api/item/additem', requestParams)
+        if (response.status !== 200) {
+                throw response.status
+        } 
+        response = await response.json()
+        dispatch(setItem(response))
+        } catch (e) {
+        console.log(e)
+}
+}
