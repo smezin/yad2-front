@@ -14,17 +14,19 @@ import fetchFromResource from 'utility/fetchFromResource'
 import cleanItem from 'utility/cleanItem'
 import { publishItem } from 'actions/item.actions'
 import { AuthContext } from 'context/AuthContext'
+import { updateUser } from 'actions/auth.actions'
 
 const PublishNewItem = () => {
     const { item } = useContext(ItemContext)
-    const { auth } = useContext(AuthContext)
+    const { auth, dispatch } = useContext(AuthContext)
     const [itemCategory, setItemCategory] = useState(item.properties.category)
     const publishButton = fetchFromResource('string', 'personal', 'publish', 'localName')
     
     const publishItemButton = () => {
         const itemToPublish = cleanItem(item)
         console.log('publishing: ', item)
-        publishItem(itemToPublish, auth.id, auth.mobile)        
+        publishItem(itemToPublish, auth.id, auth.mobile)  
+        // updateUser(auth, {items: ['2345a']} ,dispatch)   
     }
     
     const renderFormByCategory = () => {

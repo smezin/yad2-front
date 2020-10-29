@@ -4,6 +4,7 @@ export const userReducerInitialState = {
     email: undefined,
     favoriteItems: [],
     id: undefined,
+    items: [],
     mobile: undefined,
     previousSearches: [],
     token: undefined,    
@@ -39,6 +40,18 @@ export const authReducer = (state = userReducerCurrentState, action) => {
             Cookies.remove("User")
             return {
                 ...userReducerInitialState
+            }
+        case 'UPDATE_AUTH':
+            const updatedState = {
+                ...state,
+                ...action.updates
+            }
+            Cookies.set("User", updatedState, {expires: 3})
+            return updatedState
+        case 'CONNECT_ITEM':
+            return {
+                ...state,
+                items: state.items.push(action.item)
             }
         default:
             return state
