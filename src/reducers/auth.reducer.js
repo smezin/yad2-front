@@ -25,7 +25,6 @@ if (user) {
 export const authReducer = (state = userReducerCurrentState, action) => {
     switch(action.type) {
         case 'SET_AUTH':
-            console.log(action.response)
             const newState =  {
                 ...state,
                 id: action.response.id,
@@ -41,7 +40,7 @@ export const authReducer = (state = userReducerCurrentState, action) => {
             return {
                 ...userReducerInitialState
             }
-        case 'UPDATE_AUTH':
+        case 'UPDATE_USER':
             const updatedState = {
                 ...state,
                 ...action.updates
@@ -49,9 +48,12 @@ export const authReducer = (state = userReducerCurrentState, action) => {
             Cookies.set("User", updatedState, {expires: 3})
             return updatedState
         case 'CONNECT_ITEM':
+            console.log(action.itemId)
+            let updatedItemsArr = [...state.items] || []
+            updatedItemsArr.push(action.itemId)
             return {
                 ...state,
-                items: state.items.push(action.item)
+                items: updatedItemsArr
             }
         default:
             return state

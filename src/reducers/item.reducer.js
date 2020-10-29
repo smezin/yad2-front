@@ -23,6 +23,7 @@ const initialItemProperties = {
     text: undefined,
 }
 export const itemReducerInitialState = {
+    id: undefined,
     properties: initialItemProperties,
 }
 export const itemReducer = (state = itemReducerInitialState, action) => {
@@ -55,6 +56,15 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
                     floor: action.floor
                 }
 
+            }
+        case 'SET_ID':
+            console.log('from reducer ', action.id)
+            return {
+                ...state,
+                id: action.id,
+                properties: {
+                    ...state.properties
+                }
             }
         case 'SET_LOCATION':
             return {

@@ -48,29 +48,52 @@ export const signUp = async (username, email, mobile, password, dispatch) => {
 export const signAllOut = async (dispatch) => {
     dispatch(removeAuth())
 }
+export const connectItemContext = (itemId) => ({
+    type: 'CONNECT_ITEM',
+    itemId
+})
 
-
-export const updateAuth = (updates) => ({
-    type: 'UPDATE_AUTH',
+export const updateUserContext = (updates) => ({
+    type: 'UPDATE_USER',
     updates
 })
-// export const updateUser = async(user, updates, dispatch) => {
-//     console.log('updateUser')
-//     try {
-//         const requestParams = {
-//             method: 'PATCH',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify({user, updates})
-//         }
-//         let response = await fetch('http://localhost:8080/api/auth/me', requestParams)
-//         if (response.status !== 200) {
-//             throw response.status
-//         }
-//         response = await response.json()
-//         dispatch(updateAuth(response))
-//     } catch (e) {
-//         console.log(e)
-//     }
-// }
+export const updateUser = async(user, updates, dispatch) => {
+    console.log('updateUser')
+    try {
+        const requestParams = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({user, updates})
+        }
+        let response = await fetch('http://localhost:8080/api/auth/me', requestParams)
+        if (response.status !== 200) {
+            throw response.status
+        }
+        response = await response.json()
+        dispatch(updateUserContext(response))
+    } catch (e) {
+        console.log(e)
+    }
+}
+export const connectItem = async(user, itemId, dispatch) => {
+    console.log('updateUser')
+    try {
+        const requestParams = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({user})
+        }
+        let response = await fetch('http://localhost:8080/api/auth/connect', requestParams)
+        if (response.status !== 200) {
+            throw response.status
+        }
+        response = await response.json()
+        dispatch(connectItem(response))
+    } catch (e) {
+        console.log(e)
+    }
+}

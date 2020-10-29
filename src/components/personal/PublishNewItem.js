@@ -17,16 +17,15 @@ import { AuthContext } from 'context/AuthContext'
 import { updateUser } from 'actions/auth.actions'
 
 const PublishNewItem = () => {
-    const { item } = useContext(ItemContext)
-    const { auth, dispatch } = useContext(AuthContext)
+    const { item, dispatch: itemDispatch } = useContext(ItemContext)
+    const { auth, dispatch: authDispatch } = useContext(AuthContext)
     const [itemCategory, setItemCategory] = useState(item.properties.category)
     const publishButton = fetchFromResource('string', 'personal', 'publish', 'localName')
     
-    const publishItemButton = () => {
+    const publishItemButton = async () => {
         const itemToPublish = cleanItem(item)
-        console.log('publishing: ', item)
-        publishItem(itemToPublish, auth.id, auth.mobile)  
-        // updateUser(auth, {items: ['2345a']} ,dispatch)   
+        const itemId = await publishItem(itemToPublish, auth.id, auth.mobile, itemDispatch)  
+        updateUser(auth, {items: itemId} ,authDispatch)          
     }
     
     const renderFormByCategory = () => {
