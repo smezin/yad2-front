@@ -5,6 +5,7 @@ const initialItemProperties = {
     dealType: undefined,
     entryDate: undefined,
     floor: undefined,
+    imageUrls: [],
     isPromoted: undefined,
     location: undefined,
     myGender: undefined,
@@ -22,12 +23,14 @@ const initialItemProperties = {
     text: undefined,
 }
 export const itemReducerInitialState = {
-    id: undefined,
-    images: [],
     properties: initialItemProperties,
 }
 export const itemReducer = (state = itemReducerInitialState, action) => {
     switch(action.type) {
+        case 'CLEAR_ITEM':
+            return {
+                ...itemReducerInitialState
+            }
         case 'SET_CATEGORY':
             return {
                 ...state,
@@ -113,44 +116,74 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
                     text: action.text
                 }
             }
-        case 'TOGGLE_AVAILABLE_IMMEDIATELY':
+        case 'SET_AVAILABLE_IMMEDIATELY':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    availableImmediately: action.availableImmediately
+                }
             }
-        case 'TOGGLE_BALCONY':
+        case 'SET_BALCONY':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    balcony: action.balcony
+                }
             }
-        case 'TOGGLE_DEAL_TYPE':
+        case 'SET_DEAL_TYPE':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    dealType: action.dealType
+                }
             }
        
-        case 'TOGGLE_RESTROOM': 
+        case 'SET_RESTROOM': 
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    restroom: action.restroom
+                }
             }
-        case 'TOGGLE_ROOMMATES':
+        case 'SET_ROOMMATES':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    roommates: action.roommates
+                }
             }
-        case 'TOGGLE_SECURITY_ROOM':
+        case 'SET_SECURITY_ROOM':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    securityRoom: action.securityRoom
+                }
             }
-        case 'TOGGLE_SPLIT':
+        case 'SET_SPLIT':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    split: action.split
+                }
             }
-        case 'TOGGLE_STORAGE':
+        case 'SET_STORAGE':
             return {
-
+                ...state,
+                properties: {
+                    ...state.properties,
+                    storage: action.storage
+                }
             }
-        case 'SET_ITEM':
-            console.log('from item reducer -->\n ', action.response)
         default:
             return {
-                state
+                ...state
             }
     }
 } 

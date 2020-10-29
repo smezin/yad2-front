@@ -1,3 +1,8 @@
+//CLEAR_ITEM
+export const clearItem = () => ({
+        type: 'CLEAR_ITEM'
+})
+
 //SET_CATEGORY
 export const setCategory = (category) => ({
         type: 'SET_CATEGORY',
@@ -51,45 +56,62 @@ export const setText = (text) => ({
         type: 'SET_TEXT',
         text
 })    
-//TOGGLE_AVAILABLE_IMMEDIATELY
-
-//TOGGLE_BALCONY
-
-//TOGGLE_DEAL_TYPE
-
-//TOGGLE_PROPERTY_TYPE
-    
-//TOGGLE_RESTROOM 
-
-//TOGGLE_ROOMMATES
-
-//SET_ROOMS
-  
-//TOGGLE_SECURITY_ROOM
-
-//TOGGLE_SPLIT
-
-//TOGGLE_STORAGE
-export const setItem = (response) => ({
-        type: 'SET_ITEM',
-        response
+//SET_AVAILABLE_IMMEDIATELY
+export const setAvailableImmediately = (availableImmediately) => ({
+        type: 'SET_AVAILABLE_IMMEDIATELY',
+        availableImmediately
 })
-export const publishItem = async (item, userId, dispatch) => {
+//SET_BALCONY
+export const setBalcony = (balcony) => ({
+        type: 'SET_BALCONY',
+        balcony
+})
+//SET_DEAL_TYPE
+export const setDealType = (dealType) => ({
+        type: 'SET_DEAL_TYPE',
+        dealType
+})
+//SET_RESTROOM 
+export const setRestroom = (restroom) => ({
+        type: 'SET_RESTROOM',
+        restroom
+})
+//SET_ROOMMATES
+export const setRoommates = (roommates) => ({
+        type: 'SET_ROOMMATES',
+        roommates
+})
+//SET_SECURITY_ROOM
+export const setSecurityRoom = (securityRoom) => ({
+        type: 'SET_SECURITY_ROOM',
+        securityRoom
+})
+//SET_SPLIT
+export const setSplit = (split) => ({
+        type: 'SET_SPLIT',
+        split
+})
+//SET_STORAGE
+export const setStorage = (storage) => ({
+        type: 'SET_STORAGE',
+        storage
+})
+//publish Item
+export const publishItem = async (item, ownerId, ownerMobile) => {        
         try {
         const requestParams = {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({item, userId})
+                body: JSON.stringify({item, ownerId, ownerMobile})
         }
         let response = await fetch('http://localhost:8080/api/item/additem', requestParams)
         if (response.status !== 200) {
                 throw response.status
         } 
         response = await response.json()
-        dispatch(setItem(response))
         } catch (e) {
         console.log(e)
-}
+        }
 }

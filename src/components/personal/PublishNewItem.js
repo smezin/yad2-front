@@ -16,17 +16,17 @@ import { publishItem } from 'actions/item.actions'
 import { AuthContext } from 'context/AuthContext'
 
 const PublishNewItem = () => {
-    const { item, dispatch } = useContext(ItemContext)
+    const { item } = useContext(ItemContext)
     const { auth } = useContext(AuthContext)
     const [itemCategory, setItemCategory] = useState(item.properties.category)
     const publishButton = fetchFromResource('string', 'personal', 'publish', 'localName')
     
     const publishItemButton = () => {
-        console.log(item)
         const itemToPublish = cleanItem(item)
-        console.log(itemToPublish)
-        publishItem(item, auth.id, dispatch)        
+        console.log('publishing: ', item)
+        publishItem(itemToPublish, auth.id, auth.mobile)        
     }
+    
     const renderFormByCategory = () => {
         switch(itemCategory) {
             case 'forsale':
@@ -73,7 +73,7 @@ const PublishNewItem = () => {
             <ItemPropertyType category={itemCategory} />
             <ItemProperties category={itemCategory} />
             <ItemText />
-            <div className="custom-fields">{renderFormByCategory()} </div>
+            {/* <div className="custom-fields">{renderFormByCategory()} </div> */}
             <div className="publish-button" onClick={publishItemButton}>
                 {publishButton}
             </div>

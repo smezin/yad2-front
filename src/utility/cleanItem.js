@@ -7,7 +7,7 @@ const cleanItem = (item) => {
     let cleanedItem = JSON.parse(JSON.stringify(item))
     Object.keys(cleanedItem.properties).forEach((itemProperty) => {
         (cleanedItem.properties[itemProperty] === undefined || 
-            cleanedItem.properties[itemProperty].length === 0  
+            cleanedItem.properties[itemProperty].length === 0    
         ) &&
         delete cleanedItem.properties[itemProperty] 
     })
