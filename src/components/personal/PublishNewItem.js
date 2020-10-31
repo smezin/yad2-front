@@ -25,7 +25,7 @@ const PublishNewItem = () => {
     const publishItemButton = async () => {
         const itemToPublish = cleanItem(item)
         const itemId = await publishItem(itemToPublish, auth.id, auth.mobile, itemDispatch)  
-        updateUser(auth, {items: itemId} ,authDispatch)          
+        updateUser(auth, {items: itemId} ,authDispatch) 
     }
     
     const renderFormByCategory = () => {

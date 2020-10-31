@@ -24,6 +24,7 @@ const initialItemProperties = {
 }
 export const itemReducerInitialState = {
     id: undefined,
+    masterCategory: 'realestate',
     properties: initialItemProperties,
 }
 export const itemReducer = (state = itemReducerInitialState, action) => {
