@@ -14,7 +14,6 @@ let userReducerCurrentState = userReducerInitialState
 const user = Cookies.get("User")
 
 if (user) {
-    console.log(JSON.parse(user))
     userReducerCurrentState = Object.assign({}, JSON.parse(user))
     userReducerCurrentState = {
         ...userReducerInitialState,
@@ -48,7 +47,6 @@ export const authReducer = (state = userReducerCurrentState, action) => {
             Cookies.set("User", updatedState, {expires: 3})
             return updatedState
         case 'CONNECT_ITEM':
-            console.log(action.itemId)
             let updatedItemsArr = [...state.items] || []
             updatedItemsArr.push(action.itemId)
             return {
