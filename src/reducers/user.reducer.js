@@ -21,7 +21,7 @@ if (user) {
     }
 }
 
-export const authReducer = (state = userReducerCurrentState, action) => {
+export const userReducer = (state = userReducerCurrentState, action) => {
     switch(action.type) {
         case 'SET_AUTH':
             const newState =  {

@@ -3,8 +3,8 @@ import validator from 'validator'
 import { signInImage } from 'images'
 import fetchFromResource from 'utility/fetchFromResource'
 import SideAd from 'components/body/common/SideAd'
-import { signIn, signUp } from 'actions/auth.actions'
-import { AuthContext } from 'context/AuthContext'
+import { signIn, signUp } from 'actions/user.actions'
+import { UserContext } from 'context/UserContext'
 
 const SignInSignOnForm = () => {
     const headerLocalName = fetchFromResource('string', 'signIn', 'localName')
@@ -22,7 +22,7 @@ const SignInSignOnForm = () => {
     const emailLocalName = fetchFromResource('string', 'signIn', 'email','localName')
     const mobileLocalName = fetchFromResource('string', 'signIn', 'mobile','localName')
     const locale = 'he-IL'
-    const { dispatch } = useContext(AuthContext)
+    const { dispatch } = useContext(UserContext)
     const [isSignUp, setIsSignUp] = useState(false)
     const renderSignUp = () => setIsSignUp(true)
     const renderSignIn = () => setIsSignUp(false)

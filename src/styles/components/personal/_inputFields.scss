@@ -54,6 +54,7 @@
     .single-picker-discrete {
         @extend .item-form__input-field;
     }
+    
     .item-text__input{
         border: 1px solid $theme-box-border;
         max-width: 95%;
@@ -69,8 +70,10 @@
         padding: $std-size * 0.5;
        
         option {
-            font-size: $font-size-xs;
-            
+            font-size: $font-size-xs;            
         }
+    }
+    #autocomplete-dropdown-container {
+        @extend .autocomplete-dropdown-container-template;
     }
 }

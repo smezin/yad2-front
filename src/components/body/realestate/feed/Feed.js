@@ -4,9 +4,8 @@ import FeedSortFiltersRow from 'components/body/realestate/feed/feedSortFilter/F
 import FeedItems from './FeedItems'
 import { useLocation } from 'react-router-dom'
 import getSubPath from 'utility/getSubPath'
-import { getFeed, setFeedItems, getCategoryFeed } from 'actions/feed.actions'
+import { getCategoryFeed, setFeedItems } from 'actions/feed.actions'
 import { FeedContext } from 'context/FeedContext'
-
 
 const Feed =  () => {
     const location = useLocation()
@@ -16,12 +15,11 @@ const Feed =  () => {
 
     useEffect(() => {
         async function fetchData() {
-            const feedItems = await getCategoryFeed('rent')
-            //dispatch(setFeedItems(feedItems))
-            console.log(feedItems)
+            const feedItems = await getCategoryFeed(category)
+            dispatch(setFeedItems(feedItems))
         }
         fetchData();
-      }, [dispatch])
+      }, [category, dispatch])
 
     console.log(feed)
     return (

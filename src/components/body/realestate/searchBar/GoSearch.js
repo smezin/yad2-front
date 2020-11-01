@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
 import { magnifyingGlass } from 'resources/specialChars'
-import { AuthContext } from 'context/AuthContext';
+import { UserContext } from 'context/UserContext';
 const GoSearch = () => {
-    const {auth} = useContext(AuthContext)
+    const { user } = useContext(UserContext)
     const searchLocalName = fetchFromResource('string', 'realestateSearchBar', 'goSearch', 'localName')
     const onClick = () => {
-        console.log(auth)
+        console.log(user)
     }
     return (
         <div className="go-search" onClick={onClick}>

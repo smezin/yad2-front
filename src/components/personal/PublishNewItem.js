@@ -13,19 +13,19 @@ import ItemPropertyType from './inputFields/ItemPropertyType'
 import fetchFromResource from 'utility/fetchFromResource'
 import cleanItem from 'utility/cleanItem'
 import { publishItem } from 'actions/item.actions'
-import { AuthContext } from 'context/AuthContext'
-import { updateUser } from 'actions/auth.actions'
+import { UserContext } from 'context/UserContext'
+import { updateUser } from 'actions/user.actions'
 
 const PublishNewItem = () => {
     const { item, dispatch: itemDispatch } = useContext(ItemContext)
-    const { auth, dispatch: authDispatch } = useContext(AuthContext)
+    const { user, dispatch: userDispatch } = useContext(UserContext)
     const [itemCategory, setItemCategory] = useState(item.properties.category)
     const publishButton = fetchFromResource('string', 'personal', 'publish', 'localName')
     
-    const publishItemButton = async () => {
+    const publishItemButton = async () => {      
         const itemToPublish = cleanItem(item)
-        const itemId = await publishItem(itemToPublish, auth.id, auth.mobile, itemDispatch)  
-        updateUser(auth, {items: itemId} ,authDispatch) 
+        const itemId = await publishItem(itemToPublish, user.id, user.mobile, itemDispatch)  
+        updateUser(user, {items: itemId}, userDispatch) 
     }
     
     const renderFormByCategory = () => {

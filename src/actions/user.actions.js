@@ -16,7 +16,7 @@ export const signIn = async (username, password, dispatch) => {
             },
             body: JSON.stringify({username, password})
         }
-        let response = await fetch('http://localhost:8080/api/auth/signin', requestParams)
+        let response = await fetch('http://localhost:8080/api/user/signin', requestParams)
         if (response.status !== 200) {
             throw response.status
         } 
@@ -35,7 +35,7 @@ export const signUp = async (username, email, mobile, password, dispatch) => {
             },
             body: JSON.stringify({username, email, mobile, password})
         }
-        let response = await fetch('http://localhost:8080/api/auth/signup', requestParams)
+        let response = await fetch('http://localhost:8080/api/user/signup', requestParams)
         if (response.status !== 201 && response.status !== 200) {
             throw response.status            
         }
@@ -67,7 +67,7 @@ export const updateUser = async(user, updates, dispatch) => {
             },
             body: JSON.stringify({user, updates})
         }
-        let response = await fetch('http://localhost:8080/api/auth/me', requestParams)
+        let response = await fetch('http://localhost:8080/api/user/me', requestParams)
         if (response.status !== 200) {
             throw response.status
         }

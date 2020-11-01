@@ -8,7 +8,7 @@ import RealestateBody from 'components/body/realestate/RealestateBody'
 import Footer from 'components/footer/Footer'
 import PageNotFound from 'components/PageNotFound'
 import PersonalPage from 'components/personal/PersonalPage'
-import AuthContextProvider from 'context/AuthContext'
+import UserContextProvider from 'context/UserContext'
 
 export const history = createBrowserHistory()
 
@@ -16,7 +16,7 @@ const AppRouter = () => {
     
     return (
         <Router>      
-        <AuthContextProvider>
+        <UserContextProvider>
             <MainMenu />  
             <RealestateNavbar />
             <Switch>
@@ -27,7 +27,7 @@ const AppRouter = () => {
                 <Route component={PageNotFound} />
             </Switch>
             <Footer />
-        </AuthContextProvider>  
+        </UserContextProvider>  
         </Router>
     )
 }

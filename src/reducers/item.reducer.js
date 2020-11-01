@@ -8,6 +8,7 @@ const initialItemProperties = {
     imageUrls: [],
     isPromoted: undefined,
     location: undefined,
+    masterCategory: 'realestate',
     myGender: undefined,
     price: undefined,
     properties: [],
@@ -24,7 +25,6 @@ const initialItemProperties = {
 }
 export const itemReducerInitialState = {
     id: undefined,
-    masterCategory: 'realestate',
     properties: initialItemProperties,
 }
 export const itemReducer = (state = itemReducerInitialState, action) => {

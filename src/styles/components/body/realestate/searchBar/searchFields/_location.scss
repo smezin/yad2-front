@@ -17,22 +17,25 @@
             }
         }
         #autocomplete-dropdown-container {
-            box-shadow: $theme-box-shadow;
-            color: $theme-text;
-            direction: rtl;
-            font-size: $font-size-s;
-            position: absolute;
-            z-index: 10;
-            .suggestion-item,
-            .description-suggestion-item {
-                background: $theme-background-header;
-                padding: $std-size * 0.2 $std-size * 0.5;
-            }
-            .suggestion-item__active,
-            .description-suggestion-item__active {
-                @extend .description-suggestion-item;
-                background: $theme-selected;
-            }
+            @extend .autocomplete-dropdown-container-template;
         }
+    }
+}
+.autocomplete-dropdown-container-template {
+    box-shadow: $theme-box-shadow;
+    color: $theme-text;
+    direction: rtl;
+    font-size: $font-size-s;
+    position: absolute;
+    z-index: 10;
+    .suggestion-item,
+    .description-suggestion-item {
+        background: $theme-background-header;
+        padding: $std-size * 0.2 $std-size * 0.5;
+    }
+    .suggestion-item__active,
+    .description-suggestion-item__active {
+        @extend .description-suggestion-item;
+        background: $theme-selected;
     }
 }
