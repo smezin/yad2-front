@@ -14,11 +14,11 @@ const Feed =  () => {
     const { feed, dispatch } = useContext(FeedContext)
 
     useEffect(() => {
-        async function fetchData() {
-            const feedItems = await getCategoryFeed(category)
+        const fetchItemsFeed = async () => {
+            const feedItems = await getCategoryFeed(category) || []
             dispatch(setFeedItems(feedItems))
         }
-        fetchData();
+        fetchItemsFeed();
       }, [category, dispatch])
 
     console.log(feed)

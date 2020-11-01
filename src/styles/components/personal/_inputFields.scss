@@ -34,8 +34,8 @@
     .item-location__input,
     .item-property-type__input,
     .item-rooms__input {
-        background-color: inherit;
-        select{
+        background-color: inherit;    
+        select {
             @extend .item-form__input-field;
         }
         input {
