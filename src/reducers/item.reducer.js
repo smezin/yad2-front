@@ -59,7 +59,6 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
 
             }
         case 'SET_ID':
-            console.log('from reducer ', action.id)
             return {
                 ...state,
                 id: action.id,

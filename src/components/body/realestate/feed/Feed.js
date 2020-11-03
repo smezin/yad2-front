@@ -11,7 +11,7 @@ const Feed =  () => {
     const location = useLocation()
     const pathname = location.pathname || location.location.pathname
     const category = getSubPath(pathname, '/realestate')
-    const { feed, dispatch } = useContext(FeedContext)
+    const { dispatch } = useContext(FeedContext)
 
     useEffect(() => {
         const fetchItemsFeed = async () => {
@@ -21,7 +21,6 @@ const Feed =  () => {
         fetchItemsFeed();
       }, [category, dispatch])
 
-    console.log(feed)
     return (
         <div className="feed">
             {

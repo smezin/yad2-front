@@ -491,6 +491,7 @@
     },
     "personal": {
         "localName": "האיזור האישי",
+        "welcomeMessage": {"localName": "שמחים לראות אותך "},
         "exit": {"localName": "התנתק"},
         "categories": {
             "edit": {"localName": "עדכון ועריכת מודעות"},

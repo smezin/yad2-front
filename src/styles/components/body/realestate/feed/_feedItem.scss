@@ -21,6 +21,7 @@
             border-radius: 5%;
             height: 100%;
             margin: auto 0;
+            width: $std-size * 7;
         }
         .symbol__heart {
             @extend .favorite-heart;

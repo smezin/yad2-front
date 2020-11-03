@@ -58,7 +58,6 @@ export const updateUserContext = (updates) => ({
     updates
 })
 export const updateUser = async(user, updates, dispatch) => {
-    console.log('updateUser')
     try {
         const requestParams = {
             method: 'PATCH',

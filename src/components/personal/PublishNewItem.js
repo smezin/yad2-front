@@ -24,10 +24,20 @@ const PublishNewItem = () => {
     
     const publishItemButton = async () => {      
         const itemToPublish = cleanItem(item)
+        checkRequiredFields(itemToPublish.properties)
         const itemId = await publishItem(itemToPublish, user.id, user.mobile, itemDispatch)  
         updateUser(user, {items: itemId}, userDispatch) 
     }
-    
+    const checkRequiredFields = (cleanedItem) => {
+        const itemFields = (typeof(cleanedItem) === 'object') ? Object.keys(cleanedItem) : []
+        const requiredFields = ['category', 'floor', 'entryDate', 'location', 'price', 'propertyType', 'rooms', 'size']
+        const missingFields = requiredFields.reduce((acc, cur) => {
+            acc = itemFields.includes(cur) ? acc : [...acc, cur]
+            return acc
+        },[])
+
+        console.log('missingFields:\n', missingFields)
+    }
     const renderFormByCategory = () => {
         switch(itemCategory) {
             case 'forsale':
@@ -51,7 +61,7 @@ const PublishNewItem = () => {
             case 'commercial':
                 return (
                     <React.Fragment>
-                         
+                      
                     </React.Fragment>
                 )
             default:
@@ -71,10 +81,13 @@ const PublishNewItem = () => {
             <ItemEntryDate />
             <ItemFloor />
             <ItemRooms />
-            <ItemPropertyType category={itemCategory} />
+            {
+                itemCategory !== 'roommates' &&
+                <ItemPropertyType category={itemCategory} />
+            }            
             <ItemProperties category={itemCategory} />
             <ItemText />
-            {/* <div className="custom-fields">{renderFormByCategory()} </div> */}
+            <div className="custom-fields">{renderFormByCategory()} </div>
             <div className="publish-button" onClick={publishItemButton}>
                 {publishButton}
             </div>

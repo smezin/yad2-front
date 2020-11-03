@@ -6,14 +6,15 @@ import FavoriteHeart from './FavoriteHeart'
 
 const FeedItem = (props) => {
     const { item } = props
-    const { location, rooms, floor, size, price} = item.properties
-    const imgPath = item.images[0]
+    const { location, rooms, floor, size, price} = item
+    const defaultImage = 'https://archinect.imgix.net/uploads/s7/s7o5nwgufimwiiy6.jpg?auto=compress%2Cformat'
+    const imgPath = (item.imageUrls && item.imageUrls.length > 0) ? item.imageUrls[0] : defaultImage
     const roomsLocalName = fetchFromResource('string', 'feedItem', 'rooms', 'localName')
     const floorLoaclName = fetchFromResource('string', 'feedItem', 'floor', 'localName')
     const sizeLocalName = fetchFromResource('string', 'feedItem', 'size', 'localName')
     const propertyType = (item.properties && item.properties.propertyType) ? item.properties.propertyType : ''
-    const street = location.split(',')[0]
-    const city = location.split(',')[1] || ''
+    const street = location && location.split(',')[0] 
+    const city = location && (location.split(',')[1] || '')
 
     return (
         <div className="feed-item">

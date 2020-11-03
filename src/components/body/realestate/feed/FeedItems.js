@@ -1,15 +1,17 @@
-import { sampleItemOne, sampleItemThree, sampleItemTwo } from 'data/fixtures/item'
-import React from 'react'
+import { FeedContext } from 'context/FeedContext'
+//import { sampleItemOne, sampleItemThree, sampleItemTwo } from 'data/fixtures/item'
+import React, { useContext } from 'react'
 import FeedItem from './FeedItem'
 
-const FeedItems = (props) => {
-    //const { items } = props
-    const items = [sampleItemOne, sampleItemTwo, sampleItemThree]
+const FeedItems = () => {
+    const { feed } = useContext(FeedContext)
+    const feedArr = feed.itemsFeed
+    //const items = [sampleItemOne, sampleItemTwo, sampleItemThree]
     return (
         <div className="feed-items">
             {
-                items.map((item)=> (
-                    <FeedItem item={item} key={item.id}/>
+                feedArr.map((item)=> (
+                    <FeedItem item={item} key={item._id}/>
                 ))
             }
         </div>

@@ -7,8 +7,9 @@ const PersonalMenu = () => {
     const headerLocalName = fetchFromResource('string', 'personal', 'localName')
     const menuCategories = fetchFromResource('object', 'personal', 'categories')
     const exitButtonText = fetchFromResource('string', 'personal', 'exit', 'localName') 
+    const welcomeMessage = fetchFromResource('string', 'personal', 'welcomeMessage', 'localName')
     const [category, setCategory] = useState('publish')
-    const { dispatch } = useContext(UserContext)
+    const { user, dispatch } = useContext(UserContext)
     
     
     const onMenuCategoryPick = (menuCategory) => {
@@ -22,6 +23,7 @@ const PersonalMenu = () => {
         <div className="personal-content__top">
             <div className="personal-content__header">
                 {headerLocalName}
+                <span className="welcome-message">{welcomeMessage} {user.username}</span>                
             </div>
             <div className="personal-content__menu">
                 <div className="personal-content__categories">

@@ -49,7 +49,7 @@ const LocationSearchInput = (props) => {
                 : 'suggestion-item' 
               
               return (
-                <div 
+                <div key={suggestion.description}
                   {...getSuggestionItemProps(suggestion, {
                     className,                 
                   })}

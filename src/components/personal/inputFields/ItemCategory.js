@@ -3,7 +3,6 @@ import { ItemContext } from 'context/ItemContext'
 import { setCategory } from 'actions/item.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 
-
 const ItemCategory = () => {
     const [pickedCategory, setPickedCategory] = useState('forsale')
     const headerLocalName = fetchFromResource('string', 'personal', 'itemForm', 'itemTypes', 'headerLocalName')

@@ -21,10 +21,19 @@
         .personal-content__header {
             background-color: inherit;
             color: $theme-text-darker;
+            display: flex;
+            justify-content: space-between;
             font-size: $font-size-xxl;
             font-weight: 500;
             padding: $std-size * 1.8;
             padding-right: $std-size * 3.5;
+            .welcome-message {
+                background-color: inherit;
+                display: flex;
+                font-size: $font-size-s;
+                margin-left: $std-size;
+                margin-top: $std-size * 1.4;
+            }
         }
         .personal-content__menu {
             background: $theme-main-color;
