@@ -23,6 +23,11 @@ export const setId = (id) => ({
   type: "SET_ID",
   id,
 });
+//SET_IMAGES
+export const setImage = (image) => ({
+  type: 'SET_IMAGE',
+  image
+})
 //SET_LOCATION
 export const setLocation = (location) => ({
   type: "SET_LOCATION",
@@ -110,9 +115,9 @@ export const publishItem = async (item, ownerId, ownerMobile, dispatch) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ item, ownerId, ownerMobile }),
-    };
+    }
     let response = await fetch(
-      "http://localhost:8080/api/item/additem",
+      `${process.env.REACT_APP_DEV_SERVER_IP}/api/item/additem`,
       requestParams
     );
     if (response.status !== 200) {
@@ -124,4 +129,25 @@ export const publishItem = async (item, ownerId, ownerMobile, dispatch) => {
   } catch (e) {
     console.log(e);
   }
-};
+}
+
+//INCOMPLETE
+export const addImageToItem = async (itemId, image) => {
+  try {
+    const requestParams = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ image }),
+    }
+    let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/upload-image/${itemId}`, requestParams)
+    if (response.status !== 200) {
+      throw response.status;
+    }
+    response = await response.json();
+    console.log(response)
+  } catch (e) {
+    console.log('addImageToItem', e)
+  }
+}

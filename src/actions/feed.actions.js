@@ -11,7 +11,7 @@ export const getFeed = async () => {
         "Content-Type": "application/json",
       }
     };
-    let response = await fetch(`http://localhost:8080/api/item/getfeed`, requestParams);
+    let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/item/getfeed`, requestParams);
     if (response.status !== 200) {
       throw response.status;
     }
@@ -29,7 +29,7 @@ export const getCategoryFeed = async (category) => {
         "Content-Type": "application/json",
       }
     };
-    let response = await fetch(`http://localhost:8080/api/item/getfeed/${category}`, requestParams);
+    let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/getfeed/${category}`, requestParams);
     if (response.status !== 200) {
       throw response.status;
     }

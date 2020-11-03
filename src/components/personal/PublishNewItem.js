@@ -15,6 +15,7 @@ import cleanItem from 'utility/cleanItem'
 import { publishItem } from 'actions/item.actions'
 import { UserContext } from 'context/UserContext'
 import { updateUser } from 'actions/user.actions'
+import ImageUpload from './inputFields/ImageUpload'
 
 const PublishNewItem = () => {
     const { item, dispatch: itemDispatch } = useContext(ItemContext)
@@ -26,7 +27,8 @@ const PublishNewItem = () => {
         const itemToPublish = cleanItem(item)
         checkRequiredFields(itemToPublish.properties)
         const itemId = await publishItem(itemToPublish, user.id, user.mobile, itemDispatch)  
-        updateUser(user, {items: itemId}, userDispatch) 
+        await updateUser(user, {items: itemId}, userDispatch) 
+        //addImageToItem(itemId, item.properties.images[0])
     }
     const checkRequiredFields = (cleanedItem) => {
         const itemFields = (typeof(cleanedItem) === 'object') ? Object.keys(cleanedItem) : []
@@ -86,6 +88,7 @@ const PublishNewItem = () => {
                 <ItemPropertyType category={itemCategory} />
             }            
             <ItemProperties category={itemCategory} />
+            <ImageUpload />
             <ItemText />
             <div className="custom-fields">{renderFormByCategory()} </div>
             <div className="publish-button" onClick={publishItemButton}>

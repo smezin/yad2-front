@@ -16,7 +16,7 @@ export const signIn = async (username, password, dispatch) => {
             },
             body: JSON.stringify({username, password})
         }
-        let response = await fetch('http://localhost:8080/api/user/signin', requestParams)
+        let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/user/signin`, requestParams)
         if (response.status !== 200) {
             throw response.status
         } 
@@ -35,7 +35,7 @@ export const signUp = async (username, email, mobile, password, dispatch) => {
             },
             body: JSON.stringify({username, email, mobile, password})
         }
-        let response = await fetch('http://localhost:8080/api/user/signup', requestParams)
+        let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/user/signup`, requestParams)
         if (response.status !== 201 && response.status !== 200) {
             throw response.status            
         }
@@ -48,10 +48,10 @@ export const signUp = async (username, email, mobile, password, dispatch) => {
 export const signAllOut = async (dispatch) => {
     dispatch(removeAuth())
 }
-export const connectItemContext = (itemId) => ({
-    type: 'CONNECT_ITEM',
-    itemId
-})
+// export const connectItemContext = (itemId) => ({
+//     type: 'CONNECT_ITEM',
+//     itemId
+// })
 
 export const updateUserContext = (updates) => ({
     type: 'UPDATE_USER',
@@ -66,7 +66,7 @@ export const updateUser = async(user, updates, dispatch) => {
             },
             body: JSON.stringify({user, updates})
         }
-        let response = await fetch('http://localhost:8080/api/user/me', requestParams)
+        let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/user/me`, requestParams)
         if (response.status !== 200) {
             throw response.status
         }
@@ -75,24 +75,23 @@ export const updateUser = async(user, updates, dispatch) => {
     } catch (e) {
         console.log(e)
     }
-}
-export const connectItem = async(user, itemId, dispatch) => {
-    console.log('updateUser')
-    try {
-        const requestParams = {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({user})
-        }
-        let response = await fetch('http://localhost:8080/api/auth/connect', requestParams)
-        if (response.status !== 200) {
-            throw response.status
-        }
-        response = await response.json()
-        dispatch(connectItem(response))
-    } catch (e) {
-        console.log(e)
-    }
-}
+ }
+// export const connectItem = async(user, itemId, dispatch) => {
+//     try {
+//         const requestParams = {
+//             method: 'PATCH',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({user})
+//         }
+//         let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/auth/connect`, requestParams)
+//         if (response.status !== 200) {
+//             throw response.status
+//         }
+//         response = await response.json()
+//         dispatch(connectItem(response))
+//     } catch (e) {
+//         console.log(e)
+//     }
+// }

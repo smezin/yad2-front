@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { ItemContext } from 'context/ItemContext'
-import { setCategory } from 'actions/item.actions'
+import { clearItem, setCategory } from 'actions/item.actions'
 import fetchFromResource from 'utility/fetchFromResource'
 
 const ItemCategory = () => {
@@ -10,6 +10,7 @@ const ItemCategory = () => {
     const { dispatch } = useContext(ItemContext)
     
     const onChange = (e) => {
+        dispatch(clearItem())
         setPickedCategory(e.target.value)
         dispatch(setCategory(e.target.value))        
     }

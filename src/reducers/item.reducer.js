@@ -6,6 +6,7 @@ const initialItemProperties = {
     entryDate: undefined,
     floor: undefined,
     imageUrls: [],
+    images: [],
     isPromoted: undefined,
     location: undefined,
     masterCategory: 'realestate',
@@ -64,6 +65,14 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
                 id: action.id,
                 properties: {
                     ...state.properties
+                }
+            }
+        case 'SET_IMAGE':
+            return {
+                ...state,
+                properties: {
+                    ...state.properties,
+                    images: state.properties.images.concat(action.image)
                 }
             }
         case 'SET_LOCATION':
