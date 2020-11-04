@@ -134,13 +134,16 @@ export const publishItem = async (item, ownerId, ownerMobile, dispatch) => {
 
 //INCOMPLETE
 export const addImageToItem = async (itemId, image) => {
+  const imgBody = new FormData()
+  imgBody.append('image', image)
+  
   try {
     const requestParams = {
       method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data",
+      headers: {     
+        "Content-Type": "multipart/form-data; Boundary: --12345"
       },
-      body: new FormData(image),
+      body: imgBody,
     }
     let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/upload-image/${itemId}`, requestParams)
     if (response.status !== 200) {
@@ -149,6 +152,6 @@ export const addImageToItem = async (itemId, image) => {
     response = await response.json()
     console.log(response)
   } catch (e) {
-    console.log('addImageToItem', e)
+    console.log(e)
   }
 }

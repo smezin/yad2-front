@@ -7,12 +7,12 @@ const AlertModal = (props) => {
 
   return ( 
     <div className="alert-modal" onClick={resetMissingFields}>
-      <div className="modal-content">
-        <span className="missing-header">{headerLocalName}</span>
+      <ul className="modal-content">
+        <span className="missing-fields-header">{headerLocalName}</span>
         {
-          missing.map((field) => <div className="missing-field" key={field}>{field}</div>)
+          missing.map((field) => <li className="missing-field-text" key={field}>{field}</li>)
         }
-      </div>
+      </ul>
     </div>
   )
 }

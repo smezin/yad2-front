@@ -1,5 +1,5 @@
 .alert-modal {
-  background-color: rgba(0,0,0,0.6);
+  animation: ease-in-modal 1.2s forwards;
   display: block;
   height: 100vh;
   left: 0;
@@ -14,10 +14,24 @@
     flex-direction: column;
     margin: auto;
     margin-top: $std-size * 8;
-    padding: $std-size;
+    padding: $std-size * 1.8 $std-size * 4;
     width: 40%;
-    .missing-header {
-      padding: $std-size;
+    .missing-fields-header {
+      color: $theme-main-color;
+      font-size: $font-size-l;
+      padding-bottom: $std-size;
     }
+    .missing-field-text {
+      font-size: $font-size-s;
+      padding: $std-size * 0.2 0;
+    }
+  }
+}
+@keyframes ease-in-modal {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgba(0,0,0,0.6);
   }
 }
