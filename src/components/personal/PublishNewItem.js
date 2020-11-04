@@ -16,32 +16,37 @@ import { addImageToItem, publishItem } from 'actions/item.actions'
 import { UserContext } from 'context/UserContext'
 import { updateUser } from 'actions/user.actions'
 import ImageUpload from './inputFields/ImageUpload'
+import AlertModal from './AlertModal'
 
 const PublishNewItem = () => {
     const { item, dispatch: itemDispatch } = useContext(ItemContext)
     const { user, dispatch: userDispatch } = useContext(UserContext)
     const [itemCategory, setItemCategory] = useState(item.properties.category)
+    const [missingFields, setMissingFields] = useState([])
     const publishButton = fetchFromResource('string', 'personal', 'publish', 'localName')
-    
+   
     const publishItemButton = async () => {      
         const itemToPublish = cleanItem(item)
-        checkRequiredFields(itemToPublish.properties)
-        const itemId = await publishItem(itemToPublish, user.id, user.mobile, itemDispatch)        
-        await updateUser(user, {items: itemId}, userDispatch) 
-        console.log(item)
-        addImageToItem(itemId, item.properties.images[0])
+        if (!isMissingFields(itemToPublish)) {
+            const itemId = await publishItem(itemToPublish, user.id, user.mobile, itemDispatch)        
+            await updateUser(user, {items: itemId}, userDispatch) 
+            //addImageToItem(itemId, item.properties.images[0])
+        }      
     }
-    
-    const checkRequiredFields = (cleanedItem) => {
-        const itemFields = (typeof(cleanedItem) === 'object') ? Object.keys(cleanedItem) : []
-        const requiredFields = ['category', 'floor', 'entryDate', 'location', 'price', 'propertyType', 'rooms', 'size']
-        const missingFields = requiredFields.reduce((acc, cur) => {
+    const resetMissingFields = () => {
+        setMissingFields([])
+    }
+    const isMissingFields = (cleanedItem) => {
+        const itemFields = (typeof(cleanedItem) === 'object') ? Object.keys(cleanedItem.properties) : []
+        const requiredFields = ['category', 'floor', 'entryDate', 'location', 'price', 'propertyType', 'size']
+        const mf = requiredFields.reduce((acc, cur) => {
             acc = itemFields.includes(cur) ? acc : [...acc, cur]
             return acc
         },[])
-
-        console.log('missingFields:\n', missingFields)
+        setMissingFields (mf)
+        return mf.length > 0
     }
+    
     const renderFormByCategory = () => {
         switch(itemCategory) {
             case 'forsale':
@@ -94,8 +99,16 @@ const PublishNewItem = () => {
             <ItemText />
             <div className="custom-fields">{renderFormByCategory()} </div>
             <div className="publish-button" onClick={publishItemButton}>
-                {publishButton}
+                {publishButton} 
             </div>
+            {
+                missingFields.length > 0 &&
+                <AlertModal 
+                missing={missingFields.map((field) =>           
+                    fetchFromResource('string', 'personal', 'missingFields', field, 'localName'))}
+                resetMissingFields={resetMissingFields}
+                />
+            }
         </div>
     )
 }

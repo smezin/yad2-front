@@ -3,7 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import fetchFromResource from 'utility/fetchFromResource'
 
-const pageImage = require('images/404.jpg')
 const pageNotFound = () => {
     const message = fetchFromResource('string', 'pageNotFound', 'messageLocalName')
     const buttonText = fetchFromResource('string', 'pageNotFound', 'buttonLocalName')

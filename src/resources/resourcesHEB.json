@@ -534,7 +534,17 @@
                 "placeholderLocalName": "הוספת תיאור מפורט יעילה בהגדלת החשיפה למודעה"
             }     
         },
-        "publish": { "localName": "פרסם מודעה"}
+        "publish": { "localName": "פרסם מודעה"},
+        "missingFields": {
+            "headerLocalName": "אולי שכחת לספר לנו...",
+            "category": {"localName": "מכירה, השכרה או אולי מחפשים שותף? חשוב שנדע"}, 
+            "floor": {"localName": "באיזה קומה הנכס"}, 
+            "entryDate": {"localName": "מתי אפשר להכנס לנכס"}, 
+            "location": {"localName": "איפה נמצא הנכס"}, 
+            "price": {"localName": "מה המחיר של הנכס"}, 
+            "propertyType": {"localName": "מה סוג הנכס?"}, 
+            "size": {"localName": "מה גודל הנכס"}
+        }
     },
     "pageNotFound": {
         "messageLocalName": "כנראה הגעת לעמוד הזה בטעות",

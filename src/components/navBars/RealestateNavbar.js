@@ -28,7 +28,6 @@ const RealestateNavbar = () => {
     const onClick = (e, pickedItem) => {
         
     }
-    console.log(leftSideItems)
     return (
         <div className="realestate-navbar">
             <div className="realestate-navbar__right">

@@ -1,0 +1,23 @@
+.alert-modal {
+  background-color: rgba(0,0,0,0.6);
+  display: block;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+  .modal-content {
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: $std-size * 8;
+    padding: $std-size;
+    width: 40%;
+    .missing-header {
+      padding: $std-size;
+    }
+  }
+}
