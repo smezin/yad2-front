@@ -12,7 +12,7 @@ import ItemText from './inputFields/ItemText'
 import ItemPropertyType from './inputFields/ItemPropertyType'
 import fetchFromResource from 'utility/fetchFromResource'
 import cleanItem from 'utility/cleanItem'
-import { publishItem } from 'actions/item.actions'
+import { addImageToItem, publishItem } from 'actions/item.actions'
 import { UserContext } from 'context/UserContext'
 import { updateUser } from 'actions/user.actions'
 import ImageUpload from './inputFields/ImageUpload'
@@ -26,10 +26,12 @@ const PublishNewItem = () => {
     const publishItemButton = async () => {      
         const itemToPublish = cleanItem(item)
         checkRequiredFields(itemToPublish.properties)
-        const itemId = await publishItem(itemToPublish, user.id, user.mobile, itemDispatch)  
+        const itemId = await publishItem(itemToPublish, user.id, user.mobile, itemDispatch)        
         await updateUser(user, {items: itemId}, userDispatch) 
-        //addImageToItem(itemId, item.properties.images[0])
+        console.log(item)
+        addImageToItem(itemId, item.properties.images[0])
     }
+    
     const checkRequiredFields = (cleanedItem) => {
         const itemFields = (typeof(cleanedItem) === 'object') ? Object.keys(cleanedItem) : []
         const requiredFields = ['category', 'floor', 'entryDate', 'location', 'price', 'propertyType', 'rooms', 'size']

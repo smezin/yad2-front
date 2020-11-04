@@ -21,13 +21,14 @@ const RealestateNavbar = () => {
     const rightSide = Object.keys(rightSideItems).map((item) => {
             return new LinkedText(rightSideItems[item]['path'], item, rightSideItems[item]['localName'])
     })
+    
     const leftSide = Object.keys(leftSideItems).map((item) => {
             return new LinkedText(leftSideItems[item]['path'], item, leftSideItems[item]['localName'])
     })
     const onClick = (e, pickedItem) => {
         
     }
-    
+    console.log(leftSideItems)
     return (
         <div className="realestate-navbar">
             <div className="realestate-navbar__right">

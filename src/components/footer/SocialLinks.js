@@ -8,7 +8,7 @@ const SocialLinks = () => {
             {
                 iconsSource.map((imgSrc) => 
                 <div className="social-media-links__icon-container" key={imgSrc}>
-                    <img src={imgSrc} alt="apple" className="social-media-links__icon" />
+                    <img src={imgSrc} alt="icon" className="social-media-links__icon" />
                 </div>
                 )
             }

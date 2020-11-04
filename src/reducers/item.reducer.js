@@ -25,7 +25,7 @@ const initialItemProperties = {
     text: undefined,
 }
 export const itemReducerInitialState = {
-    id: undefined,
+  //  id: undefined,
     properties: initialItemProperties,
 }
 export const itemReducer = (state = itemReducerInitialState, action) => {
@@ -59,14 +59,15 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
                 }
 
             }
-        case 'SET_ID':
-            return {
-                ...state,
-                id: action.id,
-                properties: {
-                    ...state.properties
-                }
-            }
+        // case 'SET_ID':
+        //     console.log('reducer')
+        //     return {
+        //         ...state,
+        //         id: action.id,
+        //         properties: {
+        //             ...state.properties
+        //         }
+        //     }
         case 'SET_IMAGE':
             return {
                 ...state,

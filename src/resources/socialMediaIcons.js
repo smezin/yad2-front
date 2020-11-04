@@ -1,6 +1,8 @@
+const STORAGE_PATH = process.env.REACT_APP_S3_ASSETS_STORAGE
+
 export const socialMedaiIcons = {
-    "apple": {"imgSrc": require('../images/apple.png')},
-    "googlePlay": {"imgSrc": require('../images/google-play.png')},
-    "facebook": {"imgSrc": require('../images/facebook.png')},
-    "youtube": {"imgSrc": require('../images/youtube.png')}
+    "apple": {"imgSrc": `${STORAGE_PATH}/apple.png`},
+    "googlePlay": {"imgSrc": `${STORAGE_PATH}/google-play.png`},
+    "facebook": {"imgSrc": `${STORAGE_PATH}/facebook.png`},
+    "youtube": {"imgSrc": `${STORAGE_PATH}/youtube.png`}
 }

@@ -1,17 +1,15 @@
 import { ItemContext } from 'context/ItemContext';
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import ImageUploader from 'react-images-upload';
 import { setImage } from 'actions/item.actions'
  
 const ImageUpload = () => {
-  
-  const { item, dispatch } = useContext(ItemContext)
-  const itemId = item._id
+  const { dispatch } = useContext(ItemContext)
   
   const onDrop = (image) => {
     dispatch(setImage(image))
-    console.log(itemId)
   } 
+  
   return (
     <ImageUploader
       withIcon={true}
