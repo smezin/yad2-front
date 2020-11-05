@@ -499,6 +499,12 @@
             "update": {"localName": "עדכון פרטים"}
         },
         "itemForm": {
+            "imageUpload": {
+                "fileSizeError": "קובץ גדול מידי",
+                "fileTypeError": "סוג קובץ לא נתמך",
+                "label": "העלה קובץ תמונה, עד גודל 5M",
+                "buttonText": "בחר תמונות"
+            },
             "itemFloor": {
                 "headerLocalName": "קומה",
                 "placeholderLocalName": "בחר"

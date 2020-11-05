@@ -132,7 +132,6 @@ export const publishItem = async (item, ownerId, ownerMobile, dispatch) => {
   }
 }
 
-//INCOMPLETE
 export const addImageToItem = async (itemId, image) => {
   const imgBody = new FormData()
   imgBody.append('image', image)
@@ -140,9 +139,9 @@ export const addImageToItem = async (itemId, image) => {
   try {
     const requestParams = {
       method: "POST",
-      headers: {     
-        "Content-Type": "multipart/form-data; Boundary: --12345"
-      },
+      // headers: {     
+      //   "Content-Type": "multipart/form-data; Boundary: --12345"
+      // },
       body: imgBody,
     }
     let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/upload-image/${itemId}`, requestParams)

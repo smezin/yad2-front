@@ -76,4 +76,11 @@
     #autocomplete-dropdown-container {
         @extend .autocomplete-dropdown-container-template;
     }
+    .image-upload {
+        
+    }
+    .chooseFileButton {
+        background-color: $theme-main-color !important;
+        font-weight: 500 !important;
+    }
 }
