@@ -19,7 +19,7 @@ import ImageUpload from './inputFields/ImageUpload'
 import AlertModal from './AlertModal'
 
 const PublishNewItem = () => {
-    const { item, dispatch: itemDispatch } = useContext(ItemContext)
+    const { item } = useContext(ItemContext)
     const { user, dispatch: userDispatch } = useContext(UserContext)
     const [itemCategory, setItemCategory] = useState(item.properties.category)
     const [missingFields, setMissingFields] = useState([])
@@ -28,7 +28,7 @@ const PublishNewItem = () => {
     const publishItemButton = async () => {      
         const itemToPublish = cleanItem(item)
         if (isMissingFields(itemToPublish)) {
-            const itemId = await publishItem(itemToPublish, user.id, user.mobile, itemDispatch)        
+            const itemId = await publishItem(itemToPublish, user.id, user.mobile)        
             await updateUser(user, {items: itemId}, userDispatch) 
             addImageToItem(itemId, item.properties.images[0])
         }      

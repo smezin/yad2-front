@@ -3,6 +3,7 @@ const STORAGE_PATH = process.env.REACT_APP_S3_ADS_STORAGE
 export const ads = {
     "topAd": {"imgSrc":`${STORAGE_PATH}/large-ad-h.jpg`, "path":""},
     "sideAd": {"imgSrc": `${STORAGE_PATH}/side_ad.jfif`, "path":""},
+    "feed-banner": {"imgSrc": `${STORAGE_PATH}/feed-banner.jpg`, "path":""}
 }
 export const topBoxesRow = {
     "movers": {"imgSrc": `${STORAGE_PATH}/movers.jfif`, "text": "הובלות", "path":""},

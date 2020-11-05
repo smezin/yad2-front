@@ -494,9 +494,9 @@
         "welcomeMessage": {"localName": "שמחים לראות אותך "},
         "exit": {"localName": "התנתק"},
         "categories": {
-            "edit": {"localName": "עדכון ועריכת מודעות"},
+            "myItems": {"localName": "המודעות שלי"},
             "publish": {"localName": "פרסום מודעה חדשה"},
-            "update": {"localName": "עדכון פרטים"}
+            "favorites": {"localName": "מודעות שמורות"}
         },
         "itemForm": {
             "imageUpload": {

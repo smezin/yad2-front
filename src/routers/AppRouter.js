@@ -13,7 +13,7 @@ import UserContextProvider from 'context/UserContext'
 export const history = createBrowserHistory()
 
 const AppRouter = () => {
-    
+
     return (
         <Router>      
         <UserContextProvider>

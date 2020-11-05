@@ -3,21 +3,29 @@ import { NIS } from 'resources/specialChars'
 import fetchFromResource from 'utility/fetchFromResource'
 import { addSeperator } from 'utility/numbersDisplay'
 import FavoriteHeart from './FavoriteHeart'
+import { defaultImage } from 'images'
+import { deleteItem } from 'actions/item.actions'
 
 const FeedItem = (props) => {
     const { item } = props
     const { location, rooms, floor, size, price} = item
-    const defaultImage = 'https://archinect.imgix.net/uploads/s7/s7o5nwgufimwiiy6.jpg?auto=compress%2Cformat'
-    const imgPath = (item.imageUrls && item.imageUrls.length > 0) ? item.imageUrls[0] : defaultImage
+   
+    const imgPath = (item.imageUrls && item.imageUrls.length > 0) ? item.imageUrls[0] : defaultImage.imgSrc
     const roomsLocalName = fetchFromResource('string', 'feedItem', 'rooms', 'localName')
     const floorLoaclName = fetchFromResource('string', 'feedItem', 'floor', 'localName')
     const sizeLocalName = fetchFromResource('string', 'feedItem', 'size', 'localName')
     const propertyType = (item.properties && item.properties.propertyType) ? item.properties.propertyType : ''
     const street = location && location.split(',')[0] 
     const city = location && (location.split(',')[1] || '')
-
+    
+    /////
+    const delItem = () => {
+        console.log('-->', item._id)
+        deleteItem(item._id)
+    }
+    /////
     return (
-        <div className="feed-item">
+        <div className="feed-item" onClick={delItem}>
             <div className="feed-item__image">
                 <img src={imgPath} alt="pic" />
                 <FavoriteHeart favoriteItem={item} />

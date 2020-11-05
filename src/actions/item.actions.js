@@ -32,11 +32,6 @@ export const setFloor = (floor) => ({
   type: "SET_FLOOR",
   floor,
 })
-//SET_ID
-// export const setId = (id) => ({
-//   type: "SET_ID",
-//   id,
-// })
 //SET_IMAGES
 export const setImage = (image) => ({
   type: 'SET_IMAGE',
@@ -108,7 +103,7 @@ export const setStorage = (storage) => ({
   storage,
 })
 //publish Item
-export const publishItem = async (item, ownerId, ownerMobile, dispatch) => {
+export const publishItem = async (item, ownerId, ownerMobile) => {
   try {
     const requestParams = {
       method: "POST",
@@ -125,7 +120,6 @@ export const publishItem = async (item, ownerId, ownerMobile, dispatch) => {
       throw response.status
     }
     response = await response.json()
-    console.log(response._id)
     return response._id
   } catch (e) {
     console.log(e)
@@ -139,9 +133,6 @@ export const addImageToItem = async (itemId, image) => {
   try {
     const requestParams = {
       method: "POST",
-      // headers: {     
-      //   "Content-Type": "multipart/form-data; Boundary: --12345"
-      // },
       body: imgBody,
     }
     let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/upload-image/${itemId}`, requestParams)
@@ -149,7 +140,20 @@ export const addImageToItem = async (itemId, image) => {
       throw response.status
     }
     response = await response.json()
-    console.log(response)
+  } catch (e) {
+    console.log(e)
+  }
+}
+export const deleteItem = async (itemId) => {
+  try {
+    const requestParams = {
+      method: 'DELETE',
+    }
+    let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/delete-item/${itemId}`, requestParams)
+    if (response !== 200) {
+      throw response.status
+    }
+    response = await response.json()
   } catch (e) {
     console.log(e)
   }

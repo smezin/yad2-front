@@ -39,6 +39,7 @@
             padding: $std-size * 0.8;
             position: absolute;
             top: $std-size * 3;
+            z-index: 10;
             .sort-by__dropdown-item {
                 line-height: $std-size * 1.2;
                 padding: $std-size * 0.5;                

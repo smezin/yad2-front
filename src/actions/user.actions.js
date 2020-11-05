@@ -48,10 +48,6 @@ export const signUp = async (username, email, mobile, password, dispatch) => {
 export const signAllOut = async (dispatch) => {
     dispatch(removeAuth())
 }
-// export const connectItemContext = (itemId) => ({
-//     type: 'CONNECT_ITEM',
-//     itemId
-// })
 
 export const updateUserContext = (updates) => ({
     type: 'UPDATE_USER',
@@ -67,6 +63,25 @@ export const updateUser = async(user, updates, dispatch) => {
             body: JSON.stringify({user, updates})
         }
         let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/user/me`, requestParams)
+        if (response.status !== 200) {
+            throw response.status
+        }
+        response = await response.json()
+        dispatch(updateUserContext(response))
+    } catch (e) {
+        console.log(e)
+    }
+ }
+ export const removeItemFromUser = async(userId, itemId, dispatch) => {
+    try {
+        const requestParams = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({userId, itemId})
+        }
+        let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/user/remove-item`, requestParams)
         if (response.status !== 200) {
             throw response.status
         }
