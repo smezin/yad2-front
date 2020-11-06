@@ -143,8 +143,6 @@ export const toggleShowOnlyItemsWithImage = (showOnlyItemsWithImage) => {
         showOnlyItemsWithImage
     }
 }
-
-
 //REMOVE TYPE
 export const removeType = (propertyType) => ({
     type: 'REMOVE_TYPE',

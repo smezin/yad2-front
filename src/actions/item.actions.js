@@ -128,8 +128,7 @@ export const publishItem = async (item, ownerId, ownerMobile) => {
 
 export const addImageToItem = async (itemId, image) => {
   const imgBody = new FormData()
-  imgBody.append('image', image)
-  
+  imgBody.append('image', image)  
   try {
     const requestParams = {
       method: "POST",
