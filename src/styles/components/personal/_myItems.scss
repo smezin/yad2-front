@@ -1,0 +1,10 @@
+.my-items {
+  .item-view{
+    .feed-item {
+      .edit-item-button {
+        background: $theme-feed-item;
+        border-right: 1px solid $theme-box-border;
+      }
+    }
+  }
+}

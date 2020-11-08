@@ -9,7 +9,7 @@ import DeatailedView from './DetailedView'
 
 const FeedItem = (props) => {
     const [isDetailedView, setIsDetailedView] = useState(false)
-    const { item } = props
+    const { item, editable = false } = props
     if (!item) { return null }
     const { location, rooms, floor, size, price} = item   
     const imgPath = (item.imageUrls && item.imageUrls.length > 0) ? item.imageUrls[0] : defaultImage.imgSrc
@@ -59,6 +59,13 @@ const FeedItem = (props) => {
                 <div className="feed-item__price" onClick={toggleDetails}>
                     <span className="feed-item__price-number">{NIS}{addSeperator(price)}</span>
                 </div>
+                {   
+                    editable &&
+                    <div className="edit-item-button">
+                    edit
+                </div>
+                }
+                
             </div>
         }  
         </div>

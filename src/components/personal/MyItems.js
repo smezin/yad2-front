@@ -23,7 +23,9 @@ const MyItems = () => {
     <div className="my-items">
       {
         myItemsArr.map((item) => (
-          <FeedItem item={item} key={item._id}/>
+          <div>
+            <FeedItem item={item} editable={true} key={item._id}/>
+          </div>
         ))
       }
     </div>

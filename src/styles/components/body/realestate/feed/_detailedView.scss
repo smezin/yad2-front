@@ -1,5 +1,6 @@
 .detailed-view {  
   border: 1px solid $theme-box-border;  
+  border-bottom: 2px solid $theme-box-border;
   .summary {
     background: $theme-feed-item;
     display: flex;
@@ -14,7 +15,7 @@
         @extend .feed-item__image;
         background-color: inherit;
         padding: $std-size * 0.6;
-        width: 35%;
+        width: $std-size * 16;
         img{
           background-color: inherit;
           border-radius: 5%;
