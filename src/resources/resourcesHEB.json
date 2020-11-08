@@ -560,9 +560,14 @@
         "defaultRibbonText": {"localName": "פרויקט חדש"}
     },
     "feedItem": {
-        "rooms": {"localName": "חדרים"},
         "floor": {"localName": "קומה"},
-        "size": {"localName": "מ\"ר"}
+        "notAvailable": {"localName": "לא צוין"},
+        "price": {"localName": "מחיר"},
+        "rooms": {"localName": "חדרים"},
+        "size": {"localName": "מ\"ר"},
+        "updatedToday": {"localName": "עודכן היום"},
+        "updatedYesterday": {"localName": "עודכן אתמול"},
+        "updatedAt": {"localName": "עודכן ב"}
     },
     "signIn": {
         "localName": "התחברות",

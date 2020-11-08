@@ -16,13 +16,13 @@
         height: $std-size * 4;        
         margin: auto $std-size * 0.4;
         overflow: hidden;
-        width: 15%;
+        width: $std-size * 7;
         img{
             background-color: inherit;
             border-radius: 5%;
             height: 100%;
             margin: auto 0;
-            width: $std-size * 7;
+            width: 95%;
         }
         .symbol__heart {
             @extend .favorite-heart;

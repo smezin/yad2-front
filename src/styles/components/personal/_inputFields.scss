@@ -76,11 +76,22 @@
     #autocomplete-dropdown-container {
         @extend .autocomplete-dropdown-container-template;
     }
-    .image-upload {
-        
+    //redesign upload package
+    .fileContainer {
+        .chooseFileButton {
+            background-color: $theme-main-color;
+            font-weight: 500;
+        }
+        .deleteImage {
+            background-color: $theme-main-color;
+            font-size: $font-size-m;
+        }
     }
-    .chooseFileButton {
-        background-color: $theme-main-color !important;
-        font-weight: 500 !important;
+    .uploadPicturesWrapper {
+        .uploadPictureContainer {
+            padding: $std-size * 0.3;
+        }
     }
+    
+    
 }

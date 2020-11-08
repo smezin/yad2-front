@@ -25,7 +25,6 @@ const initialItemProperties = {
     text: undefined,
 }
 export const itemReducerInitialState = {
-  //  id: undefined,
     properties: initialItemProperties,
 }
 export const itemReducer = (state = itemReducerInitialState, action) => {
