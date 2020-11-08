@@ -15,3 +15,9 @@ export const topBoxesRow = {
     "angloSaxon": {"imgSrc": `${STORAGE_PATH}/angloSaxon.jfif`, "text": "הבית של הנדל\"ן", "path":"https://www.anglo-saxon.co.il/"},
     "ashdar": {"imgSrc": `${STORAGE_PATH}/ashdar.jfif`, "text": "זה הבית שלי", "path":"https://www.ashdar.co.il/"},
 }
+export const feedSideAds = {
+    "receiverAd": {"imgSrc": `${STORAGE_PATH}/feed-ad_receiver.jpg`, "path":""},
+    "doorsAd": {"imgSrc": `${STORAGE_PATH}/feed-ad_doors.jpg`, "path":""},
+    "realtorAd": {"imgSrc": `${STORAGE_PATH}/feed-ad_realtor.jpg`, "path":""},
+    "renevateAd": {"imgSrc": `${STORAGE_PATH}/feed-ad_renevate.jpg`, "path":""}
+}

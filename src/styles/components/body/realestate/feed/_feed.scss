@@ -1,24 +1,35 @@
 .feed {
-    background: $theme-background-body;
+  background: $theme-background-body;
+  display: flex;
+  flex-direction: row-reverse;
+  .feed-content {
+    align-items: center;
+    background: inherit;
+    direction: rtl;
     display: flex;
-    flex-direction: row-reverse;
-    .feed-content {
-        align-items: center;
-        background: inherit;
-        direction: rtl;
-        display: flex;
-        flex-direction: column;
-        margin-left: auto;
-        min-height: 800px;
-        width: 70%;
-        .feed-items {
-            width: 100%;
-        }
+    flex-direction: column;
+    margin-left: auto;
+    min-height: 800px;
+    width: 70%;
+    .feed-items {
+        width: 100%;
     }
-    .feed-ads {
-        background-color: inherit;;
-        border: 2px solid red;
-        padding: $std-size;
-        width: 30%
-    } 
+  }
+  .feed-ads {
+    background-color: inherit;
+    width: 30%;
+    .feed-side-ads {
+      background-color: inherit;;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 85%;
+      .side-ad {
+        border-radius: 5px;
+        cursor: pointer;
+        margin: $std-size;
+        width: 100%;
+      }
+    }       
+  } 
 }

@@ -3,7 +3,8 @@ import fetchFromResource from 'utility/fetchFromResource'
 import { signAllOut } from 'actions/user.actions'
 import { UserContext } from 'context/UserContext'
 
-const PersonalMenu = () => {
+const PersonalMenu = (props) => {
+    const { setTab } = props
     const headerLocalName = fetchFromResource('string', 'personal', 'localName')
     const menuCategories = fetchFromResource('object', 'personal', 'categories')
     const exitButtonText = fetchFromResource('string', 'personal', 'exit', 'localName') 
@@ -14,6 +15,7 @@ const PersonalMenu = () => {
     
     const onMenuCategoryPick = (menuCategory) => {
         setCategory(menuCategory)
+        setTab(menuCategory)
     }
     const onExit = () => {
         signAllOut(dispatch)        

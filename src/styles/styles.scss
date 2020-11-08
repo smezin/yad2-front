@@ -39,7 +39,7 @@
 @import './components/body/promotedProjects/promotedProjectsBar';
 @import './components/body/promotedProjects/promotedProject';
 @import './components/pageNotFound';
-@import './components/personal/inputFields';
+@import './components/personal/addItemForm';
 @import './components/body/promotedProjects/ribbon';
 @import './components/body/realestate/feed/feedItem';
 @import './components/body/realestate/feed/feedSortFiltersRow';
@@ -47,3 +47,5 @@
 @import './components/personal/signInSignOnForm';
 @import './components/personal/alertModal';
 @import './components/body/realestate/feed/detailedView';
+@import './components/body/realestate/feed/detailedViewAds';
+@import './components/body/realestate/feed/detailedViewDetails';

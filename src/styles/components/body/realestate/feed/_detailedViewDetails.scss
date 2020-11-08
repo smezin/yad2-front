@@ -1,0 +1,19 @@
+.detailed-view-details {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  .detailed-view-details__description-header {
+    color: $theme-text;
+    font-size: $font-size-s;
+    font-weight: 500;
+    padding: $std-size $std-size 0 $std-size;
+  }
+  .detailed-view-details__description-body {
+    color: $theme-text;
+    font-size: $font-size-xs;
+    padding: $std-size * 0.5 $std-size $std-size 0;
+    overflow-wrap: break-word;
+    width: 95%;
+    white-space: pre-wrap;
+  }
+}

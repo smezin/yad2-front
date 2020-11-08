@@ -1,140 +1,138 @@
 .detailed-view {  
-  .detailed-view__summary {
+  border: 1px solid $theme-box-border;  
+  .summary {
     background: $theme-feed-item;
     display: flex;
     height: $std-size * 9;
-    .summary {
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    .summary__right {
       background-color: inherit;
       display: flex;
-      justify-content: space-between;
-      position: relative;
-      width: 100%;
-      .summary__right {
+      .summary__right__image {
+        @extend .feed-item__image;
         background-color: inherit;
-        display: flex;
-        .summary__right__image {
-          @extend .feed-item__image;
+        padding: $std-size * 0.6;
+        width: 35%;
+        img{
           background-color: inherit;
-          padding: $std-size * 0.6;
-          width: 35%;
-          img{
-            background-color: inherit;
-            border-radius: 5%;
-            height: 100%;
-            margin: auto 0;
-            width: 95%;
-          }
-          .symbol__heart {
-            @extend .favorite-heart;
-            height: $std-size * 1.4 !important;
-            width: $std-size * 1.4 !important;
-            right: $std-size * 0.8 !important;
-            top: $std-size * 0.8 !important;
-          }
-          .symbol__heart-full {
-            @extend .symbol__heart;
-            font-size: $font-size-xs !important;           
-          }        
+          border-radius: 5%;
+          height: 100%;
+          margin: auto 0;
+          width: 95%;
         }
-        .summary__right__details {
+        .symbol__heart {
+          @extend .favorite-heart;
+          height: $std-size * 1.4 !important;
+          width: $std-size * 1.4 !important;
+          right: $std-size * 0.8 !important;
+          top: $std-size * 0.8 !important;
+        }
+        .symbol__heart-full {
+          @extend .symbol__heart;
+          font-size: $font-size-xs !important;           
+        }        
+      }
+      .summary__right__details {
+        background-color: inherit;
+        width: 30%;
+        .summary__right__address {
+          background-color: inherit !important;
+          display: flex;
+          flex-direction: column;
+          font-size: $font-size-m;
+          margin-top: $std-size;
+          .feed-item__location__street {
+            background-color: inherit;
+          }
+          .feed-item__location__city {
+            background-color: inherit;
+            font-size: $font-size-s-xs;
+          }
+        }
+        .summary__right__info-blocks {
           background-color: inherit;
-          width: 30%;
-          .summary__right__address {
-            background-color: inherit !important;
+          display: flex;
+          font-size: $font-size-s;
+          justify-content: space-between;
+          margin-top: $std-size * 0.8;
+          .summary__right__info-blocks__item {
+            background-color: inherit;
             display: flex;
             flex-direction: column;
-            font-size: $font-size-m;
-            margin-top: $std-size;
-            .feed-item__location__street {
-              background-color: inherit;
+            padding: 0 $std-size;
+            text-align: center;
+            .value {
+              color: black;
+              font-size: $font-size-s;
             }
-            .feed-item__location__city {
-              background-color: inherit;
-              font-size: $font-size-s-xs;
+            .title {
+              color: $theme-text-lighter;
             }
-          }
-          .summary__right__info-blocks {
-            background-color: inherit;
-            display: flex;
-            font-size: $font-size-s;
-            justify-content: space-between;
-            margin-top: $std-size * 0.8;
-            .summary__right__info-blocks__item {
+            span {
               background-color: inherit;
-              display: flex;
-              flex-direction: column;
-              padding: 0 $std-size;
-              text-align: center;
-              .value {
-                color: black;
-                font-size: $font-size-s;
-              }
-              .title {
-                color: $theme-text-lighter;
-              }
-              span {
-                background-color: inherit;
-                font-size: $font-size-xs;
-                padding: $std-size * 0.1;
-              }
+              font-size: $font-size-xs;
+              padding: $std-size * 0.1;
             }
           }
         }
-      }     
-      .summary__left {
+      }
+    }     
+    .summary__left {
+      background-color: inherit;
+      .summary__left__price {
         background-color: inherit;
-        .summary__left__price {
+        font-size: $font-size-s;
+        margin-left: $std-size * 0.5;
+        padding-bottom: $std-size * 0.4;
+        padding-left: $std-size;
+        padding-top: $std-size;
+        text-align: left;
+        .symbol__nis{
           background-color: inherit;
-          font-size: $font-size-s;
-          margin-left: $std-size * 0.5;
-          padding-bottom: $std-size * 0.4;
-          padding-left: $std-size;
-          padding-top: $std-size;
-          text-align: left;
-          .symbol__nis{
-            background-color: inherit;
-            padding-right: $std-size * 0.2;
-          }
+          padding-right: $std-size * 0.2;
         }
-        .updated-at {
-          background-color: inherit;
-          color: $theme-text-lighter;
-          font-size: $font-size-xxs;
-          margin: 0 auto;
-          margin-left: $std-size * 0.5;
-          padding-left: $std-size;
-          text-align: left;
-        }
-        .show-phone-number {
-          background-color: $add-item-button-background;
-          border-radius: 5px;
+      }
+      .updated-at {
+        background-color: inherit;
+        color: $theme-text-lighter;
+        font-size: $font-size-xxs;
+        margin: 0 auto;
+        margin-left: $std-size * 0.5;
+        padding-left: $std-size;
+        text-align: left;
+      }
+      .show-phone-number {
+        background-color: $add-item-button-background;
+        border-radius: 5px;
+        color: white;
+        display: flex;
+        font-size: $font-size-xs;
+        font-weight: 500;
+        line-height: $std-size * 0.8;
+        margin: $std-size * 1.5;
+        padding: $std-size * 0.8;
+        width: $std-size * 10;
+        .symbol__phone {
+          background-color: transparent;
           color: white;
-          display: flex;
-          font-size: $font-size-xs;
-          font-weight: 500;
-          line-height: $std-size * 0.8;
-          margin: $std-size * 1.5;
-          padding: $std-size * 0.8;
-          width: $std-size * 10;
-          .symbol__phone {
-            background-color: transparent;
-            color: white;
-            font-size: $font-size-m;
-            font-weight: 800;
-            padding-left: $std-size * 0.5;
-          }
+          font-size: $font-size-m;
+          font-weight: 800;
+          padding-left: $std-size * 0.5;
         }
       }
     }
   }
-  .detailed-view__details-container {
-    display: flex;
-    flex-direction: row;
-    .detailed-view__ads {
-      width: 33%;
-    }
-    .detailed-view__details {
-      width: 67%;
-    }
+}
+.detailed-view__details-container {
+  display: flex;
+  flex-direction: row;
+  .detailed-view__ads {
+    width: 33%;
   }
+  .detailed-view__details {
+    width: 67%;
+  }
+
 }

@@ -561,6 +561,7 @@
     },
     "feedItem": {
         "floor": {"localName": "קומה"},
+        "itemDescription": {"localName": "תיאור הנכס"},
         "notAvailable": {"localName": "לא צוין"},
         "price": {"localName": "מחיר"},
         "rooms": {"localName": "חדרים"},
