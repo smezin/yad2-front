@@ -1,7 +1,7 @@
 import { ItemContext } from 'context/ItemContext';
 import React, { useContext} from 'react';
 import ImageUploader from 'react-images-upload';
-import { setImage } from 'actions/item.actions'
+import { setImages } from 'actions/item.actions'
 import fetchFromResource from 'utility/fetchFromResource';
  
 const ImageUpload = () => {
@@ -11,7 +11,8 @@ const ImageUpload = () => {
   const fileTypeError = fetchFromResource('string', 'personal', 'itemForm', 'imageUpload', 'fileTypeError')
   
   const onDrop = (image) => {
-    dispatch(setImage(image))
+    console.log(image)
+    dispatch(setImages(image))
   } 
   
   return (

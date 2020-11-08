@@ -33,9 +33,9 @@ export const setFloor = (floor) => ({
   floor,
 })
 //SET_IMAGES
-export const setImage = (image) => ({
-  type: 'SET_IMAGE',
-  image
+export const setImages = (images) => ({
+  type: 'SET_IMAGES',
+  images
 })
 //SET_LOCATION
 export const setLocation = (location) => ({

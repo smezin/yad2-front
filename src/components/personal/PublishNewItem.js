@@ -30,7 +30,10 @@ const PublishNewItem = () => {
         if (isMissingFields(itemToPublish)) {
             const itemId = await publishItem(itemToPublish, user.id, user.mobile)        
             await updateUser(user, {items: itemId}, userDispatch) 
-            addImageToItem(itemId, item.properties.images[0])
+            if (item.properties && item.properties.images) {
+                item.properties.images.forEach((image) => addImageToItem(itemId, image))
+            }
+            
         }      
     }
     const resetMissingFields = () => {

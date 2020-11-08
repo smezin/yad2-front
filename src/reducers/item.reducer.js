@@ -1,3 +1,5 @@
+import isEqualFiles from "utility/isEqualFiles"
+
 const initialItemProperties = {
     availableImmediately: false,
     balcony: undefined,
@@ -67,12 +69,12 @@ export const itemReducer = (state = itemReducerInitialState, action) => {
         //             ...state.properties
         //         }
         //     }
-        case 'SET_IMAGE':
+        case 'SET_IMAGES':
             return {
                 ...state,
                 properties: {
                     ...state.properties,
-                    images: state.properties.images.concat(action.image)
+                    images: action.images
                 }
             }
         case 'SET_LOCATION':
