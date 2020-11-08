@@ -22,41 +22,41 @@ const FeedItem = (props) => {
     
     
     /////
-    // const delItem = () => {
-    //     console.log('-->', item._id)
-    //     deleteItem(item._id)
-    // }
+    const delItem = () => {
+        console.log('-->', item._id)
+        deleteItem(item._id)
+    }
     /////
-    const openDetails = () => {
+    const toggleDetails = () => {
         setIsDetailedView(!isDetailedView)
     }
     return (
         <div className="item-view">
         {
             isDetailedView ?
-            <DeatailedView item={item} openDetails={openDetails} /> :
+            <DeatailedView item={item} toggleDetails={toggleDetails} /> :
             <div className="feed-item">
                 <div className="feed-item__image">
-                    <img src={imgPath} alt="pic" onClick={openDetails}/>
+                    <img src={imgPath} alt="pic" onClick={delItem}/>
                     <FavoriteHeart favoriteItem={item} />
                 </div>
-                <div className="feed-item__location" onClick={openDetails}>
+                <div className="feed-item__location" onClick={toggleDetails}>
                     <span className="feed-item__location__street">{street}</span> 
                     <span className="feed-item__location__city">{propertyType}{propertyType !== '' ? ', ':''} {city} </span> 
                 </div>
-                <div className="feed-item__rooms" onClick={openDetails}>
+                <div className="feed-item__rooms" onClick={toggleDetails}>
                     <span className="feed-item__rooms-number">{rooms}</span> 
                     <span className="feed-item__rooms-title">{roomsLocalName}</span>
                 </div>
-                <div className="feed-item__floor" onClick={openDetails}>
+                <div className="feed-item__floor" onClick={toggleDetails}>
                     <span className="feed-item__floor-number">{floor}</span> 
                     <span className="feed-item__floor-title">{floorLoaclName}</span>
                 </div>
-                <div className="feed-item__size" onClick={openDetails}>
+                <div className="feed-item__size" onClick={toggleDetails}>
                     <span className="feed-item__size-number">{size}</span> 
                     <span className="feed-item__size-title">{sizeLocalName}</span>
                 </div>
-                <div className="feed-item__price" onClick={openDetails}>
+                <div className="feed-item__price" onClick={toggleDetails}>
                     <span className="feed-item__price-number">{NIS}{addSeperator(price)}</span>
                 </div>
             </div>

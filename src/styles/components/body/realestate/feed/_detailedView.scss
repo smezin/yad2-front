@@ -63,6 +63,7 @@
               background-color: inherit;
               display: flex;
               flex-direction: column;
+              padding: 0 $std-size;
               text-align: center;
               .value {
                 color: black;
@@ -89,7 +90,7 @@
           padding-bottom: $std-size * 0.4;
           padding-left: $std-size;
           padding-top: $std-size;
-          text-align: right;
+          text-align: left;
           .symbol__nis{
             background-color: inherit;
             padding-right: $std-size * 0.2;
@@ -101,7 +102,27 @@
           font-size: $font-size-xxs;
           margin: 0 auto;
           margin-left: $std-size * 0.5;
-          text-align: right;
+          padding-left: $std-size;
+          text-align: left;
+        }
+        .show-phone-number {
+          background-color: $add-item-button-background;
+          border-radius: 5px;
+          color: white;
+          display: flex;
+          font-size: $font-size-xs;
+          font-weight: 500;
+          line-height: $std-size * 0.8;
+          margin: $std-size * 1.5;
+          padding: $std-size * 0.8;
+          width: $std-size * 10;
+          .symbol__phone {
+            background-color: transparent;
+            color: white;
+            font-size: $font-size-m;
+            font-weight: 800;
+            padding-left: $std-size * 0.5;
+          }
         }
       }
     }

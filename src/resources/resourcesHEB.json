@@ -564,9 +564,9 @@
         "notAvailable": {"localName": "לא צוין"},
         "price": {"localName": "מחיר"},
         "rooms": {"localName": "חדרים"},
+        "showPhoneNumber": {"localName": "הצגת מספר טלפון"},
         "size": {"localName": "מ\"ר"},
         "updatedToday": {"localName": "עודכן היום"},
-        "updatedYesterday": {"localName": "עודכן אתמול"},
         "updatedAt": {"localName": "עודכן ב"}
     },
     "signIn": {

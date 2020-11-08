@@ -2,11 +2,11 @@ import React from 'react'
 import DetailedViewSummary from './DetailedViewSummary'
 
 const DeatailedView = (props) => {
-  const {item, openDetails} = props
+  const {item, toggleDetails} = props
   return (
-    <div className="detailed-view" onClick={openDetails} >
+    <div className="detailed-view" >
       <div className="detailed-view__summary">
-        <DetailedViewSummary item={item} />
+        <DetailedViewSummary item={item} toggleDetails={toggleDetails}/>
       </div>
       <div className="detailed-view__details-container">
         <div className="detailed-view__ads">

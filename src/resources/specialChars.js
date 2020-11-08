@@ -13,3 +13,4 @@ export const magnifyingGlass = <span className="symbol__magnifying-glass" style=
 export const circledBullet = <span className="symbol__circled-bullet">&#10687;</span>
 export const circle = <span className="symbol__circle">&#11096;</span>
 export const NIS = <span className="symbol__nis">&#8362;</span>
+export const phone = <span className="symbol__phone" >&#9990;</span>

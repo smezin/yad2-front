@@ -1,13 +1,24 @@
 .feed {
-    align-items: center;
     background: $theme-background-body;
-    direction: rtl;
     display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    min-height: 800px;
-    width: 70%;
-    .feed-items {
-        width: 100%;
+    flex-direction: row-reverse;
+    .feed-content {
+        align-items: center;
+        background: inherit;
+        direction: rtl;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        min-height: 800px;
+        width: 70%;
+        .feed-items {
+            width: 100%;
+        }
     }
+    .feed-ads {
+        background-color: inherit;;
+        border: 2px solid red;
+        padding: $std-size;
+        width: 30%
+    } 
 }

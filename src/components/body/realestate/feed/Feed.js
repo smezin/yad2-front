@@ -23,12 +23,18 @@ const Feed =  () => {
 
     return (
         <div className="feed">
-            {
-                category === 'forsale' &&
-                <PromotedProjectsBar />
-            }            
-            <FeedSortFiltersRow />
-            <FeedItems />
+            <div className="feed-content">
+                {
+                    category === 'forsale' &&
+                    <PromotedProjectsBar />
+                }            
+                <FeedSortFiltersRow />
+                <FeedItems />
+            </div>
+            <div className="feed-ads">
+                
+            </div>
+            
         </div>
     )
 }

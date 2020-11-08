@@ -1,15 +1,15 @@
 import { defaultImage } from 'images'
-import React from 'react'
-import { NIS } from 'resources/specialChars'
+import React, { useState } from 'react'
+import { NIS, phone } from 'resources/specialChars'
 import fetchFromResource from 'utility/fetchFromResource'
 import { addSeperator } from 'utility/numbersDisplay'
 import FavoriteHeart from './FavoriteHeart'
 
 const DetailedViewSummary = (props) => {
-  const { item } = props
-  console.log(item)
+  const [isPhoneHidden, setIsPhoneHidden] = useState(true)
+  const { item, toggleDetails } = props
   if (!item) { return null }
-  const { location, rooms, floor, size, price, createdAt} = item   
+  const { location, rooms, floor, size, price, createdAt, ownerMobile} = item   
   const imgPath = (item.imageUrls && item.imageUrls.length > 0) ? item.imageUrls[0] : defaultImage.imgSrc
   const propertyType = item.propertyType ? item.propertyType : ''
   const street = location && location.split(',')[0] 
@@ -20,13 +20,16 @@ const DetailedViewSummary = (props) => {
   const sizeLocalName = fetchFromResource('string', 'feedItem', 'size', 'localName')
   const updatedTodayLocalName = fetchFromResource('string', 'feedItem', 'updatedToday', 'localName')
   const updatedAtLocalName = fetchFromResource('string', 'feedItem', 'updatedAt', 'localName')
+  const showPhoneNumberLocalName = fetchFromResource('string', 'feedItem', 'showPhoneNumber', 'localName')
   const intlDate = new Intl.DateTimeFormat('he-IL', {dateStyle: 'long'}).format(new Date(createdAt)) 
   const isToday = ((new Date()-new Date(createdAt))/(1000 * 60 * 60 * 24)) < 1
-  console.log(isToday)
+  const showPhoneNumber = () => {
+    setIsPhoneHidden(false)
+  }
   return(
     <div className="summary">
-      <div className="summary__right">
-        <div className="summary__right__image">
+      <div className="summary__right" onClick={toggleDetails}>
+        <div className="summary__right__image" onClick={toggleDetails}>
           <img src={imgPath} alt="pic" />
           <FavoriteHeart favoriteItem={item} />
         </div>
@@ -58,6 +61,9 @@ const DetailedViewSummary = (props) => {
         </div>
         <div className="updated-at">
           {isToday ? updatedTodayLocalName : updatedAtLocalName+intlDate}
+        </div>
+        <div className="show-phone-number" onClick={showPhoneNumber}>
+          {phone}{isPhoneHidden ? showPhoneNumberLocalName : ownerMobile}
         </div>
       </div>
     </div>
