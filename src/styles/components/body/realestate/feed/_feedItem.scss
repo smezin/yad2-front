@@ -104,4 +104,26 @@
             }
         }
     }
+    .feed-item__edit-item {
+        background-color: inherit;
+        border-right: 1px solid $theme-box-border;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .feed-item__edit-item-button {
+            background-color: $add-item-button-background;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: $font-size-xs;
+            margin: 0 $std-size * 0.5;
+            padding: $std-size * 0.5;
+            min-width: $std-size * 3.5;
+            max-width: $std-size * 5;
+            text-align: center;
+            &:hover {
+                font-weight: 500;
+            }
+        }
+    }
 }

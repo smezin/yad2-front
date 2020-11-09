@@ -9,24 +9,20 @@ import DeatailedView from './DetailedView'
 
 const FeedItem = (props) => {
     const [isDetailedView, setIsDetailedView] = useState(false)
-    const { item, editable = false } = props
+    const { item, editable = false} = props
     if (!item) { return null }
     const { location, rooms, floor, size, price} = item   
     const imgPath = (item.imageUrls && item.imageUrls.length > 0) ? item.imageUrls[0] : defaultImage.imgSrc
     const roomsLocalName = fetchFromResource('string', 'feedItem', 'rooms', 'localName')
     const floorLoaclName = fetchFromResource('string', 'feedItem', 'floor', 'localName')
     const sizeLocalName = fetchFromResource('string', 'feedItem', 'size', 'localName')
+    const editLocalName = fetchFromResource('string', 'personal', 'delete', 'localName')
     const propertyType = item.propertyType ? item.propertyType : ''
     const street = location && location.split(',')[0] 
     const city = location && (location.split(',')[1] || '')
-    
-    
-    /////
     const delItem = () => {
-        console.log('-->', item._id)
         deleteItem(item._id)
     }
-    /////
     const toggleDetails = () => {
         setIsDetailedView(!isDetailedView)
     }
@@ -61,9 +57,9 @@ const FeedItem = (props) => {
                 </div>
                 {   
                     editable &&
-                    <div className="edit-item-button">
-                    edit
-                </div>
+                    <div className="feed-item__edit-item">
+                        <span className="feed-item__edit-item-button" onClick={delItem}>{editLocalName}</span>
+                    </div>
                 }
                 
             </div>

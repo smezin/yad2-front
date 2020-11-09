@@ -493,6 +493,7 @@
         "localName": "האיזור האישי",
         "welcomeMessage": {"localName": "שמחים לראות אותך "},
         "exit": {"localName": "התנתק"},
+        "delete": {"localName": "מחיקה"},
         "categories": {
             "myItems": {"localName": "המודעות שלי"},
             "publish": {"localName": "פרסום מודעה חדשה"},

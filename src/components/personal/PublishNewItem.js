@@ -32,8 +32,7 @@ const PublishNewItem = () => {
             await updateUser(user, {items: itemId}, userDispatch) 
             if (item.properties && item.properties.images) {
                 item.properties.images.forEach((image) => addImageToItem(itemId, image))
-            }
-            
+            }            
         }      
     }
     const resetMissingFields = () => {

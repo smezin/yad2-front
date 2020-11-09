@@ -6,6 +6,7 @@
     display: flex;
     height: $std-size * 9;
     justify-content: space-between;
+    overflow: hidden;
     position: relative;
     width: 100%;
     .summary__right {
@@ -15,7 +16,7 @@
         @extend .feed-item__image;
         background-color: inherit;
         padding: $std-size * 0.6;
-        width: $std-size * 16;
+        width: $std-size * 13;
         img{
           background-color: inherit;
           border-radius: 5%;
@@ -108,6 +109,7 @@
         background-color: $add-item-button-background;
         border-radius: 5px;
         color: white;
+        cursor: pointer;
         display: flex;
         font-size: $font-size-xs;
         font-weight: 500;

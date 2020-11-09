@@ -56,10 +56,10 @@ const DetailedViewSummary = (props) => {
         
       </div>
       <div className="summary__left">
-        <div className="summary__left__price">
+        <div className="summary__left__price"  onClick={toggleDetails}>
           {NIS}{addSeperator(price)}
         </div>
-        <div className="updated-at">
+        <div className="updated-at"  onClick={toggleDetails}>
           {isToday ? updatedTodayLocalName : updatedAtLocalName+intlDate}
         </div>
         <div className="show-phone-number" onClick={showPhoneNumber}>
