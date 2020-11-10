@@ -3,21 +3,21 @@ import fetchFromResource from 'utility/fetchFromResource'
 import FavoriteHeart from '../realestate/feed/FavoriteHeart'
 
 const PromotedProject = (props) => {
-    const { projectItem } = props
-    if (!projectItem || !projectItem.location || !projectItem.text) {
+    const { item } = props
+    if (!item || !item.location || !item.text) {
         return null
     }
-    const street = projectItem.location.split(',')[0]
-    const city = projectItem.location.split(',')[1] || ''
-    const imgUrl = projectItem.imageUrls[0]
-    const text = projectItem.text
-    const ribbonLocalName = projectItem.ribbonText || fetchFromResource('string', 'promotedProjects', 'defaultRibbonText', 'localName')
+    const street = item.location.split(',')[0]
+    const city = item.location.split(',')[1] || ''
+    const imgUrl = item.imageUrls[0]
+    const text = item.text
+    const ribbonLocalName = item.ribbonText || fetchFromResource('string', 'promotedProjects', 'defaultRibbonText', 'localName')
     
     return (
         <div className="promoted-project">
             <div className="promoted-project__image-container">
                 <img src={imgUrl} alt="project-pic"/>
-                <FavoriteHeart favoriteItem={projectItem} />
+                <FavoriteHeart item={item} />
             </div>           
             <div className="ribbon">{ribbonLocalName}</div>
             <div className="promoted-project__description">

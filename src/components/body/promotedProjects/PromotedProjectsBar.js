@@ -17,9 +17,9 @@ const PromotedProjectsBar = () => {
     const promotedItem3 = totalItems > 0 ? promotedItems[Math.floor(Math.random() * totalItems)] : undefined
     return ( 
         <div className="promoted-projects-bar">
-            <PromotedProject projectItem={promotedItem1} />
-            <PromotedProject projectItem={promotedItem2} />
-            <PromotedProject projectItem={promotedItem3} />
+            <PromotedProject item={promotedItem1} />
+            <PromotedProject item={promotedItem2} />
+            <PromotedProject item={promotedItem3} />
         </div>
     )
 }

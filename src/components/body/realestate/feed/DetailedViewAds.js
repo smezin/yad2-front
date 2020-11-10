@@ -10,12 +10,12 @@ const DetailedViewAds = () => {
         setPromotedItems(promotedItemsFeed)
       }
       fetchPromotedItems();
-  }, [])
+  }, [])  
   const totalItems = promotedItems.length
   const promotedItem = totalItems > 0 ? promotedItems[Math.floor(Math.random() * totalItems)] : undefined
   return (
     <div className="detailed-view-ads">
-      <PromotedProject projectItem={promotedItem}/>    
+      <PromotedProject item={promotedItem}/>    
     </div>
     
   )
