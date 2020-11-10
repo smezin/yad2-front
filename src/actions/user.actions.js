@@ -97,7 +97,6 @@ export const addItemToFavorites = async (userId, itemId, dispatch) => {
             throw response.status
         }
         response = await response.json()
-        console.log('server response: ',response)
         dispatch(updateUserContext(response))    
         Cookies.set('User', response, {expires: 3}) 
     } catch (e) {

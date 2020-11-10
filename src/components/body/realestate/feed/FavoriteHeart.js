@@ -7,16 +7,12 @@ const FavoriteHeart = (props) => {
   const { user, dispatch } = useContext(UserContext)
   const [isFavorite, setIsfavorite] = useState(false)
   const [prevIsFavorite, setPrevIsFavorite] = useState(false)
-  const [favItems, setFavItems] = useState(user.favoriteItems)
+  const favItems = user.favoriteItems
   
   const heartClicked = () => {
     setPrevIsFavorite(isFavorite)
     setIsfavorite(!isFavorite)    
   }
-  useEffect ( () => {
-    setFavItems(user.favoriteItems)
-  },[user.favoriteItems, isFavorite])
-
   useEffect(() => {
     if (item && isFavorite !== prevIsFavorite) {
       addItemToFavorites(user.id, item._id, dispatch)
