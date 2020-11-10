@@ -24,6 +24,7 @@ const MainMenu = () => {
     useEffect (()=> {
         user && dispatch(setAuth(JSON.parse(user)))
     },[user, dispatch])
+
     return (
         <div className="main-menu">
             <div className="main-menu__right-segment">

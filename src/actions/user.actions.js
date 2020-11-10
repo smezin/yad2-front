@@ -7,6 +7,10 @@ export const setAuth = (response) => ({
 export const removeAuth = () => ({
     type: 'REMOVE_AUTH'
 })
+export const setFavorites = (favoritesArr) => ({
+    type: 'SET_FAVORITES',
+    favoritesArr
+})
 
 // export const addFavorite = (itemId) => ({
 //     type: 'ADD_FAVORITE',
@@ -93,7 +97,7 @@ export const addItemToFavorites = async (userId, itemId, dispatch) => {
             throw response.status
         }
         response = await response.json()
-        console.log('---------',response)
+        console.log('server response: ',response)
         dispatch(updateUserContext(response))    
         Cookies.set('User', response, {expires: 3}) 
     } catch (e) {
@@ -119,22 +123,3 @@ export const removeItemFromUser = async(userId, itemId, dispatch) => {
         console.log(e)
     }
 }
-export const getIsFavorite = async (userId, itemId) => {
-    const requestParams = {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        }
-    }
-    try {   
-        let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/user/get-is-favorite`, requestParams)
-        if (response.status !== 200) {
-            throw response.status
-        }
-        response = await response.json()
-        return(response)
-    } catch (e) {
-
-    }
-}
- 

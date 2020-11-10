@@ -23,20 +23,11 @@ if (user) {
 
 export const userReducer = (state = userReducerCurrentState, action) => {
   switch (action.type) {
-		// case 'ADD_FAVORITE':
-		// 	let updatedItemsArr = [...state.favoriteItems] || []
-    //   updatedItemsArr.push(action.itemId)
-    //   return {
-    //     ...state,
-    //     favoriteItems: updatedItemsArr,
-    //   }
-    // case 'CONNECT_ITEM':
-    //   updatedItemsArr = [...state.items] || []
-    //   updatedItemsArr.push(action.itemId)
-    //   return {
-    //     ...state,
-    //     items: updatedItemsArr,
-    //   }
+		case 'SET_FAVORITES':
+      return {
+        ...state,
+        favoriteItems: action.favoritesArr,
+      }
     case 'REMOVE_AUTH':
       Cookies.remove('User')
       return {
