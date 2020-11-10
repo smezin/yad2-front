@@ -7,6 +7,11 @@ export const removeAuth = () => ({
     type: 'REMOVE_AUTH'
 })
 
+// export const addFavorite = (itemId) => ({
+//     type: 'ADD_FAVORITE',
+//     itemId
+// })
+
 export const signIn = async (username, password, dispatch) => {
     try {
         const requestParams = {
@@ -53,6 +58,7 @@ export const updateUserContext = (updates) => ({
     type: 'UPDATE_USER',
     updates
 })
+
 export const updateUser = async(user, updates, dispatch) => {
     try {
         const requestParams = {
@@ -71,8 +77,27 @@ export const updateUser = async(user, updates, dispatch) => {
     } catch (e) {
         console.log(e)
     }
- }
- export const removeItemFromUser = async(userId, itemId, dispatch) => {
+}
+export const addItemToFavorites = async (userId, itemId, dispatch) => {
+    try {
+        const requestParams = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({userId, itemId})
+        }
+        let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/user/add-favorite`, requestParams)
+        if (response.status !== 200) {            
+            throw response.status
+        }
+        response = await response.json()
+        dispatch(updateUserContext(response))     
+    } catch (e) {
+        console.log(e)
+    }
+}
+export const removeItemFromUser = async(userId, itemId, dispatch) => {
     try {
         const requestParams = {
             method: 'PATCH',
@@ -90,23 +115,5 @@ export const updateUser = async(user, updates, dispatch) => {
     } catch (e) {
         console.log(e)
     }
- }
-// export const connectItem = async(user, itemId, dispatch) => {
-//     try {
-//         const requestParams = {
-//             method: 'PATCH',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify({user})
-//         }
-//         let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/auth/connect`, requestParams)
-//         if (response.status !== 200) {
-//             throw response.status
-//         }
-//         response = await response.json()
-//         dispatch(connectItem(response))
-//     } catch (e) {
-//         console.log(e)
-//     }
-// }
+}
+ 

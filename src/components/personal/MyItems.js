@@ -8,11 +8,13 @@ const MyItems = () => {
   const { user } = useContext(UserContext)
   const userId = user.id
   useEffect(() => {
+    let isSubscribed = true  //unsubscribe from promise to prevent memory leak/updating unmounted component
     const fetchUserItems = async () => {
       const feedItems = (await getUserFeed(userId)) || [];
-      setMyItemsArr(feedItems)
+      isSubscribed && setMyItemsArr(feedItems)
     }
     fetchUserItems()
+    return () => isSubscribed = false
   }, [userId, myItemsArr]);
 
   return (

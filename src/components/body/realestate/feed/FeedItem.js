@@ -34,7 +34,7 @@ const FeedItem = (props) => {
             <div className="feed-item">
                 <div className="feed-item__image">
                     <img src={imgPath} alt="pic" onClick={delItem}/>
-                    <FavoriteHeart favoriteItem={item} />
+                    <FavoriteHeart item={item} />
                 </div>
                 <div className="feed-item__location" onClick={toggleDetails}>
                     <span className="feed-item__location__street">{street}</span> 

@@ -11,7 +11,6 @@ const ImageUpload = () => {
   const fileTypeError = fetchFromResource('string', 'personal', 'itemForm', 'imageUpload', 'fileTypeError')
   
   const onDrop = (image) => {
-    console.log(image)
     dispatch(setImages(image))
   } 
   
