@@ -4,16 +4,19 @@ import FavoriteHeart from '../realestate/feed/FavoriteHeart'
 
 const PromotedProject = (props) => {
     const { projectItem } = props
-    const street = projectItem.properties.location.split(',')[0]
-    const city = projectItem.properties.location.split(',')[1] || ''
-    const imgPath = projectItem.images[0]
-    const text = projectItem.properties.text
-    const ribbonLocalName = projectItem.properties.ribbonText || fetchFromResource('string', 'promotedProjects', 'defaultRibbonText', 'localName')
+    if (!projectItem || !projectItem.location || !projectItem.text) {
+        return null
+    }
+    const street = projectItem.location.split(',')[0]
+    const city = projectItem.location.split(',')[1] || ''
+    const imgUrl = projectItem.imageUrls[0]
+    const text = projectItem.text
+    const ribbonLocalName = projectItem.ribbonText || fetchFromResource('string', 'promotedProjects', 'defaultRibbonText', 'localName')
     
     return (
         <div className="promoted-project">
             <div className="promoted-project__image-container">
-                <img src={imgPath} alt="project-pic"/>
+                <img src={imgUrl} alt="project-pic"/>
                 <FavoriteHeart favoriteItem={projectItem} />
             </div>           
             <div className="ribbon">{ribbonLocalName}</div>

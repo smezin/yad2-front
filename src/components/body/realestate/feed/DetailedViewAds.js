@@ -1,12 +1,21 @@
+import { getCategoryFeed } from 'actions/feed.actions'
 import PromotedProject from 'components/body/promotedProjects/PromotedProject'
-import { sampleItemOne } from 'data/fixtures/item'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const DetailedViewAds = () => {
-
+  const [promotedItems, setPromotedItems] = useState([])
+  useEffect(() => {
+      const fetchPromotedItems = async () => {
+        const promotedItemsFeed = (await getCategoryFeed('promoted')) || [];
+        setPromotedItems(promotedItemsFeed)
+      }
+      fetchPromotedItems();
+  }, [])
+  const totalItems = promotedItems.length
+  const promotedItem = totalItems > 0 ? promotedItems[Math.floor(Math.random() * totalItems)] : undefined
   return (
     <div className="detailed-view-ads">
-      <PromotedProject projectItem={sampleItemOne}/>    
+      <PromotedProject projectItem={promotedItem}/>    
     </div>
     
   )
