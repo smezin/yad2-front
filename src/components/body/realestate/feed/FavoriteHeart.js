@@ -1,4 +1,4 @@
-import { addItemToFavorites, getIsFavorite, setFavorites } from 'actions/user.actions'
+import { addItemToFavorites } from 'actions/user.actions'
 import { UserContext } from 'context/UserContext'
 import React, { useContext, useEffect, useState } from 'react'
 
@@ -17,14 +17,13 @@ const FavoriteHeart = (props) => {
     setFavItems(user.favoriteItems)
   },[user.favoriteItems, isFavorite])
 
-
   useEffect(() => {
     if (item && isFavorite !== prevIsFavorite) {
       addItemToFavorites(user.id, item._id, dispatch)
     } 
   },[isFavorite, prevIsFavorite, user.id, item, dispatch])
 
-  return (isFavorite || (item && favItems.includes(item._id))) ? 
+  return (isFavorite || (item && favItems && favItems.includes(item._id))) ? 
   (<span role="img" aria-label="orange-heart" className="symbol__heart-full" onClick={heartClicked}>&#129505;</span>) : 
   (<span className="symbol__heart" onClick={heartClicked}>&#9825;</span>)
 }

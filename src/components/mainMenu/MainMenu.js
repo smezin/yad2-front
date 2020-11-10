@@ -12,23 +12,22 @@ import { useHistory } from 'react-router-dom'
 const MainMenu = () => {
     const history = useHistory()
     const { dispatch } = useContext(UserContext)
-    const user = Cookies.get("User")
+    const user = Cookies.get("User") 
     const navItems = fetchFromResource('object', 'mainMenu', 'navItems')
     const navLinks = Object.keys(navItems).map( (navItem) => {
-            return new LinkedText(navItems[navItem]['path'], navItems[navItem]['name'], navItems[navItem]['localName'])
+        return new LinkedText(navItems[navItem]['path'], navItems[navItem]['name'], navItems[navItem]['localName'])
     }) 
-    
-    const onClick = () => {
+    const onLogoClick = () => {
         history.push("/realestate/forsale")
     }
     useEffect (()=> {
         user && dispatch(setAuth(JSON.parse(user)))
     },[user, dispatch])
-
+   
     return (
         <div className="main-menu">
             <div className="main-menu__right-segment">
-                <div className="main-menu__logo-container" onClick={onClick}>
+                <div className="main-menu__logo-container" onClick={onLogoClick}>
                     <div className="main-menu__logo">
                             <img src={yad2logo.imgSrc} alt={yad2logo.alt}/>         
                     </div>

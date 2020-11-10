@@ -54,6 +54,6 @@ export const getUserFeed = async (userId) => {
     response = await response.json();
     return response;
   } catch(e) {
-
+    console.log(e)
   }
 }

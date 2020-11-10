@@ -123,3 +123,21 @@ export const removeItemFromUser = async(userId, itemId, dispatch) => {
         console.log(e)
     }
 }
+export const getCurrentUser = async (username) => {
+    try {
+        const requestParams = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }
+        let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/user/get/${username}`, requestParams)
+        if (response.status !== 200) {
+            throw response.status
+        }
+        response = await response.json()
+        return response
+    } catch (e) {
+        console.log(e)
+    }
+}

@@ -38,7 +38,10 @@ export const userReducer = (state = userReducerCurrentState, action) => {
         ...state,
         id: action.response.id,
         email: action.response.email,
+        favoriteItems: action.response.favoriteItems,
+        items: action.response.items,
         mobile: action.response.mobile,
+        previousSearches: action.response.previousSearches,
         token: action.response.token,
         username: action.response.username,
       }
