@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie'
 
 export const setAuth = (response) => ({
     type: 'SET_AUTH',
@@ -92,7 +93,9 @@ export const addItemToFavorites = async (userId, itemId, dispatch) => {
             throw response.status
         }
         response = await response.json()
-        dispatch(updateUserContext(response))     
+        console.log('---------',response)
+        dispatch(updateUserContext(response))    
+        Cookies.set('User', response, {expires: 3}) 
     } catch (e) {
         console.log(e)
     }
@@ -114,6 +117,24 @@ export const removeItemFromUser = async(userId, itemId, dispatch) => {
         dispatch(updateUserContext(response))
     } catch (e) {
         console.log(e)
+    }
+}
+export const getIsFavorite = async (userId, itemId) => {
+    const requestParams = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }
+    }
+    try {   
+        let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/user/get-is-favorite`, requestParams)
+        if (response.status !== 200) {
+            throw response.status
+        }
+        response = await response.json()
+        return(response)
+    } catch (e) {
+
     }
 }
  
