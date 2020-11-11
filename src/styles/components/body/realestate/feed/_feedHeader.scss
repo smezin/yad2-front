@@ -1,0 +1,19 @@
+.feed-header {
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $std-size * 2;
+  margin-top: $std-size;
+  width: 95%;
+  .feed-header__title {
+    background-color: inherit;
+    font-size: $font-size-xl;
+    
+  }
+  .feed-header__num {
+    background-color: inherit;
+    color: $theme-text-lighter;
+    font-size: $font-size-xs;
+    margin: auto 0;
+  }
+}

@@ -100,7 +100,7 @@ export const addItemToFavorites = async (userId, itemId, dispatch) => {
         dispatch(updateUserContext(response))    
         Cookies.set('User', response, {expires: 3}) 
     } catch (e) {
-        console.log(e)
+        console.log(`add favorite to user failed: ${e}`)
     }
 }
 export const removeItemFromUser = async(userId, itemId, dispatch) => {

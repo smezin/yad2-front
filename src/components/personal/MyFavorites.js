@@ -7,15 +7,13 @@ const MyFavorites = () => {
   const [favoriteItemsArr, setFavoriteItemsArr] = useState([])
   const { user } = useContext(UserContext)
   const favoriteItemsIds = user.favoriteItems
-  console.log(favoriteItemsIds[0])
+  
   useEffect(() => {
-    let isSubscribed = true  //unsubscribe from promise to prevent memory leak/updating unmounted component
     const fetchUserItems = async () => {
       const itemsArr = await Promise.all(favoriteItemsIds.map( (itemId) => getItemById(itemId))) 
-      isSubscribed && setFavoriteItemsArr(itemsArr)
+      setFavoriteItemsArr(itemsArr)
     }
     fetchUserItems()
-    return () => isSubscribed = false
   }, [favoriteItemsIds]);
 
   return (

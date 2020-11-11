@@ -9,7 +9,7 @@ const PersonalMenu = (props) => {
     const menuCategories = fetchFromResource('object', 'personal', 'categories')
     const exitButtonText = fetchFromResource('string', 'personal', 'exit', 'localName') 
     const welcomeMessage = fetchFromResource('string', 'personal', 'welcomeMessage', 'localName')
-    const [category, setCategory] = useState('publish')
+    const [category, setCategory] = useState(props?.tab || 'publish')
     const { user, dispatch } = useContext(UserContext)
     
     const onMenuCategoryPick = (menuCategory) => {

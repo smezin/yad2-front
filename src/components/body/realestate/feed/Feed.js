@@ -7,6 +7,7 @@ import getSubPath from "utility/getSubPath";
 import { getCategoryFeed, setFeedItems } from "actions/feed.actions";
 import { FeedContext } from "context/FeedContext";
 import FeedSideAd from "./FeedSideAd";
+import FeedHeader from "./feedSortFilter/FeedHeader";
 
 const Feed = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const Feed = () => {
   return (
     <div className="feed">
       <div className="feed-content">
+        <FeedHeader category={category}/>
         {category === "forsale" && <PromotedProjectsBar />}
         <FeedSortFiltersRow />
         <FeedItems />

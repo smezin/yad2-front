@@ -1,0 +1,21 @@
+.personal-zone-button__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 $std-size;
+  &:hover {
+    background-color: $theme-selected;
+  }
+  .personal-zone-button {
+    background-color: $theme-selected;
+    border-radius: 50%;
+    height: $std-size * 2.4;
+    width: $std-size * 2.4;
+    img {
+      max-height: $std-size * 1.6;
+      mix-blend-mode: multiply;
+      margin-top: $std-size * 0.4;
+      margin-left: $std-size * 0.4;
+    }
+  }
+}

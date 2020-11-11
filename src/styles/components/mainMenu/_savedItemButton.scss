@@ -1,0 +1,11 @@
+.saved_items-button__container {
+  @extend .personal-zone-button__container;
+  text-decoration: none;
+  .saved-items-button {
+    background-color: inherit;
+    font-size: $font-size-xl;
+    .symbol__heart {
+      background-color: inherit;
+    }
+  }
+}

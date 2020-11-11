@@ -572,6 +572,10 @@
         "updatedToday": {"localName": "עודכן היום"},
         "updatedAt": {"localName": "עודכן ב"}
     },
+    "feedHeader": {
+        "showingItemsPrefix": {"localName": "מציג "},
+        "showingItemsPostfix": {"localName": " מודעות"}
+    },
     "signIn": {
         "localName": "התחברות",
         "userName": {"localName": "שם משתמש", "localPlaceholder": "שם משתמש"},

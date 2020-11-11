@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import AddItemButton from './AddItemButton'
+import SavedItemsButton from './SavedItemsButton'
 import NavItem from 'components/mainMenu/NavItem'
 import fetchFromResource from 'utility/fetchFromResource'
 import LinkedText from 'entities/LinkedText'
@@ -8,6 +9,8 @@ import { UserContext } from 'context/UserContext'
 import { setAuth } from 'actions/user.actions'
 import { yad2logo } from 'images'
 import { useHistory } from 'react-router-dom'
+import PersonalZoneButton from './PersonalZoneButton'
+import NotificationButton from './NotificationButton'
 
 const MainMenu = () => {
     const history = useHistory()
@@ -41,7 +44,10 @@ const MainMenu = () => {
                 </div>
             </div>
             <div className="main-menu__left-segment">
-                <AddItemButton />      
+                <AddItemButton />     
+                <PersonalZoneButton /> 
+                <SavedItemsButton />
+                <NotificationButton />
             </div>                  
         </div>
 

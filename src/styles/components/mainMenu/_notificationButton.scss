@@ -1,0 +1,11 @@
+.notification-button__container {
+  @extend .saved_items-button__container;
+  .notification-button {
+    @extend .saved-items-button;
+    transform: rotate(-20deg);
+    .symbol__bell {
+      background-color: inherit;
+      font-weight: 800;      
+    }
+  }
+}

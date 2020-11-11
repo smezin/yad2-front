@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PublishNewItem from './PublishNewItem';
 import PersonalMenu from './PersonalMenu';
 import MyItems from './MyItems';
 import MyFavorites from './MyFavorites';
 
-const PersonalContent = () => {
-  const [tab, setTab] = useState('publish');
+const PersonalContent = (props) => {
+	const [tab, setTab] = useState(props?.tab || 'publish');
+	console.log(tab)
   const selectContent = () => {
     switch (tab) {
       case 'publish':
@@ -32,7 +33,7 @@ const PersonalContent = () => {
   };
   return (
     <div className='personal-content'>
-      <PersonalMenu setTab={setTab}/>
+      <PersonalMenu tab={tab} setTab={setTab}/>
       {selectContent()}
     </div>
   );
