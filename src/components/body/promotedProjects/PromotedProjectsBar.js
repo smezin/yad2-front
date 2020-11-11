@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PromotedProject from 'components/body/promotedProjects/PromotedProject'
-import { getCategoryFeed } from 'actions/feed.actions';
+import { getCategoryFeed } from 'requests/feed.requests'
+
 
 const PromotedProjectsBar = () => {
     const [promotedItems, setPromotedItems] = useState([])

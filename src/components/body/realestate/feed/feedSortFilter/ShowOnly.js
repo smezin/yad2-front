@@ -1,7 +1,5 @@
 import { setImageOnly, setPriceOnly } from 'actions/feed.actions'
-import { toggleShowOnlyItemsWithImage, toggleShowOnlyItemsWithPrice } from 'actions/filters.actions'
 import { FeedContext } from 'context/FeedContext'
-import { FiltersContext } from 'context/FiltersContext'
 import React, { useContext, useState } from 'react'
 import { NIS } from 'resources/specialChars'
 import fetchFromResource from 'utility/fetchFromResource'
@@ -12,17 +10,13 @@ const ShowOnly = () => {
     const withPriceLocalName = fetchFromResource('string', 'feedSortFilter', 'showOnly', 'withPrice', 'localName')
     const [withImageOnly, setWithImageOnly] = useState(false)
     const [withPriceOnly, setWithPriceOnly] = useState(false)
-    const { dispatch: filtersDispatch } = useContext(FiltersContext)
     const { dispatch } = useContext(FeedContext)
 
-
     const toggleWithPrice = () => {
-        filtersDispatch(toggleShowOnlyItemsWithPrice(!withPriceOnly))
         dispatch(setPriceOnly(!withPriceOnly))
         setWithPriceOnly(!withPriceOnly)
     }
     const toggleWithImage = () => {
-        filtersDispatch(toggleShowOnlyItemsWithImage(!withImageOnly))
         dispatch(setImageOnly(!withImageOnly))
         setWithImageOnly(!withImageOnly)
     }

@@ -1,4 +1,4 @@
-import { getUserFeed } from 'actions/feed.actions';
+import { getUserFeed } from 'requests/feed.requests';
 import FeedItem from 'components/body/realestate/feed/FeedItem';
 import { UserContext } from 'context/UserContext';
 import React, { useContext, useEffect, useState } from 'react'

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import fetchFromResource from 'utility/fetchFromResource'
-import { signAllOut } from 'actions/user.actions'
+import { signAllOut } from 'requests/user.requests'
 import { UserContext } from 'context/UserContext'
 
 const PersonalMenu = (props) => {

@@ -4,10 +4,11 @@ import FeedSortFiltersRow from "components/body/realestate/feed/feedSortFilter/F
 import FeedItems from "./FeedItems";
 import { useLocation } from "react-router-dom";
 import getSubPath from "utility/getSubPath";
-import { getCategoryFeed, setFeedItems } from "actions/feed.actions";
+import { getCategoryFeed } from "requests/feed.requests";
 import { FeedContext } from "context/FeedContext";
 import FeedSideAd from "./FeedSideAd";
 import FeedHeader from "./feedSortFilter/FeedHeader";
+import { setFeedItems } from "actions/feed.actions";
 
 const Feed = () => {
   const location = useLocation();

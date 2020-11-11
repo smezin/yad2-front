@@ -3,7 +3,7 @@ import validator from 'validator'
 import { signInImage } from 'images'
 import fetchFromResource from 'utility/fetchFromResource'
 import SideAd from 'components/body/common/SideAd'
-import { signIn, signUp } from 'actions/user.actions'
+import { signIn, signUp } from 'requests/user.requests'
 import { UserContext } from 'context/UserContext'
 
 const SignInSignOnForm = () => {

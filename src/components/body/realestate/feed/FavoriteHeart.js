@@ -1,4 +1,4 @@
-import { addItemToFavorites } from 'actions/user.actions'
+import { addItemToFavorites } from 'requests/user.requests'
 import { UserContext } from 'context/UserContext'
 import React, { useContext, useEffect, useState } from 'react'
 

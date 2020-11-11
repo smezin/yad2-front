@@ -1,4 +1,4 @@
-import { getItemById } from 'actions/item.actions';
+import { getItemById } from 'requests/item.requests';
 import FeedItem from 'components/body/realestate/feed/FeedItem';
 import { UserContext } from 'context/UserContext';
 import React, { useContext, useEffect, useState } from 'react'

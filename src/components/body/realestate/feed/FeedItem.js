@@ -4,7 +4,7 @@ import fetchFromResource from 'utility/fetchFromResource'
 import { addSeperator } from 'utility/numbersDisplay'
 import FavoriteHeart from './FavoriteHeart'
 import { defaultImage } from 'images'
-import { deleteItem } from 'actions/item.actions'
+import { deleteItem } from 'requests/item.requests'
 import DeatailedView from './DetailedView'
 
 const FeedItem = (props) => {

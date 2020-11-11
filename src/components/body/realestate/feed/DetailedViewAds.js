@@ -1,4 +1,4 @@
-import { getCategoryFeed } from 'actions/feed.actions'
+import { getCategoryFeed } from 'requests/feed.requests'
 import PromotedProject from 'components/body/promotedProjects/PromotedProject'
 import React, { useEffect, useState } from 'react'
 

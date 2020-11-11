@@ -1,5 +1,3 @@
-import { setSortBy } from 'actions/filters.actions'
-import { FiltersContext } from 'context/FiltersContext'
 import React, { useState, useContext } from 'react'
 import { circle, circledBullet, downArrow, upArrow } from 'resources/specialChars'
 import fetchFromResource from 'utility/fetchFromResource'
@@ -7,13 +5,13 @@ import onClickOutside from 'react-onclickoutside'
 import { FeedContext } from 'context/FeedContext'
 import { setOrder } from 'actions/feed.actions'
 
+
 function SortBy ()
  {
     const headerLocalName = fetchFromResource('string', 'feedSortFilter', 'sortBy', 'headerLocalName')
     const optionsObj = fetchFromResource('object', 'feedSortFilter', 'sortBy', 'options')
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [pickedOption, setPickedOption] = useState('date')
-    const { dispatch: filtersDispatch } = useContext(FiltersContext)
     const { dispatch } = useContext(FeedContext)
 
     const onClick = () => {
@@ -21,7 +19,6 @@ function SortBy ()
     }
     const onOptionPick = (option) => {
         setPickedOption(option)
-        filtersDispatch(setSortBy(option))
         dispatch(setOrder(option))
     }
     SortBy.handleClickOutside = () => setIsDropdownOpen(false)
