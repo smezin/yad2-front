@@ -565,6 +565,7 @@
         "itemDescription": {"localName": "תיאור הנכס"},
         "notAvailable": {"localName": "לא צוין"},
         "price": {"localName": "מחיר"},
+        "noPrice": {"localName": "לא צוין מחיר"},
         "rooms": {"localName": "חדרים"},
         "showPhoneNumber": {"localName": "הצגת מספר טלפון"},
         "size": {"localName": "מ\"ר"},

@@ -12,7 +12,6 @@ const PersonalMenu = (props) => {
     const [category, setCategory] = useState('publish')
     const { user, dispatch } = useContext(UserContext)
     
-    
     const onMenuCategoryPick = (menuCategory) => {
         setCategory(menuCategory)
         setTab(menuCategory)
@@ -20,7 +19,6 @@ const PersonalMenu = (props) => {
     const onExit = () => {
         signAllOut(dispatch)        
     }
-
     return (
         <div className="personal-content__top">
             <div className="personal-content__header">

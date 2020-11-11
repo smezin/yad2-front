@@ -17,6 +17,7 @@ const FeedItem = (props) => {
     const floorLoaclName = fetchFromResource('string', 'feedItem', 'floor', 'localName')
     const sizeLocalName = fetchFromResource('string', 'feedItem', 'size', 'localName')
     const editLocalName = fetchFromResource('string', 'personal', 'delete', 'localName')
+    const noPriceLocalName = fetchFromResource('string', 'feedItem', 'noPrice', 'localName')
     const propertyType = item.propertyType ? item.propertyType : ''
     const street = location && location.split(',')[0] 
     const city = location && (location.split(',')[1] || '')
@@ -53,7 +54,12 @@ const FeedItem = (props) => {
                     <span className="feed-item__size-title">{sizeLocalName}</span>
                 </div>
                 <div className="feed-item__price" onClick={toggleDetails}>
-                    <span className="feed-item__price-number">{NIS}{addSeperator(price)}</span>
+                {
+                    price ?
+                    <span className="feed-item__price-number">{NIS}{addSeperator(price)}</span> :
+                    <span className="feed-item__price-number">{noPriceLocalName}</span>
+                }
+                   
                 </div>
                 {   
                     editable &&

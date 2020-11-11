@@ -91,6 +91,9 @@
         padding-left: $std-size;
         padding-top: $std-size;
         text-align: left;
+        span {
+          @extend .summary__left__price;
+        }
         .symbol__nis{
           background-color: inherit;
           padding-right: $std-size * 0.2;

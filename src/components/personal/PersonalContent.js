@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PublishNewItem from './PublishNewItem';
 import PersonalMenu from './PersonalMenu';
 import MyItems from './MyItems';
+import MyFavorites from './MyFavorites';
 
 const PersonalContent = () => {
   const [tab, setTab] = useState('publish');
@@ -16,7 +17,7 @@ const PersonalContent = () => {
 			case 'favorites':
 				return (
 					<React.Fragment>
-						
+						<MyFavorites />
 					</React.Fragment>
 				)
 			case 'myItems':

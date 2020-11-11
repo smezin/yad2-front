@@ -21,6 +21,7 @@ const DetailedViewSummary = (props) => {
   const updatedTodayLocalName = fetchFromResource('string', 'feedItem', 'updatedToday', 'localName')
   const updatedAtLocalName = fetchFromResource('string', 'feedItem', 'updatedAt', 'localName')
   const showPhoneNumberLocalName = fetchFromResource('string', 'feedItem', 'showPhoneNumber', 'localName')
+  const noPriceLocalName = fetchFromResource('string', 'feedItem', 'noPrice', 'localName')
   const intlDate = new Intl.DateTimeFormat('he-IL', {dateStyle: 'long'}).format(new Date(createdAt)) 
   const isToday = ((new Date()-new Date(createdAt))/(1000 * 60 * 60 * 24)) < 1
   const showPhoneNumber = () => {
@@ -57,7 +58,12 @@ const DetailedViewSummary = (props) => {
       </div>
       <div className="summary__left">
         <div className="summary__left__price"  onClick={toggleDetails}>
-          {NIS}{addSeperator(price)}
+        {
+          price ?
+          <span>{NIS}{addSeperator(price)}</span> :
+          <span>{noPriceLocalName}</span>
+        }
+          
         </div>
         <div className="updated-at"  onClick={toggleDetails}>
           {isToday ? updatedTodayLocalName : updatedAtLocalName+intlDate}

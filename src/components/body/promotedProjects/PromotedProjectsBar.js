@@ -11,10 +11,15 @@ const PromotedProjectsBar = () => {
         }
         fetchPromotedItems();
     }, [])
-    const totalItems = promotedItems.length
-    const promotedItem1 = totalItems > 0 ? promotedItems[Math.floor(Math.random() * totalItems)] : undefined
-    const promotedItem2 = totalItems > 0 ? promotedItems[Math.floor(Math.random() * totalItems)] : undefined
-    const promotedItem3 = totalItems > 0 ? promotedItems[Math.floor(Math.random() * totalItems)] : undefined
+    let mutableItemsList = promotedItems.map((item) => item)
+    const promotedItem1 = mutableItemsList.length > 0 ? 
+    mutableItemsList[Math.floor(Math.random() * mutableItemsList.length)] : undefined
+    mutableItemsList = mutableItemsList.filter((item) => item._id.localeCompare(promotedItem1._id))
+    const promotedItem2 = mutableItemsList.length > 0 ? 
+    mutableItemsList[Math.floor(Math.random() * mutableItemsList.length)] : undefined
+    mutableItemsList = mutableItemsList.filter((item) => item._id.localeCompare(promotedItem2._id))
+    const promotedItem3 = mutableItemsList.length > 0 ? 
+    mutableItemsList[Math.floor(Math.random() * mutableItemsList.length)] : undefined
     return ( 
         <div className="promoted-projects-bar">
             <PromotedProject item={promotedItem1} />

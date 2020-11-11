@@ -125,7 +125,24 @@ export const publishItem = async (item, ownerId, ownerMobile) => {
     console.log(e)
   }
 }
-
+export const getItemById = async (itemId) => {
+  const requestParams = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  }
+  try {
+    let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/getitem/${itemId}`, requestParams);
+    if (response.status !== 200) {
+      throw response.status;
+  }
+  response = await response.json();
+  return response;
+  } catch(e) {
+    console.log(e)
+  }
+}
 export const addImageToItem = async (itemId, image) => {
   const imgBody = new FormData()
   imgBody.append('image', image)  
