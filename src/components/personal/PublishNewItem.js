@@ -28,8 +28,13 @@ const PublishNewItem = () => {
     const publishItemButton = async () => {      
         const itemToPublish = cleanItem(item)
         if (isMissingFields(itemToPublish)) {
-            const itemId = await publishItem(itemToPublish, user.id, user.mobile)        
-            await updateUser(user, {items: [...user.items, itemId]}, userDispatch) 
+            const itemId = await publishItem(itemToPublish, user.id, user.mobile)
+            if (user.items.length > 0) {
+                await updateUser(user, {items: [...user.items, itemId]}, userDispatch) 
+            } else {
+                await updateUser(user, {items: [itemId]}, userDispatch) 
+            }     
+            
             if (item.properties && item.properties.images) {
                 item.properties.images.forEach((image) => addImageToItem(itemId, image))
             }            

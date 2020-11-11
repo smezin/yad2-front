@@ -24,10 +24,12 @@ const FeedItems = () => {
     feed.sort.order === 'date' && feedArr.sort(byDate)
     feed.sort.order === 'priceLowToHigh' && feedArr.sort(byPriceLowToHigh)
     feed.sort.order === 'priceHighToLow' && feedArr.sort(byPriceHighToLow)
+    let filteredFeed = feed.sort.onlyWithImage ? feedArr.filter((item) => item.imageUrls.length > 0) : feedArr
+    filteredFeed = feed.sort.onlyWithPrice ? filteredFeed.filter((item) => typeof(item.price) === 'number' ) : filteredFeed
     return (
         <div className="feed-items">
             {
-                feedArr.map((item)=> (
+                filteredFeed.map((item)=> (
                     <FeedItem item={item} key={item._id}/>
                 ))
             }

@@ -1,3 +1,4 @@
+import { setImageOnly, setPriceOnly } from 'actions/feed.actions'
 import { toggleShowOnlyItemsWithImage, toggleShowOnlyItemsWithPrice } from 'actions/filters.actions'
 import { FeedContext } from 'context/FeedContext'
 import { FiltersContext } from 'context/FiltersContext'
@@ -17,10 +18,12 @@ const ShowOnly = () => {
 
     const toggleWithPrice = () => {
         filtersDispatch(toggleShowOnlyItemsWithPrice(!withPriceOnly))
+        dispatch(setPriceOnly(!withPriceOnly))
         setWithPriceOnly(!withPriceOnly)
     }
     const toggleWithImage = () => {
         filtersDispatch(toggleShowOnlyItemsWithImage(!withImageOnly))
+        dispatch(setImageOnly(!withImageOnly))
         setWithImageOnly(!withImageOnly)
     }
 
