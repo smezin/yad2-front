@@ -106,7 +106,6 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
                 dealTypes: action.dealTypes
             }
         }
-
     case 'SET_FILTERS':
         return action.filters
 

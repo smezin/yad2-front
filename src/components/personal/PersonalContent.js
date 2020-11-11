@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PublishNewItem from './PublishNewItem';
 import PersonalMenu from './PersonalMenu';
 import MyItems from './MyItems';
 import MyFavorites from './MyFavorites';
 
 const PersonalContent = (props) => {
-	const [tab, setTab] = useState(props?.tab || 'publish');
-	console.log(tab)
+	const { tab } = props
+	const [menuTab, setMenuTab] = useState(tab || 'publish');
   const selectContent = () => {
-    switch (tab) {
+    switch (menuTab) {
       case 'publish':
 				return (
 					<React.Fragment>
@@ -33,7 +33,7 @@ const PersonalContent = (props) => {
   };
   return (
     <div className='personal-content'>
-      <PersonalMenu tab={tab} setTab={setTab}/>
+      <PersonalMenu tab={tab} setTab={setMenuTab}/>
       {selectContent()}
     </div>
   );

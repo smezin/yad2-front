@@ -9,7 +9,7 @@ import DeatailedView from './DetailedView'
 
 const FeedItem = (props) => {
     const [isDetailedView, setIsDetailedView] = useState(false)
-    const { item, editable = false} = props
+    const { item, editable = false, favHeart = true} = props
     if (!item) { return null }
     const { location, rooms, floor, size, price} = item   
     const imgPath = (item.imageUrls && item.imageUrls.length > 0) ? item.imageUrls[0] : defaultImage.imgSrc
@@ -35,7 +35,10 @@ const FeedItem = (props) => {
             <div className="feed-item">
                 <div className="feed-item__image">
                     <img src={imgPath} alt="pic" onClick={delItem}/>
-                    <FavoriteHeart item={item} />
+                    {
+                        favHeart &&
+                        <FavoriteHeart item={item} />
+                    }
                 </div>
                 <div className="feed-item__location" onClick={toggleDetails}>
                     <span className="feed-item__location__street">{street}</span> 

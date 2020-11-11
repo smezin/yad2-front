@@ -4,12 +4,12 @@ import { signAllOut } from 'actions/user.actions'
 import { UserContext } from 'context/UserContext'
 
 const PersonalMenu = (props) => {
-    const { setTab } = props
+    const { tab, setTab } = props
     const headerLocalName = fetchFromResource('string', 'personal', 'localName')
     const menuCategories = fetchFromResource('object', 'personal', 'categories')
     const exitButtonText = fetchFromResource('string', 'personal', 'exit', 'localName') 
     const welcomeMessage = fetchFromResource('string', 'personal', 'welcomeMessage', 'localName')
-    const [category, setCategory] = useState(props?.tab || 'publish')
+    const [category, setCategory] = useState(tab || 'publish')
     const { user, dispatch } = useContext(UserContext)
     
     const onMenuCategoryPick = (menuCategory) => {

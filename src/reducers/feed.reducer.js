@@ -4,7 +4,12 @@ export const feedReducerInitialState = {
     totalItems: 0,
     itemsPerPage: 20,
     isLoading: true,
-    itemsFeed: []
+    itemsFeed: [],
+    sort: {
+        order: 'date',
+        onlyWithImage: false,
+        onlyWithPrice: false
+    }
 }
 
 export const feedReducer = (state = feedReducerInitialState, action) => {
@@ -17,6 +22,31 @@ export const feedReducer = (state = feedReducerInitialState, action) => {
                 totalItems: feedLength,
                 totalPages: Math.ceil(feedLength / state.itemsPerPage)
             }
+        case 'SET_ORDER':
+            return {
+                ...state,
+                sort: {
+                    ...state.sort,
+                    order: action.order
+                }
+            }
+        case 'SET_IMAGE_ONLY':
+            return {
+                ...state,
+                sort: {
+                    ...state.sort,
+                    onlyWithImage: action.onlyWithImage
+                }
+        }
+        case 'SET_PRICE_ONLY':
+            return {
+                ...state,
+                sort: {
+                    ...state.sort,
+                    onlyWithPrice: action.onlyWithPrice
+                }
+            }
+                    
         default:
             return state
     }
