@@ -1,5 +1,6 @@
 .ribbon {
     background-color: $theme-main-color;
+    border-color: $theme-main-color;
     border-radius: 0 2px 2px 0;
     bottom: $std-size * 2;
     color: white;
@@ -13,13 +14,12 @@
     position: relative; 
    }
    .ribbon:before {
-    content: "";
-    position: absolute;
-    display: block;
-    border: $std-size*0.6 solid $theme-main-color;
-   }
-   .ribbon:before {
-    left: -2em;
-    border-right-width: $std-size;
+    border: $std-size*0.6 solid;
+    border-color: inherit;
     border-left-color: transparent;
+    border-right-width: $std-size;
+    content: "";
+    display: block;
+    left: -2em;   
+    position: absolute;
    }
