@@ -115,9 +115,9 @@ export const setText = (text) => ({
     text
 })
 //SET TYPE
-export const setPropertyTypes = (propertyType) => ({
+export const setPropertyTypes = (propertyTypes) => ({
     type: 'SET_PROPERTY_TYPES',
-    propertyType
+    propertyTypes
 })
 
 //SET SORT BY

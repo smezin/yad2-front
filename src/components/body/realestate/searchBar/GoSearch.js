@@ -7,27 +7,27 @@ import { getFilteredFeed } from 'requests/feed.requests';
 import { FeedContext } from 'context/FeedContext';
 import { setFeedItems } from 'actions/feed.actions';
 
-const GoSearch = () => {
+const GoSearch = (props) => {
+    const { searchType } = props
     const { filters } = useContext(FiltersContext)
     const { dispatch } = useContext(FeedContext)
     const [feedFilters, setFeedFilters] = useState({})
     const searchLocalName = fetchFromResource('string', 'realestateSearchBar', 'goSearch', 'localName')
     const searchClicked = () => {
-        setFeedFilters(cleanFilters(filters)['search'])
-        console.log(feedFilters)
+        setFeedFilters(cleanFilters(filters)['search'])    
     }
     useEffect(() => {
+        console.log(feedFilters)
         const fetchItemsFeed = async () => {
           const feedItems = (await getFilteredFeed(feedFilters)) || [];
           console.log('-->',feedItems)
           dispatch(setFeedItems(feedItems));
         };
         fetchItemsFeed();
-        
       }, [feedFilters, dispatch]);
     
     return (
-        <div className="go-search" onClick={searchClicked}>
+        <div className={`go-search${'__'+searchType}`} onClick={searchClicked}>
             {magnifyingGlass}  <span className="go-search__header">{searchLocalName}</span> 
         </div>
     )

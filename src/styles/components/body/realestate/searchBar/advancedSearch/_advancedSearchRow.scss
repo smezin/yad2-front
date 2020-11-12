@@ -2,8 +2,32 @@
     border-bottom: 1px solid $theme-dropdown-border;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: stretch;
+    justify-content: space-between;
     margin: 0 auto;
     padding: $std-size * 0.5;
     width: 90%;
+    .go-search__advanced {
+        @extend .go-search__simple;
+        margin: 0 auto;
+        max-width: $std-size * 6;
+    }
+    .clear-advanced-filters-button {
+        color: $theme-text-darker;
+        cursor: pointer;
+        font-size: $font-size-xs;
+        margin: auto 0;
+    }
 }
+
+/*
+.advanced-search-button {
+        background: $theme-main-color;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+        font-size: $font-size-xs;
+        font-weight: 500;
+        margin: 0 auto;
+        padding: $std-size * 0.8 $std-size * 1.2;
+    }
+*/

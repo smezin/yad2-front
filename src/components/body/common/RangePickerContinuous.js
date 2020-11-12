@@ -3,13 +3,18 @@ import { FiltersContext } from 'context/FiltersContext'
 import { incAdvancedFilters, decAdvancedFilters } from 'actions/filters.actions'
 import isNumeric from 'utility/isNumeric'
 import { addSeperator, removeSeperator} from 'utility/numbersDisplay'
+import { veryBigNumber } from 'utility/veryBigNumber'
 
 const RangePickerContinuous = (props) => {
     const { rangeSpecs } = props
     const { headerLocalName, minPlaceHolder, maxPlaceHolder, setMin, setMax, minFilter, maxFilter, updateAdvancedFiltersCount } = rangeSpecs
     const { dispatch, filters } = useContext(FiltersContext)
-    const [minDisplay, setMinDisplay] = useState(addSeperator(filters.search[minFilter]))
-    const [maxDisplay, setMaxDisplay] = useState(addSeperator(filters.search[maxFilter]))
+    const [minDisplay, setMinDisplay] = useState(filters.search[minFilter] !== 0 
+        ? addSeperator(filters.search[minFilter]) 
+        : undefined)
+    const [maxDisplay, setMaxDisplay] = useState(filters.search[maxFilter] !== veryBigNumber 
+        ? addSeperator(filters.search[maxFilter])
+        : undefined)
 
     const handleChange = (e, set) => {
         let isNumber = undefined
@@ -58,18 +63,17 @@ const RangePickerContinuous = (props) => {
                 break
         }
     }
-
     useEffect( () => {        
         isNumeric(removeSeperator(minDisplay)) ? dispatch(setMin(parseFloat(removeSeperator(minDisplay)))) 
-        : dispatch(setMin(undefined))
+        : dispatch(setMin(0))
     },[minDisplay, setMin, dispatch])
 
     useEffect( () => {
         const maxDisplayWithLowerLimit = Math.max(parseFloat(removeSeperator(minDisplay)) || 0, 
-                                                parseFloat(removeSeperator(maxDisplay)) || 0)
+                                                parseFloat(removeSeperator(maxDisplay)) || veryBigNumber)
         isNumeric(removeSeperator(maxDisplayWithLowerLimit))  
         ? dispatch(setMax(parseFloat(removeSeperator(maxDisplayWithLowerLimit)))) 
-        : dispatch(setMax(undefined))
+        : dispatch(setMax(Infinity))
         
     },[maxDisplay, minDisplay, setMax, dispatch])
 

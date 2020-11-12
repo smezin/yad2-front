@@ -22,6 +22,7 @@ export const filtersReducerInitialState = {
     minRooms: undefined,
     minSize: undefined,      
     properties: [],
+    propertyTypes: undefined,
     restroom: undefined,
     roommateGender: [],
     rooms: undefined,
@@ -40,13 +41,14 @@ const advancedFiltersInitialState = {
     maxFloor: undefined,      
     maxSize: undefined,    
     properties: [],
+    propertyTypes: undefined,
     restroom: undefined,
     roommateGender: [],
     rooms: undefined,
     securityRoom: undefined,
     split: undefined,
     storage: undefined,
-    text: undefined,
+    text: undefined,    
 }
 export const filtersReducer = (state = filtersReducerInitialState, action) => {
   switch (action.type) {
@@ -209,7 +211,7 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
             ...state,
             search: {
                 ...state.search,
-                types: action.propertyType
+                propertyTypes: action.propertyTypes
             }
         }
     case 'SET_PROPERTIES':

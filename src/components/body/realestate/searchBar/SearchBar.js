@@ -97,7 +97,7 @@ const SearchBar = () => {
                 <LocationSearch category={category}/>  
                 {renderSearchBarByCategory()}
                 <AdvancedSearch category={category} parentRect={parentRect}/>
-                <GoSearch />
+                <GoSearch searchType="simple" />
             </div>            
         </div>
     )

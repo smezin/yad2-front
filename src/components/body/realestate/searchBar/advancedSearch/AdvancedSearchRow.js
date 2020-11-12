@@ -1,5 +1,4 @@
 import React from 'react'
-import AdvancedSearchButton from './AdvancedSearchButton'
 import AvailableImmediately from './AvailableImmediately'
 import Balcony from './Balcony'
 import ClearAdvancedFilters from './ClearAdvancedFilters'
@@ -13,6 +12,7 @@ import Text from './Text'
 import SizePicker from './Size'
 import Split from './Split'
 import Storage from './Storage'
+import GoSearch from '../GoSearch'
 
 const AdvancedSearchRow = (props) => {
     const { category } = props
@@ -90,7 +90,7 @@ const AdvancedSearchRow = (props) => {
         <div>
            {renderAdvancedSearchRowsByCategory()}
            <div className="advanced-search-row">
-              <AdvancedSearchButton />
+              <GoSearch searchType="advanced" />
               <ClearAdvancedFilters />
            </div>
            

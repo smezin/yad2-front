@@ -60,7 +60,7 @@ function AdvancedSearch (props)
                 isDropsownOpen && 
                 <div className="advanced-search__container" style={dropdownStyle}>
                     <ProperiesCheckboxMenu category={category} />
-                    <AdvancedSearchRow category={category} />
+                    <AdvancedSearchRow category={category} setIsDropdownOpen={setIsDropdownOpen} />
                 </div>
             }
         </div>
