@@ -4,7 +4,7 @@ import FeedItem from './FeedItem'
 
 const FeedItems = () => {
     const { feed } = useContext(FeedContext)
-    const feedArr = feed.itemsFeed
+    const feedArr = feed.itemsFeed || []
     const byDate = (a,b)=>a.updatedAt > b.updatedAt ? -1 : 1
     const byPriceLowToHigh = (a,b) => {
         if (typeof(a.price) === 'number' && typeof(b.price) === 'number') {

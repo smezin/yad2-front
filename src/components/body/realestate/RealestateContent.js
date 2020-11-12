@@ -9,9 +9,9 @@ const RealestateContent = () => {
     return (
         <div className="realestate-content">
             <FiltersContextProvider>
-                <SearchBar />            
-                <TopBoxesRow />
                 <FeedContextProvider>
+                    <SearchBar />            
+                    <TopBoxesRow /> 
                     <Feed />
                 </FeedContextProvider>               
             </FiltersContextProvider>

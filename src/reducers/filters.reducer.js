@@ -4,42 +4,41 @@ export const filtersReducerInitialState = {
   locationCurrentText: '',
   numOfAdvancedFilters: 0,
   search: {
-      balcony: undefined,
-      category: 'forsale',
-      dealTypes: [],
-      location: undefined,
-      maxFloor: undefined,
-      maxPrice: undefined,
-      maxRoommates: undefined,
-      maxRooms: undefined,
-      maxSize: undefined,
-      minEntryDate: undefined,
-      minFloor: undefined,
-      minPrice: undefined,
-      minRoommates: undefined,
-      minRooms: undefined,
-      minSize: undefined,      
-      availableImmediately: false,
-      properties: [],
-      restroom: undefined,
-      roommateGender: [],
-      rooms: undefined,
-      securityRoom: undefined,
-      split: undefined,
-      storage: undefined,
-      showOnlyItemsWithImage: false,
-      showOnlyItemsWithPrice: false,
-      text: undefined,
+    availableImmediately: false,
+    balcony: undefined,
+    category: 'forsale',
+    dealTypes: [],
+    location: undefined,
+    maxFloor: undefined,
+    maxPrice: undefined,
+    maxRoommates: undefined,
+    maxRooms: undefined,
+    maxSize: undefined,
+    masterCategory: 'realestate',
+    minEntryDate: undefined,
+    minFloor: undefined,
+    minPrice: undefined,
+    minRoommates: undefined,
+    minRooms: undefined,
+    minSize: undefined,      
+    properties: [],
+    restroom: undefined,
+    roommateGender: [],
+    rooms: undefined,
+    securityRoom: undefined,
+    split: undefined,
+    storage: undefined,
+    text: undefined,
   },
 }
 const advancedFiltersInitialState = {
+    availableImmediately: false,
     balcony: undefined,
     minEntryDate: undefined,
     minFloor: undefined,       
     minSize: undefined,      
     maxFloor: undefined,      
-    maxSize: undefined,
-    availableImmediately: false,
+    maxSize: undefined,    
     properties: [],
     restroom: undefined,
     roommateGender: [],
@@ -275,22 +274,6 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
                 securityRoom: action.securityRoom
             }
         }
-    case 'TOGGLE_SHOW_ONLY_ITEMS_WITH_IMAGE':
-        return {
-            ...state,
-            search: {
-                ...state.search,
-                showOnlyItemsWithImage: action.showOnlyItemsWithImage
-            }
-        }
-    case 'TOGGLE_SHOW_ONLY_ITEMS_WITH_PRICE':
-      return {
-          ...state,
-          search: {
-              ...state.search,
-              showOnlyItemsWithPrice: action.showOnlyItemsWithPrice
-          }
-      }
       case 'TOGGLE_SPLIT':
           return {
               ...state,
@@ -335,20 +318,6 @@ export const filtersReducer = (state = filtersReducerInitialState, action) => {
                     [...state.search.properties, action.property]
             }
         }
-    // case 'TOGGLE_DEAL_TYPE':
-    //     let newDealTypesArr = [...state.search.dealTypes]
-    //     if (state.search.dealTypes.includes(action.dealType)) {
-    //         newDealTypesArr = newDealTypesArr.filter((dealType) => dealType !== action.dealType)
-    //     } else {
-    //         newDealTypesArr.push(action.dealType)
-    //     }
-    //     return {
-    //         ...state,
-    //         search: {
-    //             ...state.search,
-    //             dealTypes: newDealTypesArr
-    //         }
-    //     }
     default:
         return state
     }

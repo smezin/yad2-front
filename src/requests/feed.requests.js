@@ -1,12 +1,12 @@
+const defaultGetRequestParams = {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  }
+}
 export const getFeed = async () => {
   try {
-    const requestParams = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    };
-    let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/item/getfeed`, requestParams);
+    let response = await fetch( `${process.env.REACT_APP_DEV_SERVER_IP}/api/feed/getfeed`, defaultGetRequestParams);
     if (response.status !== 200) {
       throw response.status;
     }
@@ -18,13 +18,7 @@ export const getFeed = async () => {
 }
 export const getCategoryFeed = async (category) => {
   try {
-    const requestParams = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    }
-    let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/getfeed/${category}`, requestParams);
+    let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/feed/getfeed/${category}`, defaultGetRequestParams);
     if (response.status !== 200) {
       throw response.status;
     }
@@ -36,13 +30,7 @@ export const getCategoryFeed = async (category) => {
 }
 export const getUserFeed = async (userId) => {
   try {
-    const requestParams = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    }
-    let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/item/getUserfeed/${userId}`, requestParams);
+    let response = await fetch(`${process.env.REACT_APP_DEV_SERVER_IP}/api/feed/getUserfeed/${userId}`, defaultGetRequestParams);
     if (response.status !== 200) {
       throw response.status;
     }
@@ -51,4 +39,24 @@ export const getUserFeed = async (userId) => {
   } catch(e) {
     console.log(e)
   }
+}
+export const getFilteredFeed = async (filters) => {
+  const requestParams = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    body: JSON.stringify(filters) 
+  }
+  try {
+    let response = await fetch (`${process.env.REACT_APP_DEV_SERVER_IP}/api/feed/getFilteredFeed`, requestParams)
+    if (response.status !== 200) {
+      throw response.status
+    }
+    response = await response.json()
+    return response
+  } catch (e) {
+    console.log(e)
+  }
+  
 }

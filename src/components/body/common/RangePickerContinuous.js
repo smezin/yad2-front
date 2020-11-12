@@ -65,9 +65,12 @@ const RangePickerContinuous = (props) => {
     },[minDisplay, setMin, dispatch])
 
     useEffect( () => {
-        const maxDisplayWithLowerLimit = Math.max(parseFloat(removeSeperator(minDisplay)), parseFloat(removeSeperator(maxDisplay)))
-        isNumeric(removeSeperator(maxDisplayWithLowerLimit)) ? dispatch(setMax(parseFloat(removeSeperator(maxDisplayWithLowerLimit)))) 
+        const maxDisplayWithLowerLimit = Math.max(parseFloat(removeSeperator(minDisplay)) || 0, 
+                                                parseFloat(removeSeperator(maxDisplay)) || 0)
+        isNumeric(removeSeperator(maxDisplayWithLowerLimit))  
+        ? dispatch(setMax(parseFloat(removeSeperator(maxDisplayWithLowerLimit)))) 
         : dispatch(setMax(undefined))
+        
     },[maxDisplay, minDisplay, setMax, dispatch])
 
     const onMaxSubmit = () => {

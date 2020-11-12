@@ -1,5 +1,5 @@
 import React from 'react'
-import AdvancedSearchButton from './AdvancedSeachButton'
+import AdvancedSearchButton from './AdvancedSearchButton'
 import AvailableImmediately from './AvailableImmediately'
 import Balcony from './Balcony'
 import ClearAdvancedFilters from './ClearAdvancedFilters'

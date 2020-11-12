@@ -103,6 +103,7 @@ export const setMinSize = (minSize) => ({
     type: 'SET_MIN_SIZE',
     minSize
 })
+
 //SET PROPERTIES
 export const setProperties = (properties) => ({
     type: 'SET_PROPERTIES',
@@ -124,23 +125,6 @@ export const setSortBy = (sortBy) => {
     return {
         type: 'SET_SORT_BY',
         sortBy
-    }
-}
-
-//TOGGLE SHOW ONLY ITEMS WITH PRICE
-export const toggleShowOnlyItemsWithPrice = (showOnlyItemsWithPrice) => {
-    return {
-        type: 'TOGGLE_SHOW_ONLY_ITEMS_WITH_PRICE',
-        showOnlyItemsWithPrice
-        
-    }
-}
-
-//TOGGLE SHOW ONLY ITEMS WITH IMAGE
-export const toggleShowOnlyItemsWithImage = (showOnlyItemsWithImage) => {
-    return {
-        type: 'TOGGLE_SHOW_ONLY_ITEMS_WITH_IMAGE',
-        showOnlyItemsWithImage
     }
 }
 //REMOVE TYPE
