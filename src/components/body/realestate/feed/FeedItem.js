@@ -17,6 +17,7 @@ const FeedItem = (props) => {
     const floorLoaclName = fetchFromResource('string', 'feedItem', 'floor', 'localName')
     const sizeLocalName = fetchFromResource('string', 'feedItem', 'size', 'localName')
     const editLocalName = fetchFromResource('string', 'personal', 'delete', 'localName')
+    const notAvailableLocalName = fetchFromResource('string', 'feedItem', 'notAvailable', 'localName')
     const noPriceLocalName = fetchFromResource('string', 'feedItem', 'noPrice', 'localName')
     const propertyType = item.propertyType ? item.propertyType : ''
     const street = location && location.split(',')[0] 
@@ -45,15 +46,15 @@ const FeedItem = (props) => {
                     <span className="feed-item__location__city">{propertyType}{propertyType !== '' ? ', ':''} {city} </span> 
                 </div>
                 <div className="feed-item__rooms" onClick={toggleDetails}>
-                    <span className="feed-item__rooms-number">{rooms}</span> 
+                    <span className="feed-item__rooms-number">{rooms || notAvailableLocalName}</span> 
                     <span className="feed-item__rooms-title">{roomsLocalName}</span>
                 </div>
                 <div className="feed-item__floor" onClick={toggleDetails}>
-                    <span className="feed-item__floor-number">{floor}</span> 
+                    <span className="feed-item__floor-number">{floor || notAvailableLocalName}</span> 
                     <span className="feed-item__floor-title">{floorLoaclName}</span>
                 </div>
                 <div className="feed-item__size" onClick={toggleDetails}>
-                    <span className="feed-item__size-number">{size}</span> 
+                    <span className="feed-item__size-number">{size || notAvailableLocalName}</span> 
                     <span className="feed-item__size-title">{sizeLocalName}</span>
                 </div>
                 <div className="feed-item__price" onClick={toggleDetails}>
